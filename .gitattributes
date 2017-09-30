@@ -1,0 +1,9 @@
+* text eol=lf
+
+*.config text eol=crlf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
