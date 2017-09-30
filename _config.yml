@@ -114,6 +114,7 @@ author:
 # Reading Files
 include:
   - .htaccess
+  - .web.config
   - _pages
 exclude:
   - "*.sublime-project"
@@ -123,6 +124,7 @@ exclude:
   - .bundle
   - .jekyll-assets-cache
   - .sass-cache
+  - .travis.yml
   - assets/js/plugins
   - assets/js/_main.js
   - assets/js/vendor
