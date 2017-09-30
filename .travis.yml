@@ -2,12 +2,20 @@ language: ruby
 rvm:
 - current
 
+sudo: false
+dist: trusty
+
 before_script:
- - chmod +x ./_deploy/cibuild.sh # or do this locally and commit
+ #- sudo apt-get install lftp
+ - chmod +x ./_deploy/cibuild.sh
+ - chmod +x ./_deploy/deploy.sh
 
 # Assume bundler is being used, therefore
 # the `install` step will run `bundle install` by default.
 script: ./_deploy/cibuild.sh
+
+after_success:
+ - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then ./_deploy/deploy.sh; fi'
 
 # branch whitelist, only for GitHub Pages
 branches:
@@ -17,5 +25,10 @@ branches:
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+  - secure: "mkpHK7LZajFo8yPhVmCO5o3CNqPVEe0RZgtVrnncEWKFSENDCL72gp5WBxA6UMGpNxid4IoZj9s0UReHsLRKBVWPgEYuYG50C9NOjkbcn5HDNxwziXPI1QsaZyUgyKkBsE5/DKDuSzK1EriMzzHaqLgzEimV0IG2VVv6D0TgKehKhdI7qXCrOPUcJiQZqYFeqkdJNbH7N5pIj2/PbyCIZ69lcW6zezP2UR1KrdkY0aRtTK1FWnwhQhe7uDOGlj1XE5gZgLS9X8LNV/bFLwsS69yFIPTMoaGvV2o/06sus8tYWT/RdmsDonIgeiyVbrh+fuZzaMzvAE6jlbF1wZ3i5rd7fe+4+HdQ6+WlgpzJD2vJ3cuQR6TN8p9pl7Zt6SvRgL+6K1sdELYLpuEjeJCYqHI6K9xUilYl1sBndZNQYl+wZiBsc9AlNFLPks37rqpDi1jBI9XmMi0ZjS3yZ+NhIFagTA+5szdiYgBxhC9SZg0dSvm5C49Fnv1FGgfP8z6GwTgcdgqiR5GlOxX2LyzetT/aBfLiEpzZ0xrtJ7dMl5Izlfc1l+ZODMYTD+zUs725qfDAD+UyxyYVMd8JnZvOqXNpAioN6juXpz2Gwwi33/DroT0FCZ3tC9v5cjnH242CdQ+E/uEtmmSZtQFD32z0Rvo70QmhriTWNAaMB5CE4VM="
+  - secure: "mH6XaxuZ27mkwcTH3xfnbVd1wjeYH/IbC2GMZhHAun3v+RsevvzITP8+JNM5qDHXPooJzXObbGI+Ge3XbNaqI/PoQsTMQw82kUBkmXjh+9ZvVCsl6e5u/DQJb0do9Ab+cCVUsMQ47n6VE+YR3/PqoC4fh/OFNcICpVD6bvNjiK4H+Woxs2yDtkeQ2ET4gkVW1ynf5EKAOvdSkeU+E4fzvlIoQhtqTrEv+Yn79+HtghC+pKb97mqljsNEv0BW3V3cg5BHaTje/o/nbc0xEoZlKdUcONp+8H7tLfhWFIy7M1+S+Y/r3JfD3W7s2L4ostfOwglA7V+PbXir+8Phk9GdEWw0xQ4XlRYUG0c55voOqAn4mO9UrQbc/PIN6UvYj8NYvRt+viNNODdEMwAMMdfIXm1tRN2qd0nLAimm8hj6OORON6NpOl2xNoO5VyjKmhEywX+NsycpLV/cAc92yjOc9foYVLsghNzf+pWJKsvYr9bADVm8tITmoCsoJ34eSqV56mp4pp/K4tbIjnJdqgSU/QhHjQyIoFtF4b/P1k0Jxd4y8jU/7vl7BuuzAlHOZXVbljbGTs5RmbYDSG+yNBPLzdAJKjtcOHhstIWn4mBNZki81s73EIaFczsnGiAhc6m1krqXmvy+HaLVrba/lqFORVOl3YuFpsNV34e1JuiQGH8="
 
-sudo: false # route your build to the container-based infrastructure for a faster build
+addons:
+  apt:
+    packages:
+      lftp
