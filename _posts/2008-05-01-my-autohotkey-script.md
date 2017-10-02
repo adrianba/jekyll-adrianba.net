@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2008-05-02T05:28:18.000Z
-layout: single
 slug: my-autohotkey-script
 title: My AutoHotkey Script
 wordpress_id: 425
 old_link: 'https://adrianba.net/2008/05/01/my-autohotkey-script/'
+last_modified_at: 2008-05-02T05:28:18.000Z
 ---
+
 [James asked](/2008/04/30/elevated-command-prompt-from-a-hotkey) for the script I use. It's actually very simple and doesn't take advantage of any advanced features of AutoHotkey at present. Here it is:
 
  

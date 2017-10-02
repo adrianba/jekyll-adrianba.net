@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2014-04-20T02:45:00.000Z
-layout: single
 slug: installing-squid-web-proxy-for-windows
 title: Installing Squid Web Proxy for Windows
 wordpress_id: 472
 old_link: 'https://adrianba.net/2014/04/19/installing-squid-web-proxy-for-windows/'
+last_modified_at: 2014-04-20T02:45:00.000Z
 ---
+
 I'm running Windows Server Essentials 2012 R2 for file storage and system backups. While I'm doing lots of [experimenting with Boxstarter](/2014/04/19/introducing-boxstarter), I wanted a caching web proxy that would keep local copies of the package files I'm installing over and over so that I wouldn't have to wait for them to come from the Internet each time.
 
  

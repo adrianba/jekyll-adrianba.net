@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2007-10-06T04:15:37.000Z
-layout: single
 slug: blogging-with-subtext
 title: Blogging with Subtext
 wordpress_id: 410
 old_link: 'https://adrianba.net/2007/10/05/blogging-with-subtext/'
+last_modified_at: 2007-10-06T04:15:37.000Z
 ---
+
 Once I'd made the decision to begin blogging again, I had a look around to see whether I should change the engine used to host my blog.
 
 

@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2008-09-07T01:01:37.000Z
-layout: single
 slug: running-managed-code-from-a-network-share
 title: Running managed code from a network share
 wordpress_id: 432
 old_link: 'https://adrianba.net/2008/09/06/running-managed-code-from-a-network-share/'
+last_modified_at: 2008-09-07T01:01:37.000Z
 ---
+
 Since the launch of .NET all those years ago now, one issue keeps coming up for me. You create a quick proof-of-concept and stick it on a network share so that you can either run it on another PC (or get someone to try it for you) so that you can avoid those a€oewell, it runs on my PCa€ conversations. Unfortunately, running a managed .EXE from a network share puts it in the Intranet zone and suddenly imposes a host of CAS policies that you probably forgot about (again). You have to copy the file locally to make it run. This has always seemed like a chore especially since the same doesna€™t apply to unmanaged programs.
 
  

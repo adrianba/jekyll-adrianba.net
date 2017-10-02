@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2009-04-25T04:31:38.000Z
-layout: single
 slug: favourite-clock-gadget
 title: Favourite clock gadget
 wordpress_id: 448
 old_link: 'https://adrianba.net/2009/04/24/favourite-clock-gadget/'
+last_modified_at: 2009-04-25T04:31:38.000Z
 ---
+
 [![Digital World Clock](http://download.gallery.start.com/d.dll/1~2~606~22792/LARGE.jpg)](http://gallery.live.com/liveItemDetail.aspx?li=cb194986-22fc-43b5-97c2-21dd652fa51a)
 
  

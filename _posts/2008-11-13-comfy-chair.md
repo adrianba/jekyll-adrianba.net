@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2008-11-14T04:53:59.000Z
-layout: single
 slug: comfy-chair
 title: Comfy Chair
 wordpress_id: 436
 old_link: 'https://adrianba.net/2008/11/13/comfy-chair/'
+last_modified_at: 2008-11-14T04:53:59.000Z
 ---
+
 I finally got around to buying a proper chair to sit on to use my PC at home.
 
  

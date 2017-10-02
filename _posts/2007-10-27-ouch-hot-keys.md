@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2007-10-27T22:39:56.000Z
-layout: single
 slug: ouch-hot-keys
 title: 'Ouch, hot keys!'
 wordpress_id: 411
 old_link: 'https://adrianba.net/2007/10/27/ouch-hot-keys/'
+last_modified_at: 2007-10-27T22:39:56.000Z
 ---
+
 I used to use [WinKey](http://www.copernic.com/winkey/) to bind the Windows key on the keyboard together with another key to use as a shortcut. By default, the Windows shell has some "hotkeys". For example, Win+R gives the run dialog and Win+E opens an Explorer window. I wanted some extras for common tasks and that's what WinKey did. Unfortunately, as you can see if you follow the link, WinKey hasn't been supported by Copernic since 2005. In the past, I noted that it didn't work completely without [admin rights](/2003/02/14/c6a52dd56eb44837a9935c8f53b4064d) and under Vista that becomes common with UAC but I've struggled on nevertheless.
 
  

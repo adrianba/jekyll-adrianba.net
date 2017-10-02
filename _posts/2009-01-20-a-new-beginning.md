@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2009-01-20T13:20:00.000Z
-layout: single
 slug: a-new-beginning
 title: A new beginning
 wordpress_id: 443
 old_link: 'https://adrianba.net/2009/01/20/a-new-beginning/'
+last_modified_at: 2009-01-20T13:20:00.000Z
 ---
+
 On 2nd May, 1997, the Tony Blair led the Labour Party to the first election victory over the Conservatives for 18 years. This was a landslide victory, the worst performance by the Conservatives for over 90 years, and a popular call for change by the people of the UK. The country was desperate for something different. There was such a feeling of relief, of new optimism, a belief that things would be better now.
 
  

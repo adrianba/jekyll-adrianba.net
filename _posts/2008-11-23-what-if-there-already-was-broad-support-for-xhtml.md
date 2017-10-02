@@ -1,13 +1,12 @@
 ---
-comments: false
-date: 2008-11-24T05:43:21.000Z
-layout: single
 slug: what-if-there-already-was-broad-support-for-xhtml
 title: What if there already was broad support for XHTML?
 wordpress_id: 440
 old_link: >-
   https://adrianba.net/2008/11/23/what-if-there-already-was-broad-support-for-xhtml/
+last_modified_at: 2008-11-24T05:43:21.000Z
 ---
+
 [W3C XHTML 1.0 Appendix C](http://www.w3.org/TR/2002/REC-xhtml1-20020801/#guidelines): _This appendix summarizes design guidelines for authors who wish their XHTML documents to render on existing HTML user agents._
 
  

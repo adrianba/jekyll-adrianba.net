@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2007-10-28T18:37:19.000Z
-layout: single
 slug: free-data-recovery-software-testdisk
 title: Free data recovery software - TestDisk
 wordpress_id: 412
 old_link: 'https://adrianba.net/2007/10/28/free-data-recovery-software-testdisk/'
+last_modified_at: 2007-10-28T18:37:19.000Z
 ---
+
 I've copied across my IE favourites to a new PC knowing that I need to spend some time going through them and reorganising. There are things there that probably don't point to anything useful and a bunch that could be easier to find if they were in sensible folders.
 
  

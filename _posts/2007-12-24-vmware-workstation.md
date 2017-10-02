@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2007-12-24T23:14:59.000Z
-layout: single
 slug: vmware-workstation
 title: VMware Workstation
 wordpress_id: 420
 old_link: 'https://adrianba.net/2007/12/24/vmware-workstation/'
+last_modified_at: 2007-12-24T23:14:59.000Z
 ---
+
 After evaluating the latest version of [VMware Workstation 6](http://www.vmware.com/products/ws/) for my free month, I got out my credit card and bought a copy over the weekend.
 
 I was last a VMware customer for Workstation 4 so I didn't qualify for a discount on moving to 6 but, despite the $200 price tag, I think it's money well spent. Microsoft's recent virtualisation investment is going into the server platform, specifically Hyper-V for Windows 2008. As a consequence, desktop virtualisation has been somewhat abandoned for the time being at least. There's really no comparison between Virtual PC and VMware Workstation.

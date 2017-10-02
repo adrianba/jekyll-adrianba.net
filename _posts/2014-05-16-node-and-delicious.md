@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2014-05-16T18:32:46.000Z
-layout: single
 slug: node-and-delicious
 title: Node and Delicious
 wordpress_id: 474
 old_link: 'https://adrianba.net/2014/05/16/node-and-delicious/'
+last_modified_at: 2014-05-16T18:32:46.000Z
 ---
+
 In my last post, I wrote about [using node.js as a scripting tool](/2014/04/20/node-and-xml-stream). Node has lots of good libraries for making network requests and processing the results. [request](https://www.npmjs.org/package/request) is one of the most popular HTTP clients. It is easier to work with than the built-in [http](http://nodejs.org/api/http.html) module that is designed to provide basic http client/server primitives.
 
  

@@ -1,13 +1,12 @@
 ---
-comments: false
-date: 2007-10-29T15:04:06.000Z
-layout: single
 slug: rename-item-and-square-brackets-in-powershell-no-literalpath
 title: Rename-Item and square brackets in PowerShell (no -LiteralPath)
 wordpress_id: 414
 old_link: >-
   https://adrianba.net/2007/10/29/rename-item-and-square-brackets-in-powershell-no-literalpath/
+last_modified_at: 2007-10-29T15:04:06.000Z
 ---
+
 In the [Managing wildcards in paths](http://www.microsoft.com/technet/scriptcenter/topics/winpsh/payette2.mspx#E2AAC) section of Windows PowerShell in Action (Part 2) on MSDN, it says:
 
  

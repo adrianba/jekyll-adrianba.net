@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2015-03-12T20:23:27.000Z
-layout: single
 slug: itrsquos-time-to-move-on-from-ie8
 title: It’s time to move on from IE8
 wordpress_id: 477
 old_link: 'https://adrianba.net/2015/03/12/itrsquos-time-to-move-on-from-ie8/'
+last_modified_at: 2015-03-12T20:23:27.000Z
 ---
+
 Yesterday, [my esteemed (new) colleague Aaron Gustafson wrote a piece](http://www.aaron-gustafson.com/notebook/lines-in-the-sand/) about his reaction to the “[Break Up with Internet Explorer 8](http://breakupwithie8.com/)” site currently doing the rounds in the Twittersphere. He argues for support of older browsers and optimisation for newer, better browsers. I disagree.
 
  

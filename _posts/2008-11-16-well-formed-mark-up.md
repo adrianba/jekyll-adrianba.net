@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2008-11-17T02:44:49.000Z
-layout: single
 slug: well-formed-mark-up
 title: Well-formed mark-up?
 wordpress_id: 438
 old_link: 'https://adrianba.net/2008/11/16/well-formed-mark-up/'
+last_modified_at: 2008-11-17T02:44:49.000Z
 ---
+
 Therea€™s an interesting debate going on in the W3C HTML working group about whether well-formed HTML is important in the specification process for HTML5. It feels to me somehow intellectually that well-formedness is a valuable goal but when it comes down to explaining why it matters Ia€™m finding it hard.
 
  

@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2008-08-04T11:45:17.000Z
-layout: single
 slug: puddle-jumping
 title: Puddle Jumping
 wordpress_id: 430
 old_link: 'https://adrianba.net/2008/08/04/puddle-jumping/'
+last_modified_at: 2008-08-04T11:45:17.000Z
 ---
+
 I realise that this post is way overdue but I've finally made the time to sit down and write up my news.
 
  

@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2014-04-20T01:19:13.000Z
-layout: single
 slug: introducing-boxstarter
 title: Introducing Boxstarter
 wordpress_id: 471
 old_link: 'https://adrianba.net/2014/04/19/introducing-boxstarter/'
+last_modified_at: 2014-04-20T01:19:13.000Z
 ---
+
 Every year, Scott Hanselman publishes his [Ultimate Developer and Power Users Tool List for Windows](http://www.hanselman.com/tools/). I usually take a look through it, pat myself on the back when I see things I’ve been using for a while, and spend some time investigating some of the new ones. Sometimes a tool that I’ve looked at before but haven’t been using gets another mention and it prompts me to take a look (this year it was [Clink](http://mridgers.github.io/clink/), a tool that adds readline-style editing to the Windows command line).
 
  

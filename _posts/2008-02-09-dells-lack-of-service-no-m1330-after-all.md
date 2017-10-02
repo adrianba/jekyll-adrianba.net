@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2008-02-10T01:36:06.000Z
-layout: single
 slug: dells-lack-of-service-no-m1330-after-all
 title: Dell's lack of service - no M1330 after all
 wordpress_id: 423
 old_link: 'https://adrianba.net/2008/02/09/dells-lack-of-service-no-m1330-after-all/'
+last_modified_at: 2008-02-10T01:36:06.000Z
 ---
+
 I [ordered the Dell XPS M1330](/2008/02/01/dell-xps-m1330) with a specific trip in mind. Before ordering, I confirmed with their online sales agent whether if I ordered at that moment I would receive the laptop before I needed to leave. I was told that if I selected the 9 cell battery then it would be scheduled to be received no later than the day I was leaving but if I gave the agent my order reference number, they would prioritise the order so that it would be delivered in time.
 
  

@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2008-09-08T12:15:00.000Z
-layout: single
 slug: xmlstarlet-command-line-xml-toolkit
 title: XMLStarlet Command Line XML Toolkit
 wordpress_id: 434
 old_link: 'https://adrianba.net/2008/09/08/xmlstarlet-command-line-xml-toolkit/'
+last_modified_at: 2008-09-08T12:15:00.000Z
 ---
+
  
 
 I've recently been writing some scripts to automate a test harness. The test harness takes in an XML file as it's input. It turns out that most of the tests we want a slight variations of the same scenario and this means small tweaks to the XML file. When I started, I ended up with a new XML file for each scenario. This was okay for 2 variations of 3 scenarios (6 files) but as the test space grew so did the number of XML files. I wanted to find an easier way of keeping all the files in sync but I didn't want a heavyweight solution such as some kind of database or input file that I would somehow have to find a way to parse.

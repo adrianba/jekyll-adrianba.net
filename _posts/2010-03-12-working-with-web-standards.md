@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2010-03-13T00:07:00.000Z
-layout: single
 slug: working-with-web-standards
 title: Working with Web Standards
 wordpress_id: 461
 old_link: 'https://adrianba.net/2010/03/12/working-with-web-standards/'
+last_modified_at: 2010-03-13T00:07:00.000Z
 ---
+
 There's lots going on in the web standards world and being part of the Internet Explorer team gives me a front row seat. We've posted a few updates on the IE Blog relating to standards in the last few weeks:
 
  

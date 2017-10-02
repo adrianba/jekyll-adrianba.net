@@ -1,13 +1,12 @@
 ---
-comments: false
-date: 2012-12-20T18:46:15.000Z
-layout: single
 slug: pretending-browser-detection-isnt-browser-detection
 title: Pretending browser detection isn't browser detection
 wordpress_id: 470
 old_link: >-
   https://adrianba.net/2012/12/20/pretending-browser-detection-isnt-browser-detection/
+last_modified_at: 2012-12-20T18:46:15.000Z
 ---
+
 From time to time I see [posts like this describing "CSS Hacks" to detect a particular version of IE](http://www.impressivewebs.com/ie10-css-hacks/). This post describes how [removing conditional comments support in IE10](http://msdn.microsoft.com/en-us/library/ie/hh801214(v=vs.85).aspx) might be a problem for targeting workarounds to IE10. Specifically it says:
 
  

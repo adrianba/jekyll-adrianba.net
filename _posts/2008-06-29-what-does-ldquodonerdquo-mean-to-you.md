@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2008-06-30T02:48:28.000Z
-layout: single
 slug: what-does-ldquodonerdquo-mean-to-you
 title: What does “done” mean to you?
 wordpress_id: 429
 old_link: 'https://adrianba.net/2008/06/29/what-does-ldquodonerdquo-mean-to-you/'
+last_modified_at: 2008-06-30T02:48:28.000Z
 ---
+
  
 
  

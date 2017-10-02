@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2007-12-11T03:26:19.000Z
-layout: single
 slug: upgrading-sky-pace-3100-hard-disk
 title: Upgrading Sky+ Pace 3100 Hard Disk
 wordpress_id: 416
 old_link: 'https://adrianba.net/2007/12/10/upgrading-sky-pace-3100-hard-disk/'
+last_modified_at: 2007-12-11T03:26:19.000Z
 ---
+
 I've been having increasing problems with my Sky+ box over recent weeks culminating in programmes that would just hang during play back. I tried reinitialising the hard disk using the built-in firmware but this didn't solve the problem and I figured it was actually a hardware issue with the disk.
 
  

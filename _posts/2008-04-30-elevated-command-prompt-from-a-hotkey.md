@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2008-04-30T22:05:07.000Z
-layout: single
 slug: elevated-command-prompt-from-a-hotkey
 title: Elevated command prompt from a hotkey
 wordpress_id: 424
 old_link: 'https://adrianba.net/2008/04/30/elevated-command-prompt-from-a-hotkey/'
+last_modified_at: 2008-04-30T22:05:07.000Z
 ---
+
 While I think UAC is a good thing, it gets pretty annoying when running lots of commands at the command line that just turn around and say "sorry, I need to be elevated". I've blogged before about using [AutoHotkey](/2007/10/27/ouch-hot-keys) to run commands bound to keyboard shortcuts and I use Win+P to pull up a command prompt with all the environment variables set so that I can access developer tools like devenv and csc. Finally I started to look around at a way to bind an elevated command prompt to a keystroke.
 
  

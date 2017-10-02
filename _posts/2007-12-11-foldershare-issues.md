@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2007-12-12T04:02:56.000Z
-layout: single
 slug: foldershare-issues
 title: FolderShare issues
 wordpress_id: 417
 old_link: 'https://adrianba.net/2007/12/11/foldershare-issues/'
+last_modified_at: 2007-12-12T04:02:56.000Z
 ---
+
 Last week there was an issue with the FolderShare service, which may have inadvertently moved original files to the FolderShare Trash folder. This is detailed on the [FolderShare](https://www.foldershare.com/) site:
 
  

@@ -1,13 +1,12 @@
 ---
-comments: false
-date: 2015-03-15T05:27:51.000Z
-layout: single
 slug: using-yeoman-to-start-writing-technical-specifications-with-respec
 title: Using Yeoman to start writing technical specifications with ReSpec
 wordpress_id: 478
 old_link: >-
   https://adrianba.net/2015/03/14/using-yeoman-to-start-writing-technical-specifications-with-respec/
+last_modified_at: 2015-03-15T05:27:51.000Z
 ---
+
 [Yeoman](http://yeoman.io/) is a tool that provides a scaffolding system to begin new projects. The genius thing about Yeoman is that, by itself, it doesn’t know how to do anything. This flexibility comes from a modular approach that relies on separate generator modules. Each [generator](http://yeoman.io/generators/) knows how to create a particular kind of project (e.g. an Backbone.js app or a Chrome extension).
 
  

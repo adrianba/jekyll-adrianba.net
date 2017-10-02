@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2009-05-05T12:16:47.000Z
-layout: single
 slug: windows-mobile-devices-and-windows-7
 title: Windows Mobile Devices and Windows 7
 wordpress_id: 450
 old_link: 'https://adrianba.net/2009/05/05/windows-mobile-devices-and-windows-7/'
+last_modified_at: 2009-05-05T12:16:47.000Z
 ---
+
 Yesterday, I started experimenting with building a simple application using the .NET Compact Framework v3.5 and Visual Studio 2008. It was pretty simple to get running using the emulator after downloading and installing the [Windows Mobile 6 SDKs](http://www.microsoft.com/downloads/details.aspx?FamilyID=06111a3a-a651-4745-88ef-3d48091a390b&displaylang=en) (make sure you get the Refresh).
 
  

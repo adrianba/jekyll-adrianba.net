@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2015-12-20T19:40:07.000Z
-layout: single
 slug: mdi-to-tiff-converter
 title: MDI to TIFF converter
 wordpress_id: 480
 old_link: 'https://adrianba.net/2015/12/20/mdi-to-tiff-converter/'
+last_modified_at: 2015-12-20T19:40:07.000Z
 ---
+
 Microsoft Office Document Imaging (MODI) was part of Office up to Office 2007. It allowed you to scan multipage documents into .MDI files. MODI was deprecated and removed from Office 2010 and with a modern installation of Windows and Office there is no native support for .MDI files. If you have these files archived then you will need to convert them to another format.
 
 

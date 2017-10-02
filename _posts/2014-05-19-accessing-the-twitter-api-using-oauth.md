@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2014-05-19T15:30:00.000Z
-layout: single
 slug: accessing-the-twitter-api-using-oauth
 title: Accessing the Twitter API using OAuth
 wordpress_id: 475
 old_link: 'https://adrianba.net/2014/05/19/accessing-the-twitter-api-using-oauth/'
+last_modified_at: 2014-05-19T15:30:00.000Z
 ---
+
 Following on from my last post that described [using Node to access feeds from Delicious](/2014/05/16/node-and-delicious), I’ve also been investigating how to access my Twitter feed. This adds a little more complexity because Twitter requires that your app or script [authenticate to Twitter](https://dev.twitter.com/docs/auth) using [OAuth](http://oauth.net/).
 
 Per [Wikipedia](http://en.wikipedia.org/wiki/OAuth), "_OAuth provides client applications a 'secure delegated access' to server resources on behalf of a resource owner. It specifies a process for resource owners to authorize third-party access to their server resources without sharing their credentials._" What this means is that your app can access the Twitter API in an authenticated way using OAuth without having to embed your username and password into the script.

@@ -1,13 +1,12 @@
 ---
-comments: false
-date: 2009-04-02T22:20:44.000Z
-layout: single
 slug: why-doesnrsquot-microsoft-just-fix-all-of-the-bugs-before
 title: Why doesn’t Microsoft just fix all of the bugs before they ship?
 wordpress_id: 445
 old_link: >-
   https://adrianba.net/2009/04/02/why-doesnrsquot-microsoft-just-fix-all-of-the-bugs-before/
+last_modified_at: 2009-04-02T22:20:44.000Z
 ---
+
 Back in December, the Office Sustained Engineering team wrote a blog attempting to answer the question, a€oe[Why doesna€™t Office just fix all of the bugs before they ship?](http://blogs.technet.com/office_sustained_engineering/archive/2008/12/12/why-doesn-t-office-just-fix-all-of-the-bugs-before-they-ship-it.aspx)a€. In fact there description applies to any product from Microsoft and in fact products from many companies.
 
  

@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2009-03-09T05:34:10.000Z
-layout: single
 slug: getting-off-ie6
 title: Getting off IE6?
 wordpress_id: 444
 old_link: 'https://adrianba.net/2009/03/08/getting-off-ie6/'
+last_modified_at: 2009-03-09T05:34:10.000Z
 ---
+
 Scott Hanselman has a post talking about [how to encourage users to upgrade their browser from IE6](http://www.hanselman.com/blog/IE6WarningStopLivingInThePastGetOffOfIE6.aspx) to something newer. Ita€™s true that there are still a large number of people using IE6. Previous versions of IE are the biggest competitor to new releases and in the past it has often taken around 18 months before the number of users of a new release surpasses the number of users of the previous release.
 
  

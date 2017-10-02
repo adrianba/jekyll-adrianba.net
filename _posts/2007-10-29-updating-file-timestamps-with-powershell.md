@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2007-10-29T14:47:00.000Z
-layout: single
 slug: updating-file-timestamps-with-powershell
 title: Updating file timestamps with PowerShell
 wordpress_id: 413
 old_link: 'https://adrianba.net/2007/10/29/updating-file-timestamps-with-powershell/'
+last_modified_at: 2007-10-29T14:47:00.000Z
 ---
+
 I've recently copied over some [Audible](http://www.audible.com/) files from one PC to another. Had I used robocopy, I could have preserved all the timestamps but I just copied them in Explorer so I ended up with the situation where the last modified time was the same as the original but the created time has very recent. When you import files into your Audible Manager library it shows the created date. Since I usually sort by date so that my recent purchases are at the top of the list, this was something of a problem.
 
  

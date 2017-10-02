@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2015-12-06T06:46:56.000Z
-layout: single
 slug: using-dvi-monitors-with-the-new-surface-dock
 title: Using DVI monitors with the new Surface Dock
 wordpress_id: 479
 old_link: 'https://adrianba.net/2015/12/05/using-dvi-monitors-with-the-new-surface-dock/'
+last_modified_at: 2015-12-06T06:46:56.000Z
 ---
+
 The new [Surface Dock](https://www.microsoft.com/surface/en-us/accessories/surface-dock) from Microsoft has two [mini-DisplayPort](https://en.wikipedia.org/wiki/Mini_DisplayPort) outputs that can be used to connect a Surface Book, Surface Pro 3, or Surface Pro 4 to two external monitors.
 
  

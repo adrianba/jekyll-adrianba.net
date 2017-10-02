@@ -1,13 +1,12 @@
 ---
-comments: false
-date: 2016-09-24T19:01:17.000Z
-layout: single
 slug: using-microsoft-flow-to-publish-medium-com-recommendations
 title: Using Microsoft Flow to publish medium.com recommendations
 wordpress_id: 535
 old_link: >-
   https://adrianba.net/2016/09/24/using-microsoft-flow-to-publish-medium-com-recommendations/
+last_modified_at: 2016-09-24T19:01:17.000Z
 ---
+
 Like a growing number of people, I read a lot of content on [medium.com](https://medium.com/). I wanted to find a way to share the posts that I find most interesting.
 
 Over the last couple of weeks I've been playing with [Microsoft Flow](https://flow.microsoft.com/), which allows you to create automated workflows between different apps and services. I'm not on the Flow team - I just think the service is interesting, especially now that it is [available for everyone](https://flow.microsoft.com/en-us/blog/available-for-everyone/) to use. It reminds me of [Yahoo Pipes](https://en.wikipedia.org/wiki/Yahoo!_Pipes).

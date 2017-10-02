@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2008-09-07T22:15:00.000Z
-layout: single
 slug: a-trip-to-the-us-embassy-for-a-visa-interview
 title: A trip to the US Embassy for a visa interview
 wordpress_id: 433
 old_link: 'https://adrianba.net/2008/09/07/a-trip-to-the-us-embassy-for-a-visa-interview/'
+last_modified_at: 2008-09-07T22:15:00.000Z
 ---
+
 Back in early July, I had to head off to the US Embassy in London for the interview for my work visa to come and live out in Seattle. While there was lots of official information about what you needed to do, I didna€™t find much discussion of the experience and so I thought Ia€™d share mine here. First of all, nothing here is secret or security related information. You can find all the details on the US Embassy web site, [here](http://www.usembassy.org.uk/cons_new/visa/niv/interview.html) and [here](http://www.usembassy.org.uk/cons_new/visa/niv/apply.html) for example.
 
  

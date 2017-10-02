@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2014-04-20T18:53:46.000Z
-layout: single
 slug: node-and-xml-stream
 title: Node and xml-stream
 wordpress_id: 473
 old_link: 'https://adrianba.net/2014/04/20/node-and-xml-stream/'
+last_modified_at: 2014-04-20T18:53:46.000Z
 ---
+
  
 
 For the last couple of months, I've been experimenting more and more with [node.js](http://nodejs.org/). My impression is that most people who have heard of node but not really used it think of it as a server technology for building web applications using JavaScript. Of course, it does that and there is [good support for node.js hosted on Microsoft Azure Web Sites](http://azure.microsoft.com/en-us/develop/nodejs/). But you can also use node as a scripting language for local tasks. There are lots of popular scripting languages like [Python](https://www.python.org/) and [Ruby](https://www.ruby-lang.org/) but if you're already a JavaScript developer then node is a convenient choice.

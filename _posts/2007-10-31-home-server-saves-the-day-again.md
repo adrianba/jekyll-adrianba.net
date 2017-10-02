@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2007-10-31T15:28:33.000Z
-layout: single
 slug: home-server-saves-the-day-again
 title: Home Server saves the day (again!)
 wordpress_id: 415
 old_link: 'https://adrianba.net/2007/10/31/home-server-saves-the-day-again/'
+last_modified_at: 2007-10-31T15:28:33.000Z
 ---
+
 There's no two ways about it, [Windows Home Server](http://www.microsoft.com/windows/products/winfamily/windowshomeserver/default.mspx) is cool. The backup system is excellent, especially the part where it only backs up identical clusters for different machines once. This means that if you have the same OS on multiple PCs, all the OS files will be backed up only once saving a bunch of space. It also means that you get differential backups sort of for free.
 
  

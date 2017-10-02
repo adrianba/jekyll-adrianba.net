@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2014-05-20T15:25:00.000Z
-layout: single
 slug: using-c-to-access-the-twitter-api
 title: 'Using C# to access the Twitter API'
 wordpress_id: 476
 old_link: 'https://adrianba.net/2014/05/20/using-c-to-access-the-twitter-api/'
+last_modified_at: 2014-05-20T15:25:00.000Z
 ---
+
  
 
 My last post described [how to acquire Twitter OAuth keys and tokens](/2014/05/19/accessing-the-twitter-api-using-oauth) to allow you to use Twitter's API to access Twitter feeds. I showed how to use the [request module](https://www.npmjs.org/package/request) with node.js, which has built-in support for OAuth, to request and process data.

@@ -1,12 +1,11 @@
 ---
-comments: false
-date: 2008-02-02T06:37:41.000Z
-layout: single
 slug: net-framework-fixes
 title: .NET Framework Fixes
 wordpress_id: 421
 old_link: 'https://adrianba.net/2008/02/01/net-framework-fixes/'
+last_modified_at: 2008-02-02T06:37:41.000Z
 ---
+
 There's a big long list of problems that are fixed in the .NET Framework Service Pack 1 in this [knowledge base article (945757)](http://support.microsoft.com/kb/945757). Some of these have very generic names such as "FIX: You may receive an exception when you browse a .NET Framework 2.0 ASP.NET Web application" but if you click through into the underlying articles you can see more information about the specific scenarios that are covered.
 
  
