@@ -186,6 +186,7 @@ timezone: "America/Los_Angeles"
 # Plugins (previously gems:)
 plugins:
   - jekyll-paginate
+  - jekyll-archives
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
@@ -216,18 +217,18 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
-# https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
 
+# https://github.com/jekyll/jekyll-archives
+jekyll-archives:
+  enabled:
+    - year
+    - month
+    - day
+  layout: 'archive-taxonomy'
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    day: '/:year/:month/:day.html'
 
 # HTML Compression
 # - http://jch.penibelst.de/

@@ -10,8 +10,11 @@ source "https://rubygems.org"
 # Happy Jekylling!
 gem "jekyll", "3.5.2"
 
-# This is the default theme for new Jekyll sites. You may change this to anything you like.
+# This is the theme for the Jekyll sites.
 gem "minimal-mistakes-jekyll"
+
+# Include the archive plug-in
+gem "jekyll-archives"
 
 # Install html proofer
 gem "html-proofer"
