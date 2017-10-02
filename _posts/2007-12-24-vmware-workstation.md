@@ -15,4 +15,4 @@ There are a couple of features that make it compelling beyond what Virtual PC pr
 
 The second thing that I like, and that VMware has always been better at handling, is snapshots. In Workstation 6, there is a great dialog that allows you to keep a hierarchy of snapshots and to branch and prune just as you like. Here is an example of an XP VM that I've set-up to allow testing of both IE6 and IE7:
 
-![VMware Workstation 6 - Snapshot Manager](/wp-content/uploads/2007/12/img420-1.png)
+![VMware Workstation 6 - Snapshot Manager](/assets/uploads/2007/12/img420-1.png)

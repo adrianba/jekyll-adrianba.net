@@ -12,7 +12,7 @@ Yesterday, a note was posted on the [IE blog](http://blogs.msdn.com/ie/) about t
 
  
 
-![A webpage is not responding on the following website](/wp-content/uploads/2009/05/img451-1.png)
+![A webpage is not responding on the following website](/assets/uploads/2009/05/img451-1.png)
 
  
 

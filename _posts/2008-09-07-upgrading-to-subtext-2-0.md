@@ -14,4 +14,4 @@ Finally today I went through and updated the engine and made the few small chang
 I also took this opportunity to make sure I had configured image uploading correctly. If this has been successful then the image of my shiny new Sequoia will be included below.
 
 
-![sequoia](/wp-content/uploads/2008/09/img431-1.jpeg)
+![sequoia](/assets/uploads/2008/09/img431-1.jpeg)

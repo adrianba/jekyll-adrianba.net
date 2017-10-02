@@ -30,19 +30,19 @@ The CONSUMER_KEY and CONSUMER_SECRET values are provided by the service to ident
 
 This all sounds a little complicated so an example will help. Before we get to that we need to get the values. Twitter provides a portal for this at [https://apps.twitter.com/](https://apps.twitter.com/). If you login and select Create New App you will see a screen that looks like this:
 
-[![image](/wp-content/uploads/2014/05/img475-1.png)](/wp-content/uploads/2014/05/img475-1.png)
+[![image](/assets/uploads/2014/05/img475-1.png)](/assets/uploads/2014/05/img475-1.png)
 
 Here you provide the name of you application, a description, and a link to your web site. For our initial scripting purposes the values here don’t matter too much. There is a Callback URL value but we also don’t need this now and can leave this blank. Finally there are some terms and conditions to read and agree to. Once you have completed this form, press the Create your Twitter application button and you will see a screen that looks like this:
 
-[![image](/wp-content/uploads/2014/05/img475-2.png)](=)
+[![image](/assets/uploads/2014/05/img475-2.png)](=)
 
 If you click on the API Keys tab you will see something like this:
 
-[![image](/wp-content/uploads/2014/05/img475-3.png)](/wp-content/uploads/2014/05/img475-3.png)
+[![image](/assets/uploads/2014/05/img475-3.png)](/assets/uploads/2014/05/img475-3.png)
 
 Since we want our script to access Twitter using our account, we can click on the Create my access token button to generate the appropriate token values. You should see something like this:
 
-[![image](/wp-content/uploads/2014/05/img475-4.png)](/wp-content/uploads/2014/05/img475-4.png)
+[![image](/assets/uploads/2014/05/img475-4.png)](/assets/uploads/2014/05/img475-4.png)
 
 You may need to refresh to see your new access token.
 
