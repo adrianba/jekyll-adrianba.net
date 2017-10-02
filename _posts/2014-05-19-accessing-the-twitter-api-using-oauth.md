@@ -33,7 +33,7 @@ This all sounds a little complicated so an example will help. Before we get to t
 
 Here you provide the name of you application, a description, and a link to your web site. For our initial scripting purposes the values here don’t matter too much. There is a Callback URL value but we also don’t need this now and can leave this blank. Finally there are some terms and conditions to read and agree to. Once you have completed this form, press the Create your Twitter application button and you will see a screen that looks like this:
 
-[![image](/assets/uploads/2014/05/img475-2.png)](=)
+[![image](/assets/uploads/2014/05/img475-2.png)](/assets/uploads/2014/05/img475-2.png)
 
 If you click on the API Keys tab you will see something like this:
 
