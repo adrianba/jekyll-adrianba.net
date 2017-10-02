@@ -114,7 +114,7 @@ author:
 # Reading Files
 include:
   - .htaccess
-  - .web.config
+  - web.config
   - _pages
 exclude:
   - "*.sublime-project"

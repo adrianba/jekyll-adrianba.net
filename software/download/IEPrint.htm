@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Internet Explorer 6 Printing Addin</title>
+<script type="text/javascript">
+    function doLoad() {
+        var loader = document.getElementById("loader");
+        var msg = document.getElementById("msg");
+        if (loader != null && loader != "undefined") {
+            msg.innerText = 'Add-in loaded. You will probably need to restart Internet Explorer to see the toolbar button.';
+        } else {
+            msg.innerText = '';
+        }
+    }
+</script>
+</head>
+<body onLoad="doLoad()">
+<p id="msg">Loading...</p>
+<object id="loader" classid="clsid:D7C980D5-83EB-4C60-B1B0-816ECB63F0C4" codebase="IEPrint.CAB#Version=1,0,0,140" width="0" height="0">
+<p>Internet Explorer 6 Printing Addin could not be loaded. If there is a Gold Bar at the top of the window, you should click it and select "Install ActiveX Control...".</p>
+</object>
+</body>
+</html>
