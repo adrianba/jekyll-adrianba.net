@@ -1,5 +1,5 @@
 Echo Running RC config
-debug 4
+#debug 4
 set cmd:save-cwd-history no
 set cmd:save-rl-history no
 set ftp:use-feat no
