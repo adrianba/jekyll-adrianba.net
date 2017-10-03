@@ -14,7 +14,8 @@ gem "jekyll", "3.5.2"
 gem "minimal-mistakes-jekyll"
 
 # Include the archive plug-in
-gem "jekyll-archives"
+#gem "jekyll-archives"
+gem 'jekyll-archives', git: 'https://github.com/jekyll/jekyll-archives'
 
 # Install html proofer
 gem "html-proofer"

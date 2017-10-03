@@ -22,6 +22,12 @@ branches:
   only:
   - master
 
+cache:
+  bundler: true
+  directories:
+  - .jekyll-metadata
+  - _site
+
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
