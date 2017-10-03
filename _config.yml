@@ -251,3 +251,7 @@ defaults:
       comments: false
       share: true
       related: true
+  - scope:
+      path: "software"
+    values:
+      layout: single
