@@ -25,8 +25,11 @@ branches:
 cache:
   bundler: true
   directories:
-  - .jekyll-metadata
+  - .cache
   - _site
+
+before_cache:
+  mkdir -p .cache && cp .jekyll-metadata .cache
 
 env:
   global:
