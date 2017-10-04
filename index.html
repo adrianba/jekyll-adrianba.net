@@ -6,4 +6,10 @@ header:
 sidebar:
   - title: "Disclaimer"
     text: "<small>The posts on this blog are provided AS IS with no warranties, and confer no rights. The opinions expressed herein are my own personal opinions and do not represent my employer's view in any way.</small>"
+paginate:
+    collection:   posts
+    per_page:     10             # maximum number of items per page
+    limit:        1              # Maximum number of pages to paginate (false for unlimited)
+    permalink:    /page:num/     # pagination path (relative to template page)
+    title_suffix: " (page :num)" # Append to template's page title
 ---

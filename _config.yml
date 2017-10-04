@@ -178,14 +178,15 @@ sass:
 
 # Outputting
 permalink: pretty
-paginate: 10 # amount of posts to show
-paginate_path: /page:num/
 timezone: "America/Los_Angeles"
 
+# jekyll-paginate
+#paginate: 10 # amount of posts to show
+#paginate_path: /page:num/
 
 # Plugins (previously gems:)
 plugins:
-  - jekyll-paginate
+  - octopress-paginate
   - jekyll-archives
   - jekyll-sitemap
   - jekyll-gist

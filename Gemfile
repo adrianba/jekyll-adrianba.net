@@ -26,7 +26,7 @@ gem "html-proofer"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-   gem "jekyll-paginate"
+   gem 'octopress-paginate'
    gem "jekyll-sitemap"
    gem "jekyll-gist"
    gem "jekyll-feed", "~> 0.6"

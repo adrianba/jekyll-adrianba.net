@@ -87,6 +87,10 @@ GEM
       mini_portile2 (~> 2.3.0)
     octokit (4.7.0)
       sawyer (~> 0.8.0, >= 0.5.3)
+    octopress-hooks (2.6.2)
+      jekyll (>= 2.0)
+    octopress-paginate (1.2.0)
+      octopress-hooks
     parallel (1.12.0)
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
@@ -120,10 +124,10 @@ DEPENDENCIES
   jekyll-archives!
   jekyll-feed (~> 0.6)
   jekyll-gist
-  jekyll-paginate
   jekyll-sitemap
   jemoji
   minimal-mistakes-jekyll
+  octopress-paginate
   tzinfo-data
 
 BUNDLED WITH
