@@ -14,7 +14,7 @@ title                    : "adrianba.net"
 title_separator          : "-"
 name                     : "Adrian Bateman"
 description              : "On land, on sea, and in the ether."
-url                      : # "https://adrianba.net/"
+url                      : #"https://beta.adrianba.net"
 baseurl                  :
 repository               : "adrianba/jekyll-adrianba.net"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -82,6 +82,9 @@ analytics:
   google:
     tracking_id          : UA-48621303-1 
 
+# For SEO
+github:
+  url: "http://beta.adrianba.net"
 
 # Site Author
 author:
