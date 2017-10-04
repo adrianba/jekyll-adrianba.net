@@ -6,4 +6,3 @@ set ftp:use-feat no
 set ssl:verify-certificate yes
 set ssl:ca-file "~/.lftp/adrianba.net.crt"
 set ssl:check-hostname no
-set ftp:timezone "America/Los_Angeles"
