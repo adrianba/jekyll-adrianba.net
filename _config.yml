@@ -14,8 +14,8 @@ title                    : "adrianba.net"
 title_separator          : "-"
 name                     : "Adrian Bateman"
 description              : "On land, on sea, and in the ether."
-url                      : #"https://adrianba.net"
-baseurl                  :
+url                      : "https://adrianba.net"
+baseurl                  : ""
 repository               : "adrianba/jekyll-adrianba.net"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
