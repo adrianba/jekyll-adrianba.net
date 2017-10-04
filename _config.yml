@@ -67,9 +67,14 @@ og_image                 : "/assets/sailing.jpg" # Open Graph/Twitter default si
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
+  type                   : Person # Person or Organization (defaults to Person)
+  name                   : "Adrian Bateman" # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
+    - "https://adebateman.org/"
+    - "https://twitter.com/adrianba"
+    - "https://facebook.com/adrianba"
+    - "https://instagram.com/adebateman"
+    - "https://www.linkedin.com/in/adrianba"
 
 # Analytics
 analytics:
