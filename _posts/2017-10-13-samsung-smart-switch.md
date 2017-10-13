@@ -1,8 +1,11 @@
 ---
 title: "Samsung Smart Switch - How to install on Windows 10"
+last_modified_at: 20171013T221800Z
 ---
 **Samsung Smart Switch** is a tool that will backup your phone and transfer the data to a new Samsung
 phone. You also use it to backup your phone to your PC in case you need to restore it later.
+
+[![Screenshot of Samsung Smart Switch](/assets/uploads/2017/samsung-smart-switch.png)](/assets/uploads/2017/samsung-smart-switch.png)
 
 You can find [Samsung Smart Switch for Mac or PC](http://www.samsung.com/us/support/answer/ANS00048603/)
 on the Samsung site. The PC version has a dependency on some relatively old versions of the Visual
