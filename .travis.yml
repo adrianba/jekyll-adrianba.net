@@ -5,8 +5,10 @@ rvm:
 sudo: false
 dist: trusty
 
+before_install:
+- git clone --branch=publish https://github.com/adrianba/jekyll-adrianba.net.git ./_site
+
 before_script:
- #- sudo apt-get install lftp
  - chmod +x ./_deploy/cibuild.sh
  - chmod +x ./_deploy/deploy.sh
 
@@ -17,7 +19,7 @@ script: ./_deploy/cibuild.sh
 after_success:
  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then ./_deploy/deploy.sh; fi'
 
-# branch whitelist, only for GitHub Pages
+# branch whitelist
 branches:
   only:
   - master
@@ -26,7 +28,6 @@ cache:
   bundler: true
   directories:
   - .cache
-  - _site
 
 before_cache:
   mkdir -p .cache && cp .jekyll-metadata .cache
@@ -34,10 +35,4 @@ before_cache:
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
-  - secure: "mkpHK7LZajFo8yPhVmCO5o3CNqPVEe0RZgtVrnncEWKFSENDCL72gp5WBxA6UMGpNxid4IoZj9s0UReHsLRKBVWPgEYuYG50C9NOjkbcn5HDNxwziXPI1QsaZyUgyKkBsE5/DKDuSzK1EriMzzHaqLgzEimV0IG2VVv6D0TgKehKhdI7qXCrOPUcJiQZqYFeqkdJNbH7N5pIj2/PbyCIZ69lcW6zezP2UR1KrdkY0aRtTK1FWnwhQhe7uDOGlj1XE5gZgLS9X8LNV/bFLwsS69yFIPTMoaGvV2o/06sus8tYWT/RdmsDonIgeiyVbrh+fuZzaMzvAE6jlbF1wZ3i5rd7fe+4+HdQ6+WlgpzJD2vJ3cuQR6TN8p9pl7Zt6SvRgL+6K1sdELYLpuEjeJCYqHI6K9xUilYl1sBndZNQYl+wZiBsc9AlNFLPks37rqpDi1jBI9XmMi0ZjS3yZ+NhIFagTA+5szdiYgBxhC9SZg0dSvm5C49Fnv1FGgfP8z6GwTgcdgqiR5GlOxX2LyzetT/aBfLiEpzZ0xrtJ7dMl5Izlfc1l+ZODMYTD+zUs725qfDAD+UyxyYVMd8JnZvOqXNpAioN6juXpz2Gwwi33/DroT0FCZ3tC9v5cjnH242CdQ+E/uEtmmSZtQFD32z0Rvo70QmhriTWNAaMB5CE4VM="
-  - secure: "mH6XaxuZ27mkwcTH3xfnbVd1wjeYH/IbC2GMZhHAun3v+RsevvzITP8+JNM5qDHXPooJzXObbGI+Ge3XbNaqI/PoQsTMQw82kUBkmXjh+9ZvVCsl6e5u/DQJb0do9Ab+cCVUsMQ47n6VE+YR3/PqoC4fh/OFNcICpVD6bvNjiK4H+Woxs2yDtkeQ2ET4gkVW1ynf5EKAOvdSkeU+E4fzvlIoQhtqTrEv+Yn79+HtghC+pKb97mqljsNEv0BW3V3cg5BHaTje/o/nbc0xEoZlKdUcONp+8H7tLfhWFIy7M1+S+Y/r3JfD3W7s2L4ostfOwglA7V+PbXir+8Phk9GdEWw0xQ4XlRYUG0c55voOqAn4mO9UrQbc/PIN6UvYj8NYvRt+viNNODdEMwAMMdfIXm1tRN2qd0nLAimm8hj6OORON6NpOl2xNoO5VyjKmhEywX+NsycpLV/cAc92yjOc9foYVLsghNzf+pWJKsvYr9bADVm8tITmoCsoJ34eSqV56mp4pp/K4tbIjnJdqgSU/QhHjQyIoFtF4b/P1k0Jxd4y8jU/7vl7BuuzAlHOZXVbljbGTs5RmbYDSG+yNBPLzdAJKjtcOHhstIWn4mBNZki81s73EIaFczsnGiAhc6m1krqXmvy+HaLVrba/lqFORVOl3YuFpsNV34e1JuiQGH8="
-
-addons:
-  apt:
-    packages:
-      lftp
+  - secure: "bguuPQWObgzhDyxXSZUtoH3oflyPMcQQ5NSPtkwZj97xfLgZYel8bQ+NSEHEwkpS/yjHtx38zl0kcm34mktOjXlEhRl83/dGT77Nfwr67i13aAi/SGGmHxzxzGG6PCGGc2d6hz0lfk1XEB06B1CByl7JmH7XIKLcgni4+3Y2Q5yH3VZe7XllgxxGAgpDrKHaP+CfTtXsoSdy+gMAS2JcnxP+zgllz8h7uyGBwbMWq8a0kA4PfGXI9eqIGa66BLEK0H+zARb7DouC7a41MFb4a2udUXYzWNtjGwGs7Rs/wSB4cF4WoS2Zlk3jNhc1oCS6K8cjDekEElqoPmI7Xma+a3IdDMkQdC7mr6fuvjLTfjzvl9JXyMR14fk0cjfkj/JcWh9S7JTDfNbS94nZ0KQ7xXoKe3nrbJSU3rRkTTDncN1qc03yILO3OAX71Lvv8NstaLufBjg5YFkxEXglxse8ae7xDXyDLiZv0++pmCcwzhnhOGixNUWj4eFB/H6qnRqjmimWw7lbhGB3IT4JJCxcIwxP3Uo25186yxC/d++fmzCZ/Fr9DUmmVK4tmKP58CVn4UeLkCmHNGiiOEFp2Zxuise5YsWSUVruqUgq50L6+YIH6wKmpA1Pl+j5dlbf3SrxX95+yzkWEx4/xjBKl5FMSTTfRB2X0S35P11Il1Sw0Bg="
