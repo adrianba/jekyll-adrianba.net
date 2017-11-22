@@ -1,0 +1,19 @@
+* text eol=lf
+
+*.config text eol=crlf
+*.cs text eol=crlf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.exe binary
+*.msi binary
+*.pdf binary
+*.cab binary
+*.otf binary
+*.eot binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
