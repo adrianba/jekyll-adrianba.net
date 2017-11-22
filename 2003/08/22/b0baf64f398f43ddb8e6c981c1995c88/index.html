@@ -1,0 +1,625 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>MSBlaster and help written “by nerds for nerds” - adrianba.net</title>
+
+
+
+
+<meta name="description" content="The last week or so has been a depressing one for advocates ofthe Windows platform with lots of publicity surrounding theW32.Blaster.Worm that spread like wildfire amongst Windows PC’sthat hadn’t been kept up to date with security patches.">
+
+
+
+
+<meta name="author" content="Adrian Bateman">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="adrianba.net">
+<meta property="og:title" content="MSBlaster and help written “by nerds for nerds”">
+
+
+  <link rel="canonical" href="https://adrianba.net/2003/08/22/b0baf64f398f43ddb8e6c981c1995c88/">
+  <meta property="og:url" content="https://adrianba.net/2003/08/22/b0baf64f398f43ddb8e6c981c1995c88/">
+
+
+
+  <meta property="og:description" content="The last week or so has been a depressing one for advocates ofthe Windows platform with lots of publicity surrounding theW32.Blaster.Worm that spread like wildfire amongst Windows PC’sthat hadn’t been kept up to date with security patches.">
+
+
+
+  <meta name="twitter:site" content="@adrianba">
+  <meta name="twitter:title" content="MSBlaster and help written “by nerds for nerds”">
+  <meta name="twitter:description" content="The last week or so has been a depressing one for advocates ofthe Windows platform with lots of publicity surrounding theW32.Blaster.Worm that spread like wildfire amongst Windows PC’sthat hadn’t been kept up to date with security patches.">
+  <meta name="twitter:url" content="https://adrianba.net/2003/08/22/b0baf64f398f43ddb8e6c981c1995c88/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="http://adrianba.net/assets/sailing.jpg">
+    
+  
+
+  
+    <meta name="twitter:creator" content="@Adrian Bateman">
+  
+
+
+
+  
+
+  
+
+
+
+  <meta property="og:image" content="http://adrianba.net/assets/sailing.jpg">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2003-08-22T00:00:00-07:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://adrianba.net",
+      "logo": "http://adrianba.net/assets/sailing.jpg"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Adrian Bateman",
+      "url" : "https://adrianba.net",
+      "sameAs" : ["https://adebateman.org/","https://twitter.com/adrianba","https://facebook.com/adrianba","https://instagram.com/adebateman","https://www.linkedin.com/in/adrianba"]
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="BUqUy58DpivlHAgBj3S9R4nIrr4bSvVVWajoA7XED10" />
+
+
+  <meta name="msvalidate.01" content="63DB9D179BA14FF88535CF66336C4ED2">
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://adrianba.net/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://adrianba.net/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://adrianba.net/">adrianba.net</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="https://adrianba.net"></a></li>
+          
+        </ul>
+        <button><div class="navicon"></div></button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://adrianba.net/assets/sailing.jpg" class="author__avatar" alt="Adrian Bateman" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Adrian Bateman</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Englishman in Seattle.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">Seattle, USA</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+<li>
+  <a href="https://adebateman.org/" itemprop="url">
+    <i class="fa fa-fw fa-chain" aria-hidden="true"></i> Personal site
+  </a>
+</li>
+
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="MSBlaster and help written “by nerds for nerds”">
+    <meta itemprop="description" content="The last week or so has been a depressing one for advocates ofthe Windows platform with lots of publicity surrounding theW32.Blaster.Worm that spread like wildfire amongst Windows PC’sthat hadn’t been kept up to date with security patches.">
+    <meta itemprop="datePublished" content="August 22, 2003">
+    <meta itemprop="dateModified" content="August 23, 2003">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">MSBlaster and help written “by nerds for nerds”
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>The last week or so has been a depressing one for advocates of
+the Windows platform with lots of publicity surrounding the
+<a href="http://securityresponse.symantec.com/avcenter/venc/data/w32.blaster.worm.html">
+W32.Blaster.Worm</a> that spread like wildfire amongst Windows PC’s
+that hadn’t been kept up to date with security patches.</p>
+
+<p>Whilst it was to be expected that many home users, particularly
+those on slow modems, might not have downloaded the 30-odd patches
+awaiting them on Windows Update, it was depressing to see and hear
+publicly quoted companies losing mission-critical servers to this
+worm. This is frankly unacceptable. It might be a “problem”
+installing patches that require system reboots but this is nothing
+compared to the havoc created when systems are taken down. There
+really can be no excuse for systems departments in reasonable sized
+companies not monitoring the security patch situation and planning
+deployment of critical updates when they are released. After all,
+in this case people had plenty of time to get updated, and what do
+these people do all day anyway?</p>
+
+<p>With all the furore surrounding the Windows worm, not much
+mention was made in mainstream media of the
+<a href="http://www.internetnews.com/dev-news/article.php/2248811">GNU
+Ftp Server compromise</a> and so little was done to quiet the
+crowing from the “open source” (in other words here non-Windows)
+community.</p>
+
+<p>Following on the heals of the original MSBlaster worm,
+<a href="http://www.wired.com/news/infostructure/0,1377,60081,00.html">
+a new version is released</a> that works to patch the machines it
+infects with the Microsoft patch leading to a situation of “good”
+worms fighting “bad”.</p>
+
+<blockquote>_Some security experts were puzzled as to why users couldn't
+seem to deworm their own machines. MSBlaster is not especially
+difficult to remove._
+&gt; 
+&gt; _But some users said that it was difficult to find any
+understandable information about removing MSBlaster._
+&gt; 
+&gt; _"These virus and worm removal advice I see are obviously
+written by nerds for nerds," said Paul Pacifico, a beauty supply
+salesman in Brooklyn. "Most of the time I can't ever figure out
+what the hell they're on about."_
+&gt; 
+&gt; _Pacifico also said his computer was running perfectly today,
+and a scan shows that it, too, was infected with the new
+worm._
+&gt; 
+&gt; </blockquote>
+
+<p>Another
+<a href="http://www.microsoft.com/technet/treeview/default.asp?url=/technet/security/bulletin/MS03-030.asp">
+critical update</a> was highlighted in the past couple of days with
+an updated security bulletin. I have to say that I found it a
+little difficulty working through all the technical blurb to find
+out which version would apply to my PC in order to confirm that I
+did already have the patch installed. It is unsurprising then that
+some end users struggle with the “by nerds for nerds”
+descriptions.</p>
+
+<p>Microsoft clearly realise this and aside from “working on better
+ways to release patches”, have
+<a href="http://www.microsoft.com/security/protect/default.asp">created</a>
+a more Joe Public site explaining how users can better protect
+themselves.</p>
+
+<blockquote>_"But I actually had one of our secretaries tell me today,
+after I warned the staff about this antiworm, that she'd rather let
+the new worm fix her home machine than to 'have to fuss with all
+this security stuff.'"_
+&gt; 
+&gt; _"I didn't know whether to laugh or cry,"
+[
+confessed Godell](http://www.wired.com/news/infostructure/0,1377,60081-2,00.html)._
+&gt; 
+&gt; </blockquote>
+
+<p>Hopefully the lesson going away from this will be that people
+will pay more attention to keeping up to date with patches,
+especially in mission-critical systems. I might say, though, that
+I’ll believe it when I see it.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2003-08-23">August 23, 2003</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=adrianba&text=MSBlaster+and+help+written+%22by+nerds+for+nerds%22%20https%3A%2F%2Fadrianba.net%2F2003%2F08%2F22%2Fb0baf64f398f43ddb8e6c981c1995c88%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fadrianba.net%2F2003%2F08%2F22%2Fb0baf64f398f43ddb8e6c981c1995c88%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fadrianba.net%2F2003%2F08%2F22%2Fb0baf64f398f43ddb8e6c981c1995c88%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fadrianba.net%2F2003%2F08%2F22%2Fb0baf64f398f43ddb8e6c981c1995c88%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="https://adrianba.net/2003/08/09/a52740b37cab4b0d93d125bf60e20713/" class="pagination--pager" title="ASP.NET Web Services documentation and derived classes
+">Previous</a>
+    
+    
+      <a href="https://adrianba.net/2003/08/24/32d203ff75db42a4aa98071f4abdf964/" class="pagination--pager" title="Designing with a Wiki
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2017/10/13/samsung-smart-switch/" rel="permalink">Samsung Smart Switch - How to install on Windows 10
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Samsung Smart Switch is a tool that will backup your phone and transfer the data to a new Samsung
+phone. You also use it to backup your phone to your PC in c...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2017/10/12/node-and-vpn/" rel="permalink">NPM giving error EAI_AGAIN from Windows Subsystem for Linux (WSL)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">This morning I was experimenting with some demo code and when I tried to
+install some packages from npm I got the following network error:
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2016/09/24/using-microsoft-flow-to-publish-medium-com-recommendations/" rel="permalink">Using Microsoft Flow to publish medium.com recommendations
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Like a growing number of people, I read a lot of content on medium.com. I wanted to find a way to share the posts that I find most interesting.
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2016/01/06/using-sublime-text-as-your-git-editor-on-windows/" rel="permalink">Using Sublime Text as your git editor on Windows
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git ...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/adrianba"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+      <li><a href="https://facebook.com/adrianba"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+    
+    
+      <li><a href="http://github.com/adrianba"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="https://adrianba.net/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Adrian Bateman. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://adrianba.net/assets/js/main.min.js"></script>
+
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48621303-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+  </body>
+</html>

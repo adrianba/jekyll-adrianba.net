@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="https://adrianba.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adrianba.net/" rel="alternate" type="text/html" /><updated>2017-11-13T07:21:47-08:00</updated><id>https://adrianba.net/</id><title type="html">adrianba.net</title><subtitle>On land, on sea, and in the ether.</subtitle><author><name>Adrian Bateman</name></author><entry><title type="html">Samsung Smart Switch - How to install on Windows 10</title><link href="https://adrianba.net/2017/10/13/samsung-smart-switch/" rel="alternate" type="text/html" title="Samsung Smart Switch - How to install on Windows 10" /><published>2017-10-13T00:00:00-07:00</published><updated>2017-10-13T15:18:00-07:00</updated><id>https://adrianba.net/2017/10/13/samsung-smart-switch</id><content type="html" xml:base="https://adrianba.net/2017/10/13/samsung-smart-switch/">&lt;p&gt;&lt;strong&gt;Samsung Smart Switch&lt;/strong&gt; is a tool that will backup your phone and transfer the data to a new Samsung
+phone. You also use it to backup your phone to your PC in case you need to restore it later.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/uploads/2017/samsung-smart-switch.png&quot;&gt;&lt;img src=&quot;/assets/uploads/2017/samsung-smart-switch.png&quot; alt=&quot;Screenshot of Samsung Smart Switch&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find &lt;a href=&quot;http://www.samsung.com/us/support/answer/ANS00048603/&quot;&gt;Samsung Smart Switch for Mac or PC&lt;/a&gt;
+on the Samsung site. The PC version has a dependency on some relatively old versions of the Visual
+C++ runtime, which you may not have installed on a newer PC running Windows 10.&lt;/p&gt;
+
+&lt;p&gt;You need to install both the x86 and x64 versions of the runtime:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.microsoft.com/en-us/download/details.aspx?id=5582&quot;&gt;Microsoft Visual C++ 2008 SP1 Redistributable Package (x86)&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.microsoft.com/en-us/download/details.aspx?id=2092&quot;&gt;Microsoft Visual C++ 2008 SP1 Redistributable Package (x64)&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I had managed to install enough apps on my phone that some of them
+were causing some performance problems (one of the challenges
+I’ve found with Android). I had decided to back-up my phone, do a
+factory reset and then restore things like photos and text
+messages, but install the apps that I wanted from scratch.&lt;/p&gt;
+
+&lt;p&gt;It seemed like Smart Switch was a good tool for this. One hiccup
+was that the program doesn’t appear to have a way to do a partial
+restore. I had backed up everything on my phone and, when I
+did the restore, it put everything back the way it had been. Great
+verification of the back-up/restore process but not exactly what I
+wanted in this instance.&lt;/p&gt;
+
+&lt;p&gt;I had to do a new backup with only the data items that I wanted to
+restore selected in the preferences. After a second factory reset,
+this time the restore did exactly what I wanted and I set about
+restoring the apps I use often from my Google Play store library.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Samsung Smart Switch is a tool that will backup your phone and transfer the data to a new Samsung phone. You also use it to backup your phone to your PC in case you need to restore it later.</summary></entry><entry><title type="html">NPM giving error EAI_AGAIN from Windows Subsystem for Linux (WSL)</title><link href="https://adrianba.net/2017/10/12/node-and-vpn/" rel="alternate" type="text/html" title="NPM giving error EAI_AGAIN from Windows Subsystem for Linux (WSL)" /><published>2017-10-12T00:00:00-07:00</published><updated>2012-10-12T10:44:00-07:00</updated><id>https://adrianba.net/2017/10/12/node-and-vpn</id><content type="html" xml:base="https://adrianba.net/2017/10/12/node-and-vpn/">&lt;p&gt;This morning I was experimenting with some demo code and when I tried to
+install some packages from &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; I got the following network error:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;request to https://registry.npmjs.org/XXX failed, reason: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;where &lt;code class=&quot;highlighter-rouge&quot;&gt;XXX&lt;/code&gt; was the name of the package.&lt;/p&gt;
+
+&lt;p&gt;I was running bash from Ubuntu using WSL but when I switched to a Windows command prompt and ran the Windows install of node/npm then it connected just fine.&lt;/p&gt;
+
+&lt;p&gt;It took a little searching around but I discovered that this was most likely to do with the network proxy we have at Microsoft or some other quirk of the network configuration. We are currently testing a new on-demand VPN configuration, which had connected me to the corporate network even though I was actually attached directly. Disconnecting the VPN made things “just work” so I guess there was some kind of networking loop that Windows native networking could figure out since it has my login credentials whereas Ubuntu couldn’t.&lt;/p&gt;
+
+&lt;p&gt;So the &lt;code class=&quot;highlighter-rouge&quot;&gt;EAI_AGAIN&lt;/code&gt; error is a transient failure and is probably related to something you can fix about your network config.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">This morning I was experimenting with some demo code and when I tried to install some packages from npm I got the following network error:</summary></entry><entry><title type="html">Using Microsoft Flow to publish medium.com recommendations</title><link href="https://adrianba.net/2016/09/24/using-microsoft-flow-to-publish-medium-com-recommendations/" rel="alternate" type="text/html" title="Using Microsoft Flow to publish medium.com recommendations" /><published>2016-09-24T00:00:00-07:00</published><updated>2016-09-24T12:01:17-07:00</updated><id>https://adrianba.net/2016/09/24/using-microsoft-flow-to-publish-medium-com-recommendations</id><content type="html" xml:base="https://adrianba.net/2016/09/24/using-microsoft-flow-to-publish-medium-com-recommendations/">&lt;p&gt;Like a growing number of people, I read a lot of content on &lt;a href=&quot;https://medium.com/&quot;&gt;medium.com&lt;/a&gt;. I wanted to find a way to share the posts that I find most interesting.&lt;/p&gt;
+
+&lt;p&gt;Over the last couple of weeks I’ve been playing with &lt;a href=&quot;https://flow.microsoft.com/&quot;&gt;Microsoft Flow&lt;/a&gt;, which allows you to create automated workflows between different apps and services. I’m not on the Flow team - I just think the service is interesting, especially now that it is &lt;a href=&quot;https://flow.microsoft.com/en-us/blog/available-for-everyone/&quot;&gt;available for everyone&lt;/a&gt; to use. It reminds me of &lt;a href=&quot;https://en.wikipedia.org/wiki/Yahoo!_Pipes&quot;&gt;Yahoo Pipes&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/uploads/2016/09/microsoft-flow.png&quot;&gt;&lt;img src=&quot;/assets/uploads/2016/09/microsoft-flow-300x284.png&quot; alt=&quot;Screenshot of Microsoft Flow editor&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Tweeting out recommended reading from medium.com is very simple using Flow. Medium has an RSS feed with a list of your recommendations at &lt;code class=&quot;highlighter-rouge&quot;&gt;https://medium.com/feed/@_your-medium-id_/has-recommended&lt;/code&gt;. You can create a new Flow trigger from this RSS feed so that new entries cause the flow to run. By adding Post a tweet action, you can cause the new entry to post to Twitter. You can use data from the RSS field to populate the tweet. I post the URL and the title of the recommendation.&lt;/p&gt;
+
+&lt;p&gt;That’s it. I saved the flow with my Twitter credentials and now whenever I click the recommended button on a medium.com post, I tweet about it within a few minutes.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Like a growing number of people, I read a lot of content on medium.com. I wanted to find a way to share the posts that I find most interesting.</summary></entry><entry><title type="html">Using Sublime Text as your git editor on Windows</title><link href="https://adrianba.net/2016/01/06/using-sublime-text-as-your-git-editor-on-windows/" rel="alternate" type="text/html" title="Using Sublime Text as your git editor on Windows" /><published>2016-01-06T00:00:00-08:00</published><updated>2016-01-06T14:39:48-08:00</updated><id>https://adrianba.net/2016/01/06/using-sublime-text-as-your-git-editor-on-windows</id><content type="html" xml:base="https://adrianba.net/2016/01/06/using-sublime-text-as-your-git-editor-on-windows/">&lt;p&gt;Many git commands require using an editor including &lt;a href=&quot;http://chris.beams.io/posts/git-commit/&quot;&gt;writing good commit messages&lt;/a&gt;. I use &lt;a href=&quot;http://www.sublimetext.com/3&quot;&gt;Sublime Text&lt;/a&gt; as my default text editor and I wanted to make sure git launched Sublime Text appropriately.&lt;/p&gt;
+
+&lt;p&gt;On Windows, the sublime_text.exe program has a couple of command line options that help here. The &lt;code class=&quot;highlighter-rouge&quot;&gt;-n&lt;/code&gt; option causes a new editing window to be created and the &lt;code class=&quot;highlighter-rouge&quot;&gt;-w&lt;/code&gt; option tells Sublime Text to wait until you close the window before returning.&lt;/p&gt;
+
+&lt;p&gt;By default, the Sublime Text 3 installer puts everything into “C:\Program Files\Sublime Text 3”. The spaces in the folder names makes the git command to configure the editor slightly trickier than normal. The following command sets up the global editor for git.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git config --global core.editor &quot;\&quot;C:\Program Files\Sublime Text 3\sublime_text.exe\&quot; -n -w&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You can check that the configuration has been correctly stored with&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git config --global -l&lt;/code&gt;&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git launched Sublime Text appropriately.</summary></entry><entry><title type="html">MDI to TIFF converter</title><link href="https://adrianba.net/2015/12/20/mdi-to-tiff-converter/" rel="alternate" type="text/html" title="MDI to TIFF converter" /><published>2015-12-20T00:00:00-08:00</published><updated>2015-12-20T11:40:07-08:00</updated><id>https://adrianba.net/2015/12/20/mdi-to-tiff-converter</id><content type="html" xml:base="https://adrianba.net/2015/12/20/mdi-to-tiff-converter/">&lt;p&gt;Microsoft Office Document Imaging (MODI) was part of Office up to Office 2007. It allowed you to scan multipage documents into .MDI files. MODI was deprecated and removed from Office 2010 and with a modern installation of Windows and Office there is no native support for .MDI files. If you have these files archived then you will need to convert them to another format.&lt;/p&gt;
+
+&lt;blockquote&gt;_MDI to TIFF File Converter is a command line tool, which allows you to convert one or more MDI files to TIFF. MDI is a proprietary file format of MODI (Microsoft Office Document Imaging), which was deprecated as part of Office 2010. This conversion tool will allow you to view MDI files after they are converted to TIFF. TIFF files may be viewed using a variety of image viewing programs, such as the Windows Fax and Image Viewer._&lt;/blockquote&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://www.microsoft.com/en-us/download/details.aspx?id=30328&quot;&gt;MDI to TIFF File Converter&lt;/a&gt; is a command line tool for converting old .MDI files to modern multipage TIFF files, which can be viewed with built-in tools like Windows Photo Viewer.&lt;/p&gt;
+
+&lt;p&gt;Run the converter from a command line prompt as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mdi2tif -source _myfile_.mdi -log output.txt&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This will produce the following output:&lt;/p&gt;
+
+&lt;p&gt;`Converting MDI file myfile.mdi
+Writing results file output.txt…&lt;/p&gt;
+
+&lt;p&gt;Conversion completed.
+Files with errors: [0/1]&lt;/p&gt;
+
+&lt;p&gt;See output.txt for more details. `&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;myfile&lt;/em&gt;.mdi will be converted to &lt;em&gt;myfile&lt;/em&gt;.tif.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Microsoft Office Document Imaging (MODI) was part of Office up to Office 2007. It allowed you to scan multipage documents into .MDI files. MODI was deprecated and removed from Office 2010 and with a modern installation of Windows and Office there is no native support for .MDI files. If you have these files archived then you will need to convert them to another format.</summary></entry><entry><title type="html">Using DVI monitors with the new Surface Dock</title><link href="https://adrianba.net/2015/12/05/using-dvi-monitors-with-the-new-surface-dock/" rel="alternate" type="text/html" title="Using DVI monitors with the new Surface Dock" /><published>2015-12-05T00:00:00-08:00</published><updated>2015-12-05T22:46:56-08:00</updated><id>https://adrianba.net/2015/12/05/using-dvi-monitors-with-the-new-surface-dock</id><content type="html" xml:base="https://adrianba.net/2015/12/05/using-dvi-monitors-with-the-new-surface-dock/">&lt;p&gt;The new &lt;a href=&quot;https://www.microsoft.com/surface/en-us/accessories/surface-dock&quot;&gt;Surface Dock&lt;/a&gt; from Microsoft has two &lt;a href=&quot;https://en.wikipedia.org/wiki/Mini_DisplayPort&quot;&gt;mini-DisplayPort&lt;/a&gt; outputs that can be used to connect a Surface Book, Surface Pro 3, or Surface Pro 4 to two external monitors.&lt;/p&gt;
+
+&lt;p&gt;This makes it possible to connect to VGA, DVI, or HDMI devices with the use of an adapter. However, to work with a DVI input you must use an active DVI adapter. Using a passive DVI cable will not work.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.amazon.com/gp/product/B00OQX9526/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=B00OQX9526&amp;amp;linkCode=as2&amp;amp;tag=sailaboaacata-20&amp;amp;linkId=BVIV3PZJL3UDUQLA&quot;&gt;&lt;img src=&quot;http://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;amp;ASIN=B00OQX9526&amp;amp;Format=_SL160_&amp;amp;ID=AsinImage&amp;amp;MarketPlace=US&amp;amp;ServiceVersion=20070822&amp;amp;WS=1&amp;amp;tag=sailaboaacata-20&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;img src=&quot;http://ir-na.amazon-adsystem.com/e/ir?t=sailaboaacata-20&amp;amp;l=as2&amp;amp;o=1&amp;amp;a=B00OQX9526&quot; alt=&quot;&quot; /&gt;I tried using a passive DVI cable to connect to my Dell IN2020M monitors. This results in the monitor displaying an error message: “&lt;em&gt;The current input timing is not supported by the monitor display. Please change your input timing to 1600x900@60Hz or any other monitor listed timing as per the monitor specifications.&lt;/em&gt;”&lt;/p&gt;
+
+&lt;p&gt;I found the &lt;a href=&quot;http://www.amazon.com/gp/product/B00OQX9526/ref=as_li_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=B00OQX9526&amp;amp;linkCode=as2&amp;amp;tag=sailaboaacata-20&amp;amp;linkId=4NOERCYLKA3JVYE6&quot;&gt;gofanco Gold Plated Mini Displayport to DVI Active Converter&lt;/a&gt; on Amazon works well with the Surface Dock and I am now driving my two monitors with a good stable image.&lt;img src=&quot;http://ir-na.amazon-adsystem.com/e/ir?t=sailaboaacata-20&amp;amp;l=as2&amp;amp;o=1&amp;amp;a=B00OQX9526&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">The new Surface Dock from Microsoft has two mini-DisplayPort outputs that can be used to connect a Surface Book, Surface Pro 3, or Surface Pro 4 to two external monitors.</summary></entry><entry><title type="html">Using Yeoman to start writing technical specifications with ReSpec</title><link href="https://adrianba.net/2015/03/14/using-yeoman-to-start-writing-technical-specifications-with-respec/" rel="alternate" type="text/html" title="Using Yeoman to start writing technical specifications with ReSpec" /><published>2015-03-14T00:00:00-07:00</published><updated>2015-03-14T22:27:51-07:00</updated><id>https://adrianba.net/2015/03/14/using-yeoman-to-start-writing-technical-specifications-with-respec</id><content type="html" xml:base="https://adrianba.net/2015/03/14/using-yeoman-to-start-writing-technical-specifications-with-respec/">&lt;p&gt;&lt;a href=&quot;http://yeoman.io/&quot;&gt;Yeoman&lt;/a&gt; is a tool that provides a scaffolding system to begin new projects. The genius thing about Yeoman is that, by itself, it doesn’t know how to do anything. This flexibility comes from a modular approach that relies on separate generator modules. Each &lt;a href=&quot;http://yeoman.io/generators/&quot;&gt;generator&lt;/a&gt; knows how to create a particular kind of project (e.g. an Backbone.js app or a Chrome extension).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.w3.org/respec/&quot;&gt;ReSpec&lt;/a&gt; is a JS library written by &lt;a href=&quot;https://twitter.com/robinberjon&quot;&gt;Robin Berjon&lt;/a&gt; that makes it easier to write technical specifications, or documents that tend to be technical in nature in general. It was originally designed for the purpose of writing W3C specifications, but has since grown to be able to support other outputs as well. On of the best things about ReSpec is its intrinsic understanding of &lt;a href=&quot;http://www.w3.org/respec/guide.html#webidl-support&quot;&gt;WebIDL&lt;/a&gt;. You can outline the design for a new API and it makes it very easy to fill in the description of what the methods and properties do. It also makes it easy to refer to other specs using the &lt;a href=&quot;http://www.specref.org/&quot;&gt;SpecRef database&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Bringing these two together, I have create a &lt;a href=&quot;https://www.npmjs.com/package/generator-respec&quot;&gt;Yeoman generator called generator-respec&lt;/a&gt; that outputs a basic ReSpec document.&lt;/p&gt;
+
+&lt;p&gt;Assuming you already have &lt;code class=&quot;highlighter-rouge&quot;&gt;node&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; installed, you can install Yeoman with the command &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install –g yo&lt;/code&gt;. After that you should install the ReSpec generator with &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install –g generator-respec&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now you have the tools installed, create a new folder to hold your specification and from the command prompt in that directory run &lt;code class=&quot;highlighter-rouge&quot;&gt;yo respec&lt;/code&gt;. This will prompt you for a title, short-name, spec status, and author information and then create a new index.html document with an outline specification using ReSpec. From here you can edit your spec using the &lt;a href=&quot;http://www.w3.org/respec/guide.html&quot;&gt;ReSpec documentation&lt;/a&gt; as a guide.&lt;/p&gt;
+
+&lt;p&gt;The current implementation of generator-respec is very basic. I’m sure there are some obvious things that can be added. One idea I have is to support a subgenerator that creates related specs in the same folder. What else should be added? The &lt;a href=&quot;https://github.com/adrianba/generator-respec&quot;&gt;generator-respec project is available on GitHub&lt;/a&gt;.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Yeoman is a tool that provides a scaffolding system to begin new projects. The genius thing about Yeoman is that, by itself, it doesn’t know how to do anything. This flexibility comes from a modular approach that relies on separate generator modules. Each generator knows how to create a particular kind of project (e.g. an Backbone.js app or a Chrome extension).</summary></entry><entry><title type="html">It’s time to move on from IE8</title><link href="https://adrianba.net/2015/03/12/itrsquos-time-to-move-on-from-ie8/" rel="alternate" type="text/html" title="It’s time to move on from IE8" /><published>2015-03-12T00:00:00-07:00</published><updated>2015-03-12T13:23:27-07:00</updated><id>https://adrianba.net/2015/03/12/itrsquos-time-to-move-on-from-ie8</id><content type="html" xml:base="https://adrianba.net/2015/03/12/itrsquos-time-to-move-on-from-ie8/">&lt;p&gt;Yesterday, &lt;a href=&quot;http://www.aaron-gustafson.com/notebook/lines-in-the-sand/&quot;&gt;my esteemed (new) colleague Aaron Gustafson wrote a piece&lt;/a&gt; about his reaction to the “&lt;a href=&quot;http://breakupwithie8.com/&quot;&gt;Break Up with Internet Explorer 8&lt;/a&gt;” site currently doing the rounds in the Twittersphere. He argues for support of older browsers and optimisation for newer, better browsers. I disagree.&lt;/p&gt;
+
+&lt;p&gt;Some people don’t have control over their browsing environment. Some people can’t afford to upgrade to a more recent version of Windows because of business software that is expensive to move forward. This is true but being stuck on IE8 isn’t the common case any longer.&lt;/p&gt;
+
+&lt;p&gt;Even &lt;a href=&quot;http://blogs.msdn.com/b/ie/archive/2014/08/07/stay-up-to-date-with-internet-explorer.aspx&quot;&gt;Microsoft isn’t going to support IE8 customers after January 2016&lt;/a&gt; and you shouldn’t either. There will be no more security updates for IE8 after that[1]. We all need to move on and we need to continue to encourage organisations to &lt;a href=&quot;http://blogs.msdn.com/b/ie/archive/2015/03/02/making-it-easier-for-enterprise-customers-to-upgrade-to-internet-explorer-11-and-windows-10.aspx&quot;&gt;get to IE11 and deploy Enterprise Mode for their legacy applications&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Progressive enhancement is a good goal and something that we should aim for with today’s modern browsers. IE11 has good feature coverage and the new Microsoft EdgeHTML rendering engine that will be used by “Project Spartan” goes considerably further. All the popular browsers are adding lots of new features (track the IE ones at &lt;a href=&quot;https://status.modern.ie/&quot;&gt;https://status.modern.ie/&lt;/a&gt;) and we should make our apps light up in the face of new capabilities. Feature detection is king.&lt;/p&gt;
+
+&lt;p&gt;But IE8 is old. It didn’t have support for the old old DOM standards like Core, HTML, Style, Events, etc. You even have to polyfill addEventListener, for goodness sake. Yes, this is all possible (maybe using abstractions like &lt;a href=&quot;http://jquery.com/browser-support/&quot;&gt;jQuery 1.x&lt;/a&gt;) but why should we continue to do this for new work? Why continue to bloat the web for an audience that is shrinking ever faster? Most enterprises we engage with are rushing to get to IE11 before the support policy change comes into effect.&lt;/p&gt;
+
+&lt;p&gt;There are two types of web developers in the world. Those that are building and maintaining legacy systems for enterprises that may well have to support IE8 and probably don’t have to worry to much about modern browsers. And those who are targeting Chrome, Firefox, Safari, Opera, and modern IE. This latter category should target nothing older than IE9 and, given that &lt;a href=&quot;http://thenextweb.com/insider/2014/05/01/ie11-market-share-passes-ie10-ie9-combined-chrome-cements-lead-firefox/&quot;&gt;IE11 share has been bigger than IE9 and IE10 combined&lt;/a&gt; for almost a year, I argue that you might just support IE11.&lt;/p&gt;
+
+&lt;p&gt;Does this apply to everyone? No, of course not. Is this too simplistic? Yes. Should you just cut people off tomorrow? No, again, of course not. But having a transition plan, letting customers know what it is, and then moving to a world where you don’t worry about old legacy IE. That’s the kind of web developer I want to be. Despite helping to bring IE8 to life, I’ve broken up with it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;[1] Unless you have a commercial relationship with Microsoft to provide these, and you are required to be executing on your plan to get off IE8.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Yesterday, my esteemed (new) colleague Aaron Gustafson wrote a piece about his reaction to the “Break Up with Internet Explorer 8” site currently doing the rounds in the Twittersphere. He argues for support of older browsers and optimisation for newer, better browsers. I disagree.</summary></entry><entry><title type="html">Using C# to access the Twitter API</title><link href="https://adrianba.net/2014/05/20/using-c-to-access-the-twitter-api/" rel="alternate" type="text/html" title="Using C# to access the Twitter API" /><published>2014-05-20T00:00:00-07:00</published><updated>2014-05-20T08:25:00-07:00</updated><id>https://adrianba.net/2014/05/20/using-c-to-access-the-twitter-api</id><content type="html" xml:base="https://adrianba.net/2014/05/20/using-c-to-access-the-twitter-api/">&lt;p&gt;My last post described &lt;a href=&quot;/2014/05/19/accessing-the-twitter-api-using-oauth&quot;&gt;how to acquire Twitter OAuth keys and tokens&lt;/a&gt; to allow you to use Twitter’s API to access Twitter feeds. I showed how to use the &lt;a href=&quot;https://www.npmjs.org/package/request&quot;&gt;request module&lt;/a&gt; with node.js, which has built-in support for OAuth, to request and process data.&lt;/p&gt;
+
+&lt;p&gt;In this blog post I will show how to do the same thing using C# and .NET using the &lt;a href=&quot;http://oauth.googlecode.com/svn/code/csharp/&quot;&gt;OAuthBase class&lt;/a&gt; linked to from &lt;a href=&quot;http://oauth.net/code/&quot;&gt;oauth.net&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let’s start with the code to call the Twitter API:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;kwrd&quot;&amp;gt;using&amp;lt;/span&amp;gt; System;
+&amp;lt;span class=&quot;kwrd&quot;&amp;gt;using&amp;lt;/span&amp;gt; System.IO;
+&amp;lt;span class=&quot;kwrd&quot;&amp;gt;using&amp;lt;/span&amp;gt; System.Net;
+&amp;lt;span class=&quot;kwrd&quot;&amp;gt;using&amp;lt;/span&amp;gt; System.Text;
+&amp;lt;span class=&quot;kwrd&quot;&amp;gt;using&amp;lt;/span&amp;gt; OAuth;
+
+&amp;lt;span class=&quot;kwrd&quot;&amp;gt;class&amp;lt;/span&amp;gt; App {
+    &amp;lt;span class=&quot;kwrd&quot;&amp;gt;static&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;kwrd&quot;&amp;gt;void&amp;lt;/span&amp;gt; Main() {
+        &amp;lt;span class=&quot;rem&quot;&amp;gt;// URL for the API to call&amp;lt;/span&amp;gt;
+        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; url = &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;https://api.twitter.com/1.1/statuses/user_timeline.json&quot;&amp;lt;/span&amp;gt;
+            + &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;?screen_name=adrianba&amp;amp;count=5&quot;&amp;lt;/span&amp;gt;;
+
+        &amp;lt;span class=&quot;rem&quot;&amp;gt;// Create a http request for the API&amp;lt;/span&amp;gt;
+        var webReq = (HttpWebRequest)WebRequest.Create(url);
+
+        &amp;lt;span class=&quot;rem&quot;&amp;gt;// Set the OAuth header&amp;lt;/span&amp;gt;
+        var auth = &amp;lt;span class=&quot;kwrd&quot;&amp;gt;new&amp;lt;/span&amp;gt; OAuthHeader();
+        webReq.Headers.Add(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;Authorization&quot;&amp;lt;/span&amp;gt;,auth.getHeader(url,&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;GET&quot;&amp;lt;/span&amp;gt;));
+
+        &amp;lt;span class=&quot;rem&quot;&amp;gt;// Echo the response to the console&amp;lt;/span&amp;gt;
+        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;using&amp;lt;/span&amp;gt;(WebResponse webResp = webReq.GetResponse()) {
+            &amp;lt;span class=&quot;kwrd&quot;&amp;gt;using&amp;lt;/span&amp;gt;(StreamReader sr = &amp;lt;span class=&quot;kwrd&quot;&amp;gt;new&amp;lt;/span&amp;gt; StreamReader(
+                    webResp.GetResponseStream(),Encoding.GetEncoding(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;utf-8&quot;&amp;lt;/span&amp;gt;)
+                    )) {
+                Console.WriteLine(sr.ReadToEnd());
+            }
+        }
+    }    
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The code here is similar to the previous &lt;a href=&quot;/2014/05/19/accessing-the-twitter-api-using-oauth&quot;&gt;post&lt;/a&gt;. It creates a HTTP request to the API endpoint and this time simply writes the response to the console. The difference here is that we need to add the OAuth Authorization header. The magic takes place in the getHeader() method:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;kwrd&quot;&amp;gt;class&amp;lt;/span&amp;gt; OAuthHeader : OAuthBase {
+    &amp;lt;span class=&quot;kwrd&quot;&amp;gt;public&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; getHeader(&amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; url,&amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; method) {
+        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; normalizedUri;
+        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; normalizedParameters;
+
+        &amp;lt;span class=&quot;rem&quot;&amp;gt;// OAuth keys - FILL IN YOUR VALUES HERE (see this &amp;lt;a href=&quot;/2014/05/19/accessing-the-twitter-api-using-oauth&quot;&amp;gt;post&amp;lt;/a&amp;gt;)&amp;lt;/span&amp;gt;
+        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;const&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; consumerKey = &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;...&quot;&amp;lt;/span&amp;gt;;
+        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;const&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; consumerSecret = &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;...&quot;&amp;lt;/span&amp;gt;;
+        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;const&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; token = &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;...&quot;&amp;lt;/span&amp;gt;;
+        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;const&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; tokenSecret = &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;...&quot;&amp;lt;/span&amp;gt;;
+
+        &amp;lt;span class=&quot;rem&quot;&amp;gt;// Create timestamp and nonce for this request&amp;lt;/span&amp;gt;
+        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; timeStamp = GenerateTimeStamp();
+        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; nonce = GenerateNonce();
+
+        &amp;lt;span class=&quot;rem&quot;&amp;gt;// Generate signature for the header&amp;lt;/span&amp;gt;
+        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; signature = GenerateSignature(
+            &amp;lt;span class=&quot;kwrd&quot;&amp;gt;new&amp;lt;/span&amp;gt; Uri(url), consumerKey, consumerSecret, token, tokenSecret,
+            method, timeStamp, nonce, &amp;lt;span class=&quot;kwrd&quot;&amp;gt;out&amp;lt;/span&amp;gt; normalizedUri, &amp;lt;span class=&quot;kwrd&quot;&amp;gt;out&amp;lt;/span&amp;gt; normalizedParameters);
+
+        &amp;lt;span class=&quot;rem&quot;&amp;gt;// Compose the authorization header value&amp;lt;/span&amp;gt;
+        &amp;lt;span class=&quot;rem&quot;&amp;gt;// See http://tools.ietf.org/html/rfc5849#section-3.5.1&amp;lt;/span&amp;gt;
+        StringBuilder auth = &amp;lt;span class=&quot;kwrd&quot;&amp;gt;new&amp;lt;/span&amp;gt; StringBuilder();
+        auth.Append(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;OAuth &quot;&amp;lt;/span&amp;gt;);
+        auth.AppendFormat(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;{0}=&quot;{1}&quot;, &quot;&amp;lt;/span&amp;gt;, OAuthConsumerKeyKey, UrlEncode(consumerKey));
+        auth.AppendFormat(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;{0}=&quot;{1}&quot;, &quot;&amp;lt;/span&amp;gt;, OAuthNonceKey, UrlEncode(nonce));
+        auth.AppendFormat(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;{0}=&quot;{1}&quot;, &quot;&amp;lt;/span&amp;gt;, OAuthSignatureKey, UrlEncode(signature));
+        auth.AppendFormat(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;{0}=&quot;{1}&quot;, &quot;&amp;lt;/span&amp;gt;, OAuthSignatureMethodKey, &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;HMAC-SHA1&quot;&amp;lt;/span&amp;gt;);
+        auth.AppendFormat(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;{0}=&quot;{1}&quot;, &quot;&amp;lt;/span&amp;gt;, OAuthTimestampKey, timeStamp);
+        auth.AppendFormat(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;{0}=&quot;{1}&quot;, &quot;&amp;lt;/span&amp;gt;, OAuthTokenKey, UrlEncode(token));
+        auth.AppendFormat(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;{0}=&quot;{1}&quot;&quot;&amp;lt;/span&amp;gt;, OAuthVersionKey, &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;1.0&quot;&amp;lt;/span&amp;gt;);
+        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;return&amp;lt;/span&amp;gt; auth.ToString();    
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The OAuthHeader class inherits from the OAuthBase class mentioned above. This provides the GenerateTimeStamp, GenerateNonce, and GenerateSignature methods. &lt;a href=&quot;https://dev.twitter.com/docs/auth/authorizing-request&quot;&gt;Twitter uses the OAuth 1.0a protocol&lt;/a&gt;, defined in &lt;a href=&quot;http://tools.ietf.org/html/rfc5849&quot;&gt;RFC5849&lt;/a&gt;. This specification outlines the Authorization header value that is constructed at the end of the getHeader() method.&lt;/p&gt;
+
+&lt;p&gt;You can keep the OAuthHeader class around for easy access to resources needing OAuth authorization such as Twitter.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">My last post described how to acquire Twitter OAuth keys and tokens to allow you to use Twitter’s API to access Twitter feeds. I showed how to use the request module with node.js, which has built-in support for OAuth, to request and process data.</summary></entry><entry><title type="html">Accessing the Twitter API using OAuth</title><link href="https://adrianba.net/2014/05/19/accessing-the-twitter-api-using-oauth/" rel="alternate" type="text/html" title="Accessing the Twitter API using OAuth" /><published>2014-05-19T00:00:00-07:00</published><updated>2014-05-19T08:30:00-07:00</updated><id>https://adrianba.net/2014/05/19/accessing-the-twitter-api-using-oauth</id><content type="html" xml:base="https://adrianba.net/2014/05/19/accessing-the-twitter-api-using-oauth/">&lt;p&gt;Following on from my last post that described &lt;a href=&quot;/2014/05/16/node-and-delicious&quot;&gt;using Node to access feeds from Delicious&lt;/a&gt;, I’ve also been investigating how to access my Twitter feed. This adds a little more complexity because Twitter requires that your app or script &lt;a href=&quot;https://dev.twitter.com/docs/auth&quot;&gt;authenticate to Twitter&lt;/a&gt; using &lt;a href=&quot;http://oauth.net/&quot;&gt;OAuth&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Per &lt;a href=&quot;http://en.wikipedia.org/wiki/OAuth&quot;&gt;Wikipedia&lt;/a&gt;, “&lt;em&gt;OAuth provides client applications a ‘secure delegated access’ to server resources on behalf of a resource owner. It specifies a process for resource owners to authorize third-party access to their server resources without sharing their credentials.&lt;/em&gt;” What this means is that your app can access the Twitter API in an authenticated way using OAuth without having to embed your username and password into the script.&lt;/p&gt;
+
+&lt;p&gt;The node.js &lt;a href=&quot;https://www.npmjs.org/package/request&quot;&gt;request&lt;/a&gt; library that I mentioned last time has built in support for &lt;a href=&quot;https://github.com/mikeal/request#oauth-signing&quot;&gt;OAuth authentication&lt;/a&gt;. It requires that you populate a JavaScript object as follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;kwrd&quot;&amp;gt;var&amp;lt;/span&amp;gt; oauth = {
+   consumer_key: CONSUMER_KEY
+  , consumer_secret: CONSUMER_SECRET
+  , token: OAUTH_TOKEN
+  , token_secret: OAUTH_TOKEN_SECRET
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Each of CONSUMER_KEY, CONSUMER_SECRET, OAUTH_TOKEN and OAUTH_TOKEN_SECRET are strings that we must supply as part of the OAuth handshake.&lt;/p&gt;
+
+&lt;p&gt;There are two ways to think about using OAuth to authenticate against a service such as Twitter depending upon the type of app that you are building. The first scenario is where, for example, you are building a Twitter client. You will distribute this application and each user of the application will authenticate using their own credentials so that they can access information from the service as themselves. In the second scenario you are building an application or service that you want to access the service as you and you never need to send a variety of credentials. For example, say you are building a widget on your web site that will indicate how long it has been since you last tweeted. This will always be about you and need to use only your credentials.&lt;/p&gt;
+
+&lt;p&gt;The CONSUMER_KEY and CONSUMER_SECRET values are provided by the service to identify your application. The OAUTH_TOKEN and OAUTH_TOKEN_SECRET represent the credentials of the user accessing the service. They may be determined and stored by your app in the first scenario above or they may be part of your application in the second.&lt;/p&gt;
+
+&lt;p&gt;This all sounds a little complicated so an example will help. Before we get to that we need to get the values. Twitter provides a portal for this at &lt;a href=&quot;https://apps.twitter.com/&quot;&gt;https://apps.twitter.com/&lt;/a&gt;. If you login and select Create New App you will see a screen that looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/uploads/2014/05/img475-1.png&quot;&gt;&lt;img src=&quot;/assets/uploads/2014/05/img475-1.png&quot; alt=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here you provide the name of you application, a description, and a link to your web site. For our initial scripting purposes the values here don’t matter too much. There is a Callback URL value but we also don’t need this now and can leave this blank. Finally there are some terms and conditions to read and agree to. Once you have completed this form, press the Create your Twitter application button and you will see a screen that looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/uploads/2014/05/img475-2.png&quot;&gt;&lt;img src=&quot;/assets/uploads/2014/05/img475-2.png&quot; alt=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you click on the API Keys tab you will see something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/uploads/2014/05/img475-3.png&quot;&gt;&lt;img src=&quot;/assets/uploads/2014/05/img475-3.png&quot; alt=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Since we want our script to access Twitter using our account, we can click on the Create my access token button to generate the appropriate token values. You should see something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/uploads/2014/05/img475-4.png&quot;&gt;&lt;img src=&quot;/assets/uploads/2014/05/img475-4.png&quot; alt=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You may need to refresh to see your new access token.&lt;/p&gt;
+
+&lt;p&gt;So now you have four strings: API key, API secret, Access token, and Access token secret. These map to the four values needed in the OAuth structure described in the code above.&lt;/p&gt;
+
+&lt;p&gt;There are lots of different ways to access the &lt;a href=&quot;https://dev.twitter.com/docs/api/1.1&quot;&gt;Twitter API&lt;/a&gt;. Here I am simply going to use the &lt;a href=&quot;https://dev.twitter.com/docs/api/1.1/get/statuses/user_timeline&quot;&gt;user_timeline&lt;/a&gt; API to retrieve the 5 most recent tweets from my timeline. You can use this API to retrieve any user’s timeline that you have access to from your Twitter account (including, of course, all the public timelines).&lt;/p&gt;
+
+&lt;p&gt;So here is the code to make a request to this API:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;kwrd&quot;&amp;gt;var&amp;lt;/span&amp;gt; request = require(&amp;lt;span class=&quot;str&quot;&amp;gt;'request'&amp;lt;/span&amp;gt;);
+&amp;lt;span class=&quot;kwrd&quot;&amp;gt;var&amp;lt;/span&amp;gt; url = &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=adrianba&amp;amp;count=5&quot;&amp;lt;/span&amp;gt;;
+
+&amp;lt;span class=&quot;kwrd&quot;&amp;gt;var&amp;lt;/span&amp;gt; CONSUMER_KEY = &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;...&quot;&amp;lt;/span&amp;gt;;
+&amp;lt;span class=&quot;kwrd&quot;&amp;gt;var&amp;lt;/span&amp;gt; CONSUMER_SECRET = &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;...&quot;&amp;lt;/span&amp;gt;;
+&amp;lt;span class=&quot;kwrd&quot;&amp;gt;var&amp;lt;/span&amp;gt; OAUTH_TOKEN = &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;...&quot;&amp;lt;/span&amp;gt;;
+&amp;lt;span class=&quot;kwrd&quot;&amp;gt;var&amp;lt;/span&amp;gt; OAUTH_TOKEN_SECRET = &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;...&quot;&amp;lt;/span&amp;gt;;
+
+&amp;lt;span class=&quot;kwrd&quot;&amp;gt;var&amp;lt;/span&amp;gt; oauth = {
+    consumer_key: CONSUMER_KEY
+  , consumer_secret: CONSUMER_SECRET
+  , token: OAUTH_TOKEN
+  , token_secret: OAUTH_TOKEN_SECRET
+};
+
+request.get({url:url, oauth:oauth, json:&amp;lt;span class=&quot;kwrd&quot;&amp;gt;true&amp;lt;/span&amp;gt;}, &amp;lt;span class=&quot;kwrd&quot;&amp;gt;function&amp;lt;/span&amp;gt; (e, r, data) {
+  &amp;lt;span class=&quot;kwrd&quot;&amp;gt;var&amp;lt;/span&amp;gt; tweets = [];
+  data.forEach(&amp;lt;span class=&quot;kwrd&quot;&amp;gt;function&amp;lt;/span&amp;gt;(item) {
+    &amp;lt;span class=&quot;kwrd&quot;&amp;gt;var&amp;lt;/span&amp;gt; tweet = {};
+    tweet.id = item.id.toString();
+    tweet.text = item.text;
+    tweet.created = item.created_at;
+    tweets.push(tweet);
+  });
+  console.log(JSON.stringify(tweets));
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You obviously need to replace the “…” strings with the values copied from your API Keys page.&lt;/p&gt;
+
+&lt;p&gt;The important addition in this code is passing the oauth option into the get() method. After this, the request module takes care of the rest. In general, all services that require OAuth authentication follow this pattern although they will differ in how the keys and tokens are issued to you.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Following on from my last post that described using Node to access feeds from Delicious, I’ve also been investigating how to access my Twitter feed. This adds a little more complexity because Twitter requires that your app or script authenticate to Twitter using OAuth.</summary></entry></feed>

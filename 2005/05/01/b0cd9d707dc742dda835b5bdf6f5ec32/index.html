@@ -1,0 +1,716 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Pragmatic Service Orientation - adrianba.net</title>
+
+
+
+
+<meta name="description" content="There is a lot of industry buzz around service orientation and“SOA” and a number of prominent voices within Microsoft are tryinghard to articulate the approach the company is taking in this area.I think it is important, first of all, to emphasise that there isno Microsoft product that represents the hub of service orientation  there isn’t anything that you have to buy to be “doing” serviceorientation. In this post I want to outline my thoughts on how toconsider your application in terms of services in a pragmatic wayand as important point out what I don’t think service orientationmeans.">
+
+
+
+
+<meta name="author" content="Adrian Bateman">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="adrianba.net">
+<meta property="og:title" content="Pragmatic Service Orientation">
+
+
+  <link rel="canonical" href="https://adrianba.net/2005/05/01/b0cd9d707dc742dda835b5bdf6f5ec32/">
+  <meta property="og:url" content="https://adrianba.net/2005/05/01/b0cd9d707dc742dda835b5bdf6f5ec32/">
+
+
+
+  <meta property="og:description" content="There is a lot of industry buzz around service orientation and“SOA” and a number of prominent voices within Microsoft are tryinghard to articulate the approach the company is taking in this area.I think it is important, first of all, to emphasise that there isno Microsoft product that represents the hub of service orientation  there isn’t anything that you have to buy to be “doing” serviceorientation. In this post I want to outline my thoughts on how toconsider your application in terms of services in a pragmatic wayand as important point out what I don’t think service orientationmeans.">
+
+
+
+  <meta name="twitter:site" content="@adrianba">
+  <meta name="twitter:title" content="Pragmatic Service Orientation">
+  <meta name="twitter:description" content="There is a lot of industry buzz around service orientation and“SOA” and a number of prominent voices within Microsoft are tryinghard to articulate the approach the company is taking in this area.I think it is important, first of all, to emphasise that there isno Microsoft product that represents the hub of service orientation  there isn’t anything that you have to buy to be “doing” serviceorientation. In this post I want to outline my thoughts on how toconsider your application in terms of services in a pragmatic wayand as important point out what I don’t think service orientationmeans.">
+  <meta name="twitter:url" content="https://adrianba.net/2005/05/01/b0cd9d707dc742dda835b5bdf6f5ec32/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="http://adrianba.net/assets/sailing.jpg">
+    
+  
+
+  
+    <meta name="twitter:creator" content="@Adrian Bateman">
+  
+
+
+
+  
+
+  
+
+
+
+  <meta property="og:image" content="http://adrianba.net/assets/sailing.jpg">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2005-05-01T00:00:00-07:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://adrianba.net",
+      "logo": "http://adrianba.net/assets/sailing.jpg"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Adrian Bateman",
+      "url" : "https://adrianba.net",
+      "sameAs" : ["https://adebateman.org/","https://twitter.com/adrianba","https://facebook.com/adrianba","https://instagram.com/adebateman","https://www.linkedin.com/in/adrianba"]
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="BUqUy58DpivlHAgBj3S9R4nIrr4bSvVVWajoA7XED10" />
+
+
+  <meta name="msvalidate.01" content="63DB9D179BA14FF88535CF66336C4ED2">
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://adrianba.net/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://adrianba.net/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://adrianba.net/">adrianba.net</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="https://adrianba.net"></a></li>
+          
+        </ul>
+        <button><div class="navicon"></div></button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://adrianba.net/assets/sailing.jpg" class="author__avatar" alt="Adrian Bateman" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Adrian Bateman</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Englishman in Seattle.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">Seattle, USA</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+<li>
+  <a href="https://adebateman.org/" itemprop="url">
+    <i class="fa fa-fw fa-chain" aria-hidden="true"></i> Personal site
+  </a>
+</li>
+
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Pragmatic Service Orientation">
+    <meta itemprop="description" content="There is a lot of industry buzz around service orientation and“SOA” and a number of prominent voices within Microsoft are tryinghard to articulate the approach the company is taking in this area.I think it is important, first of all, to emphasise that there isno Microsoft product that represents the hub of service orientation  there isn’t anything that you have to buy to be “doing” serviceorientation. In this post I want to outline my thoughts on how toconsider your application in terms of services in a pragmatic wayand as important point out what I don’t think service orientationmeans.">
+    <meta itemprop="datePublished" content="May 01, 2005">
+    <meta itemprop="dateModified" content="May 01, 2005">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Pragmatic Service Orientation
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  7 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>There is a lot of industry buzz around service orientation and
+“SOA” and a number of prominent voices within Microsoft are trying
+hard to articulate the approach the company is taking in this area.
+I think it is important, first of all, to emphasise that there is
+no Microsoft product that represents the hub of service orientation</p>
+<ul>
+  <li>there isn’t anything that you have to buy to be “doing” service
+orientation. In this post I want to outline my thoughts on how to
+consider your application in terms of services in a pragmatic way
+and as important point out what I don’t think service orientation
+means.</li>
+</ul>
+
+<p>In the late 80’s and early 90’s languages came to the fore that
+allowed you to represent your data as classes together with the
+associated operations that could be run with that data. This was a
+shift from the block structured programming that was in favour
+previously where code and data was kept apart and code modules were
+formed around areas of functionality independent from where and how
+data was stored. Today writing code using objects and classes is
+the norm but it took a number of years for it to become mainstream:
+C programming gave way to C++, Turbo Pascal introduced class-like
+types, and bit by bit Visual Basic adopted object-like constructs.
+This progression was how we entered the world of object
+orientation.</p>
+
+<p>Service orientation is an evolution of object orientation. Just
+like the way object orientation didn’t mean one specific language,
+platform, or technology, service orientation represents an approach
+to building systems in a technology agnostic way. Object
+orientation got us a long way down the road to building more
+manageable and maintainable systems but as we moved to building
+more and more distributed applications it became clear that
+thinking about everything in terms of objects didn’t work any more.
+While the concept of both local and remote code appearing in our
+programming models as instances of objects was attractive, it
+turned out that to build reliable, scalable and performant
+distributed applications it really did matter where code was
+located. We needed to treat remote objects differently from local
+objects because of the speed and reliability of the network.
+Starting to consider different aspects of our applications as
+independent services helps to address these issues.</p>
+
+<p>Another problem that we ran into with distributed objects was
+one of versioning. Because the different distributed object
+technologies typically exposed implementation details, it became
+difficult to update and extend parts of an application without
+impacting other areas. For example, how many times have you broken
+a DCOM or COM+ application by deploying a change to a server
+component and then finding that there is a compatibility issue with
+some of the applications that rely on that code? What cumbersome
+processes have you put in place or what annoying compromises have
+you made to try to reduce the headaches caused by binary
+compatibility? Service orientation is about reducing the coupling
+between different parts of your application so that these problems
+are easier to solve.</p>
+
+<p>Okay, so I’ve talked about object orientation and some of the
+problems with distributed or remote objects and that somehow
+service orientation solves these problems but what is it? What do
+we mean by service orientation? Well, service orientation is an
+approach to building distributed applications by creating
+independent services that cooperate through loosely coupled
+interfaces to deliver the desired application functionality. A
+service is a logical unit of code that operates in a well defined
+area of the application with clear responsibilities through a well
+known interface. In fact, we have four tenets that guide us in
+building service oriented systems:</p>
+
+<ul>
+  <li>Services have explicit boundaries</li>
+  <li>Services are autonomous</li>
+  <li>Services share schema and contract and not class</li>
+  <li>Service compatibility is governed by policy</li>
+</ul>
+
+<p>There has been a lot already written about these so I only want
+to cover them quickly.</p>
+
+<p>Explicit boundaries: it is important for services to define
+their areas of responsibility and to expose their functionality
+only through explicit interfaces. Because crossing service
+boundaries impacts the performance and scalability of our systems,
+we want to be explicit about when we make those calls and don’t
+want them masked by technology that hides the difference between
+local and remote code.</p>
+
+<p>Services need to be autonomous so that, in a changing world, we
+can extend and enhance both the functionality of a service and of
+its consumers in an independent way and deploy those services as we
+see fit. Autonomy also means we need to plan for and accommodate
+failures when consuming other services. This is something that is
+usually discouraged by object remoting technology.</p>
+
+<p>Sharing schema and contract not class means exposing the “shape”
+of the data we deal with rather than the implementation detail of
+our service. Typically when we use DCOM or COM+, we install type
+libraries and proxies on the client that expose details of the
+class id’s used on the server. With .NET Remoting, we usually have
+to make the types we expose on the server available on the client
+for the CLR to make the remote calls. Service orientation breaks
+this coupling and allows clients to be implemented independently
+from the service.</p>
+
+<p>Finally, we want to allow the way we communicate with services
+to be governed by deployed policy. This means that I can expose my
+service end-points using a variety of technologies and allow the
+client to select the one it prefers and to understand the
+requirements for that end-point, for example determining what to
+use for security and reliability. This is an area that is pretty
+weak in most of today’s protocol stacks but is being improved and
+will become increasingly important.</p>
+
+<p>It’s taken a fair amount of time for me to arrive at the point
+of this post. Sorry about that. What I’ve written so far is really
+background information. The key take away is that service
+orientation is an approach to building systems and provides a
+roadmap towards building loosely coupled distributed applications.
+Nobody should be able to argue that loose coupling is a bad thing -
+if you go back and read those block structured programming guides
+from the 80’s, you’ll see them talking about high cohesion within
+and loose coupling between application modules.</p>
+
+<p>It is really important that you keep this in mind as you
+consider whether and how service orientation applies to the systems
+you are building. Don’t try to interpret the four tenets too
+strictly: take a pragmatic view. I’ve seen too many people dismiss
+service orientation arguing that it doesn’t apply to their
+application. Take the fundamental principles of service orientation
+and apply them as it makes sense. Think about how you will version
+and deploy the parts of your application. Work through how you will
+maintain a loose coupling between those parts. Don’t throw the baby
+out with the bath water.</p>
+
+<p>Service orientation doesn’t mean you have to deploy different
+services using completely independent databases. Don’t dismiss
+service orientation because you think it means having to kill
+application performance by doing cross database joins at the
+application tier. That’s taking the autonomy story too far. By all
+means keep the data in the same database and do joins if
+appropriate with SQL, just make sure you understand and have
+documented which service is responsible for managing which data. I
+recommend only doing this cross service data access in a read-only
+way.</p>
+
+<p>Service orientation doesn’t mean that you have to throw out all
+your existing applications and start over. On the contrary, one of
+the defining properties of service orientation is that by building
+a service facade around existing applications, you can start to use
+them in new and interesting ways that were never conceived of when
+the application was originally built. You don’t have to have a huge
+company-wide revolution to adopt service orientation - evolve your
+applications, choose to build services as you write new code, think
+about the lifetime of the systems you are building and how you will
+manage change, pull out subsystems and expose them as services when
+it makes sense.</p>
+
+<p>How many times have you worked on systems that just can’t
+sustain further development? Why does this happen? Usually it is
+because of the tightly coupled nature of the different application
+modules. Service orientation promotes loose coupling and asks you
+to consider how things will evolve. The promise of service
+orientation is that you will be able to rebuild and extend smaller
+parts of your application one at a time in future without having to
+consider a big bang rewrite. It will also allow you to leverage
+your infrastructure in new ways allowing your business greater
+agility in the marketplace.</p>
+
+<p>I’ve used the same word a few times and it is the purpose of
+this post: “pragmatic” service orientation is about understanding
+the benefits of this approach and applying them in a sensible and
+flexible way. Please be pragmatic.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2005-05-01">May 01, 2005</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=adrianba&text=Pragmatic+Service+Orientation%20https%3A%2F%2Fadrianba.net%2F2005%2F05%2F01%2Fb0cd9d707dc742dda835b5bdf6f5ec32%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fadrianba.net%2F2005%2F05%2F01%2Fb0cd9d707dc742dda835b5bdf6f5ec32%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fadrianba.net%2F2005%2F05%2F01%2Fb0cd9d707dc742dda835b5bdf6f5ec32%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fadrianba.net%2F2005%2F05%2F01%2Fb0cd9d707dc742dda835b5bdf6f5ec32%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="https://adrianba.net/2005/04/29/e53e87f5eb9d4d42bad0667789354397/" class="pagination--pager" title="Have email viruses had their day?
+">Previous</a>
+    
+    
+      <a href="https://adrianba.net/2005/05/02/5ceeb274d6e641b6b664729838c4c76e/" class="pagination--pager" title="ASMX 2.0 - Now with Basic Profile 1.1 Conformance
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2017/10/13/samsung-smart-switch/" rel="permalink">Samsung Smart Switch - How to install on Windows 10
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Samsung Smart Switch is a tool that will backup your phone and transfer the data to a new Samsung
+phone. You also use it to backup your phone to your PC in c...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2017/10/12/node-and-vpn/" rel="permalink">NPM giving error EAI_AGAIN from Windows Subsystem for Linux (WSL)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">This morning I was experimenting with some demo code and when I tried to
+install some packages from npm I got the following network error:
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2016/09/24/using-microsoft-flow-to-publish-medium-com-recommendations/" rel="permalink">Using Microsoft Flow to publish medium.com recommendations
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Like a growing number of people, I read a lot of content on medium.com. I wanted to find a way to share the posts that I find most interesting.
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2016/01/06/using-sublime-text-as-your-git-editor-on-windows/" rel="permalink">Using Sublime Text as your git editor on Windows
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git ...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/adrianba"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+      <li><a href="https://facebook.com/adrianba"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+    
+    
+      <li><a href="http://github.com/adrianba"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="https://adrianba.net/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Adrian Bateman. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://adrianba.net/assets/js/main.min.js"></script>
+
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48621303-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+  </body>
+</html>

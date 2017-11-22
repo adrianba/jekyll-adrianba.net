@@ -1,0 +1,355 @@
+<html>
+<head>
+   <title>ScriptSite.h</title>
+</head>
+
+<body style="background: #ffffff;">
+
+
+<pre><code><font color="#000000">
+<font color="#008000"><i>/////////////////////////////////////////////////////////////////////////////
+//
+// ATL Active Script Host Wrapper
+// (C) Copyright 2001 VisionTech Limited. All rights reserved.
+// http://www.visiontech.ltd.uk/
+// bateman@acm.org
+//
+// VisionTech Limited makes no warranties, either express or implied,
+// with respect to this source code and any accompanying materials.
+//
+// In no event shall VisionTech Limited or its suppliers be liable for
+// any damages whatsoever (including, without limitation, damages for
+// loss of business profits, business interruption, loss of business
+// information, or other percuniary loss) arising out of the use or
+// inability to use this software.
+//
+// This source code may be used for any purpose, including commercial
+// applications, and may be modified or redistributed subject to the
+// following conditions:
+//
+// a) This notice may not be removed or changed in any source distribution.
+//
+// b) Altered source versions must be include a note to that effect,
+//    and must not be misrepresented as the original.
+//
+// c) The origin of this software may not be misrepresented - you may
+//    not claim to have written the original version. If you use this
+//    source in a product, an acknowledgement in the documentation
+//    would be appreciated, but is not required.
+//
+/////////////////////////////////////////////////////////////////////////////</i></font>
+
+
+<font color="#808080">#ifndef INC_SCRIPTSITE_H
+#define INC_SCRIPTSITE_H
+
+#if _MSC_VER &gt; 1000
+#pragma once
+#endif </font><font color="#008000"><i>// _MSC_VER &gt; 1000</i></font>
+
+<font color="#808080">#include &lt;activscp.h&gt;</font>
+
+<font color="#008000"><i>// If you want a different application title, declare SCRIPTSITE_APPNAME in
+// you code about the reference to ScriptSite.h</i></font>
+<font color="#808080">#ifndef SCRIPTSITE_APPNAME
+#define SCRIPTSITE_APPNAME  _T(&quot;ScriptSite&quot;)
+#endif
+
+#ifndef HR
+#define HR(_ex) { HRESULT _hr = _ex; if(FAILED(_hr)) return _hr; }
+#endif</font>
+
+<font color="#008000"><i>/////////////////////////////////////////////////////////////////////////////
+// IActiveScriptSite</i></font>
+
+<font color="#0000ff">class</font> ATL_NO_VTABLE IActiveScriptSiteImpl : <font color="#0000ff">public</font> IActiveScriptSite
+{
+<font color="#0000ff">public</font>:
+    STDMETHOD(GetLCID)(LCID *plcid)
+    {
+        *plcid = LOCALE_SYSTEM_DEFAULT;
+        <font color="#0000ff">return</font> NOERROR;
+    };
+
+    STDMETHOD(GetItemInfo)(LPCOLESTR pstrName,DWORD dwMask,LPUNKNOWN* ppunkItem,LPTYPEINFO* ppTypeInfo)
+    {
+        CComPtr&lt;IUnknown&gt; spUnk;
+        HR(LookupNamedItem(pstrName,&amp;spUnk));
+
+        <font color="#0000ff">if</font>(dwMask &amp; SCRIPTINFO_ITYPEINFO) {
+            CComPtr&lt;ITypeInfo&gt; spTI;
+            CComQIPtr&lt;IProvideClassInfo&gt; spPCI = spUnk;
+            <font color="#0000ff">if</font>(!!spPCI) {
+                <font color="#008000"><i>// Got IProvideClassInfo interface so use it</i></font>
+                HR(spPCI-&gt;GetClassInfo(&amp;spTI));
+                spPCI.Release();
+            } <font color="#0000ff">else</font> {
+                <font color="#008000"><i>// Try for IDispatch::GetTypeInfo</i></font>
+                CComQIPtr&lt;IDispatch&gt; spDisp = spUnk;
+                <font color="#0000ff">if</font>(!!spDisp) {
+                    HR(spDisp-&gt;GetTypeInfo(0,LOCALE_SYSTEM_DEFAULT,&amp;spTI));
+                    spDisp.Release();
+                }
+            }
+            *ppTypeInfo = spTI.Detach();
+        }
+
+        <font color="#0000ff">if</font>(dwMask &amp; SCRIPTINFO_IUNKNOWN) {
+            *ppunkItem = spUnk.Detach();
+        }
+
+        <font color="#0000ff">return</font> NOERROR;
+    }
+
+    STDMETHOD(GetDocVersionString)(BSTR *pbstrversionString)
+    {
+        <font color="#0000ff">if</font>(pbstrversionString==NULL)
+            <font color="#0000ff">return</font> E_POINTER;
+        USES_CONVERSION;
+        *pbstrversionString = ::SysAllocString(T2OLE(SCRIPTSITE_APPNAME));
+        <font color="#0000ff">return</font> NOERROR;
+    };
+
+    <font color="#008000"><i>// This method is called when the script engine terminates</i></font>
+    STDMETHOD(OnScriptTerminate)(<font color="#0000ff">const</font> VARIANT* <font color="#008000"><i>/*pvarResult*/</i></font>,<font color="#0000ff">const</font> EXCEPINFO* <font color="#008000"><i>/*pexcepinfo*/</i></font>)
+    {
+        <font color="#0000ff">return</font> NOERROR;
+    };
+
+    <font color="#008000"><i>// This method is called when the script engine's state is changed</i></font>
+    STDMETHOD(OnStateChange)(SCRIPTSTATE <font color="#008000"><i>/*ssScriptState*/</i></font>)
+    {
+        <font color="#0000ff">return</font> NOERROR;
+    };
+
+    <font color="#008000"><i>// This method is called when the script engine wants to report an error to the user</i></font>
+    STDMETHOD(OnScriptError)(IActiveScriptError* pase)
+    {
+        <font color="#0000ff">if</font>(pase==NULL)
+            <font color="#0000ff">return</font> E_POINTER;
+        EXCEPINFO ei;
+        HR(pase-&gt;GetExceptionInfo(&amp;ei));
+        <font color="#0000ff">if</font>(ei.pfnDeferredFillIn!=NULL) {
+            HR((*ei.pfnDeferredFillIn)(&amp;ei));
+        }
+        DWORD dwContext;
+        ULONG ulLine;
+        LONG lPos;
+        HR(pase-&gt;GetSourcePosition(&amp;dwContext,&amp;ulLine,&amp;lPos));
+        CComBSTR src;
+        HR(pase-&gt;GetSourceLineText(&amp;src));
+        <font color="#0000ff">return</font> HandleScriptError(&amp;ei,ulLine,lPos,src);
+    }
+
+    <font color="#008000"><i>// This method is called when (before) the script engine starts executing the script/event handler</i></font>
+    STDMETHOD(OnEnterScript)(<font color="#0000ff">void</font>)
+    {
+        <font color="#0000ff">return</font> NOERROR;
+    };
+
+    <font color="#008000"><i>// This method is called when (after) the script engine finishes executing the script/event handler</i></font>
+    STDMETHOD(OnLeaveScript)(<font color="#0000ff">void</font>)
+    {
+        <font color="#0000ff">return</font> NOERROR;
+    };
+
+    <font color="#008000"><i>// This is an implementation method.
+    // Override this method in your implementation and return the desired object
+    // or TYPE_E_ELEMENTNOTFOUND if the name doesn't match one of yours
+    // (You must call CScriptSiteImpl::AddObject in the first place to tell
+    // the script engine that your objects exist).</i></font>
+    STDMETHOD(LookupNamedItem)(LPCOLESTR pstrName,LPUNKNOWN* ppunkItem)
+    {
+        <font color="#0000ff">return</font> TYPE_E_ELEMENTNOTFOUND;
+    }
+
+    <font color="#008000"><i>// This is an implementation method.
+    // Override this method in your implementation to handle error messages</i></font>
+    STDMETHOD(HandleScriptError)(EXCEPINFO* pei,ULONG ulLine,LONG lPos,BSTR src)
+    {
+        TCHAR buf[1024];
+        ::wsprintf(buf,<font color="#ff00ff">&quot;Script Error:\n\nSource: %ws\nError: %08X\nDescription: %ws\nLine: %d Column: %d\n\nCode:\n%ws&quot;</font>,
+            pei-&gt;bstrSource,pei-&gt;scode,pei-&gt;bstrDescription,ulLine+1,lPos,src);
+        ::MessageBox(::GetDesktopWindow(),buf,SCRIPTSITE_APPNAME,MB_OK);
+        <font color="#0000ff">return</font> NOERROR;
+    }
+};
+
+<font color="#008000"><i>/////////////////////////////////////////////////////////////////////////////
+// IActiveScriptSiteWindow</i></font>
+
+<font color="#0000ff">class</font> ATL_NO_VTABLE IActiveScriptSiteWindowImpl : <font color="#0000ff">public</font> IActiveScriptSiteWindow
+{
+<font color="#0000ff">public</font>:
+    <font color="#008000"><i>// The script engine uses the window which this method returns as a
+    // parent window when the engine needs to show a window (e.g. MsgBox)</i></font>
+    STDMETHOD(GetWindow)(HWND *phWnd)
+    {
+        <font color="#0000ff">if</font>(phWnd==NULL)
+            <font color="#0000ff">return</font> E_POINTER;
+        *phWnd = ::GetDesktopWindow();
+        <font color="#0000ff">return</font> NOERROR;
+    };
+
+    STDMETHOD(EnableModeless)(BOOL <font color="#008000"><i>/*fEnable*/</i></font>)
+    {
+        <font color="#0000ff">return</font> NOERROR;
+    };
+};
+
+<font color="#008000"><i>/////////////////////////////////////////////////////////////////////////////
+// CScriptSiteImpl</i></font>
+
+<font color="#0000ff">class</font> ATL_NO_VTABLE CScriptSiteImpl : <font color="#0000ff">public</font> IActiveScriptSiteImpl, <font color="#0000ff">public</font> IActiveScriptSiteWindowImpl
+{
+<font color="#0000ff">public</font>:
+    CScriptSiteImpl()
+    {
+        m_hWnd = NULL;
+        m_bInit = <font color="#0000ff">false</font>;
+    }
+
+    STDMETHOD(Initiate)(LPCTSTR pszLanguage,HWND hWnd)
+    {
+        <font color="#0000ff">if</font>(!!m_spEngine)
+            HR(Terminate());
+        m_hWnd = hWnd;
+
+        <font color="#008000"><i>// Create new script engine</i></font>
+        USES_CONVERSION;
+        HR(m_spEngine.CoCreateInstance(T2COLE(pszLanguage)));
+
+        <font color="#008000"><i>// Attach to site</i></font>
+        HR(m_spEngine-&gt;SetScriptSite(<font color="#0000ff">static_cast</font>&lt;IActiveScriptSite*&gt;(<font color="#0000ff">this</font>)));
+
+        CComQIPtr&lt;IActiveScriptParse&gt; spParse = m_spEngine;
+        <font color="#0000ff">if</font>(!spParse) <font color="#0000ff">return</font> E_NOINTERFACE;
+        HR(spParse-&gt;InitNew());
+
+        m_bInit = <font color="#0000ff">true</font>;
+        <font color="#0000ff">return</font> NOERROR;
+    }
+
+    STDMETHOD(Run)()
+    {
+        <font color="#0000ff">if</font>(!m_bInit) <font color="#0000ff">return</font> E_FAIL;
+        HR(m_spEngine-&gt;SetScriptState(SCRIPTSTATE_STARTED));
+        <font color="#008000"><i>// connect - this makes the script engine handle incoming events</i></font>
+        HR(m_spEngine-&gt;SetScriptState(SCRIPTSTATE_CONNECTED));
+        <font color="#0000ff">return</font> NOERROR;
+    }
+
+    STDMETHOD(Terminate)()
+    {
+        <font color="#0000ff">if</font>(m_bInit) {
+            <font color="#008000"><i>// Disconnect the host application from the engine. This will prevent
+            // the further firing of events. Event sinks that are in progress will
+            // be completed before the state changes.</i></font>
+            m_spEngine-&gt;SetScriptState(SCRIPTSTATE_DISCONNECTED);
+
+            <font color="#008000"><i>// Call to InterruptScriptThread to abandon any running scripts and
+            // force cleanup of all script elements.</i></font>
+            m_spEngine-&gt;InterruptScriptThread(SCRIPTTHREADID_ALL,NULL,0);
+
+            m_bInit = <font color="#0000ff">false</font>;
+        }
+
+        <font color="#0000ff">if</font>(!!m_spEngine) {
+            <font color="#008000"><i>// Always call prior to release</i></font>
+            m_spEngine-&gt;Close();
+            m_spEngine.Release();
+        }
+
+        <font color="#0000ff">return</font> NOERROR;
+    }
+
+    STDMETHOD(AddScript)(LPCTSTR pszScript,LPCTSTR pszContext=NULL)
+    {
+        <font color="#0000ff">if</font>(!m_bInit) <font color="#0000ff">return</font> E_FAIL;
+
+        CComQIPtr&lt;IActiveScriptParse&gt; spParse = m_spEngine;
+        <font color="#0000ff">if</font>(!spParse) <font color="#0000ff">return</font> E_NOINTERFACE;
+
+        USES_CONVERSION;
+        <font color="#0000ff">const</font> DWORD dwFlags = SCRIPTTEXT_ISVISIBLE;
+        EXCEPINFO einfo;
+        <font color="#0000ff">return</font> spParse-&gt;ParseScriptText(T2COLE(pszScript),pszContext!=NULL ? T2COLE(pszContext) : OLESTR(<font color="#ff00ff">&quot;&quot;</font>),NULL,NULL,0,0,dwFlags,NULL,&amp;einfo);
+    }
+
+    STDMETHOD(AddObject)(LPCTSTR pszName,BOOL bGlobalCollection=FALSE)
+    {
+        <font color="#0000ff">if</font>(!m_bInit) <font color="#0000ff">return</font> E_FAIL;
+
+        DWORD dwFlags = SCRIPTITEM_ISVISIBLE;
+        <font color="#0000ff">if</font>(bGlobalCollection)
+            dwFlags |= SCRIPTITEM_GLOBALMEMBERS;
+
+        USES_CONVERSION;
+        <font color="#0000ff">return</font> m_spEngine-&gt;AddNamedItem(T2COLE(pszName),dwFlags);
+    }
+
+    STDMETHOD(GetWindow)(HWND *phWnd)
+    {
+        <font color="#0000ff">if</font>(phWnd==NULL)
+            <font color="#0000ff">return</font> E_POINTER;
+        *phWnd = m_hWnd;
+        <font color="#0000ff">return</font> NOERROR;
+    };
+
+<font color="#0000ff">protected</font>:
+    ~CScriptSiteImpl()
+    {
+        <font color="#0000ff">if</font>(!!m_spEngine)
+            Terminate();
+    }
+
+<font color="#0000ff">protected</font>:
+    HWND                    m_hWnd;
+    <font color="#0000ff">bool</font>                    m_bInit;
+    CComPtr&lt;IActiveScript&gt;  m_spEngine;
+};
+
+<font color="#008000"><i>/////////////////////////////////////////////////////////////////////////////
+// CScriptSiteBasic
+//
+// This is the minimum code needed to run a script engine. It has no support
+// for your own object model, and displays errors as a messagebox. To
+// overcome this, you'll need to write your own version and override
+// LookupNamedItem and/or HandleScriptError.
+//
+// Use it like this:
+//
+//   LPCTSTR strScriptCode; // this points to the script code we want to run
+//   ...
+//   CComObject&lt;CScriptSiteBasic&gt;* pBasic;
+//   CComQIPtr&lt;IActiveScriptSite&gt; spUnk;
+//   HR(CComObject&lt;CScriptSiteBasic&gt;::CreateInstance(&amp;pBasic));
+//   spUnk = pBasic; // let CComQIPtr tidy up for us
+//   HR(pBasic-&gt;Initiate(_T(&quot;jscript&quot;),GetDesktopWindow()));
+//   HR(pBasic-&gt;AddScript(strScriptCode));
+//   HR(pBasic-&gt;Run());
+//   HR(pBasic-&gt;Terminate());</i></font>
+
+<font color="#0000ff">class</font> ATL_NO_VTABLE CScriptSiteBasic :
+    <font color="#0000ff">public</font> CComObjectRootEx&lt;CComSingleThreadModel&gt;,
+    <font color="#0000ff">public</font> CScriptSiteImpl
+{
+<font color="#0000ff">public</font>:
+DECLARE_PROTECT_FINAL_CONSTRUCT()
+BEGIN_COM_MAP(CScriptSiteBasic)
+    COM_INTERFACE_ENTRY(IActiveScriptSite)
+    COM_INTERFACE_ENTRY(IActiveScriptSiteWindow)
+END_COM_MAP()
+};
+
+<font color="#808080">#endif </font><font color="#008000"><i>// !INC_SCRIPTSITE_H</i></font>
+
+</font>
+</code></pre>
+
+
+<font color="#000000">
+</font>
+
+
+</body></html>

@@ -1,0 +1,647 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Node and xml-stream - adrianba.net</title>
+
+
+
+
+<meta name="description" content="For the last couple of months, I’ve been experimenting more and more with node.js. My impression is that most people who have heard of node but not really used it think of it as a server technology for building web applications using JavaScript. Of course, it does that and there is good support for node.js hosted on Microsoft Azure Web Sites. But you can also use node as a scripting language for local tasks. There are lots of popular scripting languages like Python and Ruby but if you’re already a JavaScript developer then node is a convenient choice.">
+
+
+
+
+<meta name="author" content="Adrian Bateman">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="adrianba.net">
+<meta property="og:title" content="Node and xml-stream">
+
+
+  <link rel="canonical" href="https://adrianba.net/2014/04/20/node-and-xml-stream/">
+  <meta property="og:url" content="https://adrianba.net/2014/04/20/node-and-xml-stream/">
+
+
+
+  <meta property="og:description" content="For the last couple of months, I’ve been experimenting more and more with node.js. My impression is that most people who have heard of node but not really used it think of it as a server technology for building web applications using JavaScript. Of course, it does that and there is good support for node.js hosted on Microsoft Azure Web Sites. But you can also use node as a scripting language for local tasks. There are lots of popular scripting languages like Python and Ruby but if you’re already a JavaScript developer then node is a convenient choice.">
+
+
+
+  <meta name="twitter:site" content="@adrianba">
+  <meta name="twitter:title" content="Node and xml-stream">
+  <meta name="twitter:description" content="For the last couple of months, I’ve been experimenting more and more with node.js. My impression is that most people who have heard of node but not really used it think of it as a server technology for building web applications using JavaScript. Of course, it does that and there is good support for node.js hosted on Microsoft Azure Web Sites. But you can also use node as a scripting language for local tasks. There are lots of popular scripting languages like Python and Ruby but if you’re already a JavaScript developer then node is a convenient choice.">
+  <meta name="twitter:url" content="https://adrianba.net/2014/04/20/node-and-xml-stream/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="http://adrianba.net/assets/sailing.jpg">
+    
+  
+
+  
+    <meta name="twitter:creator" content="@Adrian Bateman">
+  
+
+
+
+  
+
+  
+
+
+
+  <meta property="og:image" content="http://adrianba.net/assets/sailing.jpg">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2014-04-20T00:00:00-07:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://adrianba.net",
+      "logo": "http://adrianba.net/assets/sailing.jpg"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Adrian Bateman",
+      "url" : "https://adrianba.net",
+      "sameAs" : ["https://adebateman.org/","https://twitter.com/adrianba","https://facebook.com/adrianba","https://instagram.com/adebateman","https://www.linkedin.com/in/adrianba"]
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="BUqUy58DpivlHAgBj3S9R4nIrr4bSvVVWajoA7XED10" />
+
+
+  <meta name="msvalidate.01" content="63DB9D179BA14FF88535CF66336C4ED2">
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://adrianba.net/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://adrianba.net/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://adrianba.net/">adrianba.net</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="https://adrianba.net"></a></li>
+          
+        </ul>
+        <button><div class="navicon"></div></button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://adrianba.net/assets/sailing.jpg" class="author__avatar" alt="Adrian Bateman" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Adrian Bateman</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Englishman in Seattle.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">Seattle, USA</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+<li>
+  <a href="https://adebateman.org/" itemprop="url">
+    <i class="fa fa-fw fa-chain" aria-hidden="true"></i> Personal site
+  </a>
+</li>
+
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Node and xml-stream">
+    <meta itemprop="description" content="For the last couple of months, I’ve been experimenting more and more with node.js. My impression is that most people who have heard of node but not really used it think of it as a server technology for building web applications using JavaScript. Of course, it does that and there is good support for node.js hosted on Microsoft Azure Web Sites. But you can also use node as a scripting language for local tasks. There are lots of popular scripting languages like Python and Ruby but if you’re already a JavaScript developer then node is a convenient choice.">
+    <meta itemprop="datePublished" content="April 20, 2014">
+    <meta itemprop="dateModified" content="April 20, 2014">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Node and xml-stream
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>For the last couple of months, I’ve been experimenting more and more with <a href="http://nodejs.org/">node.js</a>. My impression is that most people who have heard of node but not really used it think of it as a server technology for building web applications using JavaScript. Of course, it does that and there is <a href="http://azure.microsoft.com/en-us/develop/nodejs/">good support for node.js hosted on Microsoft Azure Web Sites</a>. But you can also use node as a scripting language for local tasks. There are lots of popular scripting languages like <a href="https://www.python.org/">Python</a> and <a href="https://www.ruby-lang.org/">Ruby</a> but if you’re already a JavaScript developer then node is a convenient choice.</p>
+
+<p>I guess most scripting environments have a package management framework and node’s is called <a href="https://www.npmjs.org/">npm</a>. I recently wanted to do some scripting against an XML file and discovered the <a href="https://www.npmjs.org/package/xml-stream">xml-stream module</a> by searching on <a href="https://www.npmjs.org/search?q=xml+stream">npmjs.org</a>. One of the helpful things about npmjs.org is that it tells you how often a particular package has been downloaded, which gives you an idea of whether it is a main stream module or just someone’s hobby module that might not work so well yet.</p>
+
+<h1 id="installing-xml-stream-on-windows">Installing xml-stream on Windows</h1>
+
+<p>Installing modules is easy and the command <code class="highlighter-rouge">npm install xml-stream</code> should take care of installing the module into the <code class="highlighter-rouge">node_modules</code> folder below the current directory.</p>
+
+<p>However. When I first tried this I ran into some problems. First of all, this module needs Python to be available. I installed the latest version of <a href="https://www.python.org/download/releases/3.4.0">Python (v3.4.0)</a> and tried again. This time it complained because Python 2.7 was needed. I installed <a href="https://www.python.org/download/releases/2.7.6">Python 2.7.6</a> too but now there was a problem - how would npm know which version of Python to use? You can specify this each time or you can use the <code class="highlighter-rouge">npm config</code> command to tell npm where to look:</p>
+
+<p><code class="highlighter-rouge">npm config set python "C:Python27python.exe"</code></p>
+
+<p>You can also configure the version of Visual Studio tools you have installed so that npm knows how to use the compilers:</p>
+
+<p><code class="highlighter-rouge">npm config set msvs_version 2013</code></p>
+
+<p>You can check that this is configured correctly by typing:</p>
+
+<p><code class="highlighter-rouge">npm config list</code></p>
+
+<p>With this configuration in place, issuing the command <code class="highlighter-rouge">npm install xml-stream</code> successfully downloaded a built the xml-stream module.</p>
+
+<h1 id="using-xml-stream">Using xml-stream</h1>
+
+<p>Now that I had xml-stream installed, I could try it out. The <a href="http://www.w3.org/2002/01/tr-automation/tr.rdf">W3C publishes a list of all of their published documents</a> in an RDF/XML file. I wanted to parse this file and identify the latest version of each document.</p>
+
+<p>The first thing to do is to import the http and xml-stream modules and to download the XML file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;span class="str"&gt;"use strict"&lt;/span&gt;;
+
+&lt;span class="kwrd"&gt;var&lt;/span&gt; http = require(&lt;span class="str"&gt;'http'&lt;/span&gt;);
+&lt;span class="kwrd"&gt;var&lt;/span&gt; XmlStream = require(&lt;span class="str"&gt;'xml-stream'&lt;/span&gt;);
+&lt;span class="kwrd"&gt;var&lt;/span&gt; url = &lt;span class="str"&gt;"http://www.w3.org/2002/01/tr-automation/tr.rdf"&lt;/span&gt;;
+
+&lt;span class="kwrd"&gt;var&lt;/span&gt; request = http.get(url).on(&lt;span class="str"&gt;'response'&lt;/span&gt;, &lt;span class="kwrd"&gt;function&lt;/span&gt; (response) {
+    &lt;span class="rem"&gt;//TODO: process response here&lt;/span&gt;
+});
+</code></pre>
+</div>
+
+<p>The xml-stream module allows you to set-up event listeners for different elements in the document. The W3C file has different elements for Working Draft (WD), Last Call (LastCall), Candidate Recommendation (CR), etc. Here is the code that listens for each document type.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;span class="str"&gt;"use strict"&lt;/span&gt;;
+
+&lt;span class="kwrd"&gt;var&lt;/span&gt; http = require(&lt;span class="str"&gt;'http'&lt;/span&gt;);
+&lt;span class="kwrd"&gt;var&lt;/span&gt; XmlStream = require(&lt;span class="str"&gt;'xml-stream'&lt;/span&gt;);
+&lt;span class="kwrd"&gt;var&lt;/span&gt; url = &lt;span class="str"&gt;"http://www.w3.org/2002/01/tr-automation/tr.rdf"&lt;/span&gt;;
+
+&lt;span class="kwrd"&gt;var&lt;/span&gt; request = http.get(url).on(&lt;span class="str"&gt;'response'&lt;/span&gt;, &lt;span class="kwrd"&gt;function&lt;/span&gt; (response) {
+    &lt;span class="rem"&gt;// Collection to store documents in&lt;/span&gt;
+    &lt;span class="kwrd"&gt;var&lt;/span&gt; documents = {};
+
+    &lt;span class="kwrd"&gt;var&lt;/span&gt; processDocument = &lt;span class="kwrd"&gt;function&lt;/span&gt; (item) {
+        &lt;span class="rem"&gt;//TODO: process document&lt;/span&gt;
+    };
+
+    &lt;span class="kwrd"&gt;var&lt;/span&gt; xml = &lt;span class="kwrd"&gt;new&lt;/span&gt; XmlStream(response, &lt;span class="str"&gt;'utf8'&lt;/span&gt;);
+
+    &lt;span class="rem"&gt;// Process each type of document&lt;/span&gt;
+    xml.on(&lt;span class="str"&gt;'updateElement: WD'&lt;/span&gt;, processDocument);
+    xml.on(&lt;span class="str"&gt;'updateElement: LastCall'&lt;/span&gt;, processDocument);
+    xml.on(&lt;span class="str"&gt;'updateElement: CR'&lt;/span&gt;, processDocument);
+    xml.on(&lt;span class="str"&gt;'updateElement: PR'&lt;/span&gt;, processDocument);
+    xml.on(&lt;span class="str"&gt;'updateElement: REC'&lt;/span&gt;, processDocument);
+    xml.on(&lt;span class="str"&gt;'updateElement: NOTE'&lt;/span&gt;, processDocument);
+
+    xml.on(&lt;span class="str"&gt;'end'&lt;/span&gt;, &lt;span class="kwrd"&gt;function&lt;/span&gt; () {
+        &lt;span class="rem"&gt;// Write out JSON data of documents collection&lt;/span&gt;
+        console.log(JSON.stringify(documents));
+    });
+});
+</code></pre>
+</div>
+
+<p>Finally, we can add in a definition for the <code class="highlighter-rouge">processDocument</code> function, which will gather together all the documents into the documents collection:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;span class="kwrd"&gt;var&lt;/span&gt; processDocument = &lt;span class="kwrd"&gt;function&lt;/span&gt; (item) {
+        &lt;span class="rem"&gt;// Collect document properties&lt;/span&gt;
+        &lt;span class="kwrd"&gt;var&lt;/span&gt; document = {};
+        document.type = item.$name;
+        document.title = item[&lt;span class="str"&gt;'dc:title'&lt;/span&gt;];
+        document.date = item[&lt;span class="str"&gt;'dc:date'&lt;/span&gt;];
+        document.verURL = item.$[&lt;span class="str"&gt;'rdf:about'&lt;/span&gt;];
+        document.trURL = item[&lt;span class="str"&gt;'doc:versionOf'&lt;/span&gt;].$[&lt;span class="str"&gt;'rdf:resource'&lt;/span&gt;];
+
+        &lt;span class="rem"&gt;// If we have already seen a version of this document&lt;/span&gt;
+        &lt;span class="kwrd"&gt;if&lt;/span&gt; (documents[document.trURL]) {
+            &lt;span class="rem"&gt;// Check to see if this one is newer and if so overwrite it&lt;/span&gt;
+            &lt;span class="kwrd"&gt;var&lt;/span&gt; old = documents[document.trURL];
+            &lt;span class="kwrd"&gt;if&lt;/span&gt; (old.date &lt; document.date) {
+                documents[document.trURL] = document;
+            }
+        } &lt;span class="kwrd"&gt;else&lt;/span&gt; {
+            &lt;span class="rem"&gt;// Store the new entry&lt;/span&gt;
+            documents[document.trURL] = document;
+        }
+    };
+</code></pre>
+</div>
+
+<p>At the end, the script writes out the JSON data to the console.</p>
+
+<p>Of course, this script is a little fragile because it doesn’t map any of the namespace prefixes based on their declarations but it does the job I needed and is a good example of having a powerful JavaScript scripting environment coupled to a wide array of different packages to help you get tasks completed.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2014-04-20">April 20, 2014</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=adrianba&text=Node+and+xml-stream%20https%3A%2F%2Fadrianba.net%2F2014%2F04%2F20%2Fnode-and-xml-stream%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fadrianba.net%2F2014%2F04%2F20%2Fnode-and-xml-stream%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fadrianba.net%2F2014%2F04%2F20%2Fnode-and-xml-stream%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fadrianba.net%2F2014%2F04%2F20%2Fnode-and-xml-stream%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="https://adrianba.net/2014/04/19/introducing-boxstarter/" class="pagination--pager" title="Introducing Boxstarter
+">Previous</a>
+    
+    
+      <a href="https://adrianba.net/2014/05/16/node-and-delicious/" class="pagination--pager" title="Node and Delicious
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2017/10/13/samsung-smart-switch/" rel="permalink">Samsung Smart Switch - How to install on Windows 10
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Samsung Smart Switch is a tool that will backup your phone and transfer the data to a new Samsung
+phone. You also use it to backup your phone to your PC in c...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2017/10/12/node-and-vpn/" rel="permalink">NPM giving error EAI_AGAIN from Windows Subsystem for Linux (WSL)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">This morning I was experimenting with some demo code and when I tried to
+install some packages from npm I got the following network error:
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2016/09/24/using-microsoft-flow-to-publish-medium-com-recommendations/" rel="permalink">Using Microsoft Flow to publish medium.com recommendations
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Like a growing number of people, I read a lot of content on medium.com. I wanted to find a way to share the posts that I find most interesting.
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2016/01/06/using-sublime-text-as-your-git-editor-on-windows/" rel="permalink">Using Sublime Text as your git editor on Windows
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git ...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/adrianba"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+      <li><a href="https://facebook.com/adrianba"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+    
+    
+      <li><a href="http://github.com/adrianba"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="https://adrianba.net/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Adrian Bateman. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://adrianba.net/assets/js/main.min.js"></script>
+
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48621303-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+  </body>
+</html>

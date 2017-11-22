@@ -1,0 +1,591 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>I spent a while trying to make an ISAPI filter… - adrianba.net</title>
+
+
+
+
+<meta name="description" content="I spent a while trying to make an ISAPI filter that wouldperform the NTLM challenge/response handshake with InternetExplorer. Why? Well, apart from wanting to find out more about howthe authentication process works, this would allow theauthentication to occur without IIS then impersonating that user.In addition, you could add control with the filter without needingto worry about setting NTFS permissions on files and folders.">
+
+
+
+
+<meta name="author" content="Adrian Bateman">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="adrianba.net">
+<meta property="og:title" content="I spent a while trying to make an ISAPI filter…">
+
+
+  <link rel="canonical" href="https://adrianba.net/2002/05/06/8b873b7c6a0b4f15ac09354a0487ea06/">
+  <meta property="og:url" content="https://adrianba.net/2002/05/06/8b873b7c6a0b4f15ac09354a0487ea06/">
+
+
+
+  <meta property="og:description" content="I spent a while trying to make an ISAPI filter that wouldperform the NTLM challenge/response handshake with InternetExplorer. Why? Well, apart from wanting to find out more about howthe authentication process works, this would allow theauthentication to occur without IIS then impersonating that user.In addition, you could add control with the filter without needingto worry about setting NTFS permissions on files and folders.">
+
+
+
+  <meta name="twitter:site" content="@adrianba">
+  <meta name="twitter:title" content="I spent a while trying to make an ISAPI filter…">
+  <meta name="twitter:description" content="I spent a while trying to make an ISAPI filter that wouldperform the NTLM challenge/response handshake with InternetExplorer. Why? Well, apart from wanting to find out more about howthe authentication process works, this would allow theauthentication to occur without IIS then impersonating that user.In addition, you could add control with the filter without needingto worry about setting NTFS permissions on files and folders.">
+  <meta name="twitter:url" content="https://adrianba.net/2002/05/06/8b873b7c6a0b4f15ac09354a0487ea06/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="http://adrianba.net/assets/sailing.jpg">
+    
+  
+
+  
+    <meta name="twitter:creator" content="@Adrian Bateman">
+  
+
+
+
+  
+
+  
+
+
+
+  <meta property="og:image" content="http://adrianba.net/assets/sailing.jpg">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2002-05-06T00:00:00-07:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://adrianba.net",
+      "logo": "http://adrianba.net/assets/sailing.jpg"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Adrian Bateman",
+      "url" : "https://adrianba.net",
+      "sameAs" : ["https://adebateman.org/","https://twitter.com/adrianba","https://facebook.com/adrianba","https://instagram.com/adebateman","https://www.linkedin.com/in/adrianba"]
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="BUqUy58DpivlHAgBj3S9R4nIrr4bSvVVWajoA7XED10" />
+
+
+  <meta name="msvalidate.01" content="63DB9D179BA14FF88535CF66336C4ED2">
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://adrianba.net/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://adrianba.net/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://adrianba.net/">adrianba.net</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="https://adrianba.net"></a></li>
+          
+        </ul>
+        <button><div class="navicon"></div></button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://adrianba.net/assets/sailing.jpg" class="author__avatar" alt="Adrian Bateman" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Adrian Bateman</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Englishman in Seattle.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">Seattle, USA</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+<li>
+  <a href="https://adebateman.org/" itemprop="url">
+    <i class="fa fa-fw fa-chain" aria-hidden="true"></i> Personal site
+  </a>
+</li>
+
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="I spent a while trying to make an ISAPI filter…">
+    <meta itemprop="description" content="I spent a while trying to make an ISAPI filter that wouldperform the NTLM challenge/response handshake with InternetExplorer. Why? Well, apart from wanting to find out more about howthe authentication process works, this would allow theauthentication to occur without IIS then impersonating that user.In addition, you could add control with the filter without needingto worry about setting NTFS permissions on files and folders.">
+    <meta itemprop="datePublished" content="May 06, 2002">
+    <meta itemprop="dateModified" content="May 07, 2002">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">I spent a while trying to make an ISAPI filter…
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>I spent a while trying to make an ISAPI filter that would
+perform the NTLM challenge/response handshake with Internet
+Explorer. Why? Well, apart from wanting to find out more about how
+the authentication process works, this would allow the
+authentication to occur without IIS then impersonating that user.
+In addition, you could add control with the filter without needing
+to worry about setting NTFS permissions on files and folders.</p>
+
+<p>I ran into a problem though, and I’m sure it is my ISAPI code
+rather than my NTLM code causing the problem.</p>
+
+<p>Here’s what happens:</p>
+
+<p>The first request comes in and I check for an Authorization:
+header. Since there isn’t one, I send back a 401 with a
+WWW-Authenticate: header asking for NTLM and close the
+connection.</p>
+
+<p>The second request comes in on a new connection as planned with
+an Authorization: header with NTLM and the base 64 encoded token. I
+hook up AcceptSecurityContext and receive SEC_I_CONTINUE_NEEDED as
+expected so I create a new WWW-Authenticate: header with the base
+64 encoded token for the challenge. I send this back with a 401 and
+ask for the connection to be kept open
+(SF_STATUS_REQ_FINISHED_KEEP_CONN). I think this is where it goes
+wrong.</p>
+
+<p>The next request comes in on the same connection with the NTLM
+response in the Authorization: header, but my filter never sees it.
+I can see the response from Internet Explorer by monitoring the TCP
+port with tcpTrace, but I think something has gone wrong with the
+connection by then.</p>
+
+<p>What should happen is that I will get the NTLM response, again
+call AcceptSecurityContext and this time I should get SEC_E_OK
+whereupon I know that I am authenticated, I can set my custom HTTP
+header, and also set a flag so that I know any subsequent requests
+on the same connection are preauthenticated.</p>
+
+<p>I’ve made the source code
+available <a href="/software/download/ntlmfilt.zip">
+here</a> in case somebody can spot what I’ve done wrong (it’s a
+VS.NET project but that’s only really important in so far as I used
+an ATL Server include for the base 64 coding).</p>
+
+<p>If you spot what is wrong or have any clues, please get in
+touch.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2002-05-07">May 07, 2002</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=adrianba&text=I+spent+a+while+trying+to+make+an+ISAPI+filter...%20https%3A%2F%2Fadrianba.net%2F2002%2F05%2F06%2F8b873b7c6a0b4f15ac09354a0487ea06%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fadrianba.net%2F2002%2F05%2F06%2F8b873b7c6a0b4f15ac09354a0487ea06%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fadrianba.net%2F2002%2F05%2F06%2F8b873b7c6a0b4f15ac09354a0487ea06%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fadrianba.net%2F2002%2F05%2F06%2F8b873b7c6a0b4f15ac09354a0487ea06%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="https://adrianba.net/2002/04/29/ca178f76318243698ab04ec24909f21d/" class="pagination--pager" title="I found  this thread on Google that indicates a…
+">Previous</a>
+    
+    
+      <a href="https://adrianba.net/2002/05/15/bd1532f57b914d3c896e497466616b4e/" class="pagination--pager" title="We finally found a solution to the PNG problem we…
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2017/10/13/samsung-smart-switch/" rel="permalink">Samsung Smart Switch - How to install on Windows 10
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Samsung Smart Switch is a tool that will backup your phone and transfer the data to a new Samsung
+phone. You also use it to backup your phone to your PC in c...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2017/10/12/node-and-vpn/" rel="permalink">NPM giving error EAI_AGAIN from Windows Subsystem for Linux (WSL)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">This morning I was experimenting with some demo code and when I tried to
+install some packages from npm I got the following network error:
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2016/09/24/using-microsoft-flow-to-publish-medium-com-recommendations/" rel="permalink">Using Microsoft Flow to publish medium.com recommendations
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Like a growing number of people, I read a lot of content on medium.com. I wanted to find a way to share the posts that I find most interesting.
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2016/01/06/using-sublime-text-as-your-git-editor-on-windows/" rel="permalink">Using Sublime Text as your git editor on Windows
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git ...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/adrianba"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+      <li><a href="https://facebook.com/adrianba"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+    
+    
+      <li><a href="http://github.com/adrianba"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="https://adrianba.net/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Adrian Bateman. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://adrianba.net/assets/js/main.min.js"></script>
+
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48621303-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,644 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>ASMX 2.0 - Basic Profile 1.0 Conformance - adrianba.net</title>
+
+
+
+
+<meta name="description" content="ASP.NET web services (commonly known as ASMX web services) havebeen a part of the .NET Framework from the beginning in v1.0 whenit was still early days in the web services world. A number ofenhancements have been made to ASMX in version 2.0 of the frameworkand one in particular is aimed at helping developers achieveimproved interoperability with other web service platforms.">
+
+
+
+
+<meta name="author" content="Adrian Bateman">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="adrianba.net">
+<meta property="og:title" content="ASMX 2.0 - Basic Profile 1.0 Conformance">
+
+
+  <link rel="canonical" href="https://adrianba.net/2005/02/26/9cb90c98cf13431c93febde1b29eb294/">
+  <meta property="og:url" content="https://adrianba.net/2005/02/26/9cb90c98cf13431c93febde1b29eb294/">
+
+
+
+  <meta property="og:description" content="ASP.NET web services (commonly known as ASMX web services) havebeen a part of the .NET Framework from the beginning in v1.0 whenit was still early days in the web services world. A number ofenhancements have been made to ASMX in version 2.0 of the frameworkand one in particular is aimed at helping developers achieveimproved interoperability with other web service platforms.">
+
+
+
+  <meta name="twitter:site" content="@adrianba">
+  <meta name="twitter:title" content="ASMX 2.0 - Basic Profile 1.0 Conformance">
+  <meta name="twitter:description" content="ASP.NET web services (commonly known as ASMX web services) havebeen a part of the .NET Framework from the beginning in v1.0 whenit was still early days in the web services world. A number ofenhancements have been made to ASMX in version 2.0 of the frameworkand one in particular is aimed at helping developers achieveimproved interoperability with other web service platforms.">
+  <meta name="twitter:url" content="https://adrianba.net/2005/02/26/9cb90c98cf13431c93febde1b29eb294/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="http://adrianba.net/assets/sailing.jpg">
+    
+  
+
+  
+    <meta name="twitter:creator" content="@Adrian Bateman">
+  
+
+
+
+  
+
+  
+
+
+
+  <meta property="og:image" content="http://adrianba.net/assets/sailing.jpg">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2005-02-26T00:00:00-08:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://adrianba.net",
+      "logo": "http://adrianba.net/assets/sailing.jpg"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Adrian Bateman",
+      "url" : "https://adrianba.net",
+      "sameAs" : ["https://adebateman.org/","https://twitter.com/adrianba","https://facebook.com/adrianba","https://instagram.com/adebateman","https://www.linkedin.com/in/adrianba"]
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="BUqUy58DpivlHAgBj3S9R4nIrr4bSvVVWajoA7XED10" />
+
+
+  <meta name="msvalidate.01" content="63DB9D179BA14FF88535CF66336C4ED2">
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://adrianba.net/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://adrianba.net/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://adrianba.net/">adrianba.net</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="https://adrianba.net"></a></li>
+          
+        </ul>
+        <button><div class="navicon"></div></button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://adrianba.net/assets/sailing.jpg" class="author__avatar" alt="Adrian Bateman" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Adrian Bateman</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Englishman in Seattle.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">Seattle, USA</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+<li>
+  <a href="https://adebateman.org/" itemprop="url">
+    <i class="fa fa-fw fa-chain" aria-hidden="true"></i> Personal site
+  </a>
+</li>
+
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="ASMX 2.0 - Basic Profile 1.0 Conformance">
+    <meta itemprop="description" content="ASP.NET web services (commonly known as ASMX web services) havebeen a part of the .NET Framework from the beginning in v1.0 whenit was still early days in the web services world. A number ofenhancements have been made to ASMX in version 2.0 of the frameworkand one in particular is aimed at helping developers achieveimproved interoperability with other web service platforms.">
+    <meta itemprop="datePublished" content="February 26, 2005">
+    <meta itemprop="dateModified" content="February 27, 2005">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">ASMX 2.0 - Basic Profile 1.0 Conformance
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>ASP.NET web services (commonly known as ASMX web services) have
+been a part of the .NET Framework from the beginning in v1.0 when
+it was still early days in the web services world. A number of
+enhancements have been made to ASMX in version 2.0 of the framework
+and one in particular is aimed at helping developers achieve
+improved interoperability with other web service platforms.</p>
+
+<p>The original SOAP 1.1 and WSDL 1.1 specifications were very
+broadly defined and this has made interop a difficult goal. Through
+a standards organisation called the
+<a href="http://www.ws-i.org/">WS-I</a>, a specification called
+<a href="http://www.ws-i.org/Profiles/Basic/2003-05/BasicProfile-1.0-WGAD.htm">
+Basic Profile Version 1.0</a> (BP) was created that defines a
+profile or subset of the SOAP and WSDL specs that should be used.
+By providing a set of rules that narrows the scope of web service
+implementations there is a greater chance that different platforms
+can work together successfully. ASMX 2.0 includes checks against
+all the BP rules to determine if your web service is compliant.</p>
+
+<p>Existing web services from the 1.0 or 1.1 version of .NET when
+run with the 2.0 version of the framework will be checked to see if
+they are BP compliant. A warning will be given on the documentation
+page if the web service is non-compliant but either way the service
+will continue to work as it did with previous versions. Any
+warnings are just for information and can be disabled if you
+choose. The following file, simple.asmx, demonstrates this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;%@ WebService Language="C#" Class="SimpleService" %&gt;
+
+using System.Web.Services;
+using System.Web.Services.Protocols;
+
+[WebService(Namespace="urn:simple")]
+public class SimpleService {
+
+        [WebMethod, &lt;span style="background-color:yellow"&gt;SoapRpcMethod&lt;/span&gt;]
+        public string Hello(string s) {
+                return string.Format("Hello, {0}!",s);
+        }
+
+}
+</code></pre>
+</div>
+
+<p>The Hello method has the SoapRpcMethod attribute causing it to
+use a SOAP rpc/encoded binding. This is not allowed by the Basic
+Profile and so the documentation page for the web service gives the
+warning “This web service does not conform to WS-I Basic Profile
+v1.0.” The specific BP rule that has been violated is quoted
+together with a recommendation for what to do to make the service
+compliant. If we remove the SoapRpcMethod attribute, the warning
+goes away and the service conforms.</p>
+
+<p>New web services built for the 2.0 framework can explicitly
+declare their BP compliance using the ComformanceClaims property of
+the WebServiceBinding attribute:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;%@ WebService Language="C#" Class="SimpleService" %&gt;
+
+using System.Web.Services;
+using System.Web.Services.Protocols;
+
+[WebService(Namespace="urn:simple")]
+&lt;span style="background-color:yellow"&gt;[WebServiceBinding(ConformanceClaims=WsiClaims.BP10,EmitConformanceClaims=true)]&lt;/span&gt;
+public class SimpleService {
+
+        [WebMethod]
+        public string Hello(string s) {
+                return string.Format("Hello, {0}!",s);
+        }
+
+}
+</code></pre>
+</div>
+
+<p>The WebServiceBinding attribute adds a claim for conformance to
+the Basic Profile 1.0. The EmitConfirmanceClaims property exposes
+this claim in a machine readable way by including the following XML
+as part of the WSDL for the web service:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;wsdl:documentation&gt;
+  &lt;wsi:Claim conformsTo="http://ws-i.org/profiles/basic/1.0" xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" /&gt; 
+&lt;/wsdl:documentation&gt;
+</code></pre>
+</div>
+
+<p>Asserting Basic Profile 1.0 conformance using the
+WebServiceBinding attribute enforces the rules checking. If the
+service is non-conformant then an exception will be generated
+rather than the warning if the attribute is not present. This makes
+sense: you can’t assert conformance and then not achieve it. As
+with the warning, the exception message tells you which rules
+weren’t satisfied and suggests how to fix the problem.</p>
+
+<p>As different platforms address conformance to the Basic Profile
+it will be much easier to build interoperable web services and
+clients right first time.</p>
+
+<p>Update: This code is written with Beta 1 of .NET 2.0 which uses
+Basic Profile v1.0. Beta 2 will use the Basic Profile 1.1.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2005-02-27">February 27, 2005</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=adrianba&text=ASMX+2.0+-+Basic+Profile+1.0+Conformance%20https%3A%2F%2Fadrianba.net%2F2005%2F02%2F26%2F9cb90c98cf13431c93febde1b29eb294%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fadrianba.net%2F2005%2F02%2F26%2F9cb90c98cf13431c93febde1b29eb294%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fadrianba.net%2F2005%2F02%2F26%2F9cb90c98cf13431c93febde1b29eb294%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fadrianba.net%2F2005%2F02%2F26%2F9cb90c98cf13431c93febde1b29eb294%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="https://adrianba.net/2005/02/25/8d57fef591254d16b8a2215713685108/" class="pagination--pager" title="WSE 2.0 SP3 released
+">Previous</a>
+    
+    
+      <a href="https://adrianba.net/2005/02/27/4b571c667aab44dab57b178e0236247b/" class="pagination--pager" title="ASMX 2.0 - Basic Profile 1.0 Conformance - Part 2
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2017/10/13/samsung-smart-switch/" rel="permalink">Samsung Smart Switch - How to install on Windows 10
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Samsung Smart Switch is a tool that will backup your phone and transfer the data to a new Samsung
+phone. You also use it to backup your phone to your PC in c...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2017/10/12/node-and-vpn/" rel="permalink">NPM giving error EAI_AGAIN from Windows Subsystem for Linux (WSL)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">This morning I was experimenting with some demo code and when I tried to
+install some packages from npm I got the following network error:
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2016/09/24/using-microsoft-flow-to-publish-medium-com-recommendations/" rel="permalink">Using Microsoft Flow to publish medium.com recommendations
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Like a growing number of people, I read a lot of content on medium.com. I wanted to find a way to share the posts that I find most interesting.
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2016/01/06/using-sublime-text-as-your-git-editor-on-windows/" rel="permalink">Using Sublime Text as your git editor on Windows
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git ...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/adrianba"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+      <li><a href="https://facebook.com/adrianba"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+    
+    
+      <li><a href="http://github.com/adrianba"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="https://adrianba.net/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Adrian Bateman. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://adrianba.net/assets/js/main.min.js"></script>
+
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48621303-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+  </body>
+</html>

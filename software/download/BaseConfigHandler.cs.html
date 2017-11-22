@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+<html>
+<head>
+<title>BaseConfigHandler.cs</title>
+<style type="text/css">
+
+/*
+Webcpp v0.8.1 compatible StyleSheet
+http://webcpp.sf.net
+Theme: ide-msvcpp
+*/
+
+body
+{
+background-color: #ffffff
+}
+
+.webcpp a:link    {color:#000000}
+.webcpp a:visited {color:#008000}
+.webcpp a:active  {color:#0000ff}
+.webcpp a:hover   {color:#0000ff}
+
+.webcpp pre
+{
+color: #000000
+}
+
+.webcpp font
+{
+font-size:100%
+}
+
+.webcpp .symbols
+{
+color: #000000
+}
+
+.webcpp .preproc
+{
+color: #0000ff
+}
+
+.webcpp .integer
+{
+color: #000000
+}
+
+.webcpp .floatpt
+{
+color: #000000
+}
+
+.webcpp .dblquot
+{
+color: #000000
+}
+
+.webcpp .sinquot
+{
+color: #000000
+}
+
+.webcpp .keyword
+{
+color: #0000ff;
+font-weight: bold
+}
+
+.webcpp .keytype
+{
+color: #0000ff;
+font-weight: bold
+}
+
+.webcpp .comment
+{
+color: #008000;
+font-style: italic
+}
+
+</style>
+</head>
+<body>
+
+<div class="webcpp">
+<pre>
+
+<font CLASS=keyword>using</font> System;
+<font CLASS=keyword>using</font> System.Configuration;
+<font CLASS=keyword>using</font> System.Xml;
+<font CLASS=keyword>using</font> System.Xml.Serialization;
+
+<font CLASS=comment>/// &lt;summary&gt;</font>
+<font CLASS=comment>/// Base class for custom configuration handlers</font>
+<font CLASS=comment>/// &lt;/summary&gt;</font>
+<font CLASS=keyword>public</font> <font CLASS=keyword>class</font> BaseConfigHandler : IConfigurationSectionHandler {
+    <font CLASS=keyword>private</font> <font CLASS=keytype>static</font> <font CLASS=keytype>object</font> _lockObject <font CLASS=symbols>=</font> <font CLASS=keyword>new</font> <font CLASS=keytype>object</font>();
+    <font CLASS=keyword>private</font> <font CLASS=keytype>static</font> <font CLASS=keytype>string</font> _configSection <font CLASS=symbols>=</font> <font CLASS=keyword>null</font>;
+
+    /// &lt;summary&gt;
+    /// Get the configuration <font CLASS=keytype>object</font> parsed from the .config file.
+    /// &lt;/summary&gt;
+    /// &lt;param name<font CLASS=symbols>=</font><font CLASS=dblquot>"type"</font>&gt;Pass the type of the <font CLASS=keytype>object</font> we are deserialising.&lt;/param&gt;
+    /// &lt;returns&gt;The instance of the <font CLASS=keytype>object</font> from the .config file.&lt;/returns&gt;
+    <font CLASS=keyword>protected</font> <font CLASS=keytype>static</font> <font CLASS=keytype>object</font> GetCurrent(Type type) {
+        <font CLASS=comment>// We cache the config section name to save finding attributes</font>
+        <font CLASS=comment>// with reflection every time, so we only need to go find it</font>
+        <font CLASS=comment>// if we didn't get it before.</font>
+        <font CLASS=keyword>if</font>(_configSection<font CLASS=symbols>==</font><font CLASS=keyword>null</font>) {
+            <font CLASS=keyword>lock</font>(_lockObject) {
+                <font CLASS=comment>// Double check now we're locked that we still don't have the name</font>
+                <font CLASS=comment>// in case someone else sneaked in while we were locking.</font>
+                <font CLASS=keyword>if</font>(_configSection<font CLASS=symbols>==</font><font CLASS=keyword>null</font>) {
+                    <font CLASS=comment>// Find the CustomConfigHandlerAttribute attribute.</font>
+                    <font CLASS=keytype>object</font>[] attList <font CLASS=symbols>=</font> type.GetCustomAttributes(<font CLASS=keyword>typeof</font>(CustomConfigHandlerAttribute),<font CLASS=keyword>true</font>);
+
+                    <font CLASS=comment>// If the attribute is missing or there is more than one then throw an exception.</font>
+                    <font CLASS=keyword>if</font>(attList.Length<font CLASS=symbols>==</font><font CLASS=integer>0</font>) <font CLASS=keyword>throw</font> <font CLASS=keyword>new</font> ConfigurationException(<font CLASS=dblquot>"Missing CustomConfigHandler attribute"</font>);
+                    <font CLASS=keyword>if</font>(attList.Length&gt;<font CLASS=integer>1</font>) <font CLASS=keyword>throw</font> <font CLASS=keyword>new</font> ConfigurationException(<font CLASS=dblquot>"More than one CustomConfigHandler attribute is not supported on a class."</font>);
+
+                    <font CLASS=comment>// Store the section name from the attribute.</font>
+                    _configSection <font CLASS=symbols>=</font> ((CustomConfigHandlerAttribute)attList[<font CLASS=integer>0</font>]).SectionName;
+                }
+            }
+        }
+
+        <font CLASS=comment>// Do the lookup - this will call our IConfigurationSectionHandler.Create</font>
+        <font CLASS=comment>// method the first time we call to parse the XML. Thereafter, the object</font>
+        <font CLASS=comment>// will be cached by the framework.</font>
+        <font CLASS=keyword>return</font> ConfigurationSettings.GetConfig(_configSection);
+    }
+
+    // This method is called by the framework to parse the configuration section XML
+    // into whatever config <font CLASS=keytype>object</font> we want to <font CLASS=keyword>return</font>. In <font CLASS=keyword>this</font> <font CLASS=keyword>case</font>, we simply use
+    // the XML Serializer to deserialize ourselves from the XML node.
+    <font CLASS=keytype>object</font> IConfigurationSectionHandler.Create(<font CLASS=keytype>object</font> parent, <font CLASS=keytype>object</font> configContext, System.Xml.XmlNode section) {
+        XmlSerializer xml <font CLASS=symbols>=</font> <font CLASS=keyword>new</font> XmlSerializer(<font CLASS=keyword>this</font>.GetType());
+        <font CLASS=keyword>return</font> xml.Deserialize(<font CLASS=keyword>new</font> XmlNodeReader(section));
+    }
+}
+
+<font CLASS=comment>/// &lt;summary&gt;</font>
+<font CLASS=comment>/// Custom config handler attribute to indicate the section and group name.</font>
+<font CLASS=comment>/// &lt;/summary&gt;</font>
+[AttributeUsage(AttributeTargets.Class)]
+<font CLASS=keyword>public</font> <font CLASS=keyword>class</font> CustomConfigHandlerAttribute : XmlRootAttribute {
+    <font CLASS=keyword>public</font> CustomConfigHandlerAttribute(<font CLASS=keytype>string</font> elementName) : <font CLASS=keyword>base</font>(elementName) {
+    }
+
+    /// &lt;summary&gt;
+    /// Returns section name <font CLASS=keyword>for</font> config section including any group path.
+    /// &lt;/summary&gt;
+    <font CLASS=keyword>internal</font> <font CLASS=keytype>string</font> SectionName {
+        <font CLASS=keyword>get</font> {
+            <font CLASS=keyword>if</font>(Group<font CLASS=symbols>!=</font><font CLASS=keyword>null</font>) {
+                <font CLASS=keyword>return</font> Group <font CLASS=symbols>+</font> <font CLASS=dblquot>"/"</font> <font CLASS=symbols>+</font> <font CLASS=keyword>base</font>.ElementName;
+            } <font CLASS=keyword>else</font> {
+                <font CLASS=keyword>return</font> <font CLASS=keyword>base</font>.ElementName;
+            }
+        }
+    }
+
+    /// &lt;summary&gt;
+    /// Configuration section group name <font CLASS=keyword>is</font> section <font CLASS=keyword>is</font> <font CLASS=keyword>in</font> a group.
+    /// &lt;/summary&gt;
+    <font CLASS=keyword>public</font> <font CLASS=keytype>string</font> Group;
+}
+
+
+
+</pre>
+
+</div>
+
+
+</body>
+</html>

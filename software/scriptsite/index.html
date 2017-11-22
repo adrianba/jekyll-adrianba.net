@@ -1,0 +1,339 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>ScriptSite - ATL Active Script Engine Wrapper - VisionTech Limited - adrianba.net</title>
+
+
+
+
+<meta name="description" content="An ATL include file to assist hosting an active script engine in your project.">
+
+
+
+
+<meta name="author" content="Adrian Bateman">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="adrianba.net">
+<meta property="og:title" content="ScriptSite - ATL Active Script Engine Wrapper - VisionTech Limited">
+
+
+  <link rel="canonical" href="https://adrianba.net/software/scriptsite/">
+  <meta property="og:url" content="https://adrianba.net/software/scriptsite/">
+
+
+
+
+
+  <meta name="twitter:site" content="@adrianba">
+  <meta name="twitter:title" content="ScriptSite - ATL Active Script Engine Wrapper - VisionTech Limited">
+  <meta name="twitter:description" content="An ATL include file to assist hosting an active script engine in your project.">
+  <meta name="twitter:url" content="https://adrianba.net/software/scriptsite/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="http://adrianba.net/assets/sailing.jpg">
+    
+  
+
+  
+    <meta name="twitter:creator" content="@Adrian Bateman">
+  
+
+
+
+  
+
+  
+
+
+
+  <meta property="og:image" content="http://adrianba.net/assets/sailing.jpg">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://adrianba.net",
+      "logo": "http://adrianba.net/assets/sailing.jpg"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Adrian Bateman",
+      "url" : "https://adrianba.net",
+      "sameAs" : ["https://adebateman.org/","https://twitter.com/adrianba","https://facebook.com/adrianba","https://instagram.com/adebateman","https://www.linkedin.com/in/adrianba"]
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="BUqUy58DpivlHAgBj3S9R4nIrr4bSvVVWajoA7XED10" />
+
+
+  <meta name="msvalidate.01" content="63DB9D179BA14FF88535CF66336C4ED2">
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://adrianba.net/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://adrianba.net/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://adrianba.net/">adrianba.net</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="https://adrianba.net"></a></li>
+          
+        </ul>
+        <button><div class="navicon"></div></button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="ScriptSite - ATL Active Script Engine Wrapper - VisionTech Limited">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">ScriptSite - ATL Active Script Engine Wrapper - VisionTech Limited
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p><a href="/software/download/ScriptSite.zip">Download</a>  ·  <a href="/software/download/ScriptSite.h.html">View Source Code</a> (link opens new window)</p>
+
+<p>Microsoft did us a favour when they produced Active Scripting. We can readily add scripting facilities to our applications with practically no effort compared to what was required just a few years ago.</p>
+
+<p>I’ve included scripting in a few applications and each time modified the previous copy of my code to fit the new requirements. Having decided this time to construct a more reusable wrapper and to make use of ATL, I decided to share the results of my efforts to save others some time.</p>
+
+<p>At the heart of the code is the <code class="highlighter-rouge">CScriptSiteImpl</code> class. This is the base class from which you need to inherit for your project. I’ve included a minimal class <code class="highlighter-rouge">CScriptSiteBasic</code> (which you can use directly) that demonstrates what you need to do to use the code:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;font color="#0000ff"&gt;class&lt;/font&gt; ATL_NO_VTABLE CScriptSiteBasic :
+        &lt;font color="#0000ff"&gt;public&lt;/font&gt; CComObjectRootEx&lt;CComSingleThreadModel&gt;,
+        &lt;font color="#0000ff"&gt;public&lt;/font&gt; CScriptSiteImpl
+    {
+    &lt;font color="#0000ff"&gt;public&lt;/font&gt;:
+    DECLARE_PROTECT_FINAL_CONSTRUCT()
+    BEGIN_COM_MAP(CScriptSiteBasic)
+        COM_INTERFACE_ENTRY(IActiveScriptSite)
+        COM_INTERFACE_ENTRY(IActiveScriptSiteWindow)
+    END_COM_MAP()
+    };
+</code></pre>
+</div>
+
+<p>To make use of this class, just use code as follows:</p>
+
+<pre>    LPCTSTR strScriptCode; <font color="#008000">_// this points to the script code we want to run_</font>
+    ...
+    CComObject<CScriptSiteBasic>* pBasic;
+    CComQIPtr<IActiveScriptSite> spUnk;
+    HR(CComObject<CScriptSiteBasic>::CreateInstance(&amp;pBasic));
+    spUnk = pBasic; <font color="#008000">_// let CComQIPtr tidy up for us_</font>
+    HR(pBasic-&gt;Initiate(_T(<font color="#ff00ff">"jscript"</font>),GetDesktopWindow()));
+    HR(pBasic-&gt;AddScript(strScriptCode));
+    HR(pBasic-&gt;Run());
+    HR(pBasic-&gt;Terminate());&lt;/pre&gt;
+
+You will more than likely want to include your own object model within the script engine. To do this, you will need to create your own class derived from <tt>CScriptSiteImpl</tt> in the same fashion as <tt>CScriptSiteBasic</tt> above.
+
+You will need to call <tt>CScriptSiteImpl::AddObject</tt> once for each object to tell the script engine the names used in your model. Next, you will need to provide your own implementation of <tt>LookupNamedItem</tt> as follows:
+
+<pre>    <font color="#008000">_// Override this method in your implementation and return the desired object
+    // or TYPE_E_ELEMENTNOTFOUND if the name doesn't match one of yours
+    // (You must call CScriptSiteImpl::AddObject in the first place to tell
+    // the script engine that your objects exist)._</font>
+    STDMETHOD(LookupNamedItem)(LPCOLESTR pstrName,LPUNKNOWN* ppunkItem)
+    {
+        <font color="#0000ff">return</font> TYPE_E_ELEMENTNOTFOUND;
+    }</pre>
+
+You need to check the value of pstrName and return the corresponding IUnknown interface for that object. Of course, the object must implement IDispatch because the script engines are late bound. If the name doesn't match one of your objects, return TYPE_E_ELEMENTNOTFOUND.
+
+Finally, to include your own error handler, you need to override <tt>HandleScriptError</tt>:
+
+<pre>    <font color="#008000">_// Override this method in your implementation to handle error messages_</font>
+    STDMETHOD(HandleScriptError)(EXCEPINFO* pei,ULONG ulLine,LONG lPos,BSTR src)
+    {
+        ...
+        ...
+        <font color="#0000ff">return</font> NOERROR;
+    }</pre>
+
+<tt>pei</tt> points to the EXCEPINFO structure for the error, <tt>ulLine</tt> and <tt>lPos</tt> indicate the line and column in your source script where the error occurred, and <tt>src</tt> contains a copy of that source script line.
+
+[Download](/software/download/ScriptSite.zip)  ·  [View Source Code](/software/download/ScriptSite.h.html) (link opens new window)
+</CScriptSiteBasic></IActiveScriptSite></CScriptSiteBasic></pre>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/adrianba"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+      <li><a href="https://facebook.com/adrianba"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+    
+    
+      <li><a href="http://github.com/adrianba"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="https://adrianba.net/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Adrian Bateman. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://adrianba.net/assets/js/main.min.js"></script>
+
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48621303-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+  </body>
+</html>

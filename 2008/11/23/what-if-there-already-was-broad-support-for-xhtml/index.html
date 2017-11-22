@@ -1,0 +1,571 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>What if there already was broad support for XHTML? - adrianba.net</title>
+
+
+
+
+<meta name="description" content="W3C XHTML 1.0 Appendix C: This appendix summarizes design guidelines for authors who wish their XHTML documents to render on existing HTML user agents.">
+
+
+
+
+<meta name="author" content="Adrian Bateman">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="adrianba.net">
+<meta property="og:title" content="What if there already was broad support for XHTML?">
+
+
+  <link rel="canonical" href="https://adrianba.net/2008/11/23/what-if-there-already-was-broad-support-for-xhtml/">
+  <meta property="og:url" content="https://adrianba.net/2008/11/23/what-if-there-already-was-broad-support-for-xhtml/">
+
+
+
+  <meta property="og:description" content="W3C XHTML 1.0 Appendix C: This appendix summarizes design guidelines for authors who wish their XHTML documents to render on existing HTML user agents.">
+
+
+
+  <meta name="twitter:site" content="@adrianba">
+  <meta name="twitter:title" content="What if there already was broad support for XHTML?">
+  <meta name="twitter:description" content="W3C XHTML 1.0 Appendix C: This appendix summarizes design guidelines for authors who wish their XHTML documents to render on existing HTML user agents.">
+  <meta name="twitter:url" content="https://adrianba.net/2008/11/23/what-if-there-already-was-broad-support-for-xhtml/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="http://adrianba.net/assets/sailing.jpg">
+    
+  
+
+  
+    <meta name="twitter:creator" content="@Adrian Bateman">
+  
+
+
+
+  
+
+  
+
+
+
+  <meta property="og:image" content="http://adrianba.net/assets/sailing.jpg">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2008-11-23T00:00:00-08:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://adrianba.net",
+      "logo": "http://adrianba.net/assets/sailing.jpg"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Adrian Bateman",
+      "url" : "https://adrianba.net",
+      "sameAs" : ["https://adebateman.org/","https://twitter.com/adrianba","https://facebook.com/adrianba","https://instagram.com/adebateman","https://www.linkedin.com/in/adrianba"]
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="BUqUy58DpivlHAgBj3S9R4nIrr4bSvVVWajoA7XED10" />
+
+
+  <meta name="msvalidate.01" content="63DB9D179BA14FF88535CF66336C4ED2">
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://adrianba.net/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://adrianba.net/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://adrianba.net/">adrianba.net</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="https://adrianba.net"></a></li>
+          
+        </ul>
+        <button><div class="navicon"></div></button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://adrianba.net/assets/sailing.jpg" class="author__avatar" alt="Adrian Bateman" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Adrian Bateman</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Englishman in Seattle.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">Seattle, USA</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+<li>
+  <a href="https://adebateman.org/" itemprop="url">
+    <i class="fa fa-fw fa-chain" aria-hidden="true"></i> Personal site
+  </a>
+</li>
+
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="What if there already was broad support for XHTML?">
+    <meta itemprop="description" content="W3C XHTML 1.0 Appendix C: This appendix summarizes design guidelines for authors who wish their XHTML documents to render on existing HTML user agents.">
+    <meta itemprop="datePublished" content="November 23, 2008">
+    <meta itemprop="dateModified" content="November 24, 2008">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">What if there already was broad support for XHTML?
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p><a href="http://www.w3.org/TR/2002/REC-xhtml1-20020801/#guidelines">W3C XHTML 1.0 Appendix C</a>: <em>This appendix summarizes design guidelines for authors who wish their XHTML documents to render on existing HTML user agents.</em></p>
+
+<p><a href="http://www.w3.org/TR/xhtml-media-types/#text-html">W3C XHTML Media Types</a>: <em>The use of ‘text/html’ for XHTML SHOULD be limited for the purpose of rendering on existing HTML user agents, and SHOULD be limited to XHTML1 documents which follow the HTML Compatibility Guidelines. In particular, ‘text/html’ is NOT suitable for XHTML Family document types that adds elements and attributes from foreign namespaces, such as XHTML+MathML.</em></p>
+
+<p><a href="http://blog.whatwg.org/this-week-in-html-5-episode-9">Mark Pilgrim</a>: <em>Despite _<a href="http://lists.w3.org/Archives/Public/public-html/2008Aug/0046.html">_Chris Wilson’s assertion_</a></em> that “we cannot definitively say why XHTML has not been successful on the Web,” I think it’s pretty clear that Internet Explorer’s complete lack of support for the application/xhtml+xml MIME type has something to do with it._</p>
+
+<p><a href="http://intertwingly.net/blog/2008/10/23/Misdirection">Sam Ruby</a>: <em>what is wrong with using XML for this?Â Come on.Â I can answer that with two words: IE, and Postel.</em></p>
+
+<p><a href="http://blogs.msdn.com/ie/archive/2005/09/15/467901.aspx">Chris Wilson</a> (back in 2005): <em>I made the decision to not try to support the MIME type in IE7 simply because I personally want XHTML to be successful in the long run.Â I love XHTML (go look, my name is in the _<a href="http://www.w3.org/TR/xhtml1/#acks">_credits_</a></em> for XML 1.0); ita€™s capable of being truly interoperable if done right._</p>
+
+<p>Internet Explorer doesna€™t support XHTML served with the application/xhtml+xml MIME type and IE8 wona€™t add that support either. I wasna€™t around when the feature decisions were taken for IE8 but I do know that the wish list is long and it only makes sense to implement a reasonable number of features in each release of any software product. It also makes sense to focus your resources on things that will have the most impact for the most customers.</p>
+
+<p>Internet Explorer is an interesting product because it has many different audiences with each with different priorities. People browsing the web want it to be fast, easy-to-use, and safe. Web developers want good tools and a consistent experience across browsers. Enterprise IT managers want reliability, ease-of-deployment, and most-of-all compatibility with the applications that worked with previous versions and that run their business. Application developers want compatibility and also extensibility/customisation either of the browser itself or of the browser control they include in their applications. Ita€™s hard to please all of the people all of the time, especially when you have hundreds of millions of users.</p>
+
+<p>At the PDC in October, <a href="http://mschnlnine.vo.llnwd.net/d1/pdc08/WMV-HQ/PC12.wmv">Alex Mogilevsky presented on the new rendering engine in IE8</a> that provides interoperable support for CSS 2.1. The IE team decided that CSS 2.1 support was a a€oemust havea€ feature for IE8 and Alex describes the huge amount of work involved in making that happen (of interest, he also covers some of the history of the way IE worked in previous versions). With everything else that was a priority for IE8 XHTML wasna€™t high enough up on the list and it didna€™t make it into IE8. Will it make it into the next version of IE? Who knows. Those decisions certainly havena€™t been taken yet.</p>
+
+<p>With all the recent discussion about well-formedness I was wondering about what the web would be like if there <strong>were</strong> broad support for XHTML. What percentage of new content would be served with application/xhtml+xml? Would all the Classic ASP and PHP developers try to use XHTML but then get frustrated at the fragility of pages that have to be perfectly marked-up? Would there be a gradual move of applications towards XHTML or would it be reserved for the elite minority? Is showing nothing for a slightly incorrect page the right answer for most web developers?</p>
+
+<p><a href="http://lists.w3.org/Archives/Public/public-html/2008Nov/0136.html">Jonas Sicking</a>: _When Netscape decided to rewrite their browser engine and use what has      <br />
+become gecko (the engine used by firefox), one of the biggest problem with taking marketshare was compatibility with existing pages, even though the new engine was perfectly able to parse HTML 4 by spec. _</p>
+
+<p><em>In fact, we can still see this today. While firefox now has a worldwide marketshare of about 20%, our marketshare in many countries in Asia is tiny. Our market research data has shown that the main reason for that is website compatibility. Even though Firefox parses valid HTML4 very well.</em></p>
+
+<p>Compatibility is extremely important and the W3C HTML 5 working group is putting a huge amount of effort into describing the interoperable way to process HTML documents that are not well-formed. Meanwhile, XHTML guarantees that pages will only be displayed if they are well-formed a€” there is no error recovery. I ask the question again: what valuable properties does a well-formed document have?</p>
+
+<p>Of course, XHTML isna€™t just about well-formedness. The documents are truly XML and have the ability to embed mark-up from other namespaces such as SVG and MathML and to be processed with standard XML tools. There is also work underway in the HTML 5 WG to define the mechanisms for these languages to be embedded in HTML. What value is there in XHTML if it only differs from HTML in which type of parser I instantiate to read a document?</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2008-11-24">November 24, 2008</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=adrianba&text=What+if+there+already+was+broad+support+for+XHTML%3F%20https%3A%2F%2Fadrianba.net%2F2008%2F11%2F23%2Fwhat-if-there-already-was-broad-support-for-xhtml%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fadrianba.net%2F2008%2F11%2F23%2Fwhat-if-there-already-was-broad-support-for-xhtml%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fadrianba.net%2F2008%2F11%2F23%2Fwhat-if-there-already-was-broad-support-for-xhtml%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fadrianba.net%2F2008%2F11%2F23%2Fwhat-if-there-already-was-broad-support-for-xhtml%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="https://adrianba.net/2008/11/23/investigating-git/" class="pagination--pager" title="Investigating git
+">Previous</a>
+    
+    
+      <a href="https://adrianba.net/2008/12/12/curl-for-windows/" class="pagination--pager" title="cURL for Windows
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2017/10/13/samsung-smart-switch/" rel="permalink">Samsung Smart Switch - How to install on Windows 10
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Samsung Smart Switch is a tool that will backup your phone and transfer the data to a new Samsung
+phone. You also use it to backup your phone to your PC in c...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2017/10/12/node-and-vpn/" rel="permalink">NPM giving error EAI_AGAIN from Windows Subsystem for Linux (WSL)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">This morning I was experimenting with some demo code and when I tried to
+install some packages from npm I got the following network error:
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2016/09/24/using-microsoft-flow-to-publish-medium-com-recommendations/" rel="permalink">Using Microsoft Flow to publish medium.com recommendations
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Like a growing number of people, I read a lot of content on medium.com. I wanted to find a way to share the posts that I find most interesting.
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2016/01/06/using-sublime-text-as-your-git-editor-on-windows/" rel="permalink">Using Sublime Text as your git editor on Windows
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git ...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/adrianba"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+      <li><a href="https://facebook.com/adrianba"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+    
+    
+      <li><a href="http://github.com/adrianba"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="https://adrianba.net/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Adrian Bateman. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://adrianba.net/assets/js/main.min.js"></script>
+
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48621303-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+  </body>
+</html>

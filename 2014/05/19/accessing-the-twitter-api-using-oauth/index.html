@@ -1,0 +1,621 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Accessing the Twitter API using OAuth - adrianba.net</title>
+
+
+
+
+<meta name="description" content="Following on from my last post that described using Node to access feeds from Delicious, I’ve also been investigating how to access my Twitter feed. This adds a little more complexity because Twitter requires that your app or script authenticate to Twitter using OAuth.">
+
+
+
+
+<meta name="author" content="Adrian Bateman">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="adrianba.net">
+<meta property="og:title" content="Accessing the Twitter API using OAuth">
+
+
+  <link rel="canonical" href="https://adrianba.net/2014/05/19/accessing-the-twitter-api-using-oauth/">
+  <meta property="og:url" content="https://adrianba.net/2014/05/19/accessing-the-twitter-api-using-oauth/">
+
+
+
+  <meta property="og:description" content="Following on from my last post that described using Node to access feeds from Delicious, I’ve also been investigating how to access my Twitter feed. This adds a little more complexity because Twitter requires that your app or script authenticate to Twitter using OAuth.">
+
+
+
+  <meta name="twitter:site" content="@adrianba">
+  <meta name="twitter:title" content="Accessing the Twitter API using OAuth">
+  <meta name="twitter:description" content="Following on from my last post that described using Node to access feeds from Delicious, I’ve also been investigating how to access my Twitter feed. This adds a little more complexity because Twitter requires that your app or script authenticate to Twitter using OAuth.">
+  <meta name="twitter:url" content="https://adrianba.net/2014/05/19/accessing-the-twitter-api-using-oauth/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="http://adrianba.net/assets/sailing.jpg">
+    
+  
+
+  
+    <meta name="twitter:creator" content="@Adrian Bateman">
+  
+
+
+
+  
+
+  
+
+
+
+  <meta property="og:image" content="http://adrianba.net/assets/sailing.jpg">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2014-05-19T00:00:00-07:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://adrianba.net",
+      "logo": "http://adrianba.net/assets/sailing.jpg"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Adrian Bateman",
+      "url" : "https://adrianba.net",
+      "sameAs" : ["https://adebateman.org/","https://twitter.com/adrianba","https://facebook.com/adrianba","https://instagram.com/adebateman","https://www.linkedin.com/in/adrianba"]
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="BUqUy58DpivlHAgBj3S9R4nIrr4bSvVVWajoA7XED10" />
+
+
+  <meta name="msvalidate.01" content="63DB9D179BA14FF88535CF66336C4ED2">
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://adrianba.net/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://adrianba.net/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://adrianba.net/">adrianba.net</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="https://adrianba.net"></a></li>
+          
+        </ul>
+        <button><div class="navicon"></div></button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://adrianba.net/assets/sailing.jpg" class="author__avatar" alt="Adrian Bateman" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Adrian Bateman</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Englishman in Seattle.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">Seattle, USA</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/adrianba" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+<li>
+  <a href="https://adebateman.org/" itemprop="url">
+    <i class="fa fa-fw fa-chain" aria-hidden="true"></i> Personal site
+  </a>
+</li>
+
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Accessing the Twitter API using OAuth">
+    <meta itemprop="description" content="Following on from my last post that described using Node to access feeds from Delicious, I’ve also been investigating how to access my Twitter feed. This adds a little more complexity because Twitter requires that your app or script authenticate to Twitter using OAuth.">
+    <meta itemprop="datePublished" content="May 19, 2014">
+    <meta itemprop="dateModified" content="May 19, 2014">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Accessing the Twitter API using OAuth
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>Following on from my last post that described <a href="/2014/05/16/node-and-delicious">using Node to access feeds from Delicious</a>, I’ve also been investigating how to access my Twitter feed. This adds a little more complexity because Twitter requires that your app or script <a href="https://dev.twitter.com/docs/auth">authenticate to Twitter</a> using <a href="http://oauth.net/">OAuth</a>.</p>
+
+<p>Per <a href="http://en.wikipedia.org/wiki/OAuth">Wikipedia</a>, “<em>OAuth provides client applications a ‘secure delegated access’ to server resources on behalf of a resource owner. It specifies a process for resource owners to authorize third-party access to their server resources without sharing their credentials.</em>” What this means is that your app can access the Twitter API in an authenticated way using OAuth without having to embed your username and password into the script.</p>
+
+<p>The node.js <a href="https://www.npmjs.org/package/request">request</a> library that I mentioned last time has built in support for <a href="https://github.com/mikeal/request#oauth-signing">OAuth authentication</a>. It requires that you populate a JavaScript object as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;span class="kwrd"&gt;var&lt;/span&gt; oauth = {
+   consumer_key: CONSUMER_KEY
+  , consumer_secret: CONSUMER_SECRET
+  , token: OAUTH_TOKEN
+  , token_secret: OAUTH_TOKEN_SECRET
+};
+</code></pre>
+</div>
+
+<p>Each of CONSUMER_KEY, CONSUMER_SECRET, OAUTH_TOKEN and OAUTH_TOKEN_SECRET are strings that we must supply as part of the OAuth handshake.</p>
+
+<p>There are two ways to think about using OAuth to authenticate against a service such as Twitter depending upon the type of app that you are building. The first scenario is where, for example, you are building a Twitter client. You will distribute this application and each user of the application will authenticate using their own credentials so that they can access information from the service as themselves. In the second scenario you are building an application or service that you want to access the service as you and you never need to send a variety of credentials. For example, say you are building a widget on your web site that will indicate how long it has been since you last tweeted. This will always be about you and need to use only your credentials.</p>
+
+<p>The CONSUMER_KEY and CONSUMER_SECRET values are provided by the service to identify your application. The OAUTH_TOKEN and OAUTH_TOKEN_SECRET represent the credentials of the user accessing the service. They may be determined and stored by your app in the first scenario above or they may be part of your application in the second.</p>
+
+<p>This all sounds a little complicated so an example will help. Before we get to that we need to get the values. Twitter provides a portal for this at <a href="https://apps.twitter.com/">https://apps.twitter.com/</a>. If you login and select Create New App you will see a screen that looks like this:</p>
+
+<p><a href="/assets/uploads/2014/05/img475-1.png"><img src="/assets/uploads/2014/05/img475-1.png" alt="image" /></a></p>
+
+<p>Here you provide the name of you application, a description, and a link to your web site. For our initial scripting purposes the values here don’t matter too much. There is a Callback URL value but we also don’t need this now and can leave this blank. Finally there are some terms and conditions to read and agree to. Once you have completed this form, press the Create your Twitter application button and you will see a screen that looks like this:</p>
+
+<p><a href="/assets/uploads/2014/05/img475-2.png"><img src="/assets/uploads/2014/05/img475-2.png" alt="image" /></a></p>
+
+<p>If you click on the API Keys tab you will see something like this:</p>
+
+<p><a href="/assets/uploads/2014/05/img475-3.png"><img src="/assets/uploads/2014/05/img475-3.png" alt="image" /></a></p>
+
+<p>Since we want our script to access Twitter using our account, we can click on the Create my access token button to generate the appropriate token values. You should see something like this:</p>
+
+<p><a href="/assets/uploads/2014/05/img475-4.png"><img src="/assets/uploads/2014/05/img475-4.png" alt="image" /></a></p>
+
+<p>You may need to refresh to see your new access token.</p>
+
+<p>So now you have four strings: API key, API secret, Access token, and Access token secret. These map to the four values needed in the OAuth structure described in the code above.</p>
+
+<p>There are lots of different ways to access the <a href="https://dev.twitter.com/docs/api/1.1">Twitter API</a>. Here I am simply going to use the <a href="https://dev.twitter.com/docs/api/1.1/get/statuses/user_timeline">user_timeline</a> API to retrieve the 5 most recent tweets from my timeline. You can use this API to retrieve any user’s timeline that you have access to from your Twitter account (including, of course, all the public timelines).</p>
+
+<p>So here is the code to make a request to this API:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;span class="kwrd"&gt;var&lt;/span&gt; request = require(&lt;span class="str"&gt;'request'&lt;/span&gt;);
+&lt;span class="kwrd"&gt;var&lt;/span&gt; url = &lt;span class="str"&gt;"https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=adrianba&amp;count=5"&lt;/span&gt;;
+
+&lt;span class="kwrd"&gt;var&lt;/span&gt; CONSUMER_KEY = &lt;span class="str"&gt;"..."&lt;/span&gt;;
+&lt;span class="kwrd"&gt;var&lt;/span&gt; CONSUMER_SECRET = &lt;span class="str"&gt;"..."&lt;/span&gt;;
+&lt;span class="kwrd"&gt;var&lt;/span&gt; OAUTH_TOKEN = &lt;span class="str"&gt;"..."&lt;/span&gt;;
+&lt;span class="kwrd"&gt;var&lt;/span&gt; OAUTH_TOKEN_SECRET = &lt;span class="str"&gt;"..."&lt;/span&gt;;
+
+&lt;span class="kwrd"&gt;var&lt;/span&gt; oauth = {
+    consumer_key: CONSUMER_KEY
+  , consumer_secret: CONSUMER_SECRET
+  , token: OAUTH_TOKEN
+  , token_secret: OAUTH_TOKEN_SECRET
+};
+
+request.get({url:url, oauth:oauth, json:&lt;span class="kwrd"&gt;true&lt;/span&gt;}, &lt;span class="kwrd"&gt;function&lt;/span&gt; (e, r, data) {
+  &lt;span class="kwrd"&gt;var&lt;/span&gt; tweets = [];
+  data.forEach(&lt;span class="kwrd"&gt;function&lt;/span&gt;(item) {
+    &lt;span class="kwrd"&gt;var&lt;/span&gt; tweet = {};
+    tweet.id = item.id.toString();
+    tweet.text = item.text;
+    tweet.created = item.created_at;
+    tweets.push(tweet);
+  });
+  console.log(JSON.stringify(tweets));
+});
+</code></pre>
+</div>
+
+<p>You obviously need to replace the “…” strings with the values copied from your API Keys page.</p>
+
+<p>The important addition in this code is passing the oauth option into the get() method. After this, the request module takes care of the rest. In general, all services that require OAuth authentication follow this pattern although they will differ in how the keys and tokens are issued to you.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2014-05-19">May 19, 2014</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=adrianba&text=Accessing+the+Twitter+API+using+OAuth%20https%3A%2F%2Fadrianba.net%2F2014%2F05%2F19%2Faccessing-the-twitter-api-using-oauth%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fadrianba.net%2F2014%2F05%2F19%2Faccessing-the-twitter-api-using-oauth%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fadrianba.net%2F2014%2F05%2F19%2Faccessing-the-twitter-api-using-oauth%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fadrianba.net%2F2014%2F05%2F19%2Faccessing-the-twitter-api-using-oauth%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="https://adrianba.net/2014/05/16/node-and-delicious/" class="pagination--pager" title="Node and Delicious
+">Previous</a>
+    
+    
+      <a href="https://adrianba.net/2014/05/20/using-c-to-access-the-twitter-api/" class="pagination--pager" title="Using C# to access the Twitter API
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2017/10/13/samsung-smart-switch/" rel="permalink">Samsung Smart Switch - How to install on Windows 10
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Samsung Smart Switch is a tool that will backup your phone and transfer the data to a new Samsung
+phone. You also use it to backup your phone to your PC in c...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2017/10/12/node-and-vpn/" rel="permalink">NPM giving error EAI_AGAIN from Windows Subsystem for Linux (WSL)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">This morning I was experimenting with some demo code and when I tried to
+install some packages from npm I got the following network error:
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2016/09/24/using-microsoft-flow-to-publish-medium-com-recommendations/" rel="permalink">Using Microsoft Flow to publish medium.com recommendations
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Like a growing number of people, I read a lot of content on medium.com. I wanted to find a way to share the posts that I find most interesting.
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://adrianba.net/2016/01/06/using-sublime-text-as-your-git-editor-on-windows/" rel="permalink">Using Sublime Text as your git editor on Windows
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git ...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/adrianba"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+      <li><a href="https://facebook.com/adrianba"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+    
+    
+      <li><a href="http://github.com/adrianba"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="https://adrianba.net/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Adrian Bateman. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://adrianba.net/assets/js/main.min.js"></script>
+
+
+
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48621303-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+
+  </body>
+</html>
