@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="https://adrianba.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adrianba.net/" rel="alternate" type="text/html" /><updated>2017-11-29T21:17:26-08:00</updated><id>https://adrianba.net/</id><title type="html">adrianba.net</title><subtitle>On land, on sea, and in the ether.</subtitle><author><name>Adrian Bateman</name></author><entry><title type="html">Setting the inactivity timeout in Windows</title><link href="https://adrianba.net/2017/11/29/inactivity-timeout/" rel="alternate" type="text/html" title="Setting the inactivity timeout in Windows" /><published>2017-11-29T00:00:00-08:00</published><updated>2017-11-29T15:02:00-08:00</updated><id>https://adrianba.net/2017/11/29/inactivity-timeout</id><content type="html" xml:base="https://adrianba.net/2017/11/29/inactivity-timeout/">&lt;p&gt;Windows has a timeout that can return you to the lock screen after a period of inactivity. This
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="https://adrianba.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adrianba.net/" rel="alternate" type="text/html" /><updated>2017-12-15T12:58:38-08:00</updated><id>https://adrianba.net/</id><title type="html">adrianba.net</title><subtitle>On land, on sea, and in the ether.</subtitle><author><name>Adrian Bateman</name></author><entry><title type="html">Fix Surface Type Cover after firmware update</title><link href="https://adrianba.net/2017/12/15/fix-surface-type-cover-after-firmware-update/" rel="alternate" type="text/html" title="Fix Surface Type Cover after firmware update" /><published>2017-12-15T00:00:00-08:00</published><updated>2017-12-15T12:53:00-08:00</updated><id>https://adrianba.net/2017/12/15/fix-surface-type-cover-after-firmware-update</id><content type="html" xml:base="https://adrianba.net/2017/12/15/fix-surface-type-cover-after-firmware-update/">&lt;p&gt;This week there were Surface Pro 4 firmware updates as part of the Patch Tuesday updates. After
+the system updates completed on my SP4, the type cover stopped working. The backlight didn’t work
+and the Surface didn’t recognise the keyboard being removed or plugged back in.&lt;/p&gt;
+
+&lt;p&gt;After reaching out to people here at Microsoft, I learned that you can make some internal systems
+within the Surface reset by holding down the power button and volume up button at the same time for
+about 20 seconds. That reset got my keyboard working again.&lt;/p&gt;
+
+&lt;p&gt;I’ve seen a few forum posts where other people ran into this issue but no clear message about how
+to fix it, so hopefully if you run into the issue then you’ll find your way to this post with a
+solution.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">This week there were Surface Pro 4 firmware updates as part of the Patch Tuesday updates. After the system updates completed on my SP4, the type cover stopped working. The backlight didn’t work and the Surface didn’t recognise the keyboard being removed or plugged back in.</summary></entry><entry><title type="html">Setting the inactivity timeout in Windows</title><link href="https://adrianba.net/2017/11/29/inactivity-timeout/" rel="alternate" type="text/html" title="Setting the inactivity timeout in Windows" /><published>2017-11-29T00:00:00-08:00</published><updated>2017-11-29T15:02:00-08:00</updated><id>https://adrianba.net/2017/11/29/inactivity-timeout</id><content type="html" xml:base="https://adrianba.net/2017/11/29/inactivity-timeout/">&lt;p&gt;Windows has a timeout that can return you to the lock screen after a period of inactivity. This
 is useful if you want to make sure the PC gets locked if you walk away but don’t want to use a
 screen saver and don’t want the PC to go to sleep. It is easy through the normal settings app to
 configure the latter two cases.&lt;/p&gt;
@@ -129,83 +139,4 @@ Files with errors: [0/1]&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;[1] Unless you have a commercial relationship with Microsoft to provide these, and you are required to be executing on your plan to get off IE8.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Yesterday, my esteemed (new) colleague Aaron Gustafson wrote a piece about his reaction to the “Break Up with Internet Explorer 8” site currently doing the rounds in the Twittersphere. He argues for support of older browsers and optimisation for newer, better browsers. I disagree.</summary></entry><entry><title type="html">Using C# to access the Twitter API</title><link href="https://adrianba.net/2014/05/20/using-c-to-access-the-twitter-api/" rel="alternate" type="text/html" title="Using C# to access the Twitter API" /><published>2014-05-20T00:00:00-07:00</published><updated>2014-05-20T08:25:00-07:00</updated><id>https://adrianba.net/2014/05/20/using-c-to-access-the-twitter-api</id><content type="html" xml:base="https://adrianba.net/2014/05/20/using-c-to-access-the-twitter-api/">&lt;p&gt;My last post described &lt;a href=&quot;/2014/05/19/accessing-the-twitter-api-using-oauth&quot;&gt;how to acquire Twitter OAuth keys and tokens&lt;/a&gt; to allow you to use Twitter’s API to access Twitter feeds. I showed how to use the &lt;a href=&quot;https://www.npmjs.org/package/request&quot;&gt;request module&lt;/a&gt; with node.js, which has built-in support for OAuth, to request and process data.&lt;/p&gt;
-
-&lt;p&gt;In this blog post I will show how to do the same thing using C# and .NET using the &lt;a href=&quot;http://oauth.googlecode.com/svn/code/csharp/&quot;&gt;OAuthBase class&lt;/a&gt; linked to from &lt;a href=&quot;http://oauth.net/code/&quot;&gt;oauth.net&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Let’s start with the code to call the Twitter API:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;kwrd&quot;&amp;gt;using&amp;lt;/span&amp;gt; System;
-&amp;lt;span class=&quot;kwrd&quot;&amp;gt;using&amp;lt;/span&amp;gt; System.IO;
-&amp;lt;span class=&quot;kwrd&quot;&amp;gt;using&amp;lt;/span&amp;gt; System.Net;
-&amp;lt;span class=&quot;kwrd&quot;&amp;gt;using&amp;lt;/span&amp;gt; System.Text;
-&amp;lt;span class=&quot;kwrd&quot;&amp;gt;using&amp;lt;/span&amp;gt; OAuth;
-
-&amp;lt;span class=&quot;kwrd&quot;&amp;gt;class&amp;lt;/span&amp;gt; App {
-    &amp;lt;span class=&quot;kwrd&quot;&amp;gt;static&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;kwrd&quot;&amp;gt;void&amp;lt;/span&amp;gt; Main() {
-        &amp;lt;span class=&quot;rem&quot;&amp;gt;// URL for the API to call&amp;lt;/span&amp;gt;
-        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; url = &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;https://api.twitter.com/1.1/statuses/user_timeline.json&quot;&amp;lt;/span&amp;gt;
-            + &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;?screen_name=adrianba&amp;amp;count=5&quot;&amp;lt;/span&amp;gt;;
-
-        &amp;lt;span class=&quot;rem&quot;&amp;gt;// Create a http request for the API&amp;lt;/span&amp;gt;
-        var webReq = (HttpWebRequest)WebRequest.Create(url);
-
-        &amp;lt;span class=&quot;rem&quot;&amp;gt;// Set the OAuth header&amp;lt;/span&amp;gt;
-        var auth = &amp;lt;span class=&quot;kwrd&quot;&amp;gt;new&amp;lt;/span&amp;gt; OAuthHeader();
-        webReq.Headers.Add(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;Authorization&quot;&amp;lt;/span&amp;gt;,auth.getHeader(url,&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;GET&quot;&amp;lt;/span&amp;gt;));
-
-        &amp;lt;span class=&quot;rem&quot;&amp;gt;// Echo the response to the console&amp;lt;/span&amp;gt;
-        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;using&amp;lt;/span&amp;gt;(WebResponse webResp = webReq.GetResponse()) {
-            &amp;lt;span class=&quot;kwrd&quot;&amp;gt;using&amp;lt;/span&amp;gt;(StreamReader sr = &amp;lt;span class=&quot;kwrd&quot;&amp;gt;new&amp;lt;/span&amp;gt; StreamReader(
-                    webResp.GetResponseStream(),Encoding.GetEncoding(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;utf-8&quot;&amp;lt;/span&amp;gt;)
-                    )) {
-                Console.WriteLine(sr.ReadToEnd());
-            }
-        }
-    }    
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The code here is similar to the previous &lt;a href=&quot;/2014/05/19/accessing-the-twitter-api-using-oauth&quot;&gt;post&lt;/a&gt;. It creates a HTTP request to the API endpoint and this time simply writes the response to the console. The difference here is that we need to add the OAuth Authorization header. The magic takes place in the getHeader() method:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;span class=&quot;kwrd&quot;&amp;gt;class&amp;lt;/span&amp;gt; OAuthHeader : OAuthBase {
-    &amp;lt;span class=&quot;kwrd&quot;&amp;gt;public&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; getHeader(&amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; url,&amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; method) {
-        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; normalizedUri;
-        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; normalizedParameters;
-
-        &amp;lt;span class=&quot;rem&quot;&amp;gt;// OAuth keys - FILL IN YOUR VALUES HERE (see this &amp;lt;a href=&quot;/2014/05/19/accessing-the-twitter-api-using-oauth&quot;&amp;gt;post&amp;lt;/a&amp;gt;)&amp;lt;/span&amp;gt;
-        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;const&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; consumerKey = &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;...&quot;&amp;lt;/span&amp;gt;;
-        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;const&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; consumerSecret = &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;...&quot;&amp;lt;/span&amp;gt;;
-        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;const&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; token = &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;...&quot;&amp;lt;/span&amp;gt;;
-        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;const&amp;lt;/span&amp;gt; &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; tokenSecret = &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;...&quot;&amp;lt;/span&amp;gt;;
-
-        &amp;lt;span class=&quot;rem&quot;&amp;gt;// Create timestamp and nonce for this request&amp;lt;/span&amp;gt;
-        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; timeStamp = GenerateTimeStamp();
-        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; nonce = GenerateNonce();
-
-        &amp;lt;span class=&quot;rem&quot;&amp;gt;// Generate signature for the header&amp;lt;/span&amp;gt;
-        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;string&amp;lt;/span&amp;gt; signature = GenerateSignature(
-            &amp;lt;span class=&quot;kwrd&quot;&amp;gt;new&amp;lt;/span&amp;gt; Uri(url), consumerKey, consumerSecret, token, tokenSecret,
-            method, timeStamp, nonce, &amp;lt;span class=&quot;kwrd&quot;&amp;gt;out&amp;lt;/span&amp;gt; normalizedUri, &amp;lt;span class=&quot;kwrd&quot;&amp;gt;out&amp;lt;/span&amp;gt; normalizedParameters);
-
-        &amp;lt;span class=&quot;rem&quot;&amp;gt;// Compose the authorization header value&amp;lt;/span&amp;gt;
-        &amp;lt;span class=&quot;rem&quot;&amp;gt;// See http://tools.ietf.org/html/rfc5849#section-3.5.1&amp;lt;/span&amp;gt;
-        StringBuilder auth = &amp;lt;span class=&quot;kwrd&quot;&amp;gt;new&amp;lt;/span&amp;gt; StringBuilder();
-        auth.Append(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;OAuth &quot;&amp;lt;/span&amp;gt;);
-        auth.AppendFormat(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;{0}=&quot;{1}&quot;, &quot;&amp;lt;/span&amp;gt;, OAuthConsumerKeyKey, UrlEncode(consumerKey));
-        auth.AppendFormat(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;{0}=&quot;{1}&quot;, &quot;&amp;lt;/span&amp;gt;, OAuthNonceKey, UrlEncode(nonce));
-        auth.AppendFormat(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;{0}=&quot;{1}&quot;, &quot;&amp;lt;/span&amp;gt;, OAuthSignatureKey, UrlEncode(signature));
-        auth.AppendFormat(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;{0}=&quot;{1}&quot;, &quot;&amp;lt;/span&amp;gt;, OAuthSignatureMethodKey, &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;HMAC-SHA1&quot;&amp;lt;/span&amp;gt;);
-        auth.AppendFormat(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;{0}=&quot;{1}&quot;, &quot;&amp;lt;/span&amp;gt;, OAuthTimestampKey, timeStamp);
-        auth.AppendFormat(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;{0}=&quot;{1}&quot;, &quot;&amp;lt;/span&amp;gt;, OAuthTokenKey, UrlEncode(token));
-        auth.AppendFormat(&amp;lt;span class=&quot;str&quot;&amp;gt;&quot;{0}=&quot;{1}&quot;&quot;&amp;lt;/span&amp;gt;, OAuthVersionKey, &amp;lt;span class=&quot;str&quot;&amp;gt;&quot;1.0&quot;&amp;lt;/span&amp;gt;);
-        &amp;lt;span class=&quot;kwrd&quot;&amp;gt;return&amp;lt;/span&amp;gt; auth.ToString();    
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The OAuthHeader class inherits from the OAuthBase class mentioned above. This provides the GenerateTimeStamp, GenerateNonce, and GenerateSignature methods. &lt;a href=&quot;https://dev.twitter.com/docs/auth/authorizing-request&quot;&gt;Twitter uses the OAuth 1.0a protocol&lt;/a&gt;, defined in &lt;a href=&quot;http://tools.ietf.org/html/rfc5849&quot;&gt;RFC5849&lt;/a&gt;. This specification outlines the Authorization header value that is constructed at the end of the getHeader() method.&lt;/p&gt;
-
-&lt;p&gt;You can keep the OAuthHeader class around for easy access to resources needing OAuth authorization such as Twitter.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">My last post described how to acquire Twitter OAuth keys and tokens to allow you to use Twitter’s API to access Twitter feeds. I showed how to use the request module with node.js, which has built-in support for OAuth, to request and process data.</summary></entry></feed>
+&lt;p&gt;[1] Unless you have a commercial relationship with Microsoft to provide these, and you are required to be executing on your plan to get off IE8.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Yesterday, my esteemed (new) colleague Aaron Gustafson wrote a piece about his reaction to the “Break Up with Internet Explorer 8” site currently doing the rounds in the Twittersphere. He argues for support of older browsers and optimisation for newer, better browsers. I disagree.</summary></entry></feed>
