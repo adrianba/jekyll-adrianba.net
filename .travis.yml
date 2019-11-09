@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-- current
+- 2.5
 
 sudo: false
 dist: trusty
