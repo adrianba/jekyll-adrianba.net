@@ -1,45 +1,31 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
-  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
 
-<!-- begin SEO -->
-
-
-
-
-
-
-
-
-
-<title>adrianba.net</title>
-
-
-
-
+<!-- begin _includes/seo.html --><title>adrianba.net</title>
 <meta name="description" content="On land, on sea, and in the ether.">
 
 
+  <meta name="author" content="Adrian Bateman">
 
 
-<meta name="author" content="Adrian Bateman">
-
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en">
 <meta property="og:site_name" content="adrianba.net">
 <meta property="og:title" content="adrianba.net">
+<meta property="og:url" content="https://adrianba.net/2003/08/">
 
 
-  <link rel="canonical" href="https://adrianba.net/2003/08/">
-  <meta property="og:url" content="https://adrianba.net/2003/08/">
 
 
+  <meta property="og:image" content="http://adrianba.net/assets/sailing.jpg">
 
 
 
@@ -56,50 +42,38 @@
   
 
   
-    <meta name="twitter:creator" content="@Adrian Bateman">
+    <meta name="twitter:creator" content="@adrianba">
   
 
 
 
-  
-
-  
-
-
-
-  <meta property="og:image" content="http://adrianba.net/assets/sailing.jpg">
-
-
-
-  <meta property="og:type" content="article">
   <meta property="article:published_time" content="2003-08-01T00:00:00-07:00">
 
 
 
 
 
+  
 
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": "https://adrianba.net",
-      "logo": "http://adrianba.net/assets/sailing.jpg"
-    }
-  </script>
+  
+
+
+<link rel="canonical" href="https://adrianba.net/2003/08/">
 
 
 
-  <script type="application/ld+json">
-    {
-      "@context" : "http://schema.org",
-      "@type" : "Person",
-      "name" : "Adrian Bateman",
-      "url" : "https://adrianba.net",
-      "sameAs" : ["https://adebateman.org/","https://twitter.com/adrianba","https://facebook.com/adrianba","https://instagram.com/adebateman","https://www.linkedin.com/in/adrianba"]
-    }
-  </script>
 
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Adrian Bateman",
+      "url": "https://adrianba.net/",
+      "sameAs": ["https://adebateman.org/","https://twitter.com/adrianba","https://facebook.com/adrianba","https://instagram.com/adebateman","https://www.linkedin.com/in/adrianba"]
+    
+  }
+</script>
 
 
   <meta name="google-site-verification" content="BUqUy58DpivlHAgBj3S9R4nIrr4bSvVVWajoA7XED10" />
@@ -109,14 +83,13 @@
 
 
 
-<!-- end SEO -->
+
+<!-- end _includes/seo.html -->
 
 
-<link href="https://adrianba.net/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
 
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
+<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
@@ -124,9 +97,9 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="https://adrianba.net/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/main.css">
 
-<!--[if lte IE 9]>
+<!--[if IE]>
   <style>
     /* old IE unsupported flexbox fixes */
     .greedy-nav .site-title {
@@ -142,37 +115,57 @@
 <![endif]-->
 
 
+
     <!-- start custom head snippets -->
 
-<!-- insert favicons. use http://realfavicongenerator.net/ -->
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
 
 <!-- end custom head snippets -->
+
   </head>
 
   <body class="layout--archive-taxonomy">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
 
     <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
 <![endif]-->
-    <div class="masthead">
+
+    
+
+<div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="https://adrianba.net/">adrianba.net</a>
-        <ul class="visible-links">
+        
+        <a class="site-title" href="/">
+          adrianba.net
           
-            
-            <li class="masthead__menu-item"><a href="https://adrianba.net"></a></li>
-          
-        </ul>
-        <button><div class="navicon"></div></button>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="" ></a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
   </div>
 </div>
 
-    <div id="main" role="main">
+
+    <div class="initial-content">
+      <div id="main" role="main">
   
 
   <div class="archive">
@@ -183,21 +176,22 @@
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/31/c5af363240f045a7a3f82b43af7d1a52/" rel="permalink">Custom configuration section handlers
+        <a href="/2003/08/31/c5af363240f045a7a3f82b43af7d1a52/" rel="permalink">Custom configuration section handlers
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   2 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">I read Keith Ballinger’s
@@ -208,27 +202,29 @@ months ago, and it gave a fascinating approach to using XML
 ...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/31/b253bcc25508482c9e0392db3386050d/" rel="permalink">Missing compiler features from VB.NET
+        <a href="/2003/08/31/b253bcc25508482c9e0392db3386050d/" rel="permalink">Missing compiler features from VB.NET
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Having spent probably more time in the last couple of months on
@@ -236,27 +232,29 @@ a project using VB.NET than I might otherwise have chosen, it seems
 to me that the same probl...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/30/c672d6dca0c749d8a6f1d2c4ae4e2be0/" rel="permalink">Wikis, Grafitti, and Process
+        <a href="/2003/08/30/c672d6dca0c749d8a6f1d2c4ae4e2be0/" rel="permalink">Wikis, Grafitti, and Process
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Clay
@@ -265,27 +263,29 @@ When I was CTO of a web design firm, I noticed in staff meetings
 that we only ever talked ab...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/25/2733164bcaa346f084db67ae13f35f74/" rel="permalink">Handling Errors in ASP.NET II
+        <a href="/2003/08/25/2733164bcaa346f084db67ae13f35f74/" rel="permalink">Handling Errors in ASP.NET II
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">
@@ -294,27 +294,29 @@ application-wide exceptions and handle them gracefully. This is
 pretty much what I’ve been doing, ...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/25/1defe82b5ee143b6b01b3903485ba1f3/" rel="permalink">Updated RSS feed
+        <a href="/2003/08/25/1defe82b5ee143b6b01b3903485ba1f3/" rel="permalink">Updated RSS feed
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Apologies to those people seeing a string of old posts from me
@@ -322,27 +324,29 @@ in their RSS readers. I’ve updated my RSS generating code to
 (hopefully) correctly handle ETag...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/24/bbc49781e0784a3b93a19885530af53a/" rel="permalink">POPFile and Outclass for spam
+        <a href="/2003/08/24/bbc49781e0784a3b93a19885530af53a/" rel="permalink">POPFile and Outclass for spam
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">After reading
@@ -353,27 +357,29 @@ ago, I decided that I would give it a go after all. I’d looked at
 it previously but decided not...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/24/5e3101d058b64196866abf061a47984f/" rel="permalink">AndAlso OrElse
+        <a href="/2003/08/24/5e3101d058b64196866abf061a47984f/" rel="permalink">AndAlso OrElse
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Paul Vick
@@ -384,27 +390,29 @@ operators got their names. One of the projects I’m working on
 currently is bein...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/24/50ae51155e5f44fab62259e9d5647678/" rel="permalink">Handling Errors in ASP.NET
+        <a href="/2003/08/24/50ae51155e5f44fab62259e9d5647678/" rel="permalink">Handling Errors in ASP.NET
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">
@@ -414,27 +422,29 @@ pinged him, and he suggested a clever little hack (in the good
 sense of that word) to ...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/24/32d203ff75db42a4aa98071f4abdf964/" rel="permalink">Designing with a Wiki
+        <a href="/2003/08/24/32d203ff75db42a4aa98071f4abdf964/" rel="permalink">Designing with a Wiki
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Scott
@@ -446,27 +456,29 @@ design process. I would love to read that some day.
 </p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/22/b0baf64f398f43ddb8e6c981c1995c88/" rel="permalink">MSBlaster and help written “by nerds for nerds”
+        <a href="/2003/08/22/b0baf64f398f43ddb8e6c981c1995c88/" rel="permalink">MSBlaster and help written “by nerds for nerds”
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   2 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">The last week or so has been a depressing one for advocates of
@@ -475,27 +487,29 @@ the Windows platform with lots of publicity surrounding the
 W32.Blaster.Worm that spread like...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/09/a52740b37cab4b0d93d125bf60e20713/" rel="permalink">ASP.NET Web Services documentation and derived classes
+        <a href="/2003/08/09/a52740b37cab4b0d93d125bf60e20713/" rel="permalink">ASP.NET Web Services documentation and derived classes
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">This is another gotcha that I ran into this week. The
@@ -503,27 +517,29 @@ documentation pages generated by the ASMX engine don’t seem to
 handle derived/base class types correctl...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/09/6a1af14dd6df47de95fe484c73f78e2c/" rel="permalink">Automating signcode
+        <a href="/2003/08/09/6a1af14dd6df47de95fe484c73f78e2c/" rel="permalink">Automating signcode
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">
@@ -532,27 +548,29 @@ Rob MacFadyen writes:
 </p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/08/2d098f57c5df4fd293489c5bbc29a21e/" rel="permalink">minOccurs=”1” and ASP.NET web services
+        <a href="/2003/08/08/2d098f57c5df4fd293489c5bbc29a21e/" rel="permalink">minOccurs=”1” and ASP.NET web services
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">One of the projects that I’m working on involves putting
@@ -560,27 +578,29 @@ together a web service interface to a booking system so that
 business partners can integrate our inv...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/07/77d2d74ca90a4d7597f6e371097ef2cb/" rel="permalink">iText JAVA-PDF library for .NET
+        <a href="/2003/08/07/77d2d74ca90a4d7597f6e371097ef2cb/" rel="permalink">iText JAVA-PDF library for .NET
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">
@@ -590,27 +610,29 @@ been using it for creating rtf documents and it’s a really nice
 piece of work, (and its free :)). It’s a c# implementati...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/07/1b1ab6df0db84d4eb513d94737947be3/" rel="permalink">Switching Source Code Control Providers
+        <a href="/2003/08/07/1b1ab6df0db84d4eb513d94737947be3/" rel="permalink">Switching Source Code Control Providers
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Scott
@@ -622,27 +644,29 @@ SccSwitch. VSS
 to GotDotNet to Vault …...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/04/cde5a97e986048fa842ca8390ec56524/" rel="permalink">Microsoft Data Access Components (MDAC) 2.8
+        <a href="/2003/08/04/cde5a97e986048fa842ca8390ec56524/" rel="permalink">Microsoft Data Access Components (MDAC) 2.8
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Microsoft Data Access Components (MDAC) 2.8 contains core Data
@@ -652,27 +676,29 @@ and ODBC driver.
 Microsof...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2003/08/01/238834cf2dee4025b8b9428c0fc376f6/" rel="permalink">Webalizer Win32
+        <a href="/2003/08/01/238834cf2dee4025b8b9428c0fc376f6/" rel="permalink">Webalizer Win32
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">
@@ -682,11 +708,15 @@ for Win32. Works great. Make sure you turn off the built in
 reverse DNS lookup or it will take days to analyze any dec...</p>
   </article>
 </div>
+
     
   </div>
 </div>
+    </div>
 
-    <div class="page__footer">
+    
+
+    <div id="footer" class="page__footer">
       <footer>
         <!-- start custom footer snippets -->
 
@@ -694,46 +724,25 @@ reverse DNS lookup or it will take days to analyze any dec...</p>
         <div class="page__footer-follow">
   <ul class="social-icons">
     
-      <li><strong>Follow:</strong></li>
+
     
-    
-      <li><a href="https://twitter.com/adrianba"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
-    
-    
-      <li><a href="https://facebook.com/adrianba"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
-    
-    
-      <li><a href="http://github.com/adrianba"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
-    
-    
-    
-    <li><a href="https://adrianba.net/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2018 Adrian Bateman. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2019 Adrian Bateman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
 
     
-  <script src="https://adrianba.net/assets/js/main.min.js"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
 
 
 
 
-
-  <script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-48621303-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
 
 
 

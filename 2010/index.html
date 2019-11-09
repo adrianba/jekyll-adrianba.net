@@ -1,45 +1,31 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
-  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
 
-<!-- begin SEO -->
-
-
-
-
-
-
-
-
-
-<title>adrianba.net</title>
-
-
-
-
+<!-- begin _includes/seo.html --><title>adrianba.net</title>
 <meta name="description" content="On land, on sea, and in the ether.">
 
 
+  <meta name="author" content="Adrian Bateman">
 
 
-<meta name="author" content="Adrian Bateman">
-
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en">
 <meta property="og:site_name" content="adrianba.net">
 <meta property="og:title" content="adrianba.net">
+<meta property="og:url" content="https://adrianba.net/2010/">
 
 
-  <link rel="canonical" href="https://adrianba.net/2010/">
-  <meta property="og:url" content="https://adrianba.net/2010/">
 
 
+  <meta property="og:image" content="http://adrianba.net/assets/sailing.jpg">
 
 
 
@@ -56,50 +42,38 @@
   
 
   
-    <meta name="twitter:creator" content="@Adrian Bateman">
+    <meta name="twitter:creator" content="@adrianba">
   
 
 
 
-  
-
-  
-
-
-
-  <meta property="og:image" content="http://adrianba.net/assets/sailing.jpg">
-
-
-
-  <meta property="og:type" content="article">
   <meta property="article:published_time" content="2010-01-01T00:00:00-08:00">
 
 
 
 
 
+  
 
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": "https://adrianba.net",
-      "logo": "http://adrianba.net/assets/sailing.jpg"
-    }
-  </script>
+  
+
+
+<link rel="canonical" href="https://adrianba.net/2010/">
 
 
 
-  <script type="application/ld+json">
-    {
-      "@context" : "http://schema.org",
-      "@type" : "Person",
-      "name" : "Adrian Bateman",
-      "url" : "https://adrianba.net",
-      "sameAs" : ["https://adebateman.org/","https://twitter.com/adrianba","https://facebook.com/adrianba","https://instagram.com/adebateman","https://www.linkedin.com/in/adrianba"]
-    }
-  </script>
 
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Adrian Bateman",
+      "url": "https://adrianba.net/",
+      "sameAs": ["https://adebateman.org/","https://twitter.com/adrianba","https://facebook.com/adrianba","https://instagram.com/adebateman","https://www.linkedin.com/in/adrianba"]
+    
+  }
+</script>
 
 
   <meta name="google-site-verification" content="BUqUy58DpivlHAgBj3S9R4nIrr4bSvVVWajoA7XED10" />
@@ -109,14 +83,13 @@
 
 
 
-<!-- end SEO -->
+
+<!-- end _includes/seo.html -->
 
 
-<link href="https://adrianba.net/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
 
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
+<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
@@ -124,9 +97,9 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="https://adrianba.net/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/main.css">
 
-<!--[if lte IE 9]>
+<!--[if IE]>
   <style>
     /* old IE unsupported flexbox fixes */
     .greedy-nav .site-title {
@@ -142,37 +115,57 @@
 <![endif]-->
 
 
+
     <!-- start custom head snippets -->
 
-<!-- insert favicons. use http://realfavicongenerator.net/ -->
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
 
 <!-- end custom head snippets -->
+
   </head>
 
   <body class="layout--archive-taxonomy">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
 
     <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
 <![endif]-->
-    <div class="masthead">
+
+    
+
+<div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="https://adrianba.net/">adrianba.net</a>
-        <ul class="visible-links">
+        
+        <a class="site-title" href="/">
+          adrianba.net
           
-            
-            <li class="masthead__menu-item"><a href="https://adrianba.net"></a></li>
-          
-        </ul>
-        <button><div class="navicon"></div></button>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="" ></a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
   </div>
 </div>
 
-    <div id="main" role="main">
+
+    <div class="initial-content">
+      <div id="main" role="main">
   
 
   <div class="archive">
@@ -183,214 +176,233 @@
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2010/12/22/test-post-with-upgrade-to-subtext-2-5/" rel="permalink">Test post with upgrade to Subtext 2.5
+        <a href="/2010/12/22/test-post-with-upgrade-to-subtext-2-5/" rel="permalink">Test post with upgrade to Subtext 2.5
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">I have upgraded this blog to Subtext 2.5 and moved hosting providers from WebHost4Life to Arvixe. This is a test post to make sure it is all working.
 </p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2010/11/29/ieblog-web-standards-development-at-the-w3c-tpac-2010/" rel="permalink">IEBlog - Web Standards development at the W3C TPAC 2010
+        <a href="/2010/11/29/ieblog-web-standards-development-at-the-w3c-tpac-2010/" rel="permalink">IEBlog - Web Standards development at the W3C TPAC 2010
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Last year_ I wrote about the W3C’s annual Technical Plenary and Advisory Committee (TPAC) conference. This is where most of the W3C working groups get togeth...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2010/10/08/ieblog-css-2-1-implementation-reports/" rel="permalink">IEBlog - CSS 2.1 Implementation Reports
+        <a href="/2010/10/08/ieblog-css-2-1-implementation-reports/" rel="permalink">IEBlog - CSS 2.1 Implementation Reports
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">I want to provide an update to my __last blog post about the W3C process_ that we follow to develop and finalise Web Standards. The working group published t...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2010/09/13/ieblog-web-standards-from-working-draft-to-recommendation/" rel="permalink">IEBlog - Web Standards: from Working Draft to Recommendation
+        <a href="/2010/09/13/ieblog-web-standards-from-working-draft-to-recommendation/" rel="permalink">IEBlog - Web Standards: from Working Draft to Recommendation
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">_Complete Web Standards with multiple browser implementations and comprehensive test suites are the backbone of the interoperable Web. Getting web standards ...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2010/03/26/ieblog-standards-documentation-for-ie7-and-ie8/" rel="permalink">IEBlog - Standards Documentation for IE7 and IE8
+        <a href="/2010/03/26/ieblog-standards-documentation-for-ie7-and-ie8/" rel="permalink">IEBlog - Standards Documentation for IE7 and IE8
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Over the __last month_, as part of Microsoft’s _commitment to interoperability_, we’ve published information for Internet Explorer 7 and Internet Explorer 8 ...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2010/03/12/working-with-web-standards/" rel="permalink">Working with Web Standards
+        <a href="/2010/03/12/working-with-web-standards/" rel="permalink">Working with Web Standards
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">There’s lots going on in the web standards world and being part of the Internet Explorer team gives me a front row seat. We’ve posted a few updates on the IE...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2010/03/09/ieblog-working-with-the-html5-community/" rel="permalink">IEBlog - Working with the HTML5 Community
+        <a href="/2010/03/09/ieblog-working-with-the-html5-community/" rel="permalink">IEBlog - Working with the HTML5 Community
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">We’re always excited to engage with members of the W3C including the developers of other browsers as well as the broader web development community to help sh...</p>
   </article>
 </div>
+
     
       
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2010/03/05/ieblog-w3c-html-working-group-publishes-new-drafts/" rel="permalink">IEBlog - W3C HTML Working Group Publishes New Drafts
+        <a href="/2010/03/05/ieblog-w3c-html-working-group-publishes-new-drafts/" rel="permalink">IEBlog - W3C HTML Working Group Publishes New Drafts
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Last week, __the W3C HTML Working Group reached a decision_ to publish several new working drafts and these are now available. The discussion about what to p...</p>
   </article>
 </div>
+
     
   </div>
 </div>
+    </div>
 
-    <div class="page__footer">
+    
+
+    <div id="footer" class="page__footer">
       <footer>
         <!-- start custom footer snippets -->
 
@@ -398,46 +410,25 @@
         <div class="page__footer-follow">
   <ul class="social-icons">
     
-      <li><strong>Follow:</strong></li>
+
     
-    
-      <li><a href="https://twitter.com/adrianba"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
-    
-    
-      <li><a href="https://facebook.com/adrianba"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
-    
-    
-      <li><a href="http://github.com/adrianba"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
-    
-    
-    
-    <li><a href="https://adrianba.net/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2018 Adrian Bateman. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2019 Adrian Bateman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
 
     
-  <script src="https://adrianba.net/assets/js/main.min.js"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
 
 
 
 
-
-  <script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-48621303-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
 
 
 

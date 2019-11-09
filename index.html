@@ -1,45 +1,31 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
-  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
 
-<!-- begin SEO -->
-
-
-
-
-
-
-
-
-
-<title>adrianba.net</title>
-
-
-
-
+<!-- begin _includes/seo.html --><title>adrianba.net</title>
 <meta name="description" content="On land, on sea, and in the ether.">
 
 
+  <meta name="author" content="Adrian Bateman">
 
 
-<meta name="author" content="Adrian Bateman">
-
+<meta property="og:type" content="website">
 <meta property="og:locale" content="en">
 <meta property="og:site_name" content="adrianba.net">
 <meta property="og:title" content="adrianba.net">
+<meta property="og:url" content="https://adrianba.net/">
 
 
-  <link rel="canonical" href="https://adrianba.net/">
-  <meta property="og:url" content="https://adrianba.net/">
 
 
+  <meta property="og:image" content="https://adrianba.net/assets/seattle.jpg">
 
 
 
@@ -54,47 +40,36 @@
   
 
   
-    <meta name="twitter:creator" content="@Adrian Bateman">
+    <meta name="twitter:creator" content="@adrianba">
   
 
 
 
+
+
+
+
   
 
   
 
 
-
-  <meta property="og:image" content="https://adrianba.net/assets/seattle.jpg">
-
+<link rel="canonical" href="https://adrianba.net/">
 
 
 
 
-
-
-
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": "https://adrianba.net",
-      "logo": "http://adrianba.net/assets/sailing.jpg"
-    }
-  </script>
-
-
-
-  <script type="application/ld+json">
-    {
-      "@context" : "http://schema.org",
-      "@type" : "Person",
-      "name" : "Adrian Bateman",
-      "url" : "https://adrianba.net",
-      "sameAs" : ["https://adebateman.org/","https://twitter.com/adrianba","https://facebook.com/adrianba","https://instagram.com/adebateman","https://www.linkedin.com/in/adrianba"]
-    }
-  </script>
-
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Adrian Bateman",
+      "url": "https://adrianba.net/",
+      "sameAs": ["https://adebateman.org/","https://twitter.com/adrianba","https://facebook.com/adrianba","https://instagram.com/adebateman","https://www.linkedin.com/in/adrianba"]
+    
+  }
+</script>
 
 
   <meta name="google-site-verification" content="BUqUy58DpivlHAgBj3S9R4nIrr4bSvVVWajoA7XED10" />
@@ -104,14 +79,13 @@
 
 
 
-<!-- end SEO -->
+
+<!-- end _includes/seo.html -->
 
 
-<link href="https://adrianba.net/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
 
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
+<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
@@ -119,9 +93,9 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="https://adrianba.net/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/main.css">
 
-<!--[if lte IE 9]>
+<!--[if IE]>
   <style>
     /* old IE unsupported flexbox fixes */
     .greedy-nav .site-title {
@@ -137,37 +111,57 @@
 <![endif]-->
 
 
+
     <!-- start custom head snippets -->
 
-<!-- insert favicons. use http://realfavicongenerator.net/ -->
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
 
 <!-- end custom head snippets -->
+
   </head>
 
   <body class="layout--home">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
 
     <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
 <![endif]-->
-    <div class="masthead">
+
+    
+
+<div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="https://adrianba.net/">adrianba.net</a>
-        <ul class="visible-links">
+        
+        <a class="site-title" href="/">
+          adrianba.net
           
-            
-            <li class="masthead__menu-item"><a href="https://adrianba.net"></a></li>
-          
-        </ul>
-        <button><div class="navicon"></div></button>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="" ></a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
   </div>
 </div>
 
-    
+
+    <div class="initial-content">
+      
   
 
 
@@ -184,7 +178,7 @@
   style=" "
 >
   
-    <img src="https://adrianba.net/assets/seattle.jpg" alt="" class="page__hero-image">
+    <img src="/assets/seattle.jpg" alt="" class="page__hero-image">
   
   
 </div>
@@ -198,22 +192,28 @@
   <div class="sidebar sticky">
   
 
-<div itemscope itemtype="http://schema.org/Person">
+
+<div itemscope itemtype="https://schema.org/Person">
 
   
     <div class="author__avatar">
       
-        <img src="https://adrianba.net/assets/sailing.jpg" class="author__avatar" alt="Adrian Bateman" itemprop="image">
+
+      
+        <img src="/assets/sailing.jpg" alt="Adrian Bateman" itemprop="image">
       
     </div>
   
 
   <div class="author__content">
-    <h3 class="author__name" itemprop="name">Adrian Bateman</h3>
     
-      <p class="author__bio" itemprop="description">
-        Englishman in Seattle.
-      </p>
+      <h3 class="author__name" itemprop="name">Adrian Bateman</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Englishman in Seattle.</p>
+
+      </div>
     
   </div>
 
@@ -221,8 +221,8 @@
     <button class="btn btn--inverse">Follow</button>
     <ul class="author__urls social-icons">
       
-        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
-          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">Seattle, USA</span>
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seattle, USA</span>
         </li>
       
 
@@ -233,9 +233,21 @@
       
 
       
+
+      
         <li>
-          <a href="https://twitter.com/adrianba" itemprop="sameAs">
-            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          <a href="https://twitter.com/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
           </a>
         </li>
       
@@ -245,25 +257,13 @@
       
 
       
-        <li>
-          <a href="https://www.linkedin.com/in/adrianba" itemprop="sameAs">
-            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
-          </a>
-        </li>
-      
-
-      
-
-      
-
-      
 
       
 
       
         <li>
-          <a href="https://github.com/adrianba" itemprop="sameAs">
-            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          <a href="https://github.com/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
           </a>
         </li>
       
@@ -311,6 +311,7 @@
       <h3>Disclaimer</h3>
       <p><small>The posts on this blog are provided AS IS with no warranties, and confer no rights. The opinions expressed herein are my own personal opinions and do not represent my employer’s view in any way.</small></p>
 
+      
     
     
   
@@ -319,9 +320,11 @@
 
   <div class="archive">
     
-      <h1 class="page__title"></h1>
+      <h1 id="page-title" class="page__title"></h1>
     
-    <h3 class="archive__subtitle">Recent Posts</h3>
+    
+
+<h3 class="archive__subtitle">Recent Posts</h3>
 
 
   
@@ -329,21 +332,22 @@
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2017/12/19/particle-printable-buffer-library/" rel="permalink">Particle Printable Buffer Library
+        <a href="/2017/12/19/particle-printable-buffer-library/" rel="permalink">Particle Printable Buffer Library
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Based on the code used internally by the Particle firmware for printing
@@ -351,26 +355,28 @@ to String objects (see StringPrintableHelper in wiring/src/spark_wiring_string.c
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2017/12/15/fix-surface-type-cover-after-firmware-update/" rel="permalink">Fix Surface Type Cover after firmware update
+        <a href="/2017/12/15/fix-surface-type-cover-after-firmware-update/" rel="permalink">Fix Surface Type Cover after firmware update
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">This week there were Surface Pro 4 firmware updates as part of the Patch Tuesday updates. After
@@ -378,26 +384,28 @@ the system updates completed on my SP4, the type cover stoppe...</p>
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2017/11/29/inactivity-timeout/" rel="permalink">Setting the inactivity timeout in Windows
+        <a href="/2017/11/29/inactivity-timeout/" rel="permalink">Setting the inactivity timeout in Windows
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Windows has a timeout that can return you to the lock screen after a period of inactivity. This
@@ -405,26 +413,28 @@ is useful if you want to make sure the PC gets locked if you ...</p>
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2017/10/13/samsung-smart-switch/" rel="permalink">Samsung Smart Switch - How to install on Windows 10
+        <a href="/2017/10/13/samsung-smart-switch/" rel="permalink">Samsung Smart Switch - How to install on Windows 10
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Samsung Smart Switch is a tool that will backup your phone and transfer the data to a new Samsung
@@ -432,26 +442,28 @@ phone. You also use it to backup your phone to your PC in c...</p>
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2017/10/12/node-and-vpn/" rel="permalink">NPM giving error EAI_AGAIN from Windows Subsystem for Linux (WSL)
+        <a href="/2017/10/12/node-and-vpn/" rel="permalink">NPM giving error EAI_AGAIN from Windows Subsystem for Linux (WSL)
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">This morning I was experimenting with some demo code and when I tried to
@@ -461,26 +473,28 @@ install some packages from npm I got the following network error:
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2016/09/24/using-microsoft-flow-to-publish-medium-com-recommendations/" rel="permalink">Using Microsoft Flow to publish medium.com recommendations
+        <a href="/2016/09/24/using-microsoft-flow-to-publish-medium-com-recommendations/" rel="permalink">Using Microsoft Flow to publish medium.com recommendations
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Like a growing number of people, I read a lot of content on medium.com. I wanted to find a way to share the posts that I find most interesting.
@@ -489,364 +503,392 @@ install some packages from npm I got the following network error:
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2016/01/06/using-sublime-text-as-your-git-editor-on-windows/" rel="permalink">Using Sublime Text as your git editor on Windows
+        <a href="/2016/01/06/using-sublime-text-as-your-git-editor-on-windows/" rel="permalink">Using Sublime Text as your git editor on Windows
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git ...</p>
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2015/12/20/mdi-to-tiff-converter/" rel="permalink">MDI to TIFF converter
+        <a href="/2015/12/20/mdi-to-tiff-converter/" rel="permalink">MDI to TIFF converter
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Microsoft Office Document Imaging (MODI) was part of Office up to Office 2007. It allowed you to scan multipage documents into .MDI files. MODI was deprecate...</p>
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2015/12/05/using-dvi-monitors-with-the-new-surface-dock/" rel="permalink">Using DVI monitors with the new Surface Dock
+        <a href="/2015/12/05/using-dvi-monitors-with-the-new-surface-dock/" rel="permalink">Using DVI monitors with the new Surface Dock
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">The new Surface Dock from Microsoft has two mini-DisplayPort outputs that can be used to connect a Surface Book, Surface Pro 3, or Surface Pro 4 to two exter...</p>
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2015/03/14/using-yeoman-to-start-writing-technical-specifications-with-respec/" rel="permalink">Using Yeoman to start writing technical specifications with ReSpec
+        <a href="/2015/03/14/using-yeoman-to-start-writing-technical-specifications-with-respec/" rel="permalink">Using Yeoman to start writing technical specifications with ReSpec
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Yeoman is a tool that provides a scaffolding system to begin new projects. The genius thing about Yeoman is that, by itself, it doesn’t know how to do anythi...</p>
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2015/03/12/itrsquos-time-to-move-on-from-ie8/" rel="permalink">It’s time to move on from IE8
+        <a href="/2015/03/12/itrsquos-time-to-move-on-from-ie8/" rel="permalink">It’s time to move on from IE8
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   2 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Yesterday, my esteemed (new) colleague Aaron Gustafson wrote a piece about his reaction to the “Break Up with Internet Explorer 8” site currently doing the r...</p>
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2014/05/20/using-c-to-access-the-twitter-api/" rel="permalink">Using C# to access the Twitter API
+        <a href="/2014/05/20/using-c-to-access-the-twitter-api/" rel="permalink">Using C# to access the Twitter API
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   2 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">My last post described how to acquire Twitter OAuth keys and tokens to allow you to use Twitter’s API to access Twitter feeds. I showed how to use the reques...</p>
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2014/05/19/accessing-the-twitter-api-using-oauth/" rel="permalink">Accessing the Twitter API using OAuth
+        <a href="/2014/05/19/accessing-the-twitter-api-using-oauth/" rel="permalink">Accessing the Twitter API using OAuth
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   4 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Following on from my last post that described using Node to access feeds from Delicious, I’ve also been investigating how to access my Twitter feed. This add...</p>
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2014/05/16/node-and-delicious/" rel="permalink">Node and Delicious
+        <a href="/2014/05/16/node-and-delicious/" rel="permalink">Node and Delicious
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">In my last post, I wrote about using node.js as a scripting tool. Node has lots of good libraries for making network requests and processing the results. req...</p>
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2014/04/20/node-and-xml-stream/" rel="permalink">Node and xml-stream
+        <a href="/2014/04/20/node-and-xml-stream/" rel="permalink">Node and xml-stream
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   3 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">For the last couple of months, I’ve been experimenting more and more with node.js. My impression is that most people who have heard of node but not really us...</p>
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2014/04/19/introducing-boxstarter/" rel="permalink">Introducing Boxstarter
+        <a href="/2014/04/19/introducing-boxstarter/" rel="permalink">Introducing Boxstarter
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Every year, Scott Hanselman publishes his Ultimate Developer and Power Users Tool List for Windows. I usually take a look through it, pat myself on the back ...</p>
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2014/04/19/installing-squid-web-proxy-for-windows/" rel="permalink">Installing Squid Web Proxy for Windows
+        <a href="/2014/04/19/installing-squid-web-proxy-for-windows/" rel="permalink">Installing Squid Web Proxy for Windows
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">I’m running Windows Server Essentials 2012 R2 for file storage and system backups. While I’m doing lots of experimenting with Boxstarter, I wanted a caching ...</p>
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2012/12/20/pretending-browser-detection-isnt-browser-detection/" rel="permalink">Pretending browser detection isn’t browser detection
+        <a href="/2012/12/20/pretending-browser-detection-isnt-browser-detection/" rel="permalink">Pretending browser detection isn’t browser detection
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   2 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">From time to time I see posts like this describing “CSS Hacks” to detect a particular version of IE. This post describes how removing conditional comments su...</p>
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2012/12/19/syncing-multiple-gmail-calendars-with-windows-8-calendar-app/" rel="permalink">Syncing multiple Gmail calendars with Windows 8 Calendar app
+        <a href="/2012/12/19/syncing-multiple-gmail-calendars-with-windows-8-calendar-app/" rel="permalink">Syncing multiple Gmail calendars with Windows 8 Calendar app
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">I’m not a Gmail user but I know someone who is. She was a little disappointed to discover that when configuring her Gmail account with a Microsoft Surface, o...</p>
   </article>
 </div>
 
+
   
 
 
 
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://adrianba.net/2012/02/23/ieblog-protecting-consumers-privacy-online/" rel="permalink">IEBlog - Protecting Consumers’ Privacy Online
+        <a href="/2012/02/23/ieblog-protecting-consumers-privacy-online/" rel="permalink">IEBlog - Protecting Consumers’ Privacy Online
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
   less than 1 minute read
+
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">This morning in the United States, the White House announced a new “Consumer Privacy Bill of Rights” as part of the effort to improve consumers’ online priva...</p>
@@ -857,10 +899,14 @@ install some packages from npm I got the following network error:
 
 
 
+
   </div>
 </div>
+    </div>
 
-    <div class="page__footer">
+    
+
+    <div id="footer" class="page__footer">
       <footer>
         <!-- start custom footer snippets -->
 
@@ -868,46 +914,25 @@ install some packages from npm I got the following network error:
         <div class="page__footer-follow">
   <ul class="social-icons">
     
-      <li><strong>Follow:</strong></li>
+
     
-    
-      <li><a href="https://twitter.com/adrianba"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
-    
-    
-      <li><a href="https://facebook.com/adrianba"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
-    
-    
-      <li><a href="http://github.com/adrianba"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
-    
-    
-    
-    <li><a href="https://adrianba.net/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2018 Adrian Bateman. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2019 Adrian Bateman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
 
     
-  <script src="https://adrianba.net/assets/js/main.min.js"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
 
 
 
 
-
-  <script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-48621303-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
 
 
 
