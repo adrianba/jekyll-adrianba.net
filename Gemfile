@@ -14,8 +14,8 @@ gem "jekyll", "3.8.6"
 gem "minimal-mistakes-jekyll"
 
 # Include the archive plug-in
-#gem "jekyll-archives"
-gem 'jekyll-archives', git: 'https://github.com/jekyll/jekyll-archives'
+gem "jekyll-archives"
+#gem 'jekyll-archives', git: 'https://github.com/jekyll/jekyll-archives'
 
 # Install html proofer
 gem "html-proofer"
@@ -34,5 +34,5 @@ group :jekyll_plugins do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
