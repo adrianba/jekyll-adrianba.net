@@ -122,6 +122,12 @@ author:
       icon         : "fas fa-fw fa-globe"
       url          : "https://adebateman.org/"
 
+# Footer
+footer:
+  links:
+    - label: "Privacy Policy"
+      icon: "fas fa-fw fa-mask"
+      url: "/privacy/"
 
 # Reading Files
 include:
