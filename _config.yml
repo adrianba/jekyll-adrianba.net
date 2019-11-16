@@ -93,7 +93,7 @@ author:
   bio              : "Englishman in Seattle."
   location         : "Seattle, USA"
   email            :
-  personal_uri     : "https://adebateman.org/"
+  personal_uri     : # "https://adebateman.org/"
   bitbucket        :
   codepen          :
   dribbble         :
@@ -117,6 +117,10 @@ author:
   weibo            :
   xing             :
   youtube          : # "https://youtube.com/c/MichaelRoseDesign"
+  links:
+    - label        : "Personal site"
+      icon         : "fas fa-fw fa-globe"
+      url          : "https://adebateman.org/"
 
 
 # Reading Files
