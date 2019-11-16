@@ -1,6 +1,10 @@
 ---
 title: "Who can sue a company under the CCPA?"
 last_modified_at: 20191116T185300Z
+header:
+  image: /assets/uploads/2019/california.jpg
+  image_description: "A picture of a street sign saying California Ave with palm trees in the background"
+  caption: Photo by [Vital Sinkevich](https://unsplash.com/@vitsinkevich?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/california?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 ---
 
 Yesterday, I read [an article on JD Supra](https://www.jdsupra.com/legalnews/ccpa-privacy-faqs-can-a-company-be-sued-80335) answering the question "Can a
