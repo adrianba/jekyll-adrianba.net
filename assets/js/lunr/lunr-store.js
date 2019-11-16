@@ -2428,4 +2428,9 @@ var store = [{
         "excerpt":"Based on the code used internally by the Particle firmware for printing to String objects (see StringPrintableHelper in wiring/src/spark_wiring_string.cpp), I have written a small library that allows printing into a simple buffer. This avoids the reallocation of memory that occurs when using the String class. The library is available on...","categories": [],
         "tags": [],
         "url": "https://adrianba.net/2017/12/19/particle-printable-buffer-library/",
+        "teaser":null},{
+        "title": "Who can sue a company under the CCPA?",
+        "excerpt":"Yesterday, I read an article on JD Supra answering the question “Can a company be sued under the CCPA for failing to post a ‘do not sell my personal information’ link?” To my surprise, the answer given was “No.” The analysis in the post actually addressed the question of whether...","categories": [],
+        "tags": [],
+        "url": "https://adrianba.net/2019/11/16/who-can-sue-companies-ccpa/",
         "teaser":null}]
