@@ -3,7 +3,7 @@ rvm:
 - 2.6
 
 sudo: false
-dist: trusty
+dist: bionic
 
 before_install:
  - gem install bundler
