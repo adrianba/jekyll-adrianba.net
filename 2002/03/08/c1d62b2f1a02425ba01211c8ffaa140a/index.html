@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>The managed C++ compiler seems to have some… - adrianba.net</title>
-<meta name="description" content="The managed C++ compiler seems to have some issues, at least as faras my installation is concerned. I have an interface written in C#,which I’m implementing on one of my managed C++ classes. I updatedone of the interface methods to include an extra parameter and didthe same to the implementation. When I compiled, I got an errorstating that the method was not in the interface A::B::MyInterfacebut was actually in A::B::MyInterface. Huh? I tried everything toget it to build - full rebuilds of everything, rebooting, etc. Inthe end, I took the new parameter out, rebuilt, put it in but in adifferent place in the argument list, and rebuilt (successfully),and then moved it back where it was originally. Guess what? Itworked then!">
+<meta name="description" content="The managed C++ compiler seems to have some issues, at least as far as my installation is concerned. I have an interface written in C#, which I’m implementing on one of my managed C++ classes. I updated one of the interface methods to include an extra parameter and did the same to the implementation. When I compiled, I got an error stating that the method was not in the interface A::B::MyInterface but was actually in A::B::MyInterface. Huh? I tried everything to get it to build - full rebuilds of everything, rebooting, etc. In the end, I took the new parameter out, rebuilt, put it in but in a different place in the argument list, and rebuilt (successfully), and then moved it back where it was originally. Guess what? It worked then! ">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/2002/03/08/c1d62b2f1a02425ba01211c8ffaa140a/">
 
 
-  <meta property="og:description" content="The managed C++ compiler seems to have some issues, at least as faras my installation is concerned. I have an interface written in C#,which I’m implementing on one of my managed C++ classes. I updatedone of the interface methods to include an extra parameter and didthe same to the implementation. When I compiled, I got an errorstating that the method was not in the interface A::B::MyInterfacebut was actually in A::B::MyInterface. Huh? I tried everything toget it to build - full rebuilds of everything, rebooting, etc. Inthe end, I took the new parameter out, rebuilt, put it in but in adifferent place in the argument list, and rebuilt (successfully),and then moved it back where it was originally. Guess what? Itworked then!">
+  <meta property="og:description" content="The managed C++ compiler seems to have some issues, at least as far as my installation is concerned. I have an interface written in C#, which I’m implementing on one of my managed C++ classes. I updated one of the interface methods to include an extra parameter and did the same to the implementation. When I compiled, I got an error stating that the method was not in the interface A::B::MyInterface but was actually in A::B::MyInterface. Huh? I tried everything to get it to build - full rebuilds of everything, rebooting, etc. In the end, I took the new parameter out, rebuilt, put it in but in a different place in the argument list, and rebuilt (successfully), and then moved it back where it was originally. Guess what? It worked then! ">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="The managed C++ compiler seems to have some…">
-  <meta name="twitter:description" content="The managed C++ compiler seems to have some issues, at least as faras my installation is concerned. I have an interface written in C#,which I’m implementing on one of my managed C++ classes. I updatedone of the interface methods to include an extra parameter and didthe same to the implementation. When I compiled, I got an errorstating that the method was not in the interface A::B::MyInterfacebut was actually in A::B::MyInterface. Huh? I tried everything toget it to build - full rebuilds of everything, rebooting, etc. Inthe end, I took the new parameter out, rebuilt, put it in but in adifferent place in the argument list, and rebuilt (successfully),and then moved it back where it was originally. Guess what? Itworked then!">
+  <meta name="twitter:description" content="The managed C++ compiler seems to have some issues, at least as far as my installation is concerned. I have an interface written in C#, which I’m implementing on one of my managed C++ classes. I updated one of the interface methods to include an extra parameter and did the same to the implementation. When I compiled, I got an error stating that the method was not in the interface A::B::MyInterface but was actually in A::B::MyInterface. Huh? I tried everything to get it to build - full rebuilds of everything, rebooting, etc. In the end, I took the new parameter out, rebuilt, put it in but in a different place in the argument list, and rebuilt (successfully), and then moved it back where it was originally. Guess what? It worked then! ">
   <meta name="twitter:url" content="https://adrianba.net/2002/03/08/c1d62b2f1a02425ba01211c8ffaa140a/">
 
   
@@ -154,7 +154,7 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="" ></a>
+              <a href=""></a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -183,8 +183,6 @@
 
   
     <div class="author__avatar">
-      
-
       
         <img src="/assets/sailing.jpg" alt="Adrian Bateman" itemprop="image">
       
@@ -215,7 +213,7 @@
       
         
           
-            <li><a href="https://adebateman.org/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-globe" aria-hidden="true"></i> Personal site</a></li>
+            <li><a href="https://adebateman.org/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-globe" aria-hidden="true"></i><span class="label">Personal site</span></a></li>
           
         
       
@@ -229,7 +227,7 @@
       
         <li>
           <a href="https://twitter.com/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer">
-            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
           </a>
         </li>
       
@@ -239,7 +237,7 @@
       
         <li>
           <a href="https://www.linkedin.com/in/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer">
-            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
           </a>
         </li>
       
@@ -255,7 +253,7 @@
       
         <li>
           <a href="https://github.com/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer">
-            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
           </a>
         </li>
       
@@ -295,11 +293,12 @@
   </div>
 
 
+
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="The managed C++ compiler seems to have some…">
     <meta itemprop="description" content="The managed C++ compiler seems to have some issues, at least as faras my installation is concerned. I have an interface written in C#,which I’m implementing on one of my managed C++ classes. I updatedone of the interface methods to include an extra parameter and didthe same to the implementation. When I compiled, I got an errorstating that the method was not in the interface A::B::MyInterfacebut was actually in A::B::MyInterface. Huh? I tried everything toget it to build - full rebuilds of everything, rebooting, etc. Inthe end, I took the new parameter out, rebuilt, put it in but in adifferent place in the argument list, and rebuilt (successfully),and then moved it back where it was originally. Guess what? Itworked then!">
-    <meta itemprop="datePublished" content="March 08, 2002">
-    <meta itemprop="dateModified" content="March 08, 2002">
+    <meta itemprop="datePublished" content="2002-03-08T00:00:00-08:00">
+    <meta itemprop="dateModified" content="2002-03-08T09:08:54-08:00">
 
     <div class="page__inner-wrap">
       
@@ -344,7 +343,7 @@ worked then!</p>
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2002-03-08">March 08, 2002</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2002-03-08">March 8, 2002</time></p>
         
       </footer>
 
@@ -530,7 +529,7 @@ is useful if you want to make sure the PC gets locked if you ...</p>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Adrian Bateman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Adrian Bateman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

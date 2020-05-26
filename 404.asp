@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>adrianba.net</title>
-<meta name="description" content="On land, on sea, and in the ether.">
+<meta name="description" content="On land, on sea, and in the ether. ">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,6 +23,8 @@
 <meta property="og:url" content="https://adrianba.net/404.asp">
 
 
+  <meta property="og:description" content="On land, on sea, and in the ether. ">
+
 
 
   <meta property="og:image" content="http://adrianba.net/assets/sailing.jpg">
@@ -31,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="adrianba.net">
-  <meta name="twitter:description" content="On land, on sea, and in the ether.">
+  <meta name="twitter:description" content="On land, on sea, and in the ether. ">
   <meta name="twitter:url" content="https://adrianba.net/404.asp">
 
   
@@ -148,7 +150,7 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="" ></a>
+              <a href=""></a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -215,7 +217,7 @@ Response.Status = "404 Not Found"
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Adrian Bateman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Adrian Bateman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
