@@ -36,7 +36,7 @@ GEM
     http_parser.rb (0.6.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
-    jekyll (3.8.6)
+    jekyll (3.8.7)
       addressable (~> 2.4)
       colorator (~> 1.0)
       em-websocket (~> 0.5)
@@ -126,7 +126,7 @@ PLATFORMS
 
 DEPENDENCIES
   html-proofer
-  jekyll (= 3.8.6)
+  jekyll (= 3.8.7)
   jekyll-archives
   jekyll-feed (~> 0.6)
   jekyll-gist
@@ -136,4 +136,4 @@ DEPENDENCIES
   octopress-paginate
 
 BUNDLED WITH
-   1.17.3
+   2.1.4

@@ -1,12 +1,13 @@
 language: ruby
 rvm:
-- 2.5
+- 2.6
 
 sudo: false
 dist: trusty
 
 before_install:
-- git clone --branch=publish https://github.com/adrianba/jekyll-adrianba.net.git ./_site
+ - gem install bundler
+ - git clone --branch=publish https://github.com/adrianba/jekyll-adrianba.net.git ./_site
 
 before_script:
  - chmod +x ./_deploy/cibuild.sh

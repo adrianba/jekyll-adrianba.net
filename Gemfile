@@ -8,7 +8,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "3.8.6"
+gem "jekyll", "3.8.7"
 
 # This is the theme for the Jekyll sites.
 gem "minimal-mistakes-jekyll"
