@@ -23,7 +23,7 @@ after_success:
 # branch whitelist
 branches:
   only:
-  - master
+  - main
 
 cache:
   bundler: true
