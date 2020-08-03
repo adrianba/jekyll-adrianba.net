@@ -8,7 +8,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "3.8.7"
+gem "jekyll", "~> 4.1.1"
 
 # This is the theme for the Jekyll sites.
 gem "minimal-mistakes-jekyll"
@@ -29,7 +29,7 @@ group :jekyll_plugins do
    gem 'octopress-paginate'
    gem "jekyll-sitemap"
    gem "jekyll-gist"
-   gem "jekyll-feed", "~> 0.6"
+   gem "jekyll-feed"
    gem "jemoji"
 end
 
