@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Installing Squid Web Proxy for Windows - adrianba.net</title>
-<meta name="description" content="I’m running Windows Server Essentials 2012 R2 for file storage and system backups. While I’m doing lots of experimenting with Boxstarter, I wanted a caching web proxy that would keep local copies of the package files I’m installing over and over so that I wouldn’t have to wait for them to come from the Internet each time.  ">
+<meta name="description" content="I’m running Windows Server Essentials 2012 R2 for file storage and system backups. While I’m doing lots of experimenting with Boxstarter, I wanted a caching web proxy that would keep local copies of the package files I’m installing over and over so that I wouldn’t have to wait for them to come from the Internet each time.">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/2014/04/19/installing-squid-web-proxy-for-windows/">
 
 
-  <meta property="og:description" content="I’m running Windows Server Essentials 2012 R2 for file storage and system backups. While I’m doing lots of experimenting with Boxstarter, I wanted a caching web proxy that would keep local copies of the package files I’m installing over and over so that I wouldn’t have to wait for them to come from the Internet each time.  ">
+  <meta property="og:description" content="I’m running Windows Server Essentials 2012 R2 for file storage and system backups. While I’m doing lots of experimenting with Boxstarter, I wanted a caching web proxy that would keep local copies of the package files I’m installing over and over so that I wouldn’t have to wait for them to come from the Internet each time.">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="Installing Squid Web Proxy for Windows">
-  <meta name="twitter:description" content="I’m running Windows Server Essentials 2012 R2 for file storage and system backups. While I’m doing lots of experimenting with Boxstarter, I wanted a caching web proxy that would keep local copies of the package files I’m installing over and over so that I wouldn’t have to wait for them to come from the Internet each time.  ">
+  <meta name="twitter:description" content="I’m running Windows Server Essentials 2012 R2 for file storage and system backups. While I’m doing lots of experimenting with Boxstarter, I wanted a caching web proxy that would keep local copies of the package files I’m installing over and over so that I wouldn’t have to wait for them to come from the Internet each time.">
   <meta name="twitter:url" content="https://adrianba.net/2014/04/19/installing-squid-web-proxy-for-windows/">
 
   
@@ -324,13 +324,13 @@
 
 <p><a href="http://www.squid-cache.org/">Squid</a> is a well known caching proxy and <a href="http://wiki.squid-cache.org/GuidoSerassio">GuidoSerassio</a> of <a href="http://www.acmeconsulting.it/">Acme Consulting S.r.l.</a> maintains the official <a href="http://squid.acmeconsulting.it/">native Windows port</a>. You can download the latest stable build of Squid 2.7 from <a href="http://squid.acmeconsulting.it/download/squid-2.7.STABLE8-bin.zip">here</a>.</p>
 
-<p>Installation is simple. I extracted all the files into C:squid. In the etc folder, there are four configuration files with .conf.default extensions. I removed the .default extension from <code class="highlighter-rouge">squid.conf</code>, <code class="highlighter-rouge">mime.conf</code>, and <code class="highlighter-rouge">cachemgr.conf</code>:</p>
+<p>Installation is simple. I extracted all the files into C:squid. In the etc folder, there are four configuration files with .conf.default extensions. I removed the .default extension from <code class="language-plaintext highlighter-rouge">squid.conf</code>, <code class="language-plaintext highlighter-rouge">mime.conf</code>, and <code class="language-plaintext highlighter-rouge">cachemgr.conf</code>:</p>
 
-<p>Next from a command prompt running as Administrator cd to <code class="highlighter-rouge">c:squidsbin</code> and run <code class="highlighter-rouge">squid -i</code> and <code class="highlighter-rouge">squid -z</code>. The first command installs squid as a service and the second initialises the cache folder (<code class="highlighter-rouge">c:squidvarcache</code>). Finally, start the service with <code class="highlighter-rouge">net start squid</code>.</p>
+<p>Next from a command prompt running as Administrator cd to <code class="language-plaintext highlighter-rouge">c:squidsbin</code> and run <code class="language-plaintext highlighter-rouge">squid -i</code> and <code class="language-plaintext highlighter-rouge">squid -z</code>. The first command installs squid as a service and the second initialises the cache folder (<code class="language-plaintext highlighter-rouge">c:squidvarcache</code>). Finally, start the service with <code class="language-plaintext highlighter-rouge">net start squid</code>.</p>
 
 <p>Squid will now be running and listening on port 3128 (the default for squid). The last think you need to do is to configured the Windows Firewall to allow incoming connections to squid. Go to Advanced Settings from the Windows Firewall control panel. Select Inbound rules and add a New Rule allowing listening on TCP port 3128.</p>
 
-<p>Now you should be all set - you can configure your browser to connect to the proxy on your server using port 3128. You can look in the <code class="highlighter-rouge">c:squidvarlogs</code> folder for activity logs to make sure things are working.</p>
+<p>Now you should be all set - you can configure your browser to connect to the proxy on your server using port 3128. You can look in the <code class="language-plaintext highlighter-rouge">c:squidvarlogs</code> folder for activity logs to make sure things are working.</p>
 
         
       </section>
@@ -341,8 +341,9 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2014-04-20">April 20, 2014</time></p>
-        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2014-04-20">April 20, 2014</time></p>
+
+
       </footer>
 
       <section class="page__share">

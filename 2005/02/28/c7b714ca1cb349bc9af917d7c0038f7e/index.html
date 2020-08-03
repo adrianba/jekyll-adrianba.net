@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>ASMX 2.0 - SOAP 1.2 Support - adrianba.net</title>
-<meta name="description" content="The new ASMX runtime in .NET 2.0 will support SOAP 1.2. How useful this turns out to be remains to be seen since almost everyone is using SOAP 1.1 at the moment. By default, web services will have both SOAP 1.1 and SOAP 1.2 bindings exposed on the server side and will accept messages for either. The following excerpt from the WSDL file of a simple service shows the two bindings:  &lt;wsdl:binding name=&quot;SimpleServiceSoap&quot; type=&quot;tns:SimpleServiceSoap&quot;&gt;   &lt;soap:binding transport=&quot;http://schemas.xmlsoap.org/soap/http&quot; style=&quot;document&quot; /&gt;    &lt;wsdl:operation name=&quot;Hello&quot;&gt;     &lt;soap:operation soapAction=&quot;urn:simple/Hello&quot; style=&quot;document&quot; /&gt;      &lt;wsdl:input&gt;       &lt;soap:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:input&gt;     &lt;wsdl:output&gt;       &lt;soap:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:output&gt;   &lt;/wsdl:operation&gt; &lt;/wsdl:binding&gt; &lt;wsdl:binding name=&quot;SimpleServiceSoap12&quot; type=&quot;tns:SimpleServiceSoap&quot;&gt;   &lt;soap12:binding transport=&quot;http://schemas.xmlsoap.org/soap/http&quot; style=&quot;document&quot; /&gt;    &lt;wsdl:operation name=&quot;Hello&quot;&gt;     &lt;soap12:operation soapAction=&quot;urn:simple/Hello&quot; style=&quot;document&quot; /&gt;      &lt;wsdl:input&gt;       &lt;soap12:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:input&gt;     &lt;wsdl:output&gt;       &lt;soap12:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:output&gt;   &lt;/wsdl:operation&gt; &lt;/wsdl:binding&gt;   ">
+<meta name="description" content="The new ASMX runtime in .NET 2.0 will support SOAP 1.2. How useful this turns out to be remains to be seen since almost everyone is using SOAP 1.1 at the moment. By default, web services will have both SOAP 1.1 and SOAP 1.2 bindings exposed on the server side and will accept messages for either. The following excerpt from the WSDL file of a simple service shows the two bindings:  &lt;wsdl:binding name=&quot;SimpleServiceSoap&quot; type=&quot;tns:SimpleServiceSoap&quot;&gt;   &lt;soap:binding transport=&quot;http://schemas.xmlsoap.org/soap/http&quot; style=&quot;document&quot; /&gt;    &lt;wsdl:operation name=&quot;Hello&quot;&gt;     &lt;soap:operation soapAction=&quot;urn:simple/Hello&quot; style=&quot;document&quot; /&gt;      &lt;wsdl:input&gt;       &lt;soap:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:input&gt;     &lt;wsdl:output&gt;       &lt;soap:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:output&gt;   &lt;/wsdl:operation&gt; &lt;/wsdl:binding&gt; &lt;wsdl:binding name=&quot;SimpleServiceSoap12&quot; type=&quot;tns:SimpleServiceSoap&quot;&gt;   &lt;soap12:binding transport=&quot;http://schemas.xmlsoap.org/soap/http&quot; style=&quot;document&quot; /&gt;    &lt;wsdl:operation name=&quot;Hello&quot;&gt;     &lt;soap12:operation soapAction=&quot;urn:simple/Hello&quot; style=&quot;document&quot; /&gt;      &lt;wsdl:input&gt;       &lt;soap12:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:input&gt;     &lt;wsdl:output&gt;       &lt;soap12:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:output&gt;   &lt;/wsdl:operation&gt; &lt;/wsdl:binding&gt;">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/2005/02/28/c7b714ca1cb349bc9af917d7c0038f7e/">
 
 
-  <meta property="og:description" content="The new ASMX runtime in .NET 2.0 will support SOAP 1.2. How useful this turns out to be remains to be seen since almost everyone is using SOAP 1.1 at the moment. By default, web services will have both SOAP 1.1 and SOAP 1.2 bindings exposed on the server side and will accept messages for either. The following excerpt from the WSDL file of a simple service shows the two bindings:  &lt;wsdl:binding name=&quot;SimpleServiceSoap&quot; type=&quot;tns:SimpleServiceSoap&quot;&gt;   &lt;soap:binding transport=&quot;http://schemas.xmlsoap.org/soap/http&quot; style=&quot;document&quot; /&gt;    &lt;wsdl:operation name=&quot;Hello&quot;&gt;     &lt;soap:operation soapAction=&quot;urn:simple/Hello&quot; style=&quot;document&quot; /&gt;      &lt;wsdl:input&gt;       &lt;soap:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:input&gt;     &lt;wsdl:output&gt;       &lt;soap:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:output&gt;   &lt;/wsdl:operation&gt; &lt;/wsdl:binding&gt; &lt;wsdl:binding name=&quot;SimpleServiceSoap12&quot; type=&quot;tns:SimpleServiceSoap&quot;&gt;   &lt;soap12:binding transport=&quot;http://schemas.xmlsoap.org/soap/http&quot; style=&quot;document&quot; /&gt;    &lt;wsdl:operation name=&quot;Hello&quot;&gt;     &lt;soap12:operation soapAction=&quot;urn:simple/Hello&quot; style=&quot;document&quot; /&gt;      &lt;wsdl:input&gt;       &lt;soap12:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:input&gt;     &lt;wsdl:output&gt;       &lt;soap12:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:output&gt;   &lt;/wsdl:operation&gt; &lt;/wsdl:binding&gt;   ">
+  <meta property="og:description" content="The new ASMX runtime in .NET 2.0 will support SOAP 1.2. How useful this turns out to be remains to be seen since almost everyone is using SOAP 1.1 at the moment. By default, web services will have both SOAP 1.1 and SOAP 1.2 bindings exposed on the server side and will accept messages for either. The following excerpt from the WSDL file of a simple service shows the two bindings:  &lt;wsdl:binding name=&quot;SimpleServiceSoap&quot; type=&quot;tns:SimpleServiceSoap&quot;&gt;   &lt;soap:binding transport=&quot;http://schemas.xmlsoap.org/soap/http&quot; style=&quot;document&quot; /&gt;    &lt;wsdl:operation name=&quot;Hello&quot;&gt;     &lt;soap:operation soapAction=&quot;urn:simple/Hello&quot; style=&quot;document&quot; /&gt;      &lt;wsdl:input&gt;       &lt;soap:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:input&gt;     &lt;wsdl:output&gt;       &lt;soap:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:output&gt;   &lt;/wsdl:operation&gt; &lt;/wsdl:binding&gt; &lt;wsdl:binding name=&quot;SimpleServiceSoap12&quot; type=&quot;tns:SimpleServiceSoap&quot;&gt;   &lt;soap12:binding transport=&quot;http://schemas.xmlsoap.org/soap/http&quot; style=&quot;document&quot; /&gt;    &lt;wsdl:operation name=&quot;Hello&quot;&gt;     &lt;soap12:operation soapAction=&quot;urn:simple/Hello&quot; style=&quot;document&quot; /&gt;      &lt;wsdl:input&gt;       &lt;soap12:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:input&gt;     &lt;wsdl:output&gt;       &lt;soap12:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:output&gt;   &lt;/wsdl:operation&gt; &lt;/wsdl:binding&gt;">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="ASMX 2.0 - SOAP 1.2 Support">
-  <meta name="twitter:description" content="The new ASMX runtime in .NET 2.0 will support SOAP 1.2. How useful this turns out to be remains to be seen since almost everyone is using SOAP 1.1 at the moment. By default, web services will have both SOAP 1.1 and SOAP 1.2 bindings exposed on the server side and will accept messages for either. The following excerpt from the WSDL file of a simple service shows the two bindings:  &lt;wsdl:binding name=&quot;SimpleServiceSoap&quot; type=&quot;tns:SimpleServiceSoap&quot;&gt;   &lt;soap:binding transport=&quot;http://schemas.xmlsoap.org/soap/http&quot; style=&quot;document&quot; /&gt;    &lt;wsdl:operation name=&quot;Hello&quot;&gt;     &lt;soap:operation soapAction=&quot;urn:simple/Hello&quot; style=&quot;document&quot; /&gt;      &lt;wsdl:input&gt;       &lt;soap:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:input&gt;     &lt;wsdl:output&gt;       &lt;soap:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:output&gt;   &lt;/wsdl:operation&gt; &lt;/wsdl:binding&gt; &lt;wsdl:binding name=&quot;SimpleServiceSoap12&quot; type=&quot;tns:SimpleServiceSoap&quot;&gt;   &lt;soap12:binding transport=&quot;http://schemas.xmlsoap.org/soap/http&quot; style=&quot;document&quot; /&gt;    &lt;wsdl:operation name=&quot;Hello&quot;&gt;     &lt;soap12:operation soapAction=&quot;urn:simple/Hello&quot; style=&quot;document&quot; /&gt;      &lt;wsdl:input&gt;       &lt;soap12:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:input&gt;     &lt;wsdl:output&gt;       &lt;soap12:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:output&gt;   &lt;/wsdl:operation&gt; &lt;/wsdl:binding&gt;   ">
+  <meta name="twitter:description" content="The new ASMX runtime in .NET 2.0 will support SOAP 1.2. How useful this turns out to be remains to be seen since almost everyone is using SOAP 1.1 at the moment. By default, web services will have both SOAP 1.1 and SOAP 1.2 bindings exposed on the server side and will accept messages for either. The following excerpt from the WSDL file of a simple service shows the two bindings:  &lt;wsdl:binding name=&quot;SimpleServiceSoap&quot; type=&quot;tns:SimpleServiceSoap&quot;&gt;   &lt;soap:binding transport=&quot;http://schemas.xmlsoap.org/soap/http&quot; style=&quot;document&quot; /&gt;    &lt;wsdl:operation name=&quot;Hello&quot;&gt;     &lt;soap:operation soapAction=&quot;urn:simple/Hello&quot; style=&quot;document&quot; /&gt;      &lt;wsdl:input&gt;       &lt;soap:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:input&gt;     &lt;wsdl:output&gt;       &lt;soap:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:output&gt;   &lt;/wsdl:operation&gt; &lt;/wsdl:binding&gt; &lt;wsdl:binding name=&quot;SimpleServiceSoap12&quot; type=&quot;tns:SimpleServiceSoap&quot;&gt;   &lt;soap12:binding transport=&quot;http://schemas.xmlsoap.org/soap/http&quot; style=&quot;document&quot; /&gt;    &lt;wsdl:operation name=&quot;Hello&quot;&gt;     &lt;soap12:operation soapAction=&quot;urn:simple/Hello&quot; style=&quot;document&quot; /&gt;      &lt;wsdl:input&gt;       &lt;soap12:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:input&gt;     &lt;wsdl:output&gt;       &lt;soap12:body use=&quot;literal&quot; /&gt;      &lt;/wsdl:output&gt;   &lt;/wsdl:operation&gt; &lt;/wsdl:binding&gt;">
   <meta name="twitter:url" content="https://adrianba.net/2005/02/28/c7b714ca1cb349bc9af917d7c0038f7e/">
 
   
@@ -327,7 +327,7 @@ will have both SOAP 1.1 and SOAP 1.2 bindings exposed on the server
 side and will accept messages for either. The following excerpt
 from the WSDL file of a simple service shows the two bindings:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;wsdl:binding name="SimpleServiceSoap" type="tns:SimpleServiceSoap"&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;wsdl:binding name="SimpleServiceSoap" type="tns:SimpleServiceSoap"&gt;
   &lt;soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" /&gt; 
   &lt;wsdl:operation name="Hello"&gt;
     &lt;soap:operation soapAction="urn:simple/Hello" style="document" /&gt; 
@@ -357,7 +357,7 @@ from the WSDL file of a simple service shows the two bindings:</p>
 the web.config file. The following configuration file removes the
 SOAP 1.2 binding:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;configuration&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;configuration&gt;
   &lt;system.web&gt;
     &lt;webServices&gt;
       &lt;protocols&gt;
@@ -377,7 +377,7 @@ allows you to specify which version to use. /protocol:SOAP
 generates a SOAP 1.1 client and /protocol:SOAP12 generates a SOAP
 1.2 client:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:&gt;wsdl /o:simpleproxy.cs /protocol:SOAP http://localhost/simple.asmx
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:&gt;wsdl /o:simpleproxy.cs /protocol:SOAP http://localhost/simple.asmx
 Microsoft (R) Web Services Description Language Utility
 [Microsoft(R) .NET Framework, Version 2.0.40607.85]
 Copyright (C) Microsoft Corporation. All rights reserved.
@@ -414,8 +414,9 @@ subtle changes to the names of things in Beta 2 onwards.</p>
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2005-02-28">February 28, 2005</time></p>
-        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2005-02-28">February 28, 2005</time></p>
+
+
       </footer>
 
       <section class="page__share">

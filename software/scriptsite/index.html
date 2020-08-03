@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>ScriptSite - ATL Active Script Engine Wrapper - VisionTech Limited - adrianba.net</title>
-<meta name="description" content="An ATL include file to assist hosting an active script engine in your project. ">
+<meta name="description" content="An ATL include file to assist hosting an active script engine in your project.">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/software/scriptsite/">
 
 
-  <meta property="og:description" content="An ATL include file to assist hosting an active script engine in your project. ">
+  <meta property="og:description" content="An ATL include file to assist hosting an active script engine in your project.">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="ScriptSite - ATL Active Script Engine Wrapper - VisionTech Limited">
-  <meta name="twitter:description" content="An ATL include file to assist hosting an active script engine in your project. ">
+  <meta name="twitter:description" content="An ATL include file to assist hosting an active script engine in your project.">
   <meta name="twitter:url" content="https://adrianba.net/software/scriptsite/">
 
   
@@ -196,9 +196,9 @@
 
 <p>I’ve included scripting in a few applications and each time modified the previous copy of my code to fit the new requirements. Having decided this time to construct a more reusable wrapper and to make use of ATL, I decided to share the results of my efforts to save others some time.</p>
 
-<p>At the heart of the code is the <code class="highlighter-rouge">CScriptSiteImpl</code> class. This is the base class from which you need to inherit for your project. I’ve included a minimal class <code class="highlighter-rouge">CScriptSiteBasic</code> (which you can use directly) that demonstrates what you need to do to use the code:</p>
+<p>At the heart of the code is the <code class="language-plaintext highlighter-rouge">CScriptSiteImpl</code> class. This is the base class from which you need to inherit for your project. I’ve included a minimal class <code class="language-plaintext highlighter-rouge">CScriptSiteBasic</code> (which you can use directly) that demonstrates what you need to do to use the code:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;font color="#0000ff"&gt;class&lt;/font&gt; ATL_NO_VTABLE CScriptSiteBasic :
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;font color="#0000ff"&gt;class&lt;/font&gt; ATL_NO_VTABLE CScriptSiteBasic :
         &lt;font color="#0000ff"&gt;public&lt;/font&gt; CComObjectRootEx&lt;CComSingleThreadModel&gt;,
         &lt;font color="#0000ff"&gt;public&lt;/font&gt; CScriptSiteImpl
     {
@@ -263,6 +263,7 @@ Finally, to include your own error handler, you need to override <tt>HandleScrip
 
 
         
+
       </footer>
 
       

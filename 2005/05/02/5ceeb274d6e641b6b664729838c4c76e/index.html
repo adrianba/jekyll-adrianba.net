@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>ASMX 2.0 - Now with Basic Profile 1.1 Conformance - adrianba.net</title>
-<meta name="description" content="A few weeks ago, I wrote about the  Basic Profile support in ASP.NET Web Services (ASMX) with .NET 2.0. Since then, Beta 2 has been released changing the details slightly.  ">
+<meta name="description" content="A few weeks ago, I wrote about the  Basic Profile support in ASP.NET Web Services (ASMX) with .NET 2.0. Since then, Beta 2 has been released changing the details slightly.">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/2005/05/02/5ceeb274d6e641b6b664729838c4c76e/">
 
 
-  <meta property="og:description" content="A few weeks ago, I wrote about the  Basic Profile support in ASP.NET Web Services (ASMX) with .NET 2.0. Since then, Beta 2 has been released changing the details slightly.  ">
+  <meta property="og:description" content="A few weeks ago, I wrote about the  Basic Profile support in ASP.NET Web Services (ASMX) with .NET 2.0. Since then, Beta 2 has been released changing the details slightly.">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="ASMX 2.0 - Now with Basic Profile 1.1 Conformance">
-  <meta name="twitter:description" content="A few weeks ago, I wrote about the  Basic Profile support in ASP.NET Web Services (ASMX) with .NET 2.0. Since then, Beta 2 has been released changing the details slightly.  ">
+  <meta name="twitter:description" content="A few weeks ago, I wrote about the  Basic Profile support in ASP.NET Web Services (ASMX) with .NET 2.0. Since then, Beta 2 has been released changing the details slightly.">
   <meta name="twitter:url" content="https://adrianba.net/2005/05/02/5ceeb274d6e641b6b664729838c4c76e/">
 
   
@@ -332,7 +332,7 @@ Profile v1.1</a> (Beta 1 supported v1.0). The syntax for declaring
 that your web service conforms to BP1.1 has changed slightly
 (different property and enum names).</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%@ WebService Language="C#" Class="SimpleService" %&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%@ WebService Language="C#" Class="SimpleService" %&gt;
 
 using System.Web.Services;
 using System.Web.Services.Protocols;
@@ -352,7 +352,7 @@ public class SimpleService {
 <p>The EmitConformanceClaims property now causes the following
 claim to be included in the WSDL:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;wsdl:documentation&gt;&lt;br&gt;&lt;wsi:Claim conformsTo="http://ws-i.org/profiles/basic/1.1" xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;wsdl:documentation&gt;&lt;br&gt;&lt;wsi:Claim conformsTo="http://ws-i.org/profiles/basic/1.1" xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" 
 /&gt; &lt;br&gt;&lt;/wsdl:documentation&gt;
 </code></pre></div></div>
 
@@ -371,8 +371,9 @@ envelopes and their representation in messages.”</p>
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2005-05-03">May 3, 2005</time></p>
-        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2005-05-03">May 3, 2005</time></p>
+
+
       </footer>
 
       <section class="page__share">

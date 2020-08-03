@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>How to generate a unique session id for an ASP.NET application - adrianba.net</title>
-<meta name="description" content="It is often useful to be able to track a user session through your ASP.NET application whilst avoiding the use of server-side session state. The following code generates a session cookie on the first request which will then be propagated to subsequent requests until you either clear the cookie or the user closes their browser.  using System; using System.Web; namespace Sample {  public class SessionModule : IHttpModule {   #region IHttpModule Members   public void Init(HttpApplication context) {    context.AuthenticateRequest +=&lt;br&gt;&lt;/br&gt;     new EventHandler(OnAuthenticateRequest);   }&lt;br&gt;&lt;/br&gt;  public void Dispose() { }   #endregion&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;  #region Event Handler   private void OnAuthenticateRequest(object sender,EventArgs e) {    HttpContext ctx = HttpContext.Current;    HttpCookie cookie = ctx.Request.Cookies[&quot;SampleSession&quot;];    if(cookie==null) {     ctx.Response.Cookies.Add(&lt;br&gt;&lt;/br&gt;     new HttpCookie(&quot;SampleSession&quot;,Guid.NewGuid().ToString()));    }   }   #endregion  } }   ">
+<meta name="description" content="It is often useful to be able to track a user session through your ASP.NET application whilst avoiding the use of server-side session state. The following code generates a session cookie on the first request which will then be propagated to subsequent requests until you either clear the cookie or the user closes their browser.  using System; using System.Web; namespace Sample {  public class SessionModule : IHttpModule {   #region IHttpModule Members   public void Init(HttpApplication context) {    context.AuthenticateRequest +=&lt;br&gt;&lt;/br&gt;     new EventHandler(OnAuthenticateRequest);   }&lt;br&gt;&lt;/br&gt;  public void Dispose() { }   #endregion&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;  #region Event Handler   private void OnAuthenticateRequest(object sender,EventArgs e) {    HttpContext ctx = HttpContext.Current;    HttpCookie cookie = ctx.Request.Cookies[&quot;SampleSession&quot;];    if(cookie==null) {     ctx.Response.Cookies.Add(&lt;br&gt;&lt;/br&gt;     new HttpCookie(&quot;SampleSession&quot;,Guid.NewGuid().ToString()));    }   }   #endregion  } }">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/2003/05/23/df03fd7fa39d469bb37f0b9819c39997/">
 
 
-  <meta property="og:description" content="It is often useful to be able to track a user session through your ASP.NET application whilst avoiding the use of server-side session state. The following code generates a session cookie on the first request which will then be propagated to subsequent requests until you either clear the cookie or the user closes their browser.  using System; using System.Web; namespace Sample {  public class SessionModule : IHttpModule {   #region IHttpModule Members   public void Init(HttpApplication context) {    context.AuthenticateRequest +=&lt;br&gt;&lt;/br&gt;     new EventHandler(OnAuthenticateRequest);   }&lt;br&gt;&lt;/br&gt;  public void Dispose() { }   #endregion&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;  #region Event Handler   private void OnAuthenticateRequest(object sender,EventArgs e) {    HttpContext ctx = HttpContext.Current;    HttpCookie cookie = ctx.Request.Cookies[&quot;SampleSession&quot;];    if(cookie==null) {     ctx.Response.Cookies.Add(&lt;br&gt;&lt;/br&gt;     new HttpCookie(&quot;SampleSession&quot;,Guid.NewGuid().ToString()));    }   }   #endregion  } }   ">
+  <meta property="og:description" content="It is often useful to be able to track a user session through your ASP.NET application whilst avoiding the use of server-side session state. The following code generates a session cookie on the first request which will then be propagated to subsequent requests until you either clear the cookie or the user closes their browser.  using System; using System.Web; namespace Sample {  public class SessionModule : IHttpModule {   #region IHttpModule Members   public void Init(HttpApplication context) {    context.AuthenticateRequest +=&lt;br&gt;&lt;/br&gt;     new EventHandler(OnAuthenticateRequest);   }&lt;br&gt;&lt;/br&gt;  public void Dispose() { }   #endregion&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;  #region Event Handler   private void OnAuthenticateRequest(object sender,EventArgs e) {    HttpContext ctx = HttpContext.Current;    HttpCookie cookie = ctx.Request.Cookies[&quot;SampleSession&quot;];    if(cookie==null) {     ctx.Response.Cookies.Add(&lt;br&gt;&lt;/br&gt;     new HttpCookie(&quot;SampleSession&quot;,Guid.NewGuid().ToString()));    }   }   #endregion  } }">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="How to generate a unique session id for an ASP.NET application">
-  <meta name="twitter:description" content="It is often useful to be able to track a user session through your ASP.NET application whilst avoiding the use of server-side session state. The following code generates a session cookie on the first request which will then be propagated to subsequent requests until you either clear the cookie or the user closes their browser.  using System; using System.Web; namespace Sample {  public class SessionModule : IHttpModule {   #region IHttpModule Members   public void Init(HttpApplication context) {    context.AuthenticateRequest +=&lt;br&gt;&lt;/br&gt;     new EventHandler(OnAuthenticateRequest);   }&lt;br&gt;&lt;/br&gt;  public void Dispose() { }   #endregion&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;  #region Event Handler   private void OnAuthenticateRequest(object sender,EventArgs e) {    HttpContext ctx = HttpContext.Current;    HttpCookie cookie = ctx.Request.Cookies[&quot;SampleSession&quot;];    if(cookie==null) {     ctx.Response.Cookies.Add(&lt;br&gt;&lt;/br&gt;     new HttpCookie(&quot;SampleSession&quot;,Guid.NewGuid().ToString()));    }   }   #endregion  } }   ">
+  <meta name="twitter:description" content="It is often useful to be able to track a user session through your ASP.NET application whilst avoiding the use of server-side session state. The following code generates a session cookie on the first request which will then be propagated to subsequent requests until you either clear the cookie or the user closes their browser.  using System; using System.Web; namespace Sample {  public class SessionModule : IHttpModule {   #region IHttpModule Members   public void Init(HttpApplication context) {    context.AuthenticateRequest +=&lt;br&gt;&lt;/br&gt;     new EventHandler(OnAuthenticateRequest);   }&lt;br&gt;&lt;/br&gt;  public void Dispose() { }   #endregion&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;  #region Event Handler   private void OnAuthenticateRequest(object sender,EventArgs e) {    HttpContext ctx = HttpContext.Current;    HttpCookie cookie = ctx.Request.Cookies[&quot;SampleSession&quot;];    if(cookie==null) {     ctx.Response.Cookies.Add(&lt;br&gt;&lt;/br&gt;     new HttpCookie(&quot;SampleSession&quot;,Guid.NewGuid().ToString()));    }   }   #endregion  } }">
   <meta name="twitter:url" content="https://adrianba.net/2003/05/23/df03fd7fa39d469bb37f0b9819c39997/">
 
   
@@ -327,7 +327,7 @@ first request which will then be propagated to subsequent requests
 until you either clear the cookie or the user closes their
 browser.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>using System;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>using System;
 using System.Web;
 namespace Sample {
  public class SessionModule : IHttpModule {
@@ -351,12 +351,12 @@ namespace Sample {
 <p>You then need to add the HttpModule into the application in your
 web.config file as follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;httpModules&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;httpModules&gt;
   &lt;add&lt;br&gt;&lt;/br&gt;    type="Sample.SessionModule,SampleSession"&lt;br&gt;&lt;/br&gt;    name="SessionIdentification"&lt;br&gt;&lt;/br&gt;  /&gt;
 &lt;/httpModules&gt;
 </code></pre></div></div>
 
-<p>where <code class="highlighter-rouge">SampleSession</code> is the name of the assembly
+<p>where <code class="language-plaintext highlighter-rouge">SampleSession</code> is the name of the assembly
 that the class is compiled into.</p>
 
         
@@ -368,8 +368,9 @@ that the class is compiled into.</p>
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2003-05-23">May 23, 2003</time></p>
-        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2003-05-23">May 23, 2003</time></p>
+
+
       </footer>
 
       <section class="page__share">

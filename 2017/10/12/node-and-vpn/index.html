@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>NPM giving error EAI_AGAIN from Windows Subsystem for Linux (WSL) - adrianba.net</title>
-<meta name="description" content="This morning I was experimenting with some demo code and when I tried to install some packages from npm I got the following network error:  ">
+<meta name="description" content="This morning I was experimenting with some demo code and when I tried to install some packages from npm I got the following network error:">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/2017/10/12/node-and-vpn/">
 
 
-  <meta property="og:description" content="This morning I was experimenting with some demo code and when I tried to install some packages from npm I got the following network error:  ">
+  <meta property="og:description" content="This morning I was experimenting with some demo code and when I tried to install some packages from npm I got the following network error:">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="NPM giving error EAI_AGAIN from Windows Subsystem for Linux (WSL)">
-  <meta name="twitter:description" content="This morning I was experimenting with some demo code and when I tried to install some packages from npm I got the following network error:  ">
+  <meta name="twitter:description" content="This morning I was experimenting with some demo code and when I tried to install some packages from npm I got the following network error:">
   <meta name="twitter:url" content="https://adrianba.net/2017/10/12/node-and-vpn/">
 
   
@@ -321,18 +321,18 @@
       <section class="page__content" itemprop="text">
         
         <p>This morning I was experimenting with some demo code and when I tried to
-install some packages from <code class="highlighter-rouge">npm</code> I got the following network error:</p>
+install some packages from <code class="language-plaintext highlighter-rouge">npm</code> I got the following network error:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>request to https://registry.npmjs.org/XXX failed, reason: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>request to https://registry.npmjs.org/XXX failed, reason: getaddrinfo EAI_AGAIN registry.npmjs.org:443
 </code></pre></div></div>
 
-<p>where <code class="highlighter-rouge">XXX</code> was the name of the package.</p>
+<p>where <code class="language-plaintext highlighter-rouge">XXX</code> was the name of the package.</p>
 
 <p>I was running bash from Ubuntu using WSL but when I switched to a Windows command prompt and ran the Windows install of node/npm then it connected just fine.</p>
 
 <p>It took a little searching around but I discovered that this was most likely to do with the network proxy we have at Microsoft or some other quirk of the network configuration. We are currently testing a new on-demand VPN configuration, which had connected me to the corporate network even though I was actually attached directly. Disconnecting the VPN made things “just work” so I guess there was some kind of networking loop that Windows native networking could figure out since it has my login credentials whereas Ubuntu couldn’t.</p>
 
-<p>So the <code class="highlighter-rouge">EAI_AGAIN</code> error is a transient failure and is probably related to something you can fix about your network config.</p>
+<p>So the <code class="language-plaintext highlighter-rouge">EAI_AGAIN</code> error is a transient failure and is probably related to something you can fix about your network config.</p>
 
         
       </section>
@@ -343,8 +343,9 @@ install some packages from <code class="highlighter-rouge">npm</code> I got the 
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2012-10-12">October 12, 2012</time></p>
-        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2012-10-12">October 12, 2012</time></p>
+
+
       </footer>
 
       <section class="page__share">

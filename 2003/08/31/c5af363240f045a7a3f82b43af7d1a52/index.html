@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Custom configuration section handlers - adrianba.net</title>
-<meta name="description" content="I read Keith Ballinger’s excellent Web Services: Architecture and Implementation with .NET a few months ago, and it gave a fascinating approach to using XML Serialization. Keith suggests that this was really misnamed and that the term XML Mapping would be more appropriate because it is not designed to serialize any CLR object to XML, but rather designed to map any XML onto some set of CLR objects. Once you take this view and start to get a handle on the various XML mapping code attributes, XML serialization suddenly becomes much more powerful.  ">
+<meta name="description" content="I read Keith Ballinger’s excellent Web Services: Architecture and Implementation with .NET a few months ago, and it gave a fascinating approach to using XML Serialization. Keith suggests that this was really misnamed and that the term XML Mapping would be more appropriate because it is not designed to serialize any CLR object to XML, but rather designed to map any XML onto some set of CLR objects. Once you take this view and start to get a handle on the various XML mapping code attributes, XML serialization suddenly becomes much more powerful.">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/2003/08/31/c5af363240f045a7a3f82b43af7d1a52/">
 
 
-  <meta property="og:description" content="I read Keith Ballinger’s excellent Web Services: Architecture and Implementation with .NET a few months ago, and it gave a fascinating approach to using XML Serialization. Keith suggests that this was really misnamed and that the term XML Mapping would be more appropriate because it is not designed to serialize any CLR object to XML, but rather designed to map any XML onto some set of CLR objects. Once you take this view and start to get a handle on the various XML mapping code attributes, XML serialization suddenly becomes much more powerful.  ">
+  <meta property="og:description" content="I read Keith Ballinger’s excellent Web Services: Architecture and Implementation with .NET a few months ago, and it gave a fascinating approach to using XML Serialization. Keith suggests that this was really misnamed and that the term XML Mapping would be more appropriate because it is not designed to serialize any CLR object to XML, but rather designed to map any XML onto some set of CLR objects. Once you take this view and start to get a handle on the various XML mapping code attributes, XML serialization suddenly becomes much more powerful.">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="Custom configuration section handlers">
-  <meta name="twitter:description" content="I read Keith Ballinger’s excellent Web Services: Architecture and Implementation with .NET a few months ago, and it gave a fascinating approach to using XML Serialization. Keith suggests that this was really misnamed and that the term XML Mapping would be more appropriate because it is not designed to serialize any CLR object to XML, but rather designed to map any XML onto some set of CLR objects. Once you take this view and start to get a handle on the various XML mapping code attributes, XML serialization suddenly becomes much more powerful.  ">
+  <meta name="twitter:description" content="I read Keith Ballinger’s excellent Web Services: Architecture and Implementation with .NET a few months ago, and it gave a fascinating approach to using XML Serialization. Keith suggests that this was really misnamed and that the term XML Mapping would be more appropriate because it is not designed to serialize any CLR object to XML, but rather designed to map any XML onto some set of CLR objects. Once you take this view and start to get a handle on the various XML mapping code attributes, XML serialization suddenly becomes much more powerful.">
   <meta name="twitter:url" content="https://adrianba.net/2003/08/31/c5af363240f045a7a3f82b43af7d1a52/">
 
   
@@ -347,7 +347,7 @@ excellent article</a> by Rockford Lhotka that explains what XML
 configuration files are and what they’re used for so I won’t repeat
 any of that here. In that article, Rockford demonstrates how to
 write the code for a custom configuration section by writing a
-class that implements the <code class="highlighter-rouge">IConfigurationSectionHandler</code>
+class that implements the <code class="language-plaintext highlighter-rouge">IConfigurationSectionHandler</code>
 interface. If you want several config sections in your application,
 however, you end up writing a lot of code that is almost
 identical.</p>
@@ -357,7 +357,7 @@ can write a minimal amount of code describing simply what settings
 we want in our handler. Here is an example configuration settings
 class:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;font color="#0000FF"&gt;using&lt;/font&gt; System;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;font color="#0000FF"&gt;using&lt;/font&gt; System;
 &lt;font color="#0000FF"&gt;using&lt;/font&gt; System.Xml.Serialization;
 
 [CustomConfigHandler("myConfig",Group="sampleConfig")]
@@ -378,25 +378,25 @@ class:</p>
 <p>This class will parse a configuration section that looks like
 this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;sampleConfig&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;sampleConfig&gt;
     &lt;myConfig myString="abc" myInt="123" /&gt;
 &lt;/sampleConfig&gt;
 </code></pre></div></div>
 
 <p>The key points to take from this are that we use an attribute on
-the class <code class="highlighter-rouge">CustomConfigHandler</code> to indicate the name of
-the XML node (<code class="highlighter-rouge">myConfig</code>) and the group name
-(<code class="highlighter-rouge">sampleConfig</code>) and then we use standard XML
+the class <code class="language-plaintext highlighter-rouge">CustomConfigHandler</code> to indicate the name of
+the XML node (<code class="language-plaintext highlighter-rouge">myConfig</code>) and the group name
+(<code class="language-plaintext highlighter-rouge">sampleConfig</code>) and then we use standard XML
 Serialization attributes for the fields. This gives us strongly
 typed access to our settings. To access a setting in code, we
 simply refer to the Current property:
-<code class="highlighter-rouge">MyConfig.Current.MyString</code>.</p>
+<code class="language-plaintext highlighter-rouge">MyConfig.Current.MyString</code>.</p>
 
 <p>Finally, we need to indicate in the .config file, where the code
 resides to process the custom handler. We do this by including a
 pointer to the handler code at the top of the .config file:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;configSections&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;configSections&gt;
     &lt;sectionGroup name="sampleConfig"&gt;
         &lt;section name="myConfig" type="MyConfig,ConfigTest" /&gt;
     &lt;/sectionGroup&gt;
@@ -421,8 +421,9 @@ download a sample project</a> to try out the code.</p>
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2003-08-31">August 31, 2003</time></p>
-        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2003-08-31">August 31, 2003</time></p>
+
+
       </footer>
 
       <section class="page__share">

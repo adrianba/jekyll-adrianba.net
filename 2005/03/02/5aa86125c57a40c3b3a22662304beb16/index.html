@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>ASMX 2.0 - Nullable Types - adrianba.net</title>
-<meta name="description" content="ASP.NET Web Services (ASMX) in .NET 2.0 introduces support for  nullable types. In .NET 1.0 and 1.1, the framework didn’t support  xsi:nil for value types because, as we know, value types can’t be set to null. This commonly caused interop problems, particularly with J2EE applications.  ">
+<meta name="description" content="ASP.NET Web Services (ASMX) in .NET 2.0 introduces support for  nullable types. In .NET 1.0 and 1.1, the framework didn’t support  xsi:nil for value types because, as we know, value types can’t be set to null. This commonly caused interop problems, particularly with J2EE applications.">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/2005/03/02/5aa86125c57a40c3b3a22662304beb16/">
 
 
-  <meta property="og:description" content="ASP.NET Web Services (ASMX) in .NET 2.0 introduces support for  nullable types. In .NET 1.0 and 1.1, the framework didn’t support  xsi:nil for value types because, as we know, value types can’t be set to null. This commonly caused interop problems, particularly with J2EE applications.  ">
+  <meta property="og:description" content="ASP.NET Web Services (ASMX) in .NET 2.0 introduces support for  nullable types. In .NET 1.0 and 1.1, the framework didn’t support  xsi:nil for value types because, as we know, value types can’t be set to null. This commonly caused interop problems, particularly with J2EE applications.">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="ASMX 2.0 - Nullable Types">
-  <meta name="twitter:description" content="ASP.NET Web Services (ASMX) in .NET 2.0 introduces support for  nullable types. In .NET 1.0 and 1.1, the framework didn’t support  xsi:nil for value types because, as we know, value types can’t be set to null. This commonly caused interop problems, particularly with J2EE applications.  ">
+  <meta name="twitter:description" content="ASP.NET Web Services (ASMX) in .NET 2.0 introduces support for  nullable types. In .NET 1.0 and 1.1, the framework didn’t support  xsi:nil for value types because, as we know, value types can’t be set to null. This commonly caused interop problems, particularly with J2EE applications.">
   <meta name="twitter:url" content="https://adrianba.net/2005/03/02/5aa86125c57a40c3b3a22662304beb16/">
 
   
@@ -332,7 +332,7 @@ with J2EE applications.</p>
 <p>The following simple web service shows how a method with a
 nullable parameter.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%@ WebService Language="C#" Class="SimpleService" %&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%@ WebService Language="C#" Class="SimpleService" %&gt;
 
 using System.Web.Services;
 using System.Web.Services.Protocols;
@@ -353,7 +353,7 @@ public class SimpleService {
 
 <p>This produces the following WSDL fragment:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;s:element name="TestNullable"&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;s:element name="TestNullable"&gt;
   &lt;s:complexType&gt;
     &lt;s:sequence&gt;
       &lt;s:element minOccurs="1" maxOccurs="1" name="value" &lt;span style="background-color:yellow"&gt;nillable="true"&lt;/span&gt; type="s:int" /&gt; 
@@ -375,8 +375,9 @@ service will set value to null.</value></p>
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2005-03-03">March 3, 2005</time></p>
-        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2005-03-03">March 3, 2005</time></p>
+
+
       </footer>
 
       <section class="page__share">

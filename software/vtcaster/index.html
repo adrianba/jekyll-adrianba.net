@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>VTCaster - VisionTech Limited - adrianba.net</title>
-<meta name="description" content="Dynamically cast objects so that you can use custom interfaces in script. ">
+<meta name="description" content="Dynamically cast objects so that you can use custom interfaces in script.">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/software/vtcaster/">
 
 
-  <meta property="og:description" content="Dynamically cast objects so that you can use custom interfaces in script. ">
+  <meta property="og:description" content="Dynamically cast objects so that you can use custom interfaces in script.">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="VTCaster - VisionTech Limited">
-  <meta name="twitter:description" content="Dynamically cast objects so that you can use custom interfaces in script. ">
+  <meta name="twitter:description" content="Dynamically cast objects so that you can use custom interfaces in script.">
   <meta name="twitter:url" content="https://adrianba.net/software/vtcaster/">
 
   
@@ -200,14 +200,14 @@
 
 <p>Suppose I create a class file (<em>MyIface.cls</em>) in VB to define an interface I want to implement (note that there is no function body - this is just the interface):</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Option Explicit  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Option Explicit  
 Public Function MyTest() As String  
 End Function
 </code></pre></div></div>
 
-<p>Now, I create another class (<em>Test.cls</em>), which will implement the <code class="highlighter-rouge">MyIface</code> interface (and also a Test() method).</p>
+<p>Now, I create another class (<em>Test.cls</em>), which will implement the <code class="language-plaintext highlighter-rouge">MyIface</code> interface (and also a Test() method).</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Option Explicit  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Option Explicit  
 Implements MyIface  
 
 Public Function Test() As String  
@@ -221,7 +221,7 @@ End Function
 
 <p>Now in my .VBS script file, or .ASP web page, I can use the following code:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dim oTest,oIface,oCast,strTemp  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dim oTest,oIface,oCast,strTemp  
 
 Set oTest = CreateObject("Project.Test")  
 strTemp = oTest.Test ' strTemp now holds "Test function"  
@@ -231,9 +231,9 @@ Set oIface = oCast.castToInterface(oTest,"_MyIface")
 strTemp = oIface.MyTest ' strTemp now holds "Interface MyTest"  
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">castToInterface</code> call allows you to pass an object, and the name of the required interface, and it returns this interface. VB usually prepends an underscore (_) to the beginning of interface names which is why the code above asks for the <code class="highlighter-rouge">"_MyIface"</code> interface). In ASP code, you would typically use <code class="highlighter-rouge">Server.CreateObject</code> rather than simply <code class="highlighter-rouge">CreateObject</code>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">castToInterface</code> call allows you to pass an object, and the name of the required interface, and it returns this interface. VB usually prepends an underscore (_) to the beginning of interface names which is why the code above asks for the <code class="language-plaintext highlighter-rouge">"_MyIface"</code> interface). In ASP code, you would typically use <code class="language-plaintext highlighter-rouge">Server.CreateObject</code> rather than simply <code class="language-plaintext highlighter-rouge">CreateObject</code>.</p>
 
-<p>You can <a href="/software/download/VTCaster.zip">download the source code</a> for VTCaster [43K]. The zip file also includes a compiled DLL in case you don’t have access to Visual C++. Don’t forget to register the DLL with <code class="highlighter-rouge">regsvr32</code> before you try to use it.</p>
+<p>You can <a href="/software/download/VTCaster.zip">download the source code</a> for VTCaster [43K]. The zip file also includes a compiled DLL in case you don’t have access to Visual C++. Don’t forget to register the DLL with <code class="language-plaintext highlighter-rouge">regsvr32</code> before you try to use it.</p>
 
         
       </section>
@@ -244,6 +244,7 @@ strTemp = oIface.MyTest ' strTemp now holds "Interface MyTest"
 
 
         
+
       </footer>
 
       

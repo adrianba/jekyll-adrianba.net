@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Pretending browser detection isn’t browser detection - adrianba.net</title>
-<meta name="description" content="From time to time I see posts like this describing “CSS Hacks” to detect a particular version of IE. This post describes how removing conditional comments support in IE10 might be a problem for targeting workarounds to IE10. Specifically it says:  ">
+<meta name="description" content="From time to time I see posts like this describing “CSS Hacks” to detect a particular version of IE. This post describes how removing conditional comments support in IE10 might be a problem for targeting workarounds to IE10. Specifically it says:">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/2012/12/20/pretending-browser-detection-isnt-browser-detection/">
 
 
-  <meta property="og:description" content="From time to time I see posts like this describing “CSS Hacks” to detect a particular version of IE. This post describes how removing conditional comments support in IE10 might be a problem for targeting workarounds to IE10. Specifically it says:  ">
+  <meta property="og:description" content="From time to time I see posts like this describing “CSS Hacks” to detect a particular version of IE. This post describes how removing conditional comments support in IE10 might be a problem for targeting workarounds to IE10. Specifically it says:">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="Pretending browser detection isn’t browser detection">
-  <meta name="twitter:description" content="From time to time I see posts like this describing “CSS Hacks” to detect a particular version of IE. This post describes how removing conditional comments support in IE10 might be a problem for targeting workarounds to IE10. Specifically it says:  ">
+  <meta name="twitter:description" content="From time to time I see posts like this describing “CSS Hacks” to detect a particular version of IE. This post describes how removing conditional comments support in IE10 might be a problem for targeting workarounds to IE10. Specifically it says:">
   <meta name="twitter:url" content="https://adrianba.net/2012/12/20/pretending-browser-detection-isnt-browser-detection/">
 
   
@@ -324,7 +324,7 @@
 
 <blockquote>_"But without conditional comments in IE10, the only options we’re left with to target CSS problems are hacks or browser sniffing — and we certainly don’t want to resort to the latter."_</blockquote>
 
-<p>It goes on to describe a set of hacks that amount to browser sniffing using JavaScript (<code class="highlighter-rouge">if (/*@cc_on!@*/false &amp;&amp; document.documentMode === 10)</code>) or some combination of media queries that some developers will only fire for IE10. Just because you don’t use the user agent string doesn’t mean you’re not browser sniffing.</p>
+<p>It goes on to describe a set of hacks that amount to browser sniffing using JavaScript (<code class="language-plaintext highlighter-rouge">if (/*@cc_on!@*/false &amp;&amp; document.documentMode === 10)</code>) or some combination of media queries that some developers will only fire for IE10. Just because you don’t use the user agent string doesn’t mean you’re not browser sniffing.</p>
 
 <p>The whole point of <a href="http://blogs.msdn.com/b/ie/archive/2010/04/14/same-markup-writing-cross-browser-code.aspx">feature detection</a> is to look for the feature you want to use and if it is missing do something else. If the issue really is a bug in a specific version of a browser and you can’t find a way to detect the correct vs. the errant behaviour then consider browser detection explicitly, not hidden in code made to look like something else.</p>
 
@@ -341,8 +341,9 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2012-12-20">December 20, 2012</time></p>
-        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2012-12-20">December 20, 2012</time></p>
+
+
       </footer>
 
       <section class="page__share">

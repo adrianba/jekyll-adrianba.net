@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Accessing the Twitter API using OAuth - adrianba.net</title>
-<meta name="description" content="Following on from my last post that described using Node to access feeds from Delicious, I’ve also been investigating how to access my Twitter feed. This adds a little more complexity because Twitter requires that your app or script authenticate to Twitter using OAuth.  ">
+<meta name="description" content="Following on from my last post that described using Node to access feeds from Delicious, I’ve also been investigating how to access my Twitter feed. This adds a little more complexity because Twitter requires that your app or script authenticate to Twitter using OAuth.">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/2014/05/19/accessing-the-twitter-api-using-oauth/">
 
 
-  <meta property="og:description" content="Following on from my last post that described using Node to access feeds from Delicious, I’ve also been investigating how to access my Twitter feed. This adds a little more complexity because Twitter requires that your app or script authenticate to Twitter using OAuth.  ">
+  <meta property="og:description" content="Following on from my last post that described using Node to access feeds from Delicious, I’ve also been investigating how to access my Twitter feed. This adds a little more complexity because Twitter requires that your app or script authenticate to Twitter using OAuth.">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="Accessing the Twitter API using OAuth">
-  <meta name="twitter:description" content="Following on from my last post that described using Node to access feeds from Delicious, I’ve also been investigating how to access my Twitter feed. This adds a little more complexity because Twitter requires that your app or script authenticate to Twitter using OAuth.  ">
+  <meta name="twitter:description" content="Following on from my last post that described using Node to access feeds from Delicious, I’ve also been investigating how to access my Twitter feed. This adds a little more complexity because Twitter requires that your app or script authenticate to Twitter using OAuth.">
   <meta name="twitter:url" content="https://adrianba.net/2014/05/19/accessing-the-twitter-api-using-oauth/">
 
   
@@ -326,7 +326,7 @@
 
 <p>The node.js <a href="https://www.npmjs.org/package/request">request</a> library that I mentioned last time has built in support for <a href="https://github.com/mikeal/request#oauth-signing">OAuth authentication</a>. It requires that you populate a JavaScript object as follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="kwrd"&gt;var&lt;/span&gt; oauth = {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="kwrd"&gt;var&lt;/span&gt; oauth = {
    consumer_key: CONSUMER_KEY
   , consumer_secret: CONSUMER_SECRET
   , token: OAUTH_TOKEN
@@ -364,7 +364,7 @@
 
 <p>So here is the code to make a request to this API:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="kwrd"&gt;var&lt;/span&gt; request = require(&lt;span class="str"&gt;'request'&lt;/span&gt;);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="kwrd"&gt;var&lt;/span&gt; request = require(&lt;span class="str"&gt;'request'&lt;/span&gt;);
 &lt;span class="kwrd"&gt;var&lt;/span&gt; url = &lt;span class="str"&gt;"https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=adrianba&amp;count=5"&lt;/span&gt;;
 
 &lt;span class="kwrd"&gt;var&lt;/span&gt; CONSUMER_KEY = &lt;span class="str"&gt;"..."&lt;/span&gt;;
@@ -405,8 +405,9 @@ request.get({url:url, oauth:oauth, json:&lt;span class="kwrd"&gt;true&lt;/span&g
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2014-05-19">May 19, 2014</time></p>
-        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2014-05-19">May 19, 2014</time></p>
+
+
       </footer>
 
       <section class="page__share">

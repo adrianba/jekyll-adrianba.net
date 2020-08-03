@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Using Sublime Text as your git editor on Windows - adrianba.net</title>
-<meta name="description" content="Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git launched Sublime Text appropriately.  ">
+<meta name="description" content="Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git launched Sublime Text appropriately.">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/2016/01/06/using-sublime-text-as-your-git-editor-on-windows/">
 
 
-  <meta property="og:description" content="Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git launched Sublime Text appropriately.  ">
+  <meta property="og:description" content="Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git launched Sublime Text appropriately.">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="Using Sublime Text as your git editor on Windows">
-  <meta name="twitter:description" content="Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git launched Sublime Text appropriately.  ">
+  <meta name="twitter:description" content="Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git launched Sublime Text appropriately.">
   <meta name="twitter:url" content="https://adrianba.net/2016/01/06/using-sublime-text-as-your-git-editor-on-windows/">
 
   
@@ -322,15 +322,15 @@
         
         <p>Many git commands require using an editor including <a href="http://chris.beams.io/posts/git-commit/">writing good commit messages</a>. I use <a href="http://www.sublimetext.com/3">Sublime Text</a> as my default text editor and I wanted to make sure git launched Sublime Text appropriately.</p>
 
-<p>On Windows, the sublime_text.exe program has a couple of command line options that help here. The <code class="highlighter-rouge">-n</code> option causes a new editing window to be created and the <code class="highlighter-rouge">-w</code> option tells Sublime Text to wait until you close the window before returning.</p>
+<p>On Windows, the sublime_text.exe program has a couple of command line options that help here. The <code class="language-plaintext highlighter-rouge">-n</code> option causes a new editing window to be created and the <code class="language-plaintext highlighter-rouge">-w</code> option tells Sublime Text to wait until you close the window before returning.</p>
 
 <p>By default, the Sublime Text 3 installer puts everything into “C:\Program Files\Sublime Text 3”. The spaces in the folder names makes the git command to configure the editor slightly trickier than normal. The following command sets up the global editor for git.</p>
 
-<p><code class="highlighter-rouge">git config --global core.editor "\"C:\Program Files\Sublime Text 3\sublime_text.exe\" -n -w"</code></p>
+<p><code class="language-plaintext highlighter-rouge">git config --global core.editor "\"C:\Program Files\Sublime Text 3\sublime_text.exe\" -n -w"</code></p>
 
 <p>You can check that the configuration has been correctly stored with</p>
 
-<p><code class="highlighter-rouge">git config --global -l</code></p>
+<p><code class="language-plaintext highlighter-rouge">git config --global -l</code></p>
 
         
       </section>
@@ -341,8 +341,9 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2016-01-06">January 6, 2016</time></p>
-        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2016-01-06">January 6, 2016</time></p>
+
+
       </footer>
 
       <section class="page__share">

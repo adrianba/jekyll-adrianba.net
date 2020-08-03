@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>ASMX 2.0 - Basic Profile 1.0 Conformance - adrianba.net</title>
-<meta name="description" content="ASP.NET web services (commonly known as ASMX web services) have been a part of the .NET Framework from the beginning in v1.0 when it was still early days in the web services world. A number of enhancements have been made to ASMX in version 2.0 of the framework and one in particular is aimed at helping developers achieve improved interoperability with other web service platforms.  ">
+<meta name="description" content="ASP.NET web services (commonly known as ASMX web services) have been a part of the .NET Framework from the beginning in v1.0 when it was still early days in the web services world. A number of enhancements have been made to ASMX in version 2.0 of the framework and one in particular is aimed at helping developers achieve improved interoperability with other web service platforms.">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/2005/02/26/9cb90c98cf13431c93febde1b29eb294/">
 
 
-  <meta property="og:description" content="ASP.NET web services (commonly known as ASMX web services) have been a part of the .NET Framework from the beginning in v1.0 when it was still early days in the web services world. A number of enhancements have been made to ASMX in version 2.0 of the framework and one in particular is aimed at helping developers achieve improved interoperability with other web service platforms.  ">
+  <meta property="og:description" content="ASP.NET web services (commonly known as ASMX web services) have been a part of the .NET Framework from the beginning in v1.0 when it was still early days in the web services world. A number of enhancements have been made to ASMX in version 2.0 of the framework and one in particular is aimed at helping developers achieve improved interoperability with other web service platforms.">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="ASMX 2.0 - Basic Profile 1.0 Conformance">
-  <meta name="twitter:description" content="ASP.NET web services (commonly known as ASMX web services) have been a part of the .NET Framework from the beginning in v1.0 when it was still early days in the web services world. A number of enhancements have been made to ASMX in version 2.0 of the framework and one in particular is aimed at helping developers achieve improved interoperability with other web service platforms.  ">
+  <meta name="twitter:description" content="ASP.NET web services (commonly known as ASMX web services) have been a part of the .NET Framework from the beginning in v1.0 when it was still early days in the web services world. A number of enhancements have been made to ASMX in version 2.0 of the framework and one in particular is aimed at helping developers achieve improved interoperability with other web service platforms.">
   <meta name="twitter:url" content="https://adrianba.net/2005/02/26/9cb90c98cf13431c93febde1b29eb294/">
 
   
@@ -347,7 +347,7 @@ will continue to work as it did with previous versions. Any
 warnings are just for information and can be disabled if you
 choose. The following file, simple.asmx, demonstrates this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%@ WebService Language="C#" Class="SimpleService" %&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%@ WebService Language="C#" Class="SimpleService" %&gt;
 
 using System.Web.Services;
 using System.Web.Services.Protocols;
@@ -376,7 +376,7 @@ goes away and the service conforms.</p>
 declare their BP compliance using the ComformanceClaims property of
 the WebServiceBinding attribute:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%@ WebService Language="C#" Class="SimpleService" %&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%@ WebService Language="C#" Class="SimpleService" %&gt;
 
 using System.Web.Services;
 using System.Web.Services.Protocols;
@@ -398,7 +398,7 @@ the Basic Profile 1.0. The EmitConfirmanceClaims property exposes
 this claim in a machine readable way by including the following XML
 as part of the WSDL for the web service:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;wsdl:documentation&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;wsdl:documentation&gt;
   &lt;wsi:Claim conformsTo="http://ws-i.org/profiles/basic/1.0" xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" /&gt; 
 &lt;/wsdl:documentation&gt;
 </code></pre></div></div>
@@ -427,8 +427,9 @@ Basic Profile v1.0. Beta 2 will use the Basic Profile 1.1.</p>
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2005-02-27">February 27, 2005</time></p>
-        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2005-02-27">February 27, 2005</time></p>
+
+
       </footer>
 
       <section class="page__share">

@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>XMLStarlet Command Line XML Toolkit - adrianba.net</title>
-<meta name="description" content="I’ve recently been writing some scripts to automate a test harness. The test harness takes in an XML file as it’s input. It turns out that most of the tests we want a slight variations of the same scenario and this means small tweaks to the XML file. When I started, I ended up with a new XML file for each scenario. This was okay for 2 variations of 3 scenarios (6 files) but as the test space grew so did the number of XML files. I wanted to find an easier way of keeping all the files in sync but I didn’t want a heavyweight solution such as some kind of database or input file that I would somehow have to find a way to parse.  ">
+<meta name="description" content="I’ve recently been writing some scripts to automate a test harness. The test harness takes in an XML file as it’s input. It turns out that most of the tests we want a slight variations of the same scenario and this means small tweaks to the XML file. When I started, I ended up with a new XML file for each scenario. This was okay for 2 variations of 3 scenarios (6 files) but as the test space grew so did the number of XML files. I wanted to find an easier way of keeping all the files in sync but I didn’t want a heavyweight solution such as some kind of database or input file that I would somehow have to find a way to parse.">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/2008/09/08/xmlstarlet-command-line-xml-toolkit/">
 
 
-  <meta property="og:description" content="I’ve recently been writing some scripts to automate a test harness. The test harness takes in an XML file as it’s input. It turns out that most of the tests we want a slight variations of the same scenario and this means small tweaks to the XML file. When I started, I ended up with a new XML file for each scenario. This was okay for 2 variations of 3 scenarios (6 files) but as the test space grew so did the number of XML files. I wanted to find an easier way of keeping all the files in sync but I didn’t want a heavyweight solution such as some kind of database or input file that I would somehow have to find a way to parse.  ">
+  <meta property="og:description" content="I’ve recently been writing some scripts to automate a test harness. The test harness takes in an XML file as it’s input. It turns out that most of the tests we want a slight variations of the same scenario and this means small tweaks to the XML file. When I started, I ended up with a new XML file for each scenario. This was okay for 2 variations of 3 scenarios (6 files) but as the test space grew so did the number of XML files. I wanted to find an easier way of keeping all the files in sync but I didn’t want a heavyweight solution such as some kind of database or input file that I would somehow have to find a way to parse.">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="XMLStarlet Command Line XML Toolkit">
-  <meta name="twitter:description" content="I’ve recently been writing some scripts to automate a test harness. The test harness takes in an XML file as it’s input. It turns out that most of the tests we want a slight variations of the same scenario and this means small tweaks to the XML file. When I started, I ended up with a new XML file for each scenario. This was okay for 2 variations of 3 scenarios (6 files) but as the test space grew so did the number of XML files. I wanted to find an easier way of keeping all the files in sync but I didn’t want a heavyweight solution such as some kind of database or input file that I would somehow have to find a way to parse.  ">
+  <meta name="twitter:description" content="I’ve recently been writing some scripts to automate a test harness. The test harness takes in an XML file as it’s input. It turns out that most of the tests we want a slight variations of the same scenario and this means small tweaks to the XML file. When I started, I ended up with a new XML file for each scenario. This was okay for 2 variations of 3 scenarios (6 files) but as the test space grew so did the number of XML files. I wanted to find an easier way of keeping all the files in sync but I didn’t want a heavyweight solution such as some kind of database or input file that I would somehow have to find a way to parse.">
   <meta name="twitter:url" content="https://adrianba.net/2008/09/08/xmlstarlet-command-line-xml-toolkit/">
 
   
@@ -326,7 +326,7 @@
 
 <p>There is a pre-built Win32 binary distribution so I can just copy the xml.exe program into the same folder as my test harness. This allows me to take my template input file and update it and the output squirts out of stdout. For example, take the following file:</p>
 
-<?xml version="1.0" encoding="utf-8" ?>
+<p>&lt;?xml version=”1.0” encoding=”utf-8” ?&gt;</p>
 <Data>    
    <Transaction ID="Step1">    
        <Action Name="Navigate" Url="URL" />    
@@ -341,7 +341,7 @@
 
 <p>The following output is what you’d expect and it’s sent to stdout so you can pipe it into another command or redirect to a file.</p>
 
-<?xml version="1.0" encoding="utf-8"?>
+<p>&lt;?xml version=”1.0” encoding=”utf-8”?&gt;</p>
 <Data>         
  <Transaction ID="Step1">         
    <Action Name="Navigate" Url="http://adrianba.net" />         
@@ -360,8 +360,9 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2008-09-08">September 8, 2008</time></p>
-        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2008-09-08">September 8, 2008</time></p>
+
+
       </footer>
 
       <section class="page__share">

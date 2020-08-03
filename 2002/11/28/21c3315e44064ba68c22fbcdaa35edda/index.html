@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Apparently there is a bug in TLBIMP which means… - adrianba.net</title>
-<meta name="description" content="Apparently there is a bug in TLBIMP which means that, under certain circumstances, the interop DLL that it generates won’t support events properly. This is probably a well-known issue that everyone except me knows about, but I didn’t find too much about it on Google.  ">
+<meta name="description" content="Apparently there is a bug in TLBIMP which means that, under certain circumstances, the interop DLL that it generates won’t support events properly. This is probably a well-known issue that everyone except me knows about, but I didn’t find too much about it on Google.">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/2002/11/28/21c3315e44064ba68c22fbcdaa35edda/">
 
 
-  <meta property="og:description" content="Apparently there is a bug in TLBIMP which means that, under certain circumstances, the interop DLL that it generates won’t support events properly. This is probably a well-known issue that everyone except me knows about, but I didn’t find too much about it on Google.  ">
+  <meta property="og:description" content="Apparently there is a bug in TLBIMP which means that, under certain circumstances, the interop DLL that it generates won’t support events properly. This is probably a well-known issue that everyone except me knows about, but I didn’t find too much about it on Google.">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="Apparently there is a bug in TLBIMP which means…">
-  <meta name="twitter:description" content="Apparently there is a bug in TLBIMP which means that, under certain circumstances, the interop DLL that it generates won’t support events properly. This is probably a well-known issue that everyone except me knows about, but I didn’t find too much about it on Google.  ">
+  <meta name="twitter:description" content="Apparently there is a bug in TLBIMP which means that, under certain circumstances, the interop DLL that it generates won’t support events properly. This is probably a well-known issue that everyone except me knows about, but I didn’t find too much about it on Google.">
   <meta name="twitter:url" content="https://adrianba.net/2002/11/28/21c3315e44064ba68c22fbcdaa35edda/">
 
   
@@ -337,7 +337,7 @@ to take the following steps</a>:</p>
 default):</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tlbimp msmgs.exe /out:Messenger.dll
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tlbimp msmgs.exe /out:Messenger.dll
 </code></pre></div></div>
 
 <ol>
@@ -345,7 +345,7 @@ default):</li>
 file:</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ildasm /text Messenger.dll /out:Messenger.il
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ildasm /text Messenger.dll /out:Messenger.il
 </code></pre></div></div>
 
 <ol>
@@ -353,29 +353,29 @@ file:</li>
 following line (mark the class as public instead of private):</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.class private auto ansi sealed DMsgrObjectEvents_SinkHelper
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.class private auto ansi sealed DMsgrObjectEvents_SinkHelper
 </code></pre></div></div>
 
 <p>to</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.class public auto ansi sealed DMsgrObjectEvents_SinkHelper
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.class public auto ansi sealed DMsgrObjectEvents_SinkHelper
 </code></pre></div></div>
 
 <p>and just below that</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.class private auto ansi sealed DMsgrObjectEvents_EventProvider
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.class private auto ansi sealed DMsgrObjectEvents_EventProvider
 </code></pre></div></div>
 
 <p>to</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.class public auto ansi sealed DMsgrObjectEvents_EventProvider
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.class public auto ansi sealed DMsgrObjectEvents_EventProvider
 </code></pre></div></div>
 
 <ol>
   <li>Compile the IL file:</li>
 </ol>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ilasm /dll Messenger.il
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ilasm /dll Messenger.il
 </code></pre></div></div>
 
 <ol>
@@ -392,8 +392,9 @@ project.</li>
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2002-11-28">November 28, 2002</time></p>
-        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2002-11-28">November 28, 2002</time></p>
+
+
       </footer>
 
       <section class="page__share">

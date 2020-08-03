@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Node and xml-stream - adrianba.net</title>
-<meta name="description" content="For the last couple of months, I’ve been experimenting more and more with node.js. My impression is that most people who have heard of node but not really used it think of it as a server technology for building web applications using JavaScript. Of course, it does that and there is good support for node.js hosted on Microsoft Azure Web Sites. But you can also use node as a scripting language for local tasks. There are lots of popular scripting languages like Python and Ruby but if you’re already a JavaScript developer then node is a convenient choice.  ">
+<meta name="description" content="For the last couple of months, I’ve been experimenting more and more with node.js. My impression is that most people who have heard of node but not really used it think of it as a server technology for building web applications using JavaScript. Of course, it does that and there is good support for node.js hosted on Microsoft Azure Web Sites. But you can also use node as a scripting language for local tasks. There are lots of popular scripting languages like Python and Ruby but if you’re already a JavaScript developer then node is a convenient choice.">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/2014/04/20/node-and-xml-stream/">
 
 
-  <meta property="og:description" content="For the last couple of months, I’ve been experimenting more and more with node.js. My impression is that most people who have heard of node but not really used it think of it as a server technology for building web applications using JavaScript. Of course, it does that and there is good support for node.js hosted on Microsoft Azure Web Sites. But you can also use node as a scripting language for local tasks. There are lots of popular scripting languages like Python and Ruby but if you’re already a JavaScript developer then node is a convenient choice.  ">
+  <meta property="og:description" content="For the last couple of months, I’ve been experimenting more and more with node.js. My impression is that most people who have heard of node but not really used it think of it as a server technology for building web applications using JavaScript. Of course, it does that and there is good support for node.js hosted on Microsoft Azure Web Sites. But you can also use node as a scripting language for local tasks. There are lots of popular scripting languages like Python and Ruby but if you’re already a JavaScript developer then node is a convenient choice.">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="Node and xml-stream">
-  <meta name="twitter:description" content="For the last couple of months, I’ve been experimenting more and more with node.js. My impression is that most people who have heard of node but not really used it think of it as a server technology for building web applications using JavaScript. Of course, it does that and there is good support for node.js hosted on Microsoft Azure Web Sites. But you can also use node as a scripting language for local tasks. There are lots of popular scripting languages like Python and Ruby but if you’re already a JavaScript developer then node is a convenient choice.  ">
+  <meta name="twitter:description" content="For the last couple of months, I’ve been experimenting more and more with node.js. My impression is that most people who have heard of node but not really used it think of it as a server technology for building web applications using JavaScript. Of course, it does that and there is good support for node.js hosted on Microsoft Azure Web Sites. But you can also use node as a scripting language for local tasks. There are lots of popular scripting languages like Python and Ruby but if you’re already a JavaScript developer then node is a convenient choice.">
   <meta name="twitter:url" content="https://adrianba.net/2014/04/20/node-and-xml-stream/">
 
   
@@ -326,21 +326,21 @@
 
 <h1 id="installing-xml-stream-on-windows">Installing xml-stream on Windows</h1>
 
-<p>Installing modules is easy and the command <code class="highlighter-rouge">npm install xml-stream</code> should take care of installing the module into the <code class="highlighter-rouge">node_modules</code> folder below the current directory.</p>
+<p>Installing modules is easy and the command <code class="language-plaintext highlighter-rouge">npm install xml-stream</code> should take care of installing the module into the <code class="language-plaintext highlighter-rouge">node_modules</code> folder below the current directory.</p>
 
-<p>However. When I first tried this I ran into some problems. First of all, this module needs Python to be available. I installed the latest version of <a href="https://www.python.org/download/releases/3.4.0">Python (v3.4.0)</a> and tried again. This time it complained because Python 2.7 was needed. I installed <a href="https://www.python.org/download/releases/2.7.6">Python 2.7.6</a> too but now there was a problem - how would npm know which version of Python to use? You can specify this each time or you can use the <code class="highlighter-rouge">npm config</code> command to tell npm where to look:</p>
+<p>However. When I first tried this I ran into some problems. First of all, this module needs Python to be available. I installed the latest version of <a href="https://www.python.org/download/releases/3.4.0">Python (v3.4.0)</a> and tried again. This time it complained because Python 2.7 was needed. I installed <a href="https://www.python.org/download/releases/2.7.6">Python 2.7.6</a> too but now there was a problem - how would npm know which version of Python to use? You can specify this each time or you can use the <code class="language-plaintext highlighter-rouge">npm config</code> command to tell npm where to look:</p>
 
-<p><code class="highlighter-rouge">npm config set python "C:Python27python.exe"</code></p>
+<p><code class="language-plaintext highlighter-rouge">npm config set python "C:Python27python.exe"</code></p>
 
 <p>You can also configure the version of Visual Studio tools you have installed so that npm knows how to use the compilers:</p>
 
-<p><code class="highlighter-rouge">npm config set msvs_version 2013</code></p>
+<p><code class="language-plaintext highlighter-rouge">npm config set msvs_version 2013</code></p>
 
 <p>You can check that this is configured correctly by typing:</p>
 
-<p><code class="highlighter-rouge">npm config list</code></p>
+<p><code class="language-plaintext highlighter-rouge">npm config list</code></p>
 
-<p>With this configuration in place, issuing the command <code class="highlighter-rouge">npm install xml-stream</code> successfully downloaded a built the xml-stream module.</p>
+<p>With this configuration in place, issuing the command <code class="language-plaintext highlighter-rouge">npm install xml-stream</code> successfully downloaded a built the xml-stream module.</p>
 
 <h1 id="using-xml-stream">Using xml-stream</h1>
 
@@ -348,7 +348,7 @@
 
 <p>The first thing to do is to import the http and xml-stream modules and to download the XML file:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="str"&gt;"use strict"&lt;/span&gt;;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="str"&gt;"use strict"&lt;/span&gt;;
 
 &lt;span class="kwrd"&gt;var&lt;/span&gt; http = require(&lt;span class="str"&gt;'http'&lt;/span&gt;);
 &lt;span class="kwrd"&gt;var&lt;/span&gt; XmlStream = require(&lt;span class="str"&gt;'xml-stream'&lt;/span&gt;);
@@ -361,7 +361,7 @@
 
 <p>The xml-stream module allows you to set-up event listeners for different elements in the document. The W3C file has different elements for Working Draft (WD), Last Call (LastCall), Candidate Recommendation (CR), etc. Here is the code that listens for each document type.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="str"&gt;"use strict"&lt;/span&gt;;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="str"&gt;"use strict"&lt;/span&gt;;
 
 &lt;span class="kwrd"&gt;var&lt;/span&gt; http = require(&lt;span class="str"&gt;'http'&lt;/span&gt;);
 &lt;span class="kwrd"&gt;var&lt;/span&gt; XmlStream = require(&lt;span class="str"&gt;'xml-stream'&lt;/span&gt;);
@@ -392,9 +392,9 @@
 });
 </code></pre></div></div>
 
-<p>Finally, we can add in a definition for the <code class="highlighter-rouge">processDocument</code> function, which will gather together all the documents into the documents collection:</p>
+<p>Finally, we can add in a definition for the <code class="language-plaintext highlighter-rouge">processDocument</code> function, which will gather together all the documents into the documents collection:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;span class="kwrd"&gt;var&lt;/span&gt; processDocument = &lt;span class="kwrd"&gt;function&lt;/span&gt; (item) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;span class="kwrd"&gt;var&lt;/span&gt; processDocument = &lt;span class="kwrd"&gt;function&lt;/span&gt; (item) {
         &lt;span class="rem"&gt;// Collect document properties&lt;/span&gt;
         &lt;span class="kwrd"&gt;var&lt;/span&gt; document = {};
         document.type = item.$name;
@@ -430,8 +430,9 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2014-04-20">April 20, 2014</time></p>
-        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2014-04-20">April 20, 2014</time></p>
+
+
       </footer>
 
       <section class="page__share">

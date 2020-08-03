@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Using C# to access the Twitter API - adrianba.net</title>
-<meta name="description" content="My last post described how to acquire Twitter OAuth keys and tokens to allow you to use Twitter’s API to access Twitter feeds. I showed how to use the request module with node.js, which has built-in support for OAuth, to request and process data.  ">
+<meta name="description" content="My last post described how to acquire Twitter OAuth keys and tokens to allow you to use Twitter’s API to access Twitter feeds. I showed how to use the request module with node.js, which has built-in support for OAuth, to request and process data.">
 
 
   <meta name="author" content="Adrian Bateman">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://adrianba.net/2014/05/20/using-c-to-access-the-twitter-api/">
 
 
-  <meta property="og:description" content="My last post described how to acquire Twitter OAuth keys and tokens to allow you to use Twitter’s API to access Twitter feeds. I showed how to use the request module with node.js, which has built-in support for OAuth, to request and process data.  ">
+  <meta property="og:description" content="My last post described how to acquire Twitter OAuth keys and tokens to allow you to use Twitter’s API to access Twitter feeds. I showed how to use the request module with node.js, which has built-in support for OAuth, to request and process data.">
 
 
 
@@ -33,7 +33,7 @@
 
   <meta name="twitter:site" content="@adrianba">
   <meta name="twitter:title" content="Using C# to access the Twitter API">
-  <meta name="twitter:description" content="My last post described how to acquire Twitter OAuth keys and tokens to allow you to use Twitter’s API to access Twitter feeds. I showed how to use the request module with node.js, which has built-in support for OAuth, to request and process data.  ">
+  <meta name="twitter:description" content="My last post described how to acquire Twitter OAuth keys and tokens to allow you to use Twitter’s API to access Twitter feeds. I showed how to use the request module with node.js, which has built-in support for OAuth, to request and process data.">
   <meta name="twitter:url" content="https://adrianba.net/2014/05/20/using-c-to-access-the-twitter-api/">
 
   
@@ -326,7 +326,7 @@
 
 <p>Let’s start with the code to call the Twitter API:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="kwrd"&gt;using&lt;/span&gt; System;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="kwrd"&gt;using&lt;/span&gt; System;
 &lt;span class="kwrd"&gt;using&lt;/span&gt; System.IO;
 &lt;span class="kwrd"&gt;using&lt;/span&gt; System.Net;
 &lt;span class="kwrd"&gt;using&lt;/span&gt; System.Text;
@@ -359,7 +359,7 @@
 
 <p>The code here is similar to the previous <a href="/2014/05/19/accessing-the-twitter-api-using-oauth">post</a>. It creates a HTTP request to the API endpoint and this time simply writes the response to the console. The difference here is that we need to add the OAuth Authorization header. The magic takes place in the getHeader() method:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="kwrd"&gt;class&lt;/span&gt; OAuthHeader : OAuthBase {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="kwrd"&gt;class&lt;/span&gt; OAuthHeader : OAuthBase {
     &lt;span class="kwrd"&gt;public&lt;/span&gt; &lt;span class="kwrd"&gt;string&lt;/span&gt; getHeader(&lt;span class="kwrd"&gt;string&lt;/span&gt; url,&lt;span class="kwrd"&gt;string&lt;/span&gt; method) {
         &lt;span class="kwrd"&gt;string&lt;/span&gt; normalizedUri;
         &lt;span class="kwrd"&gt;string&lt;/span&gt; normalizedParameters;
@@ -408,8 +408,9 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2014-05-20">May 20, 2014</time></p>
-        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2014-05-20">May 20, 2014</time></p>
+
+
       </footer>
 
       <section class="page__share">
