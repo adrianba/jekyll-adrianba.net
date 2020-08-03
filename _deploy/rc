@@ -1,8 +1,0 @@
-Echo Running RC config
-#debug 4
-set cmd:save-cwd-history no
-set cmd:save-rl-history no
-set ftp:use-feat no
-set ssl:verify-certificate yes
-set ssl:ca-file "~/.lftp/adrianba.net.crt"
-set ssl:check-hostname no
