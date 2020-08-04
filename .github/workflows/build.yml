@@ -9,6 +9,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      NOKOGIRI_USE_SYSTEM_LIBRARIES: true
+
     steps:
     - name: Checkout source
       uses: actions/checkout@v2
