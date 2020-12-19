@@ -1,10 +1,10 @@
 ---
 title: "Changing Computer Name from the command line on Windows 10"
-last_modified_at: 20201218T150000-0700
+last_modified_at: 20201219T153900-0700
 ---
 
 Here is a way to change your Windows computer's name from the command line.
-[[Source: Password Recovery Blog]](https://www.top-password.com/blog/3-ways-to-change-computer-name-in-windows-10/#:~:text=Method%203%3A%20Change%20Computer%20Name%20from%20Command%20Prompt)
+[Source: [Password Recovery Blog](https://www.top-password.com/blog/3-ways-to-change-computer-name-in-windows-10/#:~:text=Method%203%3A%20Change%20Computer%20Name%20from%20Command%20Prompt)]
 
 The command line needs to be running as Administrator (Win+X, Command Prompt (Admin)).
 
