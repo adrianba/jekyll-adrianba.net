@@ -129,6 +129,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-linux
 
 DEPENDENCIES
   html-proofer
@@ -142,4 +143,4 @@ DEPENDENCIES
   octopress-paginate
 
 BUNDLED WITH
-   2.1.4
+   2.2.2
