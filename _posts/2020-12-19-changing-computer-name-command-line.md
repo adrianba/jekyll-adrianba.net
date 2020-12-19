@@ -1,6 +1,6 @@
 ---
 title: "Changing Computer Name from the command line on Windows 10"
-last_modified_at: 20201219T153900-0700
+last_modified_at: 20201219T153900-0800
 ---
 
 Here is a way to change your Windows computer's name from the command line.
