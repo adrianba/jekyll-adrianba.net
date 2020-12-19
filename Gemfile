@@ -6,6 +6,8 @@ source "https://rubygems.org"
 #
 #     bundle exec jekyll serve
 #
+gem "pkg-config", "~> 1.1"
+
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 gem "jekyll", "~> 4.1.1"
