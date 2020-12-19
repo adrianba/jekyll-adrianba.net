@@ -12,6 +12,9 @@ jobs:
       NOKOGIRI_USE_SYSTEM_LIBRARIES: true
 
     steps:
+      - name: Install dependencies
+        run: sudo apt-get install libxslt-dev libxml2-dev
+
       - name: Checkout source
         uses: actions/checkout@v2
 
