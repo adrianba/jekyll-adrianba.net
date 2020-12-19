@@ -2920,4 +2920,10 @@ var store = [{
         "tags": [],
         "url": "https://adrianba.net/2019/11/16/who-can-sue-companies-ccpa/",
         "teaser": null
+      },{
+        "title": "Changing PC Device Name for Bluetooth on Windows 10",
+        "excerpt":"I am lucky enough to own a pair of Bose QC35 II headphones, which can connect to multiple devices using Bluetooth. The headphones announce the name of each device they connect to. Sometimes, my Windows PC ends up with the device name all in caps, and the headphones spell out...","categories": [],
+        "tags": [],
+        "url": "https://adrianba.net/2020/12/18/changing-bluetooth-pc-name/",
+        "teaser": null
       }]
