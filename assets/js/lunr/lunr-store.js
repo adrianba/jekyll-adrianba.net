@@ -2926,4 +2926,10 @@ var store = [{
         "tags": [],
         "url": "https://adrianba.net/2020/12/18/changing-bluetooth-pc-name/",
         "teaser": null
+      },{
+        "title": "Changing Computer Name from the command line on Windows 10",
+        "excerpt":"Here is a way to change your Windows computer’s name from the command line. [Source: Password Recovery Blog] The command line needs to be running as Administrator (Win+X, Command Prompt (Admin)). Renaming the computer Now, run the following command: wmic computersystem where caption='current_pc_name' rename new_pc_name Replace current_pc_name with your current...","categories": [],
+        "tags": [],
+        "url": "https://adrianba.net/2020/12/19/changing-computer-name-command-line/",
+        "teaser": null
       }]

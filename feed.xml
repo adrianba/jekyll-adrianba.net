@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adrianba.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adrianba.net/" rel="alternate" type="text/html" /><updated>2020-12-19T14:08:06-08:00</updated><id>https://adrianba.net/feed.xml</id><title type="html">adrianba.net</title><subtitle>On land, on sea, and in the ether.</subtitle><author><name>Adrian Bateman</name></author><entry><title type="html">Changing PC Device Name for Bluetooth on Windows 10</title><link href="https://adrianba.net/2020/12/18/changing-bluetooth-pc-name/" rel="alternate" type="text/html" title="Changing PC Device Name for Bluetooth on Windows 10" /><published>2020-12-18T00:00:00-08:00</published><updated>2020-12-18T14:00:00-08:00</updated><id>https://adrianba.net/2020/12/18/changing-bluetooth-pc-name</id><content type="html" xml:base="https://adrianba.net/2020/12/18/changing-bluetooth-pc-name/">&lt;p&gt;I am lucky enough to own a pair of &lt;a href=&quot;https://www.bose.com/en_us/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii.html&quot;&gt;Bose QC35 II headphones&lt;/a&gt;,
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adrianba.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adrianba.net/" rel="alternate" type="text/html" /><updated>2020-12-19T15:37:23-08:00</updated><id>https://adrianba.net/feed.xml</id><title type="html">adrianba.net</title><subtitle>On land, on sea, and in the ether.</subtitle><author><name>Adrian Bateman</name></author><entry><title type="html">Changing Computer Name from the command line on Windows 10</title><link href="https://adrianba.net/2020/12/19/changing-computer-name-command-line/" rel="alternate" type="text/html" title="Changing Computer Name from the command line on Windows 10" /><published>2020-12-19T00:00:00-08:00</published><updated>2020-12-18T14:00:00-08:00</updated><id>https://adrianba.net/2020/12/19/changing-computer-name-command-line</id><content type="html" xml:base="https://adrianba.net/2020/12/19/changing-computer-name-command-line/">&lt;p&gt;Here is a way to change your Windows computer’s name from the command line.
+&lt;a href=&quot;https://www.top-password.com/blog/3-ways-to-change-computer-name-in-windows-10/#:~:text=Method%203%3A%20Change%20Computer%20Name%20from%20Command%20Prompt&quot;&gt;[Source: Password Recovery Blog]&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The command line needs to be running as Administrator (Win+X, Command Prompt (Admin)).&lt;/p&gt;
+
+&lt;h1 id=&quot;renaming-the-computer&quot;&gt;Renaming the computer&lt;/h1&gt;
+
+&lt;p&gt;Now, run the following command:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wmic computersystem where caption='current_pc_name' rename new_pc_name&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Replace &lt;em&gt;current_pc_name&lt;/em&gt; with your current computer name, and &lt;em&gt;new_pc_name&lt;/em&gt; with your desired new computer name.&lt;/p&gt;
+
+&lt;p&gt;After running the command, you will need to reboot for the changes to become effective.&lt;/p&gt;
+
+&lt;h1 id=&quot;getting-the-current-name&quot;&gt;Getting the current name&lt;/h1&gt;
+
+&lt;p&gt;To determine the current name of the computer, you can use the following command:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wmic computersystem get caption&lt;/code&gt;&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Here is a way to change your Windows computer’s name from the command line. [Source: Password Recovery Blog]</summary></entry><entry><title type="html">Changing PC Device Name for Bluetooth on Windows 10</title><link href="https://adrianba.net/2020/12/18/changing-bluetooth-pc-name/" rel="alternate" type="text/html" title="Changing PC Device Name for Bluetooth on Windows 10" /><published>2020-12-18T00:00:00-08:00</published><updated>2020-12-18T14:00:00-08:00</updated><id>https://adrianba.net/2020/12/18/changing-bluetooth-pc-name</id><content type="html" xml:base="https://adrianba.net/2020/12/18/changing-bluetooth-pc-name/">&lt;p&gt;I am lucky enough to own a pair of &lt;a href=&quot;https://www.bose.com/en_us/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii.html&quot;&gt;Bose QC35 II headphones&lt;/a&gt;,
 which can connect to multiple devices using Bluetooth. The headphones
 announce the name of each device they connect to. Sometimes, my Windows PC ends up
 with the device name all in caps, and the headphones spell out the letters
@@ -152,24 +171,4 @@ install some packages from &lt;code class=&quot;language-plaintext highlighter-r
 
 &lt;p&gt;You can check that the configuration has been correctly stored with&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git config --global -l&lt;/code&gt;&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git launched Sublime Text appropriately.</summary></entry><entry><title type="html">MDI to TIFF converter</title><link href="https://adrianba.net/2015/12/20/mdi-to-tiff-converter/" rel="alternate" type="text/html" title="MDI to TIFF converter" /><published>2015-12-20T00:00:00-08:00</published><updated>2015-12-20T11:40:07-08:00</updated><id>https://adrianba.net/2015/12/20/mdi-to-tiff-converter</id><content type="html" xml:base="https://adrianba.net/2015/12/20/mdi-to-tiff-converter/">&lt;p&gt;Microsoft Office Document Imaging (MODI) was part of Office up to Office 2007. It allowed you to scan multipage documents into .MDI files. MODI was deprecated and removed from Office 2010 and with a modern installation of Windows and Office there is no native support for .MDI files. If you have these files archived then you will need to convert them to another format.&lt;/p&gt;
-
-&lt;blockquote&gt;_MDI to TIFF File Converter is a command line tool, which allows you to convert one or more MDI files to TIFF. MDI is a proprietary file format of MODI (Microsoft Office Document Imaging), which was deprecated as part of Office 2010. This conversion tool will allow you to view MDI files after they are converted to TIFF. TIFF files may be viewed using a variety of image viewing programs, such as the Windows Fax and Image Viewer._&lt;/blockquote&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://www.microsoft.com/en-us/download/details.aspx?id=30328&quot;&gt;MDI to TIFF File Converter&lt;/a&gt; is a command line tool for converting old .MDI files to modern multipage TIFF files, which can be viewed with built-in tools like Windows Photo Viewer.&lt;/p&gt;
-
-&lt;p&gt;Run the converter from a command line prompt as follows:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mdi2tif -source _myfile_.mdi -log output.txt&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;This will produce the following output:&lt;/p&gt;
-
-&lt;p&gt;`Converting MDI file myfile.mdi
-Writing results file output.txt…&lt;/p&gt;
-
-&lt;p&gt;Conversion completed.
-Files with errors: [0/1]&lt;/p&gt;
-
-&lt;p&gt;See output.txt for more details. `&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;myfile&lt;/em&gt;.mdi will be converted to &lt;em&gt;myfile&lt;/em&gt;.tif.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Microsoft Office Document Imaging (MODI) was part of Office up to Office 2007. It allowed you to scan multipage documents into .MDI files. MODI was deprecated and removed from Office 2010 and with a modern installation of Windows and Office there is no native support for .MDI files. If you have these files archived then you will need to convert them to another format.</summary></entry></feed>
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git config --global -l&lt;/code&gt;&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git launched Sublime Text appropriately.</summary></entry></feed>
