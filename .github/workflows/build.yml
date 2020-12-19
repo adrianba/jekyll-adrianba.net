@@ -2,50 +2,49 @@ name: Build and deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     env:
       NOKOGIRI_USE_SYSTEM_LIBRARIES: true
 
     steps:
-    - name: Checkout source
-      uses: actions/checkout@v2
+      - name: Checkout source
+        uses: actions/checkout@v2
 
-    - name: Checkout publish
-      uses: actions/checkout@v2
-      with:
-        path: _site
-        ref: publish
+      - name: Checkout publish
+        uses: actions/checkout@v2
+        with:
+          path: _site
+          ref: publish
 
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 2.6
-        bundler-cache: true
-    
-    - name: Cache Jekyll data
-      uses: actions/cache@v2
-      with:
-        path: |
-          .jekyll-cache
-          .jekyll-metadata
-        key: cache-20200803
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true
 
-    - name: Build
-      run: JEKYLL_ENV=production bundle exec jekyll build --incremental
+      - name: Cache Jekyll data
+        uses: actions/cache@v2
+        with:
+          path: |
+            .jekyll-cache
+            .jekyll-metadata
+          key: cache-20200803
 
-    - name: Test
-      run: bundle exec htmlproofer ./_site --disable-external --allow-hash-href --empty-alt-ignore --internal-domains adrianba.net
+      - name: Build
+        run: JEKYLL_ENV=production bundle exec jekyll build --incremental
 
-    - name: List
-      run: ls -al && ls -al ./_site
-    
-    - name: Publish
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: chmod +x ./_deploy/deploy.sh && ./_deploy/deploy.sh
+      - name: Test
+        run: bundle exec htmlproofer ./_site --disable-external --allow-hash-href --empty-alt-ignore --internal-domains adrianba.net
+
+      - name: List
+        run: ls -al && ls -al ./_site
+
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: chmod +x ./_deploy/deploy.sh && ./_deploy/deploy.sh
