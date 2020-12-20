@@ -2932,4 +2932,10 @@ var store = [{
         "tags": [],
         "url": "https://adrianba.net/2020/12/19/changing-computer-name-command-line/",
         "teaser": null
+      },{
+        "title": "Quick shortcut to launching the Start Menu Startup folder in Explorer",
+        "excerpt":"Here is a quick way to get to the current user’s Startup folder in the Start Menu in Windows 10. Once there, you can right-click, Create Shortcut to add a program to startup when you login.   Open the Run dialog and type shell:startup.      [Source: TechJunkie]  ","categories": [],
+        "tags": [],
+        "url": "https://adrianba.net/2020/12/19/windows10-startup-folder/",
+        "teaser": null
       }]
