@@ -39,7 +39,7 @@ jobs:
           key: cache-20200803
 
       - name: Build
-        run: JEKYLL_ENV=production bundle exec jekyll build --incremental
+        run: JEKYLL_ENV=production bundle exec jekyll build
 
       - name: Test
         run: bundle exec htmlproofer ./_site --disable-external --allow-hash-href --empty-alt-ignore --internal-domains adrianba.net
