@@ -2938,4 +2938,10 @@ var store = [{
         "tags": [],
         "url": "https://adrianba.net/2020/12/19/windows10-startup-folder/",
         "teaser": null
+      },{
+        "title": "Repeated SD Card Disconnects on Surface Pro 5",
+        "excerpt":"I have been using a 128GB Micro-SD card as additional storage on my Surface Pro (both Surface Pro 4 and Surface Pro 5) for some years and regularly run into issues where the SD card doesn’t stay connected. Randomly, it will disconnect and a few seconds later reconnect. This is...","categories": [],
+        "tags": [],
+        "url": "https://adrianba.net/2021/02/18/sd-card-disconnects-on-surface-pro/",
+        "teaser": null
       }]
