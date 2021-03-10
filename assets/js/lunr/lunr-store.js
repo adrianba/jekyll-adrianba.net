@@ -2944,4 +2944,10 @@ var store = [{
         "tags": [],
         "url": "/2021/02/18/sd-card-disconnects-on-surface-pro/",
         "teaser": null
+      },{
+        "title": "Installing the latest version of git on Ubuntu",
+        "excerpt":"I was reading about the latest git security issue this evening when I realized that upgrading the Windows version of git using Chocolatey gave me a much newer version than the Ubuntu version on WSL. C:\\&gt;git --version git version 2.30.2.windows.1 I found this “hot-to” page that describes how to Install...","categories": [],
+        "tags": [],
+        "url": "/2021/03/09/ubuntu-latest-git/",
+        "teaser": null
       }]
