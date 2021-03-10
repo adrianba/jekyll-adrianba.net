@@ -15,7 +15,7 @@ C:\>git --version
 git version 2.30.2.windows.1
 ```
 
-I found this "hot-to" page that describes how to
+I found this description of how to
 [Install latest Git on Ubuntu-based Linux distributions](https://itsfoss.com/install-git-ubuntu/)
 by adding a new apt repository that tracks the latest version of `git`. Now I have
 the latest version installed.
