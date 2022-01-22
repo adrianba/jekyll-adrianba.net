@@ -2950,4 +2950,10 @@ var store = [{
         "tags": [],
         "url": "/2021/03/09/ubuntu-latest-git/",
         "teaser": null
+      },{
+        "title": "Change Windows PC name to lower case",
+        "excerpt":"It is straightforward to change the name of your Windows PC through the Settings app (go to System, About, and choose “Rename this PC”). One problem, though, is if you want to change the case of the name, but not the name itself. For example, changing from “SURFACE” to “surface”....","categories": [],
+        "tags": [],
+        "url": "/2022/01/22/changing-windows-pc-name-case/",
+        "teaser": null
       }]

@@ -209,7 +209,7 @@ Response.Status = "404 Not Found"
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Adrian Bateman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2022 Adrian Bateman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

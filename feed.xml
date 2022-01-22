@@ -1,201 +1,177 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adrianba.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adrianba.net/" rel="alternate" type="text/html" /><updated>2021-11-11T15:48:45-08:00</updated><id>https://adrianba.net/feed.xml</id><title type="html">adrianba.net</title><subtitle>On land, on sea, and in the ether.</subtitle><author><name>Adrian Bateman</name></author><entry><title type="html">Installing the latest version of git on Ubuntu</title><link href="https://adrianba.net/2021/03/09/ubuntu-latest-git/" rel="alternate" type="text/html" title="Installing the latest version of git on Ubuntu" /><published>2021-03-09T00:00:00-08:00</published><updated>2021-11-11T06:45:00-08:00</updated><id>https://adrianba.net/2021/03/09/ubuntu-latest-git</id><content type="html" xml:base="https://adrianba.net/2021/03/09/ubuntu-latest-git/">&lt;p&gt;&lt;img src=&quot;https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/02/install_git_ubuntu.png?w=800&amp;amp;ssl=1&quot; alt=&quot;An image with the git logo and text that says Install Latest Git on Ubuntu&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adrianba.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adrianba.net/" rel="alternate" type="text/html" /><updated>2022-01-22T09:33:11-08:00</updated><id>https://adrianba.net/feed.xml</id><title type="html">adrianba.net</title><subtitle>On land, on sea, and in the ether.</subtitle><author><name>Adrian Bateman</name></author><entry><title type="html">Change Windows PC name to lower case</title><link href="https://adrianba.net/2022/01/22/changing-windows-pc-name-case/" rel="alternate" type="text/html" title="Change Windows PC name to lower case" /><published>2022-01-22T00:00:00-08:00</published><updated>2022-01-22T07:45:00-08:00</updated><id>https://adrianba.net/2022/01/22/changing-windows-pc-name-case</id><content type="html" xml:base="https://adrianba.net/2022/01/22/changing-windows-pc-name-case/"><![CDATA[<p>It is straightforward to change the name of your Windows PC through the Settings
+app (go to System, About, and choose “Rename this PC”). One problem, though, is
+if you want to change the case of the name, but not the name itself. For example,
+changing from “SURFACE” to “surface”. If you try to use the built-in UI for this,
+Windows recognizes that the name hasn’t changed and won’t let you continue.</p>
 
-&lt;p&gt;I was reading about the latest &lt;a href=&quot;https://www.openwall.com/lists/oss-security/2021/03/09/3&quot;&gt;git security issue&lt;/a&gt;
-this evening when I realized that upgrading the Windows version of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt; using
-&lt;a href=&quot;https://chocolatey.org/&quot;&gt;Chocolatey&lt;/a&gt; gave me a much newer version than the
-Ubuntu version on WSL.&lt;/p&gt;
+<p>One approach would be to rename to something else, then back again with the desired
+case. However, there is an easier way using the command prompt.</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;C:\&amp;gt;git --version
+<p>In a command prompt running as Administrator, use the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WMIC computersystem where caption='current_name' rename new_name
+</code></pre></div></div>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[It is straightforward to change the name of your Windows PC through the Settings app (go to System, About, and choose “Rename this PC”). One problem, though, is if you want to change the case of the name, but not the name itself. For example, changing from “SURFACE” to “surface”. If you try to use the built-in UI for this, Windows recognizes that the name hasn’t changed and won’t let you continue.]]></summary></entry><entry><title type="html">Installing the latest version of git on Ubuntu</title><link href="https://adrianba.net/2021/03/09/ubuntu-latest-git/" rel="alternate" type="text/html" title="Installing the latest version of git on Ubuntu" /><published>2021-03-09T00:00:00-08:00</published><updated>2022-01-22T06:45:00-08:00</updated><id>https://adrianba.net/2021/03/09/ubuntu-latest-git</id><content type="html" xml:base="https://adrianba.net/2021/03/09/ubuntu-latest-git/"><![CDATA[<p><img src="https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/02/install_git_ubuntu.png?w=800&amp;ssl=1" alt="An image with the git logo and text that says Install Latest Git on Ubuntu" /></p>
+
+<p>I was reading about the latest <a href="https://www.openwall.com/lists/oss-security/2021/03/09/3">git security issue</a>
+this evening when I realized that upgrading the Windows version of <code class="language-plaintext highlighter-rouge">git</code> using
+<a href="https://chocolatey.org/">Chocolatey</a> gave me a much newer version than the
+Ubuntu version on WSL.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\&gt;git --version
 git version 2.30.2.windows.1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;p&gt;I found this description of how to
-&lt;a href=&quot;https://itsfoss.com/install-git-ubuntu/&quot;&gt;Install latest Git on Ubuntu-based Linux distributions&lt;/a&gt;
+<p>I found this description of how to
+<a href="https://itsfoss.com/install-git-ubuntu/">Install latest Git on Ubuntu-based Linux distributions</a>
 by adding a new Personal Package Archive (PPA) to your apt repository list that
-tracks the latest version of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt;.&lt;/p&gt;
+tracks the latest version of <code class="language-plaintext highlighter-rouge">git</code>.</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo add-apt-repository ppa:git-core/ppa
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
 sudo apt install git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre></div></div>
 
-&lt;p&gt;Now I have the latest version installed.&lt;/p&gt;
+<p>Now I have the latest version installed.</p>
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git --version
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git --version
 git version 2.30.2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Adrian Bateman</name></author><summary type="html"></summary></entry><entry><title type="html">Repeated SD Card Disconnects on Surface Pro 5</title><link href="https://adrianba.net/2021/02/18/sd-card-disconnects-on-surface-pro/" rel="alternate" type="text/html" title="Repeated SD Card Disconnects on Surface Pro 5" /><published>2021-02-18T00:00:00-08:00</published><updated>2021-02-23T07:17:00-08:00</updated><id>https://adrianba.net/2021/02/18/sd-card-disconnects-on-surface-pro</id><content type="html" xml:base="https://adrianba.net/2021/02/18/sd-card-disconnects-on-surface-pro/">&lt;p&gt;I have been using a 128GB Micro-SD card as additional storage on my Surface Pro
+</code></pre></div></div>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Repeated SD Card Disconnects on Surface Pro 5</title><link href="https://adrianba.net/2021/02/18/sd-card-disconnects-on-surface-pro/" rel="alternate" type="text/html" title="Repeated SD Card Disconnects on Surface Pro 5" /><published>2021-02-18T00:00:00-08:00</published><updated>2021-02-23T07:17:00-08:00</updated><id>https://adrianba.net/2021/02/18/sd-card-disconnects-on-surface-pro</id><content type="html" xml:base="https://adrianba.net/2021/02/18/sd-card-disconnects-on-surface-pro/"><![CDATA[<p>I have been using a 128GB Micro-SD card as additional storage on my Surface Pro
 (both Surface Pro 4 and Surface Pro 5) for some years and regularly run into issues
 where the SD card doesn’t stay connected. Randomly, it will disconnect and a few
 seconds later reconnect. This is especially frustrating because I often host a
 virtual disk image on the SD card and when it reconnects I have to manually
-reconnect the virtual disk too.&lt;/p&gt;
+reconnect the virtual disk too.</p>
 
-&lt;p&gt;I came across an &lt;a href=&quot;https://answers.microsoft.com/en-us/surface/forum/all/sd-card-still-randomly-disconnects/e2f4b3f2-954b-4b1b-8a02-81029880edd0?auth=1#threadSummaryAnswersSection:~:text=Ran%20into%20the%20same%20problem%20regardless%20of%20SD%20card%20manufacturer&quot;&gt;old post&lt;/a&gt; with a similar issue on Surface Pro 3. I recall that
+<p>I came across an <a href="https://answers.microsoft.com/en-us/surface/forum/all/sd-card-still-randomly-disconnects/e2f4b3f2-954b-4b1b-8a02-81029880edd0?auth=1#threadSummaryAnswersSection:~:text=Ran%20into%20the%20same%20problem%20regardless%20of%20SD%20card%20manufacturer">old post</a> with a similar issue on Surface Pro 3. I recall that
 there have been a variety of SD card issues with SP3 over the years that didn’t
-crop up with other editions, but I figured this was worth a try.&lt;/p&gt;
+crop up with other editions, but I figured this was worth a try.</p>
 
-&lt;p&gt;The change is to switch from the RealTek driver to a generic USB driver as follows:&lt;/p&gt;
+<p>The change is to switch from the RealTek driver to a generic USB driver as follows:</p>
 
-&lt;ol&gt;
-  &lt;li&gt;Press &lt;strong&gt;[Win]+X&lt;/strong&gt; then select &lt;strong&gt;Device Manager&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;Expand &lt;strong&gt;Universal Serial Bus Controller&lt;/strong&gt;, right-click on the &lt;strong&gt;RealTek USB 3.0 Card Reader&lt;/strong&gt; driver, then select &lt;strong&gt;Update Driver Software&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;From the pop-up, select &lt;strong&gt;Browse my computer for driver software&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;On the next screen, select &lt;strong&gt;Let me pick from a list of device drivers on my computer&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;Make sure Show compatible hardware is selected, then click on &lt;strong&gt;USB Mass Storage Device&lt;/strong&gt;, then click Next.&lt;/li&gt;
-  &lt;li&gt;It should say that Windows has successfully updated your driver software, so you can now click &lt;strong&gt;Close&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;You should be prompted to restart in order for the changes to take effect.&lt;/li&gt;
-&lt;/ol&gt;
+<ol>
+  <li>Press <strong>[Win]+X</strong> then select <strong>Device Manager</strong>.</li>
+  <li>Expand <strong>Universal Serial Bus Controller</strong>, right-click on the <strong>RealTek USB 3.0 Card Reader</strong> driver, then select <strong>Update Driver Software</strong>.</li>
+  <li>From the pop-up, select <strong>Browse my computer for driver software</strong>.</li>
+  <li>On the next screen, select <strong>Let me pick from a list of device drivers on my computer</strong>.</li>
+  <li>Make sure Show compatible hardware is selected, then click on <strong>USB Mass Storage Device</strong>, then click Next.</li>
+  <li>It should say that Windows has successfully updated your driver software, so you can now click <strong>Close</strong>.</li>
+  <li>You should be prompted to restart in order for the changes to take effect.</li>
+</ol>
 
-&lt;p&gt;I only just made this change a few days ago so I will see how it goes, but so far
-I haven’t had any further disconnects.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">I have been using a 128GB Micro-SD card as additional storage on my Surface Pro (both Surface Pro 4 and Surface Pro 5) for some years and regularly run into issues where the SD card doesn’t stay connected. Randomly, it will disconnect and a few seconds later reconnect. This is especially frustrating because I often host a virtual disk image on the SD card and when it reconnects I have to manually reconnect the virtual disk too.</summary></entry><entry><title type="html">Changing Computer Name from the command line on Windows 10</title><link href="https://adrianba.net/2020/12/19/changing-computer-name-command-line/" rel="alternate" type="text/html" title="Changing Computer Name from the command line on Windows 10" /><published>2020-12-19T00:00:00-08:00</published><updated>2020-12-19T15:39:00-08:00</updated><id>https://adrianba.net/2020/12/19/changing-computer-name-command-line</id><content type="html" xml:base="https://adrianba.net/2020/12/19/changing-computer-name-command-line/">&lt;p&gt;Here is a way to change your Windows computer’s name from the command line.
-[Source: &lt;a href=&quot;https://www.top-password.com/blog/3-ways-to-change-computer-name-in-windows-10/#:~:text=Method%203%3A%20Change%20Computer%20Name%20from%20Command%20Prompt&quot;&gt;Password Recovery Blog&lt;/a&gt;]&lt;/p&gt;
+<p>I only just made this change a few days ago so I will see how it goes, but so far
+I haven’t had any further disconnects.</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[I have been using a 128GB Micro-SD card as additional storage on my Surface Pro (both Surface Pro 4 and Surface Pro 5) for some years and regularly run into issues where the SD card doesn’t stay connected. Randomly, it will disconnect and a few seconds later reconnect. This is especially frustrating because I often host a virtual disk image on the SD card and when it reconnects I have to manually reconnect the virtual disk too.]]></summary></entry><entry><title type="html">Changing Computer Name from the command line on Windows 10</title><link href="https://adrianba.net/2020/12/19/changing-computer-name-command-line/" rel="alternate" type="text/html" title="Changing Computer Name from the command line on Windows 10" /><published>2020-12-19T00:00:00-08:00</published><updated>2020-12-19T15:39:00-08:00</updated><id>https://adrianba.net/2020/12/19/changing-computer-name-command-line</id><content type="html" xml:base="https://adrianba.net/2020/12/19/changing-computer-name-command-line/"><![CDATA[<p>Here is a way to change your Windows computer’s name from the command line.
+[Source: <a href="https://www.top-password.com/blog/3-ways-to-change-computer-name-in-windows-10/#:~:text=Method%203%3A%20Change%20Computer%20Name%20from%20Command%20Prompt">Password Recovery Blog</a>]</p>
 
-&lt;p&gt;The command line needs to be running as Administrator (Win+X, Command Prompt (Admin)).&lt;/p&gt;
+<p>The command line needs to be running as Administrator (Win+X, Command Prompt (Admin)).</p>
 
-&lt;h1 id=&quot;renaming-the-computer&quot;&gt;Renaming the computer&lt;/h1&gt;
+<h1 id="renaming-the-computer">Renaming the computer</h1>
 
-&lt;p&gt;Now, run the following command:&lt;/p&gt;
+<p>Now, run the following command:</p>
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wmic computersystem where caption='current_pc_name' rename new_pc_name&lt;/code&gt;&lt;/p&gt;
+<p><code class="language-plaintext highlighter-rouge">wmic computersystem where caption='current_pc_name' rename new_pc_name</code></p>
 
-&lt;p&gt;Replace &lt;em&gt;current_pc_name&lt;/em&gt; with your current computer name, and &lt;em&gt;new_pc_name&lt;/em&gt; with your desired new computer name.&lt;/p&gt;
+<p>Replace <em>current_pc_name</em> with your current computer name, and <em>new_pc_name</em> with your desired new computer name.</p>
 
-&lt;p&gt;After running the command, you will need to reboot for the changes to become effective.&lt;/p&gt;
+<p>After running the command, you will need to reboot for the changes to become effective.</p>
 
-&lt;h1 id=&quot;getting-the-current-name&quot;&gt;Getting the current name&lt;/h1&gt;
+<h1 id="getting-the-current-name">Getting the current name</h1>
 
-&lt;p&gt;To determine the current name of the computer, you can use the following command:&lt;/p&gt;
+<p>To determine the current name of the computer, you can use the following command:</p>
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wmic computersystem get caption&lt;/code&gt;&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Here is a way to change your Windows computer’s name from the command line. [Source: Password Recovery Blog]</summary></entry><entry><title type="html">Quick shortcut to launching the Start Menu Startup folder in Explorer</title><link href="https://adrianba.net/2020/12/19/windows10-startup-folder/" rel="alternate" type="text/html" title="Quick shortcut to launching the Start Menu Startup folder in Explorer" /><published>2020-12-19T00:00:00-08:00</published><updated>2020-12-19T16:05:00-08:00</updated><id>https://adrianba.net/2020/12/19/windows10-startup-folder</id><content type="html" xml:base="https://adrianba.net/2020/12/19/windows10-startup-folder/">&lt;p&gt;Here is a quick way to get to the current user’s Startup folder in the Start
+<p><code class="language-plaintext highlighter-rouge">wmic computersystem get caption</code></p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[Here is a way to change your Windows computer’s name from the command line. [Source: Password Recovery Blog]]]></summary></entry><entry><title type="html">Quick shortcut to launching the Start Menu Startup folder in Explorer</title><link href="https://adrianba.net/2020/12/19/windows10-startup-folder/" rel="alternate" type="text/html" title="Quick shortcut to launching the Start Menu Startup folder in Explorer" /><published>2020-12-19T00:00:00-08:00</published><updated>2020-12-19T16:05:00-08:00</updated><id>https://adrianba.net/2020/12/19/windows10-startup-folder</id><content type="html" xml:base="https://adrianba.net/2020/12/19/windows10-startup-folder/"><![CDATA[<p>Here is a quick way to get to the current user’s Startup folder in the Start
 Menu in Windows 10. Once there, you can right-click, Create Shortcut to add a
-program to startup when you login.&lt;/p&gt;
+program to startup when you login.</p>
 
-&lt;p&gt;Open the Run dialog and type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;shell:startup&lt;/code&gt;.&lt;/p&gt;
+<p>Open the Run dialog and type <code class="language-plaintext highlighter-rouge">shell:startup</code>.</p>
 
-&lt;p&gt;&lt;a href=&quot;/assets/uploads/2020/run-shell-startup.png&quot;&gt;&lt;img src=&quot;/assets/uploads/2020/run-shell-startup.png&quot; alt=&quot;Screenshot of Run Dialog showing shell:startup&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+<p><a href="/assets/uploads/2020/run-shell-startup.png"><img src="/assets/uploads/2020/run-shell-startup.png" alt="Screenshot of Run Dialog showing shell:startup" /></a></p>
 
-&lt;p&gt;[Source: &lt;a href=&quot;https://www.techjunkie.com/windows-10-startup-folder/#:~:text=open%20the%20Run%20dialog%20and%20type%20shell%3Astartup&quot;&gt;TechJunkie&lt;/a&gt;]&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Here is a quick way to get to the current user’s Startup folder in the Start Menu in Windows 10. Once there, you can right-click, Create Shortcut to add a program to startup when you login.</summary></entry><entry><title type="html">Changing PC Device Name for Bluetooth on Windows 10</title><link href="https://adrianba.net/2020/12/18/changing-bluetooth-pc-name/" rel="alternate" type="text/html" title="Changing PC Device Name for Bluetooth on Windows 10" /><published>2020-12-18T00:00:00-08:00</published><updated>2020-12-18T14:00:00-08:00</updated><id>https://adrianba.net/2020/12/18/changing-bluetooth-pc-name</id><content type="html" xml:base="https://adrianba.net/2020/12/18/changing-bluetooth-pc-name/">&lt;p&gt;I am lucky enough to own a pair of &lt;a href=&quot;https://www.bose.com/en_us/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii.html&quot;&gt;Bose QC35 II headphones&lt;/a&gt;,
+<p>[Source: <a href="https://www.techjunkie.com/windows-10-startup-folder/#:~:text=open%20the%20Run%20dialog%20and%20type%20shell%3Astartup">TechJunkie</a>]</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[Here is a quick way to get to the current user’s Startup folder in the Start Menu in Windows 10. Once there, you can right-click, Create Shortcut to add a program to startup when you login.]]></summary></entry><entry><title type="html">Changing PC Device Name for Bluetooth on Windows 10</title><link href="https://adrianba.net/2020/12/18/changing-bluetooth-pc-name/" rel="alternate" type="text/html" title="Changing PC Device Name for Bluetooth on Windows 10" /><published>2020-12-18T00:00:00-08:00</published><updated>2020-12-18T14:00:00-08:00</updated><id>https://adrianba.net/2020/12/18/changing-bluetooth-pc-name</id><content type="html" xml:base="https://adrianba.net/2020/12/18/changing-bluetooth-pc-name/"><![CDATA[<p>I am lucky enough to own a pair of <a href="https://www.bose.com/en_us/products/headphones/over_ear_headphones/quietcomfort-35-wireless-ii.html">Bose QC35 II headphones</a>,
 which can connect to multiple devices using Bluetooth. The headphones
 announce the name of each device they connect to. Sometimes, my Windows PC ends up
 with the device name all in caps, and the headphones spell out the letters
-rather than saying the name as a word.&lt;/p&gt;
+rather than saying the name as a word.</p>
 
-&lt;p&gt;It is possible to change the name your Windows PC uses for the Bluetooth device
+<p>It is possible to change the name your Windows PC uses for the Bluetooth device
 without needing to change the way the PC name is reflected elsewhere. To do this,
-use Device Manager and navigate to the Bluetooth radio adapter on your PC.&lt;/p&gt;
+use Device Manager and navigate to the Bluetooth radio adapter on your PC.</p>
 
-&lt;p&gt;&lt;a href=&quot;/assets/uploads/2020/devicemanager-bluetooth-adapter.png&quot;&gt;&lt;img src=&quot;/assets/uploads/2020/devicemanager-bluetooth-adapter.png&quot; alt=&quot;Screenshot of Windows Device Manager with Bluetooth Radio Adapter highlighted&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+<p><a href="/assets/uploads/2020/devicemanager-bluetooth-adapter.png"><img src="/assets/uploads/2020/devicemanager-bluetooth-adapter.png" alt="Screenshot of Windows Device Manager with Bluetooth Radio Adapter highlighted" /></a></p>
 
-&lt;p&gt;In the Properties for the Bluetooth Radio Adapter, on the Advanced tab, you
+<p>In the Properties for the Bluetooth Radio Adapter, on the Advanced tab, you
 can edit the name that the PC device appears as over Bluetooth. Here, I was able
 to change the name from all caps to a single capitalized word so that the
-headphones will capture the new name and report it out correctly.&lt;/p&gt;
+headphones will capture the new name and report it out correctly.</p>
 
-&lt;p&gt;&lt;a href=&quot;/assets/uploads/2020/bluetooth-adapter-advanced-properties.png&quot;&gt;&lt;img src=&quot;/assets/uploads/2020/bluetooth-adapter-advanced-properties.png&quot; alt=&quot;Screenshot of Bluetooth Radio Adapter Advanced Properties Page&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">I am lucky enough to own a pair of Bose QC35 II headphones, which can connect to multiple devices using Bluetooth. The headphones announce the name of each device they connect to. Sometimes, my Windows PC ends up with the device name all in caps, and the headphones spell out the letters rather than saying the name as a word.</summary></entry><entry><title type="html">Who can sue a company under the CCPA?</title><link href="https://adrianba.net/2019/11/16/who-can-sue-companies-ccpa/" rel="alternate" type="text/html" title="Who can sue a company under the CCPA?" /><published>2019-11-16T00:00:00-08:00</published><updated>2019-11-16T10:53:00-08:00</updated><id>https://adrianba.net/2019/11/16/who-can-sue-companies-ccpa</id><content type="html" xml:base="https://adrianba.net/2019/11/16/who-can-sue-companies-ccpa/">&lt;p&gt;Yesterday, I read &lt;a href=&quot;https://www.jdsupra.com/legalnews/ccpa-privacy-faqs-can-a-company-be-sued-80335&quot;&gt;an article on JD Supra&lt;/a&gt; answering the question “Can a
+<p><a href="/assets/uploads/2020/bluetooth-adapter-advanced-properties.png"><img src="/assets/uploads/2020/bluetooth-adapter-advanced-properties.png" alt="Screenshot of Bluetooth Radio Adapter Advanced Properties Page" /></a></p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[I am lucky enough to own a pair of Bose QC35 II headphones, which can connect to multiple devices using Bluetooth. The headphones announce the name of each device they connect to. Sometimes, my Windows PC ends up with the device name all in caps, and the headphones spell out the letters rather than saying the name as a word.]]></summary></entry><entry><title type="html">Who can sue a company under the CCPA?</title><link href="https://adrianba.net/2019/11/16/who-can-sue-companies-ccpa/" rel="alternate" type="text/html" title="Who can sue a company under the CCPA?" /><published>2019-11-16T00:00:00-08:00</published><updated>2019-11-16T10:53:00-08:00</updated><id>https://adrianba.net/2019/11/16/who-can-sue-companies-ccpa</id><content type="html" xml:base="https://adrianba.net/2019/11/16/who-can-sue-companies-ccpa/"><![CDATA[<p>Yesterday, I read <a href="https://www.jdsupra.com/legalnews/ccpa-privacy-faqs-can-a-company-be-sued-80335">an article on JD Supra</a> answering the question “Can a
 company be sued under the CCPA for failing to post a ‘do not sell my personal
-information’ link?” To my surprise, the answer given was “No.”&lt;/p&gt;
+information’ link?” To my surprise, the answer given was “No.”</p>
 
-&lt;p&gt;The analysis in the post actually addressed the question of whether a consumer
+<p>The analysis in the post actually addressed the question of whether a consumer
 could sue a company for failing to post the link, but it did not address who
-else might have a cause of action.&lt;/p&gt;
+else might have a cause of action.</p>
 
-&lt;h2 id=&quot;who-can-sue-under-the-ccpa&quot;&gt;Who can sue under the CCPA?&lt;/h2&gt;
+<h2 id="who-can-sue-under-the-ccpa">Who can sue under the CCPA?</h2>
 
-&lt;p&gt;&lt;a href=&quot;https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&amp;amp;sectionNum=1798.150.&quot;&gt;§1798.150&lt;/a&gt; of the CCPA provides a cause of action for a data breach involving
+<p><a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&amp;sectionNum=1798.150.">§1798.150</a> of the CCPA provides a cause of action for a data breach involving
 disclosure of a consumer’s personal information because of a business’s
 failure to implement reasonable security measures. This section allows
 consumers to sue the business for damages after giving the business notice
-and a chance to cure the issue if that is possible.&lt;/p&gt;
+and a chance to cure the issue if that is possible.</p>
 
-&lt;p&gt;&lt;a href=&quot;https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&amp;amp;sectionNum=1798.155.&quot;&gt;§1798.155&lt;/a&gt; of the CCPA allows the California Attorney
+<p><a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&amp;sectionNum=1798.155.">§1798.155</a> of the CCPA allows the California Attorney
 General to bring a civil action against a business.
 This action can be brought for any violation of
 the CCPA including a failure to post a ‘do not sell my personal information’
 link if the business is required to provide one. Just like in the data breach
 case, businesses have a chance to cure the issue after being notified of a
-potential violation before an action can be commenced.&lt;/p&gt;
+potential violation before an action can be commenced.</p>
 
-&lt;h2 id=&quot;public-vs-private-causes-of-action&quot;&gt;Public vs. Private Causes of Action&lt;/h2&gt;
+<h2 id="public-vs-private-causes-of-action">Public vs. Private Causes of Action</h2>
 
-&lt;p&gt;Of course, there is a higher chance of being sued under a law that provides a
+<p>Of course, there is a higher chance of being sued under a law that provides a
 private cause of action, which allows anybody who is injured to sue you, than
 there is under a public cause of action, which requires a public body such as
 the state Attorney General to sue you. Government agencies only have so many
-resources and they need to prioritize where they focus their efforts.&lt;/p&gt;
+resources and they need to prioritize where they focus their efforts.</p>
 
-&lt;p&gt;Nevertheless, it seems irresponsible to suggest that a company cannot be sued
+<p>Nevertheless, it seems irresponsible to suggest that a company cannot be sued
 if they fail to post the required ‘do not sell my personal information’ link.
 Depending upon the nature of the company, the type of information collected,
 and the way in which it is being sold, a business might attract the attention
 of the AG, and the penalties for intentionally violating the CCPA could be
-large (up to $7,500 per violation, which could be per consumer).&lt;/p&gt;
+large (up to $7,500 per violation, which could be per consumer).</p>
 
-&lt;p&gt;The CCPA comes into effect on January 1, 2020 and businesses that sell
+<p>The CCPA comes into effect on January 1, 2020 and businesses that sell
 personal information should provide a “clear and conspicuous link” titled
 “Do Not Sell My Personal Information” on the homepage that California
-consumers will see (see &lt;a href=&quot;https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&amp;amp;sectionNum=1798.135.&quot;&gt;§1798.135&lt;/a&gt;).&lt;/p&gt;
+consumers will see (see <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&amp;sectionNum=1798.135.">§1798.135</a>).</p>
 
-&lt;p&gt;&lt;em&gt;Disclaimer: the information included here is provided AS IS for discussion purposes only. It may not be completely accurate, may not be applicable in all situations, and should not be acted upon without specific legal advice based on particular situations.&lt;/em&gt;&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Yesterday, I read an article on JD Supra answering the question “Can a company be sued under the CCPA for failing to post a ‘do not sell my personal information’ link?” To my surprise, the answer given was “No.”</summary></entry><entry><title type="html">Particle Printable Buffer Library</title><link href="https://adrianba.net/2017/12/19/particle-printable-buffer-library/" rel="alternate" type="text/html" title="Particle Printable Buffer Library" /><published>2017-12-19T00:00:00-08:00</published><updated>2017-10-19T12:31:00-07:00</updated><id>https://adrianba.net/2017/12/19/particle-printable-buffer-library</id><content type="html" xml:base="https://adrianba.net/2017/12/19/particle-printable-buffer-library/">&lt;p&gt;Based on the code used internally by the Particle firmware for printing
-to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String&lt;/code&gt; objects (see &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;StringPrintableHelper&lt;/code&gt; in &lt;a href=&quot;https://github.com/spark/firmware/blob/89f8e270ce7d748a4d9d5f633a650b0bacb728da/wiring/src/spark_wiring_string.cpp#L787&quot;&gt;wiring/src/spark_wiring_string.cpp&lt;/a&gt;), I have written a small
-library that allows printing into a simple buffer. This avoids the reallocation of memory that occurs when using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String&lt;/code&gt; class.&lt;/p&gt;
+<p><em>Disclaimer: the information included here is provided AS IS for discussion purposes only. It may not be completely accurate, may not be applicable in all situations, and should not be acted upon without specific legal advice based on particular situations.</em></p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[Yesterday, I read an article on JD Supra answering the question “Can a company be sued under the CCPA for failing to post a ‘do not sell my personal information’ link?” To my surprise, the answer given was “No.”]]></summary></entry><entry><title type="html">Particle Printable Buffer Library</title><link href="https://adrianba.net/2017/12/19/particle-printable-buffer-library/" rel="alternate" type="text/html" title="Particle Printable Buffer Library" /><published>2017-12-19T00:00:00-08:00</published><updated>2017-10-19T12:31:00-07:00</updated><id>https://adrianba.net/2017/12/19/particle-printable-buffer-library</id><content type="html" xml:base="https://adrianba.net/2017/12/19/particle-printable-buffer-library/"><![CDATA[<p>Based on the code used internally by the Particle firmware for printing
+to <code class="language-plaintext highlighter-rouge">String</code> objects (see <code class="language-plaintext highlighter-rouge">StringPrintableHelper</code> in <a href="https://github.com/spark/firmware/blob/89f8e270ce7d748a4d9d5f633a650b0bacb728da/wiring/src/spark_wiring_string.cpp#L787">wiring/src/spark_wiring_string.cpp</a>), I have written a small
+library that allows printing into a simple buffer. This avoids the reallocation of memory that occurs when using the <code class="language-plaintext highlighter-rouge">String</code> class.</p>
 
-&lt;p&gt;The library is available on &lt;a href=&quot;https://github.com/adrianba/printable-buffer&quot;&gt;GitHub&lt;/a&gt; and I’ve published it to the Particle
-library list so you can add it through the IDE or by use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;particle library add printable-buffer&lt;/code&gt; using the CLI.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Based on the code used internally by the Particle firmware for printing to String objects (see StringPrintableHelper in wiring/src/spark_wiring_string.cpp), I have written a small library that allows printing into a simple buffer. This avoids the reallocation of memory that occurs when using the String class.</summary></entry><entry><title type="html">Fix Surface Type Cover after firmware update</title><link href="https://adrianba.net/2017/12/15/fix-surface-type-cover-after-firmware-update/" rel="alternate" type="text/html" title="Fix Surface Type Cover after firmware update" /><published>2017-12-15T00:00:00-08:00</published><updated>2017-12-15T12:53:00-08:00</updated><id>https://adrianba.net/2017/12/15/fix-surface-type-cover-after-firmware-update</id><content type="html" xml:base="https://adrianba.net/2017/12/15/fix-surface-type-cover-after-firmware-update/">&lt;p&gt;This week there were Surface Pro 4 firmware updates as part of the Patch Tuesday updates. After
+<p>The library is available on <a href="https://github.com/adrianba/printable-buffer">GitHub</a> and I’ve published it to the Particle
+library list so you can add it through the IDE or by use <code class="language-plaintext highlighter-rouge">particle library add printable-buffer</code> using the CLI.</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[Based on the code used internally by the Particle firmware for printing to String objects (see StringPrintableHelper in wiring/src/spark_wiring_string.cpp), I have written a small library that allows printing into a simple buffer. This avoids the reallocation of memory that occurs when using the String class.]]></summary></entry><entry><title type="html">Fix Surface Type Cover after firmware update</title><link href="https://adrianba.net/2017/12/15/fix-surface-type-cover-after-firmware-update/" rel="alternate" type="text/html" title="Fix Surface Type Cover after firmware update" /><published>2017-12-15T00:00:00-08:00</published><updated>2017-12-15T12:53:00-08:00</updated><id>https://adrianba.net/2017/12/15/fix-surface-type-cover-after-firmware-update</id><content type="html" xml:base="https://adrianba.net/2017/12/15/fix-surface-type-cover-after-firmware-update/"><![CDATA[<p>This week there were Surface Pro 4 firmware updates as part of the Patch Tuesday updates. After
 the system updates completed on my SP4, the type cover stopped working. The backlight didn’t work
-and the Surface didn’t recognise the keyboard being removed or plugged back in.&lt;/p&gt;
+and the Surface didn’t recognise the keyboard being removed or plugged back in.</p>
 
-&lt;p&gt;After reaching out to people here at Microsoft, I learned that you can make some internal systems
+<p>After reaching out to people here at Microsoft, I learned that you can make some internal systems
 within the Surface reset by holding down the power button and volume up button at the same time for
-about 20 seconds. That reset got my keyboard working again.&lt;/p&gt;
+about 20 seconds. That reset got my keyboard working again.</p>
 
-&lt;p&gt;I’ve seen a few forum posts where other people ran into this issue but no clear message about how
+<p>I’ve seen a few forum posts where other people ran into this issue but no clear message about how
 to fix it, so hopefully if you run into the issue then you’ll find your way to this post with a
-solution.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">This week there were Surface Pro 4 firmware updates as part of the Patch Tuesday updates. After the system updates completed on my SP4, the type cover stopped working. The backlight didn’t work and the Surface didn’t recognise the keyboard being removed or plugged back in.</summary></entry><entry><title type="html">Setting the inactivity timeout in Windows</title><link href="https://adrianba.net/2017/11/29/inactivity-timeout/" rel="alternate" type="text/html" title="Setting the inactivity timeout in Windows" /><published>2017-11-29T00:00:00-08:00</published><updated>2017-11-29T15:02:00-08:00</updated><id>https://adrianba.net/2017/11/29/inactivity-timeout</id><content type="html" xml:base="https://adrianba.net/2017/11/29/inactivity-timeout/">&lt;p&gt;Windows has a timeout that can return you to the lock screen after a period of inactivity. This
+solution.</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[This week there were Surface Pro 4 firmware updates as part of the Patch Tuesday updates. After the system updates completed on my SP4, the type cover stopped working. The backlight didn’t work and the Surface didn’t recognise the keyboard being removed or plugged back in.]]></summary></entry><entry><title type="html">Setting the inactivity timeout in Windows</title><link href="https://adrianba.net/2017/11/29/inactivity-timeout/" rel="alternate" type="text/html" title="Setting the inactivity timeout in Windows" /><published>2017-11-29T00:00:00-08:00</published><updated>2017-11-29T15:02:00-08:00</updated><id>https://adrianba.net/2017/11/29/inactivity-timeout</id><content type="html" xml:base="https://adrianba.net/2017/11/29/inactivity-timeout/"><![CDATA[<p>Windows has a timeout that can return you to the lock screen after a period of inactivity. This
 is useful if you want to make sure the PC gets locked if you walk away but don’t want to use a
 screen saver and don’t want the PC to go to sleep. It is easy through the normal settings app to
-configure the latter two cases.&lt;/p&gt;
+configure the latter two cases.</p>
 
-&lt;p&gt;To configure the inactivity timeout, you need to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gpedit.msc&lt;/code&gt; and navigate to the Security
-Options folder shown in this screen grab.&lt;/p&gt;
+<p>To configure the inactivity timeout, you need to run <code class="language-plaintext highlighter-rouge">gpedit.msc</code> and navigate to the Security
+Options folder shown in this screen grab.</p>
 
-&lt;p&gt;&lt;a href=&quot;/assets/uploads/2017/inactivity-timeout.png&quot;&gt;&lt;img src=&quot;/assets/uploads/2017/inactivity-timeout.png&quot; alt=&quot;Screenshot of Local Group Policy Editor showing the Computer Configuration - Windows Settings -
-Security Settings - Local Policies - Security Options node&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+<p><a href="/assets/uploads/2017/inactivity-timeout.png"><img src="/assets/uploads/2017/inactivity-timeout.png" alt="Screenshot of Local Group Policy Editor showing the Computer Configuration - Windows Settings -
+Security Settings - Local Policies - Security Options node" /></a></p>
 
-&lt;p&gt;The policy you need is called “Interactive login: Machine inactivity limit”. Double-click on this
-and you can configure a timeout in seconds.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Windows has a timeout that can return you to the lock screen after a period of inactivity. This is useful if you want to make sure the PC gets locked if you walk away but don’t want to use a screen saver and don’t want the PC to go to sleep. It is easy through the normal settings app to configure the latter two cases.</summary></entry><entry><title type="html">Samsung Smart Switch - How to install on Windows 10</title><link href="https://adrianba.net/2017/10/13/samsung-smart-switch/" rel="alternate" type="text/html" title="Samsung Smart Switch - How to install on Windows 10" /><published>2017-10-13T00:00:00-07:00</published><updated>2017-10-13T15:18:00-07:00</updated><id>https://adrianba.net/2017/10/13/samsung-smart-switch</id><content type="html" xml:base="https://adrianba.net/2017/10/13/samsung-smart-switch/">&lt;p&gt;&lt;strong&gt;Samsung Smart Switch&lt;/strong&gt; is a tool that will backup your phone and transfer the data to a new Samsung
-phone. You also use it to backup your phone to your PC in case you need to restore it later.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/assets/uploads/2017/samsung-smart-switch.png&quot;&gt;&lt;img src=&quot;/assets/uploads/2017/samsung-smart-switch.png&quot; alt=&quot;Screenshot of Samsung Smart Switch&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;You can find &lt;a href=&quot;http://www.samsung.com/us/support/answer/ANS00048603/&quot;&gt;Samsung Smart Switch for Mac or PC&lt;/a&gt;
-on the Samsung site. The PC version has a dependency on some relatively old versions of the Visual
-C++ runtime, which you may not have installed on a newer PC running Windows 10.&lt;/p&gt;
-
-&lt;p&gt;You need to install both the x86 and x64 versions of the runtime:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.microsoft.com/en-us/download/details.aspx?id=5582&quot;&gt;Microsoft Visual C++ 2008 SP1 Redistributable Package (x86)&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.microsoft.com/en-us/download/details.aspx?id=2092&quot;&gt;Microsoft Visual C++ 2008 SP1 Redistributable Package (x64)&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I had managed to install enough apps on my phone that some of them
-were causing some performance problems (one of the challenges
-I’ve found with Android). I had decided to back-up my phone, do a
-factory reset and then restore things like photos and text
-messages, but install the apps that I wanted from scratch.&lt;/p&gt;
-
-&lt;p&gt;It seemed like Smart Switch was a good tool for this. One hiccup
-was that the program doesn’t appear to have a way to do a partial
-restore. I had backed up everything on my phone and, when I
-did the restore, it put everything back the way it had been. Great
-verification of the back-up/restore process but not exactly what I
-wanted in this instance.&lt;/p&gt;
-
-&lt;p&gt;I had to do a new backup with only the data items that I wanted to
-restore selected in the preferences. After a second factory reset,
-this time the restore did exactly what I wanted and I set about
-restoring the apps I use often from my Google Play store library.&lt;/p&gt;</content><author><name>Adrian Bateman</name></author><summary type="html">Samsung Smart Switch is a tool that will backup your phone and transfer the data to a new Samsung phone. You also use it to backup your phone to your PC in case you need to restore it later.</summary></entry></feed>
+<p>The policy you need is called “Interactive login: Machine inactivity limit”. Double-click on this
+and you can configure a timeout in seconds.</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[Windows has a timeout that can return you to the lock screen after a period of inactivity. This is useful if you want to make sure the PC gets locked if you walk away but don’t want to use a screen saver and don’t want the PC to go to sleep. It is easy through the normal settings app to configure the latter two cases.]]></summary></entry></feed>
