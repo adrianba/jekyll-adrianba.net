@@ -2956,4 +2956,10 @@ var store = [{
         "tags": [],
         "url": "/2022/01/22/changing-windows-pc-name-case/",
         "teaser": null
+      },{
+        "title": "Running ssh-agent with WSL2 (so that VSCode can find it)",
+        "excerpt":"I often use Visual Studio Code together with WSL2 using the Remote - WSL extension. Recently, I have been using Docker running on a remote server accessed over SSH. When I tried to use the Docker extension for VSCode, I would get an error message saying: “In order to use...","categories": [],
+        "tags": [],
+        "url": "/2022/05/13/running-ssh-agent-with-wsl2/",
+        "teaser": null
       }]
