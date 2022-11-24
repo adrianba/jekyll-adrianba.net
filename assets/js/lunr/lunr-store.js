@@ -2962,4 +2962,10 @@ var store = [{
         "tags": [],
         "url": "/2022/05/13/running-ssh-agent-with-wsl2/",
         "teaser": null
+      },{
+        "title": "Clean recovery of Surface RT and Windows Update (2022)",
+        "excerpt":"If you reset a Microsoft Surface RT from a recovery disk, there is a good chance that you will get an error from Windows Update: Error 8007000e Windows Update ran into a problem. There are various guides on the web for how to recover from this but most of them...","categories": [],
+        "tags": [],
+        "url": "/2022/11/23/surface-rt-recovery-and-updates/",
+        "teaser": null
       }]

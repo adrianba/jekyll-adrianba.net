@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adrianba.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adrianba.net/" rel="alternate" type="text/html" /><updated>2022-09-17T07:02:04-07:00</updated><id>https://adrianba.net/feed.xml</id><title type="html">adrianba.net</title><subtitle>On land, on sea, and in the ether.</subtitle><author><name>Adrian Bateman</name></author><entry><title type="html">Running ssh-agent with WSL2 (so that VSCode can find it)</title><link href="https://adrianba.net/2022/05/13/running-ssh-agent-with-wsl2/" rel="alternate" type="text/html" title="Running ssh-agent with WSL2 (so that VSCode can find it)" /><published>2022-05-13T00:00:00-07:00</published><updated>2022-05-13T19:45:00-07:00</updated><id>https://adrianba.net/2022/05/13/running-ssh-agent-with-wsl2</id><content type="html" xml:base="https://adrianba.net/2022/05/13/running-ssh-agent-with-wsl2/"><![CDATA[<p>I often use Visual Studio Code together with WSL2 using the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">Remote - WSL extension</a>. Recently, I have been using Docker running on a remote server accessed over SSH. When I tried to use the <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Docker extension</a> for VSCode, I would get an error message saying: “In order to use an SSH DOCKER_HOST, you must configure an ssh-agent.  Source: Docker (Extension)”.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adrianba.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adrianba.net/" rel="alternate" type="text/html" /><updated>2022-11-23T17:24:06-08:00</updated><id>https://adrianba.net/feed.xml</id><title type="html">adrianba.net</title><subtitle>On land, on sea, and in the ether.</subtitle><author><name>Adrian Bateman</name></author><entry><title type="html">Clean recovery of Surface RT and Windows Update (2022)</title><link href="https://adrianba.net/2022/11/23/surface-rt-recovery-and-updates/" rel="alternate" type="text/html" title="Clean recovery of Surface RT and Windows Update (2022)" /><published>2022-11-23T00:00:00-08:00</published><updated>2022-11-23T20:00:00-08:00</updated><id>https://adrianba.net/2022/11/23/surface-rt-recovery-and-updates</id><content type="html" xml:base="https://adrianba.net/2022/11/23/surface-rt-recovery-and-updates/"><![CDATA[<p>If you reset a Microsoft Surface RT from a recovery disk, there is a good chance
+that you will get an error from Windows Update: Error 8007000e Windows Update ran into a problem.
+There are various guides on the web for how to recover from this but most of them didn’t work for
+me. Here is what did work.</p>
+
+<ol>
+  <li>
+    <p>On the Surface RT, I <a href="https://support.microsoft.com/en-us/windows/create-a-usb-recovery-drive-460091d5-1e8f-cb33-2d17-8fdef77412d5">created a USB recovery drive</a> using the Recovery Drive app.
+I used a 4GB USB drive and the tool formats the drive and copies the recovery files (uncheck the
+checkbox for backing up files).</p>
+  </li>
+  <li>
+    <p>Download a <a href="https://support.microsoft.com/en-us/surface-recovery-image">Surface Recovery Image</a>
+from Microsoft. If you type in your serial number, the site will provide the corresponding image
+for Windows 8.1.</p>
+  </li>
+  <li>
+    <p>Extract all the files from the recovery image zip file onto the USB overwriting existing files.</p>
+  </li>
+  <li>
+    <p>Power off the Surface RT. Insert the USB drive. Press and hold volume down, press the power button
+to power on, and as soon as you see the Surface logo, release the volume down button. The Surface
+should boot from the USB and under Advanced Options, you can reset from the drive. Choose to
+repartition the drive to make sure everything is reset.</p>
+  </li>
+  <li>
+    <p>This is the point at which if you connect to the network, you will get the Windows Update error.
+Instead, go through the OOBE but skip connecting to a network.</p>
+  </li>
+  <li>Install the following updates in order (even though they are out of order - no other order worked
+for me):
+    <ul>
+      <li><a href="http://download.windowsupdate.com/c/msdownload/update/software/crup/2014/02/windows8.1-kb2919442-arm_506ed7113697c597c2859d295d562fa4311834ec.msu">KB-2919442</a></li>
+      <li><a href="http://download.windowsupdate.com/c/msdownload/update/software/crup/2014/02/windows8.1-kb2932046-arm_fe6acf558880d127aef1a759a8c2539afc67b5fb.msu">KB-2932046</a></li>
+      <li><a href="http://download.windowsupdate.com/c/msdownload/update/software/crup/2014/02/windows8.1-kb2919355-arm_a6119d3e5ddd1a233a09dd79d91067de7b826f85.msu">KB-2919355</a></li>
+      <li>Reboot</li>
+      <li><a href="http://download.windowsupdate.com/d/msdownload/update/software/crup/2014/03/windows8.1-kb2938439-arm_4a536d9ddcd9993cbe4fbc309ebd50a18d65f954.msu">KB-2938439</a></li>
+      <li>Reboot</li>
+      <li><a href="http://download.windowsupdate.com/c/msdownload/update/software/crup/2014/02/windows8.1-kb2937592-arm_860c83a0cccc0519111f57a679ae9f9d071315e5.msu">KB-2937592</a></li>
+      <li>Reboot</li>
+      <li><a href="http://download.windowsupdate.com/d/msdownload/update/software/crup/2016/06/windows8.1-kb3173424-arm_e11b6837c0586d2b8d887f3bc33b3372fe83c8c7.msu">KB-3173424</a></li>
+      <li><a href="http://download.windowsupdate.com/c/msdownload/update/software/updt/2016/07/windows8.1-kb3172614-arm_3d918d6c809bf6f57c8fcefa5db5c739e1754426.msu">KB-3172614</a></li>
+      <li>Reboot</li>
+      <li><a href="https://download.microsoft.com/download/C/0/F/C0F4437B-2A24-4C8F-9E67-BD487BDABADB/Windows8.1-KB3097667-arm.msu">KB3097667</a></li>
+      <li>Reboot</li>
+    </ul>
+  </li>
+  <li>At this point, connect to Wi-Fi and search for updates in Windows Update. It takes a long time to
+find any updates (maybe an hour or more) - just leave it. Then follow the instructions to install
+the updates. This will take several hours to install &gt;100 updates.</li>
+</ol>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[If you reset a Microsoft Surface RT from a recovery disk, there is a good chance that you will get an error from Windows Update: Error 8007000e Windows Update ran into a problem. There are various guides on the web for how to recover from this but most of them didn’t work for me. Here is what did work.]]></summary></entry><entry><title type="html">Running ssh-agent with WSL2 (so that VSCode can find it)</title><link href="https://adrianba.net/2022/05/13/running-ssh-agent-with-wsl2/" rel="alternate" type="text/html" title="Running ssh-agent with WSL2 (so that VSCode can find it)" /><published>2022-05-13T00:00:00-07:00</published><updated>2022-05-13T19:45:00-07:00</updated><id>https://adrianba.net/2022/05/13/running-ssh-agent-with-wsl2</id><content type="html" xml:base="https://adrianba.net/2022/05/13/running-ssh-agent-with-wsl2/"><![CDATA[<p>I often use Visual Studio Code together with WSL2 using the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">Remote - WSL extension</a>. Recently, I have been using Docker running on a remote server accessed over SSH. When I tried to use the <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Docker extension</a> for VSCode, I would get an error message saying: “In order to use an SSH DOCKER_HOST, you must configure an ssh-agent.  Source: Docker (Extension)”.</p>
 
 <p><img src="/assets/uploads/2022/must-configure-ssh-agent.png" alt="Screen shot of VSCode error message" /></p>
 
@@ -21,7 +71,7 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eval `keychain -q --eval --agents ssh id_rsa id_ed25519`
 </code></pre></div></div>
 
-<p>Now, each time you open a shell, <code class="language-plaintext highlighter-rouge">keychain</code> will check if <code class="language-plaintext highlighter-rouge">ssh-agent</code> is running and if not start it.</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[I often use Visual Studio Code together with WSL2 using the Remote - WSL extension. Recently, I have been using Docker running on a remote server accessed over SSH. When I tried to use the Docker extension for VSCode, I would get an error message saying: “In order to use an SSH DOCKER_HOST, you must configure an ssh-agent. Source: Docker (Extension)”.]]></summary></entry><entry><title type="html">Change Windows PC name to lower case</title><link href="https://adrianba.net/2022/01/22/changing-windows-pc-name-case/" rel="alternate" type="text/html" title="Change Windows PC name to lower case" /><published>2022-01-22T00:00:00-08:00</published><updated>2022-09-17T08:45:00-07:00</updated><id>https://adrianba.net/2022/01/22/changing-windows-pc-name-case</id><content type="html" xml:base="https://adrianba.net/2022/01/22/changing-windows-pc-name-case/"><![CDATA[<p>It is straightforward to change the name of your Windows PC through the Settings
+<p>Now, each time you open a shell, <code class="language-plaintext highlighter-rouge">keychain</code> will check if <code class="language-plaintext highlighter-rouge">ssh-agent</code> is running and if not start it.</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[I often use Visual Studio Code together with WSL2 using the Remote - WSL extension. Recently, I have been using Docker running on a remote server accessed over SSH. When I tried to use the Docker extension for VSCode, I would get an error message saying: “In order to use an SSH DOCKER_HOST, you must configure an ssh-agent. Source: Docker (Extension)”.]]></summary></entry><entry><title type="html">Change Windows PC name to lower case</title><link href="https://adrianba.net/2022/01/22/changing-windows-pc-name-case/" rel="alternate" type="text/html" title="Change Windows PC name to lower case" /><published>2022-01-22T00:00:00-08:00</published><updated>2022-11-23T07:45:00-08:00</updated><id>https://adrianba.net/2022/01/22/changing-windows-pc-name-case</id><content type="html" xml:base="https://adrianba.net/2022/01/22/changing-windows-pc-name-case/"><![CDATA[<p>It is straightforward to change the name of your Windows PC through the Settings
 app (go to System, About, and choose “Rename this PC”). One problem, though, is
 if you want to change the case of the name, but not the name itself. For example,
 changing from “SURFACE” to “surface”. If you try to use the built-in UI for this,
@@ -33,7 +83,7 @@ case. However, there is an easier way using the command prompt.</p>
 <p>In a command prompt running as Administrator, use the following command:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WMIC computersystem where caption='current_name' rename new_name
-</code></pre></div></div>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[It is straightforward to change the name of your Windows PC through the Settings app (go to System, About, and choose “Rename this PC”). One problem, though, is if you want to change the case of the name, but not the name itself. For example, changing from “SURFACE” to “surface”. If you try to use the built-in UI for this, Windows recognizes that the name hasn’t changed and won’t let you continue.]]></summary></entry><entry><title type="html">Installing the latest version of git on Ubuntu</title><link href="https://adrianba.net/2021/03/09/ubuntu-latest-git/" rel="alternate" type="text/html" title="Installing the latest version of git on Ubuntu" /><published>2021-03-09T00:00:00-08:00</published><updated>2022-09-17T07:45:00-07:00</updated><id>https://adrianba.net/2021/03/09/ubuntu-latest-git</id><content type="html" xml:base="https://adrianba.net/2021/03/09/ubuntu-latest-git/"><![CDATA[<p><img src="https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/02/install_git_ubuntu.png?w=800&amp;ssl=1" alt="An image with the git logo and text that says Install Latest Git on Ubuntu" /></p>
+</code></pre></div></div>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[It is straightforward to change the name of your Windows PC through the Settings app (go to System, About, and choose “Rename this PC”). One problem, though, is if you want to change the case of the name, but not the name itself. For example, changing from “SURFACE” to “surface”. If you try to use the built-in UI for this, Windows recognizes that the name hasn’t changed and won’t let you continue.]]></summary></entry><entry><title type="html">Installing the latest version of git on Ubuntu</title><link href="https://adrianba.net/2021/03/09/ubuntu-latest-git/" rel="alternate" type="text/html" title="Installing the latest version of git on Ubuntu" /><published>2021-03-09T00:00:00-08:00</published><updated>2022-11-23T06:45:00-08:00</updated><id>https://adrianba.net/2021/03/09/ubuntu-latest-git</id><content type="html" xml:base="https://adrianba.net/2021/03/09/ubuntu-latest-git/"><![CDATA[<p><img src="https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/02/install_git_ubuntu.png?w=800&amp;ssl=1" alt="An image with the git logo and text that says Install Latest Git on Ubuntu" /></p>
 
 <p>I was reading about the latest <a href="https://www.openwall.com/lists/oss-security/2021/03/09/3">git security issue</a>
 this evening when I realized that upgrading the Windows version of <code class="language-plaintext highlighter-rouge">git</code> using
@@ -175,14 +225,4 @@ to <code class="language-plaintext highlighter-rouge">String</code> objects (see
 library that allows printing into a simple buffer. This avoids the reallocation of memory that occurs when using the <code class="language-plaintext highlighter-rouge">String</code> class.</p>
 
 <p>The library is available on <a href="https://github.com/adrianba/printable-buffer">GitHub</a> and I’ve published it to the Particle
-library list so you can add it through the IDE or by use <code class="language-plaintext highlighter-rouge">particle library add printable-buffer</code> using the CLI.</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[Based on the code used internally by the Particle firmware for printing to String objects (see StringPrintableHelper in wiring/src/spark_wiring_string.cpp), I have written a small library that allows printing into a simple buffer. This avoids the reallocation of memory that occurs when using the String class.]]></summary></entry><entry><title type="html">Fix Surface Type Cover after firmware update</title><link href="https://adrianba.net/2017/12/15/fix-surface-type-cover-after-firmware-update/" rel="alternate" type="text/html" title="Fix Surface Type Cover after firmware update" /><published>2017-12-15T00:00:00-08:00</published><updated>2017-12-15T12:53:00-08:00</updated><id>https://adrianba.net/2017/12/15/fix-surface-type-cover-after-firmware-update</id><content type="html" xml:base="https://adrianba.net/2017/12/15/fix-surface-type-cover-after-firmware-update/"><![CDATA[<p>This week there were Surface Pro 4 firmware updates as part of the Patch Tuesday updates. After
-the system updates completed on my SP4, the type cover stopped working. The backlight didn’t work
-and the Surface didn’t recognise the keyboard being removed or plugged back in.</p>
-
-<p>After reaching out to people here at Microsoft, I learned that you can make some internal systems
-within the Surface reset by holding down the power button and volume up button at the same time for
-about 20 seconds. That reset got my keyboard working again.</p>
-
-<p>I’ve seen a few forum posts where other people ran into this issue but no clear message about how
-to fix it, so hopefully if you run into the issue then you’ll find your way to this post with a
-solution.</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[This week there were Surface Pro 4 firmware updates as part of the Patch Tuesday updates. After the system updates completed on my SP4, the type cover stopped working. The backlight didn’t work and the Surface didn’t recognise the keyboard being removed or plugged back in.]]></summary></entry></feed>
+library list so you can add it through the IDE or by use <code class="language-plaintext highlighter-rouge">particle library add printable-buffer</code> using the CLI.</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[Based on the code used internally by the Particle firmware for printing to String objects (see StringPrintableHelper in wiring/src/spark_wiring_string.cpp), I have written a small library that allows printing into a simple buffer. This avoids the reallocation of memory that occurs when using the String class.]]></summary></entry></feed>
