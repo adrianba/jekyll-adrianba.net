@@ -78,9 +78,10 @@ social:
 
 # Analytics
 analytics:
-  provider               : "google" # false (default), "google", "google-universal", "custom"
+  provider               : "google-gtag"
   google:
-    tracking_id          : UA-48621303-1 
+    tracking_id          : G-ZB7NPZFPYX
+    anonymize_ip         : false
 
 # For SEO
 github:
