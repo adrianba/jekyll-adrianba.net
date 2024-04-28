@@ -1,10 +1,11 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.25.1 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
+
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
@@ -89,9 +90,6 @@
 
 
   <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
-
-
-<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
@@ -100,8 +98,8 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
 
 
 
@@ -121,10 +119,6 @@
     <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
   </ul>
 </nav>
-
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
 
     
 
@@ -179,22 +173,22 @@
   
 
 
-<div itemscope itemtype="https://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
 
   
     <div class="author__avatar">
-      
-        <img src="/assets/sailing.jpg" alt="Adrian Bateman" itemprop="image">
-      
+      <a href="https://adrianba.net/">
+        <img src="/assets/sailing.jpg" alt="Adrian Bateman" itemprop="image" class="u-photo">
+      </a>
     </div>
   
 
   <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://adrianba.net/" itemprop="url">Adrian Bateman</a>
+    </h3>
     
-      <h3 class="author__name" itemprop="name">Adrian Bateman</h3>
-    
-    
-      <div class="author__bio" itemprop="description">
+      <div class="author__bio p-note" itemprop="description">
         <p>Englishman in Seattle.</p>
 
       </div>
@@ -206,14 +200,14 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seattle, USA</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seattle, USA</span>
         </li>
       
 
       
         
           
-            <li><a href="https://adebateman.org/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-globe" aria-hidden="true"></i><span class="label">Personal site</span></a></li>
+            <li><a href="https://adebateman.org/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-globe" aria-hidden="true"></i><span class="label">Personal site</span></a></li>
           
         
       
@@ -226,7 +220,7 @@
 
       
         <li>
-          <a href="https://twitter.com/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://twitter.com/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
           </a>
         </li>
@@ -236,7 +230,7 @@
 
       
         <li>
-          <a href="https://www.linkedin.com/in/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://www.linkedin.com/in/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
           </a>
         </li>
@@ -252,7 +246,7 @@
 
       
         <li>
-          <a href="https://github.com/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://github.com/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
           </a>
         </li>
@@ -1122,6 +1116,7 @@ install some packages from npm I got the following network error:
 
   </div>
 </div>
+      
     </div>
 
     
@@ -1149,7 +1144,7 @@ install some packages from npm I got the following network error:
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2023 Adrian Bateman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2024 <a href="https://adrianba.net">adrianba.net</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -1180,7 +1175,6 @@ install some packages from npm I got the following network error:
   src="https://log.adrianba.net/script.js"
   data-website-id="e4a4e083-52be-40f7-88e9-3ac737346958"
 ></script>
-
 
 
 

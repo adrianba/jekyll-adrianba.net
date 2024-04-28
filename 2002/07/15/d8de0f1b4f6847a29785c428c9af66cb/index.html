@@ -1,10 +1,11 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.25.1 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
+
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
@@ -97,9 +98,6 @@
 
 
   <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
-
-
-<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
@@ -108,8 +106,8 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
 
 
 
@@ -129,10 +127,6 @@
     <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
   </ul>
 </nav>
-
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
 
     
 
@@ -163,28 +157,30 @@
 
 
 
+
+
 <div id="main" role="main">
   
   <div class="sidebar sticky">
   
 
 
-<div itemscope itemtype="https://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
 
   
     <div class="author__avatar">
-      
-        <img src="/assets/sailing.jpg" alt="Adrian Bateman" itemprop="image">
-      
+      <a href="https://adrianba.net/">
+        <img src="/assets/sailing.jpg" alt="Adrian Bateman" itemprop="image" class="u-photo">
+      </a>
     </div>
   
 
   <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://adrianba.net/" itemprop="url">Adrian Bateman</a>
+    </h3>
     
-      <h3 class="author__name" itemprop="name">Adrian Bateman</h3>
-    
-    
-      <div class="author__bio" itemprop="description">
+      <div class="author__bio p-note" itemprop="description">
         <p>Englishman in Seattle.</p>
 
       </div>
@@ -196,14 +192,14 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seattle, USA</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seattle, USA</span>
         </li>
       
 
       
         
           
-            <li><a href="https://adebateman.org/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-globe" aria-hidden="true"></i><span class="label">Personal site</span></a></li>
+            <li><a href="https://adebateman.org/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-globe" aria-hidden="true"></i><span class="label">Personal site</span></a></li>
           
         
       
@@ -216,7 +212,7 @@
 
       
         <li>
-          <a href="https://twitter.com/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://twitter.com/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
           </a>
         </li>
@@ -226,7 +222,7 @@
 
       
         <li>
-          <a href="https://www.linkedin.com/in/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://www.linkedin.com/in/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
           </a>
         </li>
@@ -242,7 +238,7 @@
 
       
         <li>
-          <a href="https://github.com/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://github.com/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
           </a>
         </li>
@@ -284,7 +280,7 @@
 
 
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Quick reminder: if you use the clipboard or…">
     <meta itemprop="description" content="Quick reminder: if you use the clipboard or drag-and-drop in a COMapplication then you need to call OleInitialize/OleUninitializeinstead of CoInitialize(Ex)/CoUninitialize (or if you’re using OLEof course).">
     <meta itemprop="datePublished" content="2002-07-15T00:00:00-07:00">
@@ -293,8 +289,10 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Quick reminder: if you use the clipboard or…
-</h1>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://adrianba.net/2002/07/15/d8de0f1b4f6847a29785c428c9af66cb/" class="u-url" itemprop="url">Quick reminder: if you use the clipboard or…
+</a>
+          </h1>
           
 
   <p class="page__meta">
@@ -319,7 +317,7 @@
         </header>
       
 
-      <section class="page__content" itemprop="text">
+      <section class="page__content e-content" itemprop="text">
         
         <p>Quick reminder: if you use the clipboard or drag-and-drop in a COM
 application then you need to call OleInitialize/OleUninitialize
@@ -337,8 +335,7 @@ of course).</p>
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2002-07-16">July 16, 2002</time></p>
-
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2002-07-16">July 16, 2002</time></p>
 
       </footer>
 
@@ -349,7 +346,7 @@ of course).</p>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fadrianba.net%2F2002%2F07%2F15%2Fd8de0f1b4f6847a29785c428c9af66cb%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fadrianba.net%2F2002%2F07%2F15%2Fd8de0f1b4f6847a29785c428c9af66cb%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://adrianba.net/2002/07/15/d8de0f1b4f6847a29785c428c9af66cb/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
@@ -373,10 +370,17 @@ of course).</p>
   
   
     <div class="page__related">
-      <h4 class="page__related-title">You May Also Enjoy</h4>
-      <div class="grid__wrapper">
-        
-          
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+    
+    
+      
+      
+      
+      
+      
 
 
 
@@ -415,8 +419,12 @@ that you will get an error from Windows Update: Error 8007000e Windows Updat...<
   </article>
 </div>
 
-        
-          
+    
+      
+      
+      
+      
+      
 
 
 
@@ -454,8 +462,12 @@ that you will get an error from Windows Update: Error 8007000e Windows Updat...<
   </article>
 </div>
 
-        
-          
+    
+      
+      
+      
+      
+      
 
 
 
@@ -494,8 +506,12 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
   </article>
 </div>
 
-        
-          
+    
+      
+      
+      
+      
+      
 
 
 
@@ -534,13 +550,18 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
   </article>
 </div>
 
-        
-      </div>
-    </div>
+    
+      
+      
+      
+  </div>
+</div>
+
   
   
 </div>
 
+      
     </div>
 
     
@@ -568,7 +589,7 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2023 Adrian Bateman. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2024 <a href="https://adrianba.net">adrianba.net</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -599,7 +620,6 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
   src="https://log.adrianba.net/script.js"
   data-website-id="e4a4e083-52be-40f7-88e9-3ac737346958"
 ></script>
-
 
 
 
