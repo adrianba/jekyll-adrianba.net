@@ -1,0 +1,731 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Running ESPHome on a ESP32C6 device for Home Assistant - adrianba.net</title>
+<meta name="description" content="ESP32C6 boards are not native supported by ESPHome">
+
+
+  <meta name="author" content="Adrian Bateman">
+  
+  <meta property="article:author" content="Adrian Bateman">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="adrianba.net">
+<meta property="og:title" content="Running ESPHome on a ESP32C6 device for Home Assistant">
+<meta property="og:url" content="https://adrianba.net/2024/12/01/esp32c6-and-home-assistant/">
+
+
+  <meta property="og:description" content="ESP32C6 boards are not native supported by ESPHome">
+
+
+
+  <meta property="og:image" content="https://adrianba.net/assets/uploads/2024/esp32.jpg">
+
+
+
+  <meta name="twitter:site" content="@adrianba">
+  <meta name="twitter:title" content="Running ESPHome on a ESP32C6 device for Home Assistant">
+  <meta name="twitter:description" content="ESP32C6 boards are not native supported by ESPHome">
+  <meta name="twitter:url" content="https://adrianba.net/2024/12/01/esp32c6-and-home-assistant/">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://adrianba.net/assets/uploads/2024/esp32.jpg">
+  
+
+  
+    <meta name="twitter:creator" content="@adrianba">
+  
+
+
+
+  <meta property="article:published_time" content="2024-12-01T00:00:00-08:00">
+
+
+
+  <meta property="article:modified_time" content="2024-12-01T20:00:00-08:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://adrianba.net/2024/12/01/esp32c6-and-home-assistant/">
+
+
+
+
+
+
+
+  <meta name="google-site-verification" content="BUqUy58DpivlHAgBj3S9R4nIrr4bSvVVWajoA7XED10" />
+
+
+  <meta name="msvalidate.01" content="63DB9D179BA14FF88535CF66336C4ED2">
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          adrianba.net
+          
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/uploads/2024/esp32.jpg" alt="Futuristic image of an ESP32 (AI generated)" class="page__hero-image">
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://adrianba.net/">
+        <img src="/assets/sailing.jpg" alt="Adrian Bateman" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://adrianba.net/" itemprop="url">Adrian Bateman</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Englishman in Seattle.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seattle, USA</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://adebateman.org/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-globe" aria-hidden="true"></i><span class="label">Personal site</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Running ESPHome on a ESP32C6 device for Home Assistant">
+    <meta itemprop="description" content="ESP32C6 boards are not native supported by ESPHome">
+    <meta itemprop="datePublished" content="2024-12-01T00:00:00-08:00">
+    <meta itemprop="dateModified" content="2024-12-01T20:00:00-08:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://adrianba.net/2024/12/01/esp32c6-and-home-assistant/" itemprop="url">Running ESPHome on a ESP32C6 device for Home Assistant
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h1 id="esp32c6-boards-are-not-native-supported-by-esphome">ESP32C6 boards are not native supported by ESPHome</h1>
+
+<p>The <a href="https://esphome.io/">ESPHome</a> project provides a way to use ESP32-based microcontrollers
+with [Home Assistant]https://www.home-assistant.io/). Recently I have been experimenting with
+the <a href="https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/">Seeed Studio Xiao ESP32C6</a>
+microcontrollers, which come are packaged as a tiny PCB with a USB-C connector to power or
+program them. These devices include WiFi and Bluetooth support.</p>
+
+<p>I came across the ESPHome project but unfortunately discovered that ESP32C6 boards are not
+supported natively. Neverthless, I found that some people had managed to get them to work,
+although there wasn’t one place with all the instructions.</p>
+
+<h1 id="building-firmware-for-esp32c6-using-docker">Building firmware for ESP32C6 using Docker</h1>
+
+<p>I have Docker installed and ESPHome supports running its setup software using a Docker
+container. First, you need to create a skeleton configuration file.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">--rm</span> <span class="nt">-it</span> <span class="nt">-v</span> /home/user:/config ghcr.io/esphome/esphome wizard esp32c6.yaml
+</code></pre></div></div>
+
+<p>This command will create <code class="language-plaintext highlighter-rouge">esp32c6.yaml</code> in the <code class="language-plaintext highlighter-rouge">/user/home</code> folder. You answer the questions
+for things like the name of the device and the WiFi network it will connect to.</p>
+
+<p>Next, edit the file to support compiling for ESP32C6 and also add whatever support you
+want from your controller according to the ESPHome documentation. I wanted to use my device
+as a Bluetooth repeater. Here is the edited configuration file:</p>
+
+<h2 id="esp32c6yaml">esp32c6.yaml</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">esphome</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">esp32c6</span>
+  <span class="na">platformio_options</span><span class="pi">:</span>
+    <span class="na">platform</span><span class="pi">:</span> <span class="s">https://github.com/mnowak32/platform-espressif32.git#boards/seeed_xiao_esp32c6</span>
+
+<span class="na">esp32</span><span class="pi">:</span>
+  <span class="na">board</span><span class="pi">:</span> <span class="s">seeed_xiao_esp32c6</span>
+  <span class="na">flash_size</span><span class="pi">:</span> <span class="s">4MB</span>
+  <span class="na">variant</span><span class="pi">:</span> <span class="s">esp32c6</span>
+  <span class="na">framework</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">esp-idf</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s">5.2.1</span>
+    <span class="na">sdkconfig_options</span><span class="pi">:</span>
+      <span class="na">CONFIG_ESPTOOLPY_FLASHSIZE_4MB</span><span class="pi">:</span> <span class="s">y</span>
+
+<span class="c1"># Enable logging</span>
+<span class="na">logger</span><span class="pi">:</span>
+
+<span class="c1"># Enable Home Assistant API</span>
+<span class="na">api</span><span class="pi">:</span>
+  <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+
+<span class="na">ota</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">platform</span><span class="pi">:</span> <span class="s">esphome</span>
+    <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+
+<span class="na">wifi</span><span class="pi">:</span>
+  <span class="na">ssid</span><span class="pi">:</span> <span class="s2">"</span><span class="s">SSID"</span>
+  <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">wifi-password"</span>
+
+  <span class="c1"># Enable fallback hotspot (captive portal) in case wifi connection fails</span>
+  <span class="na">ap</span><span class="pi">:</span>
+    <span class="na">ssid</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Esp32C6</span><span class="nv"> </span><span class="s">Fallback</span><span class="nv"> </span><span class="s">Hotspot"</span>
+    <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">012345678999"</span>
+
+<span class="na">captive_portal</span><span class="pi">:</span>
+
+<span class="na">bluetooth_proxy</span><span class="pi">:</span>
+  <span class="na">active</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Note 1: change <code class="language-plaintext highlighter-rouge">SSID</code> and <code class="language-plaintext highlighter-rouge">wifi-password</code> for your network. I also chose to start without passwords.</p>
+
+<p>Note 2: I used v5.2.1 of ESP-IDF just because that was used in a few sample files I found from
+people who got this to work. I will experiment with the more recent versions v5.2.3 and v5.3.1,
+which are currently the latest versions.</p>
+
+<h2 id="build-the-firmware">Build the firmware</h2>
+
+<p>Next, you need to build the firmware for the device using the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">--rm</span> <span class="nt">-v</span> /home/user:/config <span class="nt">-it</span> ghcr.io/esphome/esphome compile esp32c6.yaml
+</code></pre></div></div>
+
+<p>This will take a little while to download all the build tools in the Docker container and then
+compile the code. Eventually, it will complete having built the firmware binary.</p>
+
+<p>You can find the firmware located in <code class="language-plaintext highlighter-rouge">/home/user/.esphome/build/esp32wart/.pioenvs/esp32wart/firmware.factory.bin</code>.</p>
+
+<h1 id="flashing-the-firmware">Flashing the firmware</h1>
+
+<p>I used <code class="language-plaintext highlighter-rouge">esptool.py</code> to flash the firmware onto the device, which I already had installed from
+previously installing the <a href="https://docs.espressif.com/projects/esp-idf">ESP-IDF tools</a>. I think if
+you have a recent version of Python installed, you can just install this with <code class="language-plaintext highlighter-rouge">pip install esptool</code>
+but I haven’t tried this.</p>
+
+<p>To flash the firmware, I used the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>esptool.py <span class="nt">-p</span> COM6 <span class="nt">--before</span> default_reset <span class="nt">--after</span> hard_reset <span class="nt">--chip</span> esp32c6 write_flash <span class="nt">--flash_mode</span> dio <span class="nt">--flash_size</span> detect <span class="nt">--flash_freq</span> 40m 0x0 firmware.factory.bin
+</code></pre></div></div>
+
+<p>This is on Windows (hence the COM6), but I imagine it works with other platforms by changing the
+port as appropriate. Most of the options are probably not necessary, but I created this command
+based on the ESP-IDF documentation.</p>
+
+<p>I think the important parts are the port, <code class="language-plaintext highlighter-rouge">--chip esp32c6</code>, and using 0x0 as the start address.</p>
+
+<p>This should write the firmware and restart the device, where it will attempt to connect to
+the network.</p>
+
+<h1 id="accessing-microcontroller-from-home-assistant">Accessing microcontroller from Home Assistant</h1>
+
+<p>If you have installed the ESPHome integration in Home Assistant, then the microcontroller
+should soon be detected as a new device by Home Assistant. If you add the device, then you can
+start to use it with Home Assistant. I had configure my device as a Bluetooth Repeater, and
+shortly after adding it to Home Assistant, all the Bluetooth devices it could see were also
+made available in Home Assistant.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-12-01">December 1, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=adrianba&text=Running+ESPHome+on+a+ESP32C6+device+for+Home+Assistant%20https%3A%2F%2Fadrianba.net%2F2024%2F12%2F01%2Fesp32c6-and-home-assistant%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fadrianba.net%2F2024%2F12%2F01%2Fesp32c6-and-home-assistant%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://adrianba.net/2024/12/01/esp32c6-and-home-assistant/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2022/11/23/surface-rt-recovery-and-updates/" class="pagination--pager" title="Clean recovery of Surface RT and Windows Update (2022)
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2022/11/23/surface-rt-recovery-and-updates/" rel="permalink">Clean recovery of Surface RT and Windows Update (2022)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">If you reset a Microsoft Surface RT from a recovery disk, there is a good chance
+that you will get an error from Windows Update: Error 8007000e Windows Updat...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2022/05/13/running-ssh-agent-with-wsl2/" rel="permalink">Running ssh-agent with WSL2 (so that VSCode can find it)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I often use Visual Studio Code together with WSL2 using the Remote - WSL extension. Recently, I have been using Docker running on a remote server accessed ov...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2022/01/22/changing-windows-pc-name-case/" rel="permalink">Change Windows PC name to lower case
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">It is straightforward to change the name of your Windows PC through the Settings
+app (go to System, About, and choose “Rename this PC”). One problem, though,...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/03/09/ubuntu-latest-git/" rel="permalink">Installing the latest version of git on Ubuntu
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="/privacy/" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-mask" aria-hidden="true"></i> Privacy Policy</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 <a href="https://adrianba.net">adrianba.net</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZB7NPZFPYX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZB7NPZFPYX', { 'anonymize_ip': false});
+</script>
+
+
+
+<script
+  async
+  src="https://log.adrianba.net/script.js"
+  data-website-id="e4a4e083-52be-40f7-88e9-3ac737346958"
+></script>
+
+
+
+
+
+
+  </body>
+</html>

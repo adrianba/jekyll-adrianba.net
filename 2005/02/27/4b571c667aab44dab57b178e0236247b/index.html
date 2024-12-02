@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.25.1 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
   Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -71,17 +71,7 @@
 
 
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": "Adrian Bateman",
-      "url": "https://adrianba.net/",
-      "sameAs": ["https://adebateman.org/","https://twitter.com/adrianba","https://facebook.com/adrianba","https://instagram.com/adebateman","https://www.linkedin.com/in/adrianba"]
-    
-  }
-</script>
+
 
 
   <meta name="google-site-verification" content="BUqUy58DpivlHAgBj3S9R4nIrr4bSvVVWajoA7XED10" />
@@ -100,8 +90,9 @@
   <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
+<script type="text/javascript">
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
 </script>
 
 <!-- For all browsers -->
@@ -280,7 +271,7 @@
 
 
 
-  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="ASMX 2.0 - Basic Profile 1.0 Conformance - Part 2">
     <meta itemprop="description" content="In mylast post, I described how .NET 2.0 will check your webservices for conformance to the Basic Profile (v1.0 in Beta 1 andv1.1 from Beta 2 onwards). When you create a web service clientproxy using WSDL.EXE, the service is also checked for BPcompliance. If I generate a proxy for my simple non-compliant webservice then I get the following output:C:&gt;wsdl /o:simpleproxy.cs http://localhost/simple.asmxMicrosoft (R) Web Services Description Language Utility[Microsoft(R) .NET Framework, Version 2.0.40607.85]Copyright (C) Microsoft Corporation. All rights reserved.Warning: This web reference does not conform to WS-I Basic Profile v1.0.R2706: A wsdl:binding in a DESCRIPTION MUST use the value of &quot;literal&quot; forthe use attribute in all soapbind:body, soapbind:fault, soapbind:header andsoapbind:headerfault elements.- Operation &#39;Hello&#39; on binding &#39;SimpleServiceSoap&#39; from namespace &#39;urn:simple&#39;.Writing file &#39;simpleproxy.cs&#39;.C:&gt;">
     <meta itemprop="datePublished" content="2005-02-27T00:00:00-08:00">
@@ -289,8 +280,8 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="https://adrianba.net/2005/02/27/4b571c667aab44dab57b178e0236247b/" class="u-url" itemprop="url">ASMX 2.0 - Basic Profile 1.0 Conformance - Part 2
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="https://adrianba.net/2005/02/27/4b571c667aab44dab57b178e0236247b/" itemprop="url">ASMX 2.0 - Basic Profile 1.0 Conformance - Part 2
 </a>
           </h1>
           
@@ -317,7 +308,7 @@
         </header>
       
 
-      <section class="page__content e-content" itemprop="text">
+      <section class="page__content" itemprop="text">
         
         <p>In my
 <a href="/2005/02/26/9cb90c98cf13431c93febde1b29eb294">
@@ -395,16 +386,53 @@ unless something appears in the service’s WSDL that prevents this
 
   
   
-    <div class="page__related">
+    
+<div class="page__related">
   
   <h2 class="page__related-title">You May Also Enjoy</h2>
   <div class="grid__wrapper">
     
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024/12/01/esp32c6-and-home-assistant/" rel="permalink">Running ESPHome on a ESP32C6 device for Home Assistant
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
     
       
       
-      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">ESP32C6 boards are not native supported by ESPHome
+</p>
+  </article>
+</div>
+
+    
       
       
 
@@ -448,9 +476,6 @@ that you will get an error from Windows Update: Error 8007000e Windows Updat...<
     
       
       
-      
-      
-      
 
 
 
@@ -489,9 +514,6 @@ that you will get an error from Windows Update: Error 8007000e Windows Updat...<
 </div>
 
     
-      
-      
-      
       
       
 
@@ -533,53 +555,6 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
 </div>
 
     
-      
-      
-      
-      
-      
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2021/03/09/ubuntu-latest-git/" rel="permalink">Installing the latest version of git on Ubuntu
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-</p>
-  </article>
-</div>
-
-    
-      
-      
-      
   </div>
 </div>
 

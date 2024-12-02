@@ -2968,4 +2968,10 @@ var store = [{
         "tags": [],
         "url": "/2022/11/23/surface-rt-recovery-and-updates/",
         "teaser": null
+      },{
+        "title": "Running ESPHome on a ESP32C6 device for Home Assistant",
+        "excerpt":"ESP32C6 boards are not native supported by ESPHome The ESPHome project provides a way to use ESP32-based microcontrollers with [Home Assistant]https://www.home-assistant.io/). Recently I have been experimenting with the Seeed Studio Xiao ESP32C6 microcontrollers, which come are packaged as a tiny PCB with a USB-C connector to power or program them....","categories": [],
+        "tags": [],
+        "url": "/2024/12/01/esp32c6-and-home-assistant/",
+        "teaser": null
       }]

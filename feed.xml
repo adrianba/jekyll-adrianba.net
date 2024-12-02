@@ -1,4 +1,119 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adrianba.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adrianba.net/" rel="alternate" type="text/html" /><updated>2024-04-27T21:14:35-07:00</updated><id>https://adrianba.net/feed.xml</id><title type="html">adrianba.net</title><subtitle>On land, on sea, and in the ether.</subtitle><author><name>Adrian Bateman</name></author><entry><title type="html">Clean recovery of Surface RT and Windows Update (2022)</title><link href="https://adrianba.net/2022/11/23/surface-rt-recovery-and-updates/" rel="alternate" type="text/html" title="Clean recovery of Surface RT and Windows Update (2022)" /><published>2022-11-23T00:00:00-08:00</published><updated>2022-11-23T20:00:00-08:00</updated><id>https://adrianba.net/2022/11/23/surface-rt-recovery-and-updates</id><content type="html" xml:base="https://adrianba.net/2022/11/23/surface-rt-recovery-and-updates/"><![CDATA[<p>If you reset a Microsoft Surface RT from a recovery disk, there is a good chance
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adrianba.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adrianba.net/" rel="alternate" type="text/html" /><updated>2024-12-01T20:49:27-08:00</updated><id>https://adrianba.net/feed.xml</id><title type="html">adrianba.net</title><subtitle>On land, on sea, and in the ether.</subtitle><author><name>Adrian Bateman</name></author><entry><title type="html">Running ESPHome on a ESP32C6 device for Home Assistant</title><link href="https://adrianba.net/2024/12/01/esp32c6-and-home-assistant/" rel="alternate" type="text/html" title="Running ESPHome on a ESP32C6 device for Home Assistant" /><published>2024-12-01T00:00:00-08:00</published><updated>2024-12-01T20:00:00-08:00</updated><id>https://adrianba.net/2024/12/01/esp32c6-and-home-assistant</id><content type="html" xml:base="https://adrianba.net/2024/12/01/esp32c6-and-home-assistant/"><![CDATA[<h1 id="esp32c6-boards-are-not-native-supported-by-esphome">ESP32C6 boards are not native supported by ESPHome</h1>
+
+<p>The <a href="https://esphome.io/">ESPHome</a> project provides a way to use ESP32-based microcontrollers
+with [Home Assistant]https://www.home-assistant.io/). Recently I have been experimenting with
+the <a href="https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/">Seeed Studio Xiao ESP32C6</a>
+microcontrollers, which come are packaged as a tiny PCB with a USB-C connector to power or
+program them. These devices include WiFi and Bluetooth support.</p>
+
+<p>I came across the ESPHome project but unfortunately discovered that ESP32C6 boards are not
+supported natively. Neverthless, I found that some people had managed to get them to work,
+although there wasn’t one place with all the instructions.</p>
+
+<h1 id="building-firmware-for-esp32c6-using-docker">Building firmware for ESP32C6 using Docker</h1>
+
+<p>I have Docker installed and ESPHome supports running its setup software using a Docker
+container. First, you need to create a skeleton configuration file.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">--rm</span> <span class="nt">-it</span> <span class="nt">-v</span> /home/user:/config ghcr.io/esphome/esphome wizard esp32c6.yaml
+</code></pre></div></div>
+
+<p>This command will create <code class="language-plaintext highlighter-rouge">esp32c6.yaml</code> in the <code class="language-plaintext highlighter-rouge">/user/home</code> folder. You answer the questions
+for things like the name of the device and the WiFi network it will connect to.</p>
+
+<p>Next, edit the file to support compiling for ESP32C6 and also add whatever support you
+want from your controller according to the ESPHome documentation. I wanted to use my device
+as a Bluetooth repeater. Here is the edited configuration file:</p>
+
+<h2 id="esp32c6yaml">esp32c6.yaml</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">esphome</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">esp32c6</span>
+  <span class="na">platformio_options</span><span class="pi">:</span>
+    <span class="na">platform</span><span class="pi">:</span> <span class="s">https://github.com/mnowak32/platform-espressif32.git#boards/seeed_xiao_esp32c6</span>
+
+<span class="na">esp32</span><span class="pi">:</span>
+  <span class="na">board</span><span class="pi">:</span> <span class="s">seeed_xiao_esp32c6</span>
+  <span class="na">flash_size</span><span class="pi">:</span> <span class="s">4MB</span>
+  <span class="na">variant</span><span class="pi">:</span> <span class="s">esp32c6</span>
+  <span class="na">framework</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">esp-idf</span>
+    <span class="na">version</span><span class="pi">:</span> <span class="s">5.2.1</span>
+    <span class="na">sdkconfig_options</span><span class="pi">:</span>
+      <span class="na">CONFIG_ESPTOOLPY_FLASHSIZE_4MB</span><span class="pi">:</span> <span class="s">y</span>
+
+<span class="c1"># Enable logging</span>
+<span class="na">logger</span><span class="pi">:</span>
+
+<span class="c1"># Enable Home Assistant API</span>
+<span class="na">api</span><span class="pi">:</span>
+  <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+
+<span class="na">ota</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">platform</span><span class="pi">:</span> <span class="s">esphome</span>
+    <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+
+<span class="na">wifi</span><span class="pi">:</span>
+  <span class="na">ssid</span><span class="pi">:</span> <span class="s2">"</span><span class="s">SSID"</span>
+  <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">wifi-password"</span>
+
+  <span class="c1"># Enable fallback hotspot (captive portal) in case wifi connection fails</span>
+  <span class="na">ap</span><span class="pi">:</span>
+    <span class="na">ssid</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Esp32C6</span><span class="nv"> </span><span class="s">Fallback</span><span class="nv"> </span><span class="s">Hotspot"</span>
+    <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">012345678999"</span>
+
+<span class="na">captive_portal</span><span class="pi">:</span>
+
+<span class="na">bluetooth_proxy</span><span class="pi">:</span>
+  <span class="na">active</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>Note 1: change <code class="language-plaintext highlighter-rouge">SSID</code> and <code class="language-plaintext highlighter-rouge">wifi-password</code> for your network. I also chose to start without passwords.</p>
+
+<p>Note 2: I used v5.2.1 of ESP-IDF just because that was used in a few sample files I found from
+people who got this to work. I will experiment with the more recent versions v5.2.3 and v5.3.1,
+which are currently the latest versions.</p>
+
+<h2 id="build-the-firmware">Build the firmware</h2>
+
+<p>Next, you need to build the firmware for the device using the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">--rm</span> <span class="nt">-v</span> /home/user:/config <span class="nt">-it</span> ghcr.io/esphome/esphome compile esp32c6.yaml
+</code></pre></div></div>
+
+<p>This will take a little while to download all the build tools in the Docker container and then
+compile the code. Eventually, it will complete having built the firmware binary.</p>
+
+<p>You can find the firmware located in <code class="language-plaintext highlighter-rouge">/home/user/.esphome/build/esp32wart/.pioenvs/esp32wart/firmware.factory.bin</code>.</p>
+
+<h1 id="flashing-the-firmware">Flashing the firmware</h1>
+
+<p>I used <code class="language-plaintext highlighter-rouge">esptool.py</code> to flash the firmware onto the device, which I already had installed from
+previously installing the <a href="https://docs.espressif.com/projects/esp-idf">ESP-IDF tools</a>. I think if
+you have a recent version of Python installed, you can just install this with <code class="language-plaintext highlighter-rouge">pip install esptool</code>
+but I haven’t tried this.</p>
+
+<p>To flash the firmware, I used the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>esptool.py <span class="nt">-p</span> COM6 <span class="nt">--before</span> default_reset <span class="nt">--after</span> hard_reset <span class="nt">--chip</span> esp32c6 write_flash <span class="nt">--flash_mode</span> dio <span class="nt">--flash_size</span> detect <span class="nt">--flash_freq</span> 40m 0x0 firmware.factory.bin
+</code></pre></div></div>
+
+<p>This is on Windows (hence the COM6), but I imagine it works with other platforms by changing the
+port as appropriate. Most of the options are probably not necessary, but I created this command
+based on the ESP-IDF documentation.</p>
+
+<p>I think the important parts are the port, <code class="language-plaintext highlighter-rouge">--chip esp32c6</code>, and using 0x0 as the start address.</p>
+
+<p>This should write the firmware and restart the device, where it will attempt to connect to
+the network.</p>
+
+<h1 id="accessing-microcontroller-from-home-assistant">Accessing microcontroller from Home Assistant</h1>
+
+<p>If you have installed the ESPHome integration in Home Assistant, then the microcontroller
+should soon be detected as a new device by Home Assistant. If you add the device, then you can
+start to use it with Home Assistant. I had configure my device as a Bluetooth Repeater, and
+shortly after adding it to Home Assistant, all the Bluetooth devices it could see were also
+made available in Home Assistant.</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[ESP32C6 boards are not native supported by ESPHome]]></summary></entry><entry><title type="html">Clean recovery of Surface RT and Windows Update (2022)</title><link href="https://adrianba.net/2022/11/23/surface-rt-recovery-and-updates/" rel="alternate" type="text/html" title="Clean recovery of Surface RT and Windows Update (2022)" /><published>2022-11-23T00:00:00-08:00</published><updated>2022-11-23T20:00:00-08:00</updated><id>https://adrianba.net/2022/11/23/surface-rt-recovery-and-updates</id><content type="html" xml:base="https://adrianba.net/2022/11/23/surface-rt-recovery-and-updates/"><![CDATA[<p>If you reset a Microsoft Surface RT from a recovery disk, there is a good chance
 that you will get an error from Windows Update: Error 8007000e Windows Update ran into a problem.
 There are various guides on the web for how to recover from this but most of them didn’t work for
 me. Here is what did work.</p>
@@ -71,7 +186,7 @@ the updates. This will take several hours to install &gt;100 updates.</li>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eval `keychain -q --eval --agents ssh id_rsa id_ed25519`
 </code></pre></div></div>
 
-<p>Now, each time you open a shell, <code class="language-plaintext highlighter-rouge">keychain</code> will check if <code class="language-plaintext highlighter-rouge">ssh-agent</code> is running and if not start it.</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[I often use Visual Studio Code together with WSL2 using the Remote - WSL extension. Recently, I have been using Docker running on a remote server accessed over SSH. When I tried to use the Docker extension for VSCode, I would get an error message saying: “In order to use an SSH DOCKER_HOST, you must configure an ssh-agent. Source: Docker (Extension)”.]]></summary></entry><entry><title type="html">Change Windows PC name to lower case</title><link href="https://adrianba.net/2022/01/22/changing-windows-pc-name-case/" rel="alternate" type="text/html" title="Change Windows PC name to lower case" /><published>2022-01-22T00:00:00-08:00</published><updated>2024-04-27T08:45:00-07:00</updated><id>https://adrianba.net/2022/01/22/changing-windows-pc-name-case</id><content type="html" xml:base="https://adrianba.net/2022/01/22/changing-windows-pc-name-case/"><![CDATA[<p>It is straightforward to change the name of your Windows PC through the Settings
+<p>Now, each time you open a shell, <code class="language-plaintext highlighter-rouge">keychain</code> will check if <code class="language-plaintext highlighter-rouge">ssh-agent</code> is running and if not start it.</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[I often use Visual Studio Code together with WSL2 using the Remote - WSL extension. Recently, I have been using Docker running on a remote server accessed over SSH. When I tried to use the Docker extension for VSCode, I would get an error message saying: “In order to use an SSH DOCKER_HOST, you must configure an ssh-agent. Source: Docker (Extension)”.]]></summary></entry><entry><title type="html">Change Windows PC name to lower case</title><link href="https://adrianba.net/2022/01/22/changing-windows-pc-name-case/" rel="alternate" type="text/html" title="Change Windows PC name to lower case" /><published>2022-01-22T00:00:00-08:00</published><updated>2024-12-01T07:45:00-08:00</updated><id>https://adrianba.net/2022/01/22/changing-windows-pc-name-case</id><content type="html" xml:base="https://adrianba.net/2022/01/22/changing-windows-pc-name-case/"><![CDATA[<p>It is straightforward to change the name of your Windows PC through the Settings
 app (go to System, About, and choose “Rename this PC”). One problem, though, is
 if you want to change the case of the name, but not the name itself. For example,
 changing from “SURFACE” to “surface”. If you try to use the built-in UI for this,
@@ -83,7 +198,7 @@ case. However, there is an easier way using the command prompt.</p>
 <p>In a command prompt running as Administrator, use the following command:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WMIC computersystem where caption='current_name' rename new_name
-</code></pre></div></div>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[It is straightforward to change the name of your Windows PC through the Settings app (go to System, About, and choose “Rename this PC”). One problem, though, is if you want to change the case of the name, but not the name itself. For example, changing from “SURFACE” to “surface”. If you try to use the built-in UI for this, Windows recognizes that the name hasn’t changed and won’t let you continue.]]></summary></entry><entry><title type="html">Installing the latest version of git on Ubuntu</title><link href="https://adrianba.net/2021/03/09/ubuntu-latest-git/" rel="alternate" type="text/html" title="Installing the latest version of git on Ubuntu" /><published>2021-03-09T00:00:00-08:00</published><updated>2024-04-27T07:45:00-07:00</updated><id>https://adrianba.net/2021/03/09/ubuntu-latest-git</id><content type="html" xml:base="https://adrianba.net/2021/03/09/ubuntu-latest-git/"><![CDATA[<p><img src="https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/02/install_git_ubuntu.png?w=800&amp;ssl=1" alt="An image with the git logo and text that says Install Latest Git on Ubuntu" /></p>
+</code></pre></div></div>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[It is straightforward to change the name of your Windows PC through the Settings app (go to System, About, and choose “Rename this PC”). One problem, though, is if you want to change the case of the name, but not the name itself. For example, changing from “SURFACE” to “surface”. If you try to use the built-in UI for this, Windows recognizes that the name hasn’t changed and won’t let you continue.]]></summary></entry><entry><title type="html">Installing the latest version of git on Ubuntu</title><link href="https://adrianba.net/2021/03/09/ubuntu-latest-git/" rel="alternate" type="text/html" title="Installing the latest version of git on Ubuntu" /><published>2021-03-09T00:00:00-08:00</published><updated>2024-12-01T06:45:00-08:00</updated><id>https://adrianba.net/2021/03/09/ubuntu-latest-git</id><content type="html" xml:base="https://adrianba.net/2021/03/09/ubuntu-latest-git/"><![CDATA[<p><img src="https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/02/install_git_ubuntu.png?w=800&amp;ssl=1" alt="An image with the git logo and text that says Install Latest Git on Ubuntu" /></p>
 
 <p>I was reading about the latest <a href="https://www.openwall.com/lists/oss-security/2021/03/09/3">git security issue</a>
 this evening when I realized that upgrading the Windows version of <code class="language-plaintext highlighter-rouge">git</code> using
@@ -220,9 +335,4 @@ personal information should provide a “clear and conspicuous link” titled
 “Do Not Sell My Personal Information” on the homepage that California
 consumers will see (see <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&amp;sectionNum=1798.135.">§1798.135</a>).</p>
 
-<p><em>Disclaimer: the information included here is provided AS IS for discussion purposes only. It may not be completely accurate, may not be applicable in all situations, and should not be acted upon without specific legal advice based on particular situations.</em></p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[Yesterday, I read an article on JD Supra answering the question “Can a company be sued under the CCPA for failing to post a ‘do not sell my personal information’ link?” To my surprise, the answer given was “No.”]]></summary></entry><entry><title type="html">Particle Printable Buffer Library</title><link href="https://adrianba.net/2017/12/19/particle-printable-buffer-library/" rel="alternate" type="text/html" title="Particle Printable Buffer Library" /><published>2017-12-19T00:00:00-08:00</published><updated>2017-10-19T12:31:00-07:00</updated><id>https://adrianba.net/2017/12/19/particle-printable-buffer-library</id><content type="html" xml:base="https://adrianba.net/2017/12/19/particle-printable-buffer-library/"><![CDATA[<p>Based on the code used internally by the Particle firmware for printing
-to <code class="language-plaintext highlighter-rouge">String</code> objects (see <code class="language-plaintext highlighter-rouge">StringPrintableHelper</code> in <a href="https://github.com/spark/firmware/blob/89f8e270ce7d748a4d9d5f633a650b0bacb728da/wiring/src/spark_wiring_string.cpp#L787">wiring/src/spark_wiring_string.cpp</a>), I have written a small
-library that allows printing into a simple buffer. This avoids the reallocation of memory that occurs when using the <code class="language-plaintext highlighter-rouge">String</code> class.</p>
-
-<p>The library is available on <a href="https://github.com/adrianba/printable-buffer">GitHub</a> and I’ve published it to the Particle
-library list so you can add it through the IDE or by use <code class="language-plaintext highlighter-rouge">particle library add printable-buffer</code> using the CLI.</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[Based on the code used internally by the Particle firmware for printing to String objects (see StringPrintableHelper in wiring/src/spark_wiring_string.cpp), I have written a small library that allows printing into a simple buffer. This avoids the reallocation of memory that occurs when using the String class.]]></summary></entry></feed>
+<p><em>Disclaimer: the information included here is provided AS IS for discussion purposes only. It may not be completely accurate, may not be applicable in all situations, and should not be acted upon without specific legal advice based on particular situations.</em></p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[Yesterday, I read an article on JD Supra answering the question “Can a company be sued under the CCPA for failing to post a ‘do not sell my personal information’ link?” To my surprise, the answer given was “No.”]]></summary></entry></feed>
