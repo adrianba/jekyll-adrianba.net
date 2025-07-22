@@ -1,6 +1,6 @@
 ---
 title: "Running ESPHome on a ESP32C6 device for Home Assistant"
-last_modified_at: 20241201T200000-0800
+last_modified_at: 20250722T140000-0700
 header:
   image: /assets/uploads/2024/esp32.jpg
   image_description: "Futuristic image of an ESP32 (AI generated)"
@@ -9,7 +9,7 @@ header:
 # ESP32C6 boards are not native supported by ESPHome
 
 The [ESPHome](https://esphome.io/) project provides a way to use ESP32-based microcontrollers
-with [Home Assistant]https://www.home-assistant.io/). Recently I have been experimenting with
+with [Home Assistant](https://www.home-assistant.io/). Recently I have been experimenting with
 the [Seeed Studio Xiao ESP32C6](https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/)
 microcontrollers, which come are packaged as a tiny PCB with a USB-C connector to power or
 program them. These devices include WiFi and Bluetooth support.
@@ -17,6 +17,8 @@ program them. These devices include WiFi and Bluetooth support.
 I came across the ESPHome project but unfortunately discovered that ESP32C6 boards are not
 supported natively. Neverthless, I found that some people had managed to get them to work,
 although there wasn't one place with all the instructions.
+
+**Update July 2025**: the ESPHome project now supports ESP32C6 boards. [See below](#update-july-2025).
 
 # Building firmware for ESP32C6 using Docker
 
@@ -126,3 +128,48 @@ should soon be detected as a new device by Home Assistant. If you add the device
 start to use it with Home Assistant. I had configure my device as a Bluetooth Repeater, and
 shortly after adding it to Home Assistant, all the Bluetooth devices it could see were also
 made available in Home Assistant.
+
+# Update July 2025
+
+With recent updates to the project, ESPHome now appears to support ESP32C6 boards
+natively with YAML files created directly from the wizard. For example, you can
+now specify `seeed_xiao_esp32c6` as the board you want to target.
+
+For example, the following YAML configuration file compiles directly:
+
+## esp32c6-2025.yaml
+
+```yaml
+esphome:
+  name: esp32c6
+
+esp32:
+  board: seeed_xiao_esp32c6
+  framework:
+    type: esp-idf
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: ""
+
+ota:
+  - platform: esphome
+    password: ""
+
+wifi:
+  ssid: "SSID"
+  password: "wifi-password"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esp32C6 Fallback Hotspot"
+    password: "012345678999"
+
+captive_portal:
+
+bluetooth_proxy:
+  active: true
+```
