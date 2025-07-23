@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adrianba.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adrianba.net/" rel="alternate" type="text/html" /><updated>2024-12-01T20:49:27-08:00</updated><id>https://adrianba.net/feed.xml</id><title type="html">adrianba.net</title><subtitle>On land, on sea, and in the ether.</subtitle><author><name>Adrian Bateman</name></author><entry><title type="html">Running ESPHome on a ESP32C6 device for Home Assistant</title><link href="https://adrianba.net/2024/12/01/esp32c6-and-home-assistant/" rel="alternate" type="text/html" title="Running ESPHome on a ESP32C6 device for Home Assistant" /><published>2024-12-01T00:00:00-08:00</published><updated>2024-12-01T20:00:00-08:00</updated><id>https://adrianba.net/2024/12/01/esp32c6-and-home-assistant</id><content type="html" xml:base="https://adrianba.net/2024/12/01/esp32c6-and-home-assistant/"><![CDATA[<h1 id="esp32c6-boards-are-not-native-supported-by-esphome">ESP32C6 boards are not native supported by ESPHome</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://adrianba.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://adrianba.net/" rel="alternate" type="text/html" /><updated>2025-07-22T20:32:03-07:00</updated><id>https://adrianba.net/feed.xml</id><title type="html">adrianba.net</title><subtitle>On land, on sea, and in the ether.</subtitle><author><name>Adrian Bateman</name></author><entry><title type="html">Running ESPHome on a ESP32C6 device for Home Assistant</title><link href="https://adrianba.net/2024/12/01/esp32c6-and-home-assistant/" rel="alternate" type="text/html" title="Running ESPHome on a ESP32C6 device for Home Assistant" /><published>2024-12-01T00:00:00-08:00</published><updated>2025-07-22T14:00:00-07:00</updated><id>https://adrianba.net/2024/12/01/esp32c6-and-home-assistant</id><content type="html" xml:base="https://adrianba.net/2024/12/01/esp32c6-and-home-assistant/"><![CDATA[<h1 id="esp32c6-boards-are-not-native-supported-by-esphome">ESP32C6 boards are not native supported by ESPHome</h1>
 
 <p>The <a href="https://esphome.io/">ESPHome</a> project provides a way to use ESP32-based microcontrollers
-with [Home Assistant]https://www.home-assistant.io/). Recently I have been experimenting with
+with <a href="https://www.home-assistant.io/">Home Assistant</a>. Recently I have been experimenting with
 the <a href="https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/">Seeed Studio Xiao ESP32C6</a>
 microcontrollers, which come are packaged as a tiny PCB with a USB-C connector to power or
 program them. These devices include WiFi and Bluetooth support.</p>
@@ -9,6 +9,8 @@ program them. These devices include WiFi and Bluetooth support.</p>
 <p>I came across the ESPHome project but unfortunately discovered that ESP32C6 boards are not
 supported natively. Neverthless, I found that some people had managed to get them to work,
 although there wasn’t one place with all the instructions.</p>
+
+<p><strong>Update July 2025</strong>: the ESPHome project now supports ESP32C6 boards. <a href="#update-july-2025">See below</a>.</p>
 
 <h1 id="building-firmware-for-esp32c6-using-docker">Building firmware for ESP32C6 using Docker</h1>
 
@@ -113,7 +115,51 @@ the network.</p>
 should soon be detected as a new device by Home Assistant. If you add the device, then you can
 start to use it with Home Assistant. I had configure my device as a Bluetooth Repeater, and
 shortly after adding it to Home Assistant, all the Bluetooth devices it could see were also
-made available in Home Assistant.</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[ESP32C6 boards are not native supported by ESPHome]]></summary></entry><entry><title type="html">Clean recovery of Surface RT and Windows Update (2022)</title><link href="https://adrianba.net/2022/11/23/surface-rt-recovery-and-updates/" rel="alternate" type="text/html" title="Clean recovery of Surface RT and Windows Update (2022)" /><published>2022-11-23T00:00:00-08:00</published><updated>2022-11-23T20:00:00-08:00</updated><id>https://adrianba.net/2022/11/23/surface-rt-recovery-and-updates</id><content type="html" xml:base="https://adrianba.net/2022/11/23/surface-rt-recovery-and-updates/"><![CDATA[<p>If you reset a Microsoft Surface RT from a recovery disk, there is a good chance
+made available in Home Assistant.</p>
+
+<h1 id="update-july-2025">Update July 2025</h1>
+
+<p>With recent updates to the project, ESPHome now appears to support ESP32C6 boards
+natively with YAML files created directly from the wizard. For example, you can
+now specify <code class="language-plaintext highlighter-rouge">seeed_xiao_esp32c6</code> as the board you want to target.</p>
+
+<p>For example, the following YAML configuration file compiles directly:</p>
+
+<h2 id="esp32c6-2025yaml">esp32c6-2025.yaml</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">esphome</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">esp32c6</span>
+
+<span class="na">esp32</span><span class="pi">:</span>
+  <span class="na">board</span><span class="pi">:</span> <span class="s">seeed_xiao_esp32c6</span>
+  <span class="na">framework</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">esp-idf</span>
+
+<span class="c1"># Enable logging</span>
+<span class="na">logger</span><span class="pi">:</span>
+
+<span class="c1"># Enable Home Assistant API</span>
+<span class="na">api</span><span class="pi">:</span>
+  <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+
+<span class="na">ota</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">platform</span><span class="pi">:</span> <span class="s">esphome</span>
+    <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+
+<span class="na">wifi</span><span class="pi">:</span>
+  <span class="na">ssid</span><span class="pi">:</span> <span class="s2">"</span><span class="s">SSID"</span>
+  <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">wifi-password"</span>
+
+  <span class="c1"># Enable fallback hotspot (captive portal) in case wifi connection fails</span>
+  <span class="na">ap</span><span class="pi">:</span>
+    <span class="na">ssid</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Esp32C6</span><span class="nv"> </span><span class="s">Fallback</span><span class="nv"> </span><span class="s">Hotspot"</span>
+    <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">012345678999"</span>
+
+<span class="na">captive_portal</span><span class="pi">:</span>
+
+<span class="na">bluetooth_proxy</span><span class="pi">:</span>
+  <span class="na">active</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[ESP32C6 boards are not native supported by ESPHome]]></summary></entry><entry><title type="html">Clean recovery of Surface RT and Windows Update (2022)</title><link href="https://adrianba.net/2022/11/23/surface-rt-recovery-and-updates/" rel="alternate" type="text/html" title="Clean recovery of Surface RT and Windows Update (2022)" /><published>2022-11-23T00:00:00-08:00</published><updated>2022-11-23T20:00:00-08:00</updated><id>https://adrianba.net/2022/11/23/surface-rt-recovery-and-updates</id><content type="html" xml:base="https://adrianba.net/2022/11/23/surface-rt-recovery-and-updates/"><![CDATA[<p>If you reset a Microsoft Surface RT from a recovery disk, there is a good chance
 that you will get an error from Windows Update: Error 8007000e Windows Update ran into a problem.
 There are various guides on the web for how to recover from this but most of them didn’t work for
 me. Here is what did work.</p>
@@ -186,7 +232,7 @@ the updates. This will take several hours to install &gt;100 updates.</li>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eval `keychain -q --eval --agents ssh id_rsa id_ed25519`
 </code></pre></div></div>
 
-<p>Now, each time you open a shell, <code class="language-plaintext highlighter-rouge">keychain</code> will check if <code class="language-plaintext highlighter-rouge">ssh-agent</code> is running and if not start it.</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[I often use Visual Studio Code together with WSL2 using the Remote - WSL extension. Recently, I have been using Docker running on a remote server accessed over SSH. When I tried to use the Docker extension for VSCode, I would get an error message saying: “In order to use an SSH DOCKER_HOST, you must configure an ssh-agent. Source: Docker (Extension)”.]]></summary></entry><entry><title type="html">Change Windows PC name to lower case</title><link href="https://adrianba.net/2022/01/22/changing-windows-pc-name-case/" rel="alternate" type="text/html" title="Change Windows PC name to lower case" /><published>2022-01-22T00:00:00-08:00</published><updated>2024-12-01T07:45:00-08:00</updated><id>https://adrianba.net/2022/01/22/changing-windows-pc-name-case</id><content type="html" xml:base="https://adrianba.net/2022/01/22/changing-windows-pc-name-case/"><![CDATA[<p>It is straightforward to change the name of your Windows PC through the Settings
+<p>Now, each time you open a shell, <code class="language-plaintext highlighter-rouge">keychain</code> will check if <code class="language-plaintext highlighter-rouge">ssh-agent</code> is running and if not start it.</p>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[I often use Visual Studio Code together with WSL2 using the Remote - WSL extension. Recently, I have been using Docker running on a remote server accessed over SSH. When I tried to use the Docker extension for VSCode, I would get an error message saying: “In order to use an SSH DOCKER_HOST, you must configure an ssh-agent. Source: Docker (Extension)”.]]></summary></entry><entry><title type="html">Change Windows PC name to lower case</title><link href="https://adrianba.net/2022/01/22/changing-windows-pc-name-case/" rel="alternate" type="text/html" title="Change Windows PC name to lower case" /><published>2022-01-22T00:00:00-08:00</published><updated>2025-07-22T08:45:00-07:00</updated><id>https://adrianba.net/2022/01/22/changing-windows-pc-name-case</id><content type="html" xml:base="https://adrianba.net/2022/01/22/changing-windows-pc-name-case/"><![CDATA[<p>It is straightforward to change the name of your Windows PC through the Settings
 app (go to System, About, and choose “Rename this PC”). One problem, though, is
 if you want to change the case of the name, but not the name itself. For example,
 changing from “SURFACE” to “surface”. If you try to use the built-in UI for this,
@@ -198,7 +244,7 @@ case. However, there is an easier way using the command prompt.</p>
 <p>In a command prompt running as Administrator, use the following command:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WMIC computersystem where caption='current_name' rename new_name
-</code></pre></div></div>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[It is straightforward to change the name of your Windows PC through the Settings app (go to System, About, and choose “Rename this PC”). One problem, though, is if you want to change the case of the name, but not the name itself. For example, changing from “SURFACE” to “surface”. If you try to use the built-in UI for this, Windows recognizes that the name hasn’t changed and won’t let you continue.]]></summary></entry><entry><title type="html">Installing the latest version of git on Ubuntu</title><link href="https://adrianba.net/2021/03/09/ubuntu-latest-git/" rel="alternate" type="text/html" title="Installing the latest version of git on Ubuntu" /><published>2021-03-09T00:00:00-08:00</published><updated>2024-12-01T06:45:00-08:00</updated><id>https://adrianba.net/2021/03/09/ubuntu-latest-git</id><content type="html" xml:base="https://adrianba.net/2021/03/09/ubuntu-latest-git/"><![CDATA[<p><img src="https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/02/install_git_ubuntu.png?w=800&amp;ssl=1" alt="An image with the git logo and text that says Install Latest Git on Ubuntu" /></p>
+</code></pre></div></div>]]></content><author><name>Adrian Bateman</name></author><summary type="html"><![CDATA[It is straightforward to change the name of your Windows PC through the Settings app (go to System, About, and choose “Rename this PC”). One problem, though, is if you want to change the case of the name, but not the name itself. For example, changing from “SURFACE” to “surface”. If you try to use the built-in UI for this, Windows recognizes that the name hasn’t changed and won’t let you continue.]]></summary></entry><entry><title type="html">Installing the latest version of git on Ubuntu</title><link href="https://adrianba.net/2021/03/09/ubuntu-latest-git/" rel="alternate" type="text/html" title="Installing the latest version of git on Ubuntu" /><published>2021-03-09T00:00:00-08:00</published><updated>2025-07-22T07:45:00-07:00</updated><id>https://adrianba.net/2021/03/09/ubuntu-latest-git</id><content type="html" xml:base="https://adrianba.net/2021/03/09/ubuntu-latest-git/"><![CDATA[<p><img src="https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/02/install_git_ubuntu.png?w=800&amp;ssl=1" alt="An image with the git logo and text that says Install Latest Git on Ubuntu" /></p>
 
 <p>I was reading about the latest <a href="https://www.openwall.com/lists/oss-security/2021/03/09/3">git security issue</a>
 this evening when I realized that upgrading the Windows version of <code class="language-plaintext highlighter-rouge">git</code> using

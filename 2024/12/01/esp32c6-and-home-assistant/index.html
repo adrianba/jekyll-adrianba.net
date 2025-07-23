@@ -1,7 +1,7 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
-  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.27.2 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
@@ -55,7 +55,7 @@
 
 
 
-  <meta property="article:modified_time" content="2024-12-01T20:00:00-08:00">
+  <meta property="article:modified_time" content="2025-07-22T14:00:00-07:00">
 
 
 
@@ -88,7 +88,7 @@
   <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="adrianba.net Feed">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script type="text/javascript">
+<script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
   
 </script>
@@ -108,7 +108,7 @@
 
   </head>
 
-  <body class="layout--single">
+  <body class="layout--single" dir="ltr">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -291,7 +291,7 @@
     <meta itemprop="headline" content="Running ESPHome on a ESP32C6 device for Home Assistant">
     <meta itemprop="description" content="ESP32C6 boards are not native supported by ESPHome">
     <meta itemprop="datePublished" content="2024-12-01T00:00:00-08:00">
-    <meta itemprop="dateModified" content="2024-12-01T20:00:00-08:00">
+    <meta itemprop="dateModified" content="2025-07-22T14:00:00-07:00">
 
     <div class="page__inner-wrap">
       
@@ -329,7 +329,7 @@
         <h1 id="esp32c6-boards-are-not-native-supported-by-esphome">ESP32C6 boards are not native supported by ESPHome</h1>
 
 <p>The <a href="https://esphome.io/">ESPHome</a> project provides a way to use ESP32-based microcontrollers
-with [Home Assistant]https://www.home-assistant.io/). Recently I have been experimenting with
+with <a href="https://www.home-assistant.io/">Home Assistant</a>. Recently I have been experimenting with
 the <a href="https://wiki.seeedstudio.com/xiao_esp32c6_getting_started/">Seeed Studio Xiao ESP32C6</a>
 microcontrollers, which come are packaged as a tiny PCB with a USB-C connector to power or
 program them. These devices include WiFi and Bluetooth support.</p>
@@ -337,6 +337,8 @@ program them. These devices include WiFi and Bluetooth support.</p>
 <p>I came across the ESPHome project but unfortunately discovered that ESP32C6 boards are not
 supported natively. Neverthless, I found that some people had managed to get them to work,
 although there wasn’t one place with all the instructions.</p>
+
+<p><strong>Update July 2025</strong>: the ESPHome project now supports ESP32C6 boards. <a href="#update-july-2025">See below</a>.</p>
 
 <h1 id="building-firmware-for-esp32c6-using-docker">Building firmware for ESP32C6 using Docker</h1>
 
@@ -443,6 +445,50 @@ start to use it with Home Assistant. I had configure my device as a Bluetooth Re
 shortly after adding it to Home Assistant, all the Bluetooth devices it could see were also
 made available in Home Assistant.</p>
 
+<h1 id="update-july-2025">Update July 2025</h1>
+
+<p>With recent updates to the project, ESPHome now appears to support ESP32C6 boards
+natively with YAML files created directly from the wizard. For example, you can
+now specify <code class="language-plaintext highlighter-rouge">seeed_xiao_esp32c6</code> as the board you want to target.</p>
+
+<p>For example, the following YAML configuration file compiles directly:</p>
+
+<h2 id="esp32c6-2025yaml">esp32c6-2025.yaml</h2>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">esphome</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">esp32c6</span>
+
+<span class="na">esp32</span><span class="pi">:</span>
+  <span class="na">board</span><span class="pi">:</span> <span class="s">seeed_xiao_esp32c6</span>
+  <span class="na">framework</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">esp-idf</span>
+
+<span class="c1"># Enable logging</span>
+<span class="na">logger</span><span class="pi">:</span>
+
+<span class="c1"># Enable Home Assistant API</span>
+<span class="na">api</span><span class="pi">:</span>
+  <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+
+<span class="na">ota</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">platform</span><span class="pi">:</span> <span class="s">esphome</span>
+    <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+
+<span class="na">wifi</span><span class="pi">:</span>
+  <span class="na">ssid</span><span class="pi">:</span> <span class="s2">"</span><span class="s">SSID"</span>
+  <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">wifi-password"</span>
+
+  <span class="c1"># Enable fallback hotspot (captive portal) in case wifi connection fails</span>
+  <span class="na">ap</span><span class="pi">:</span>
+    <span class="na">ssid</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Esp32C6</span><span class="nv"> </span><span class="s">Fallback</span><span class="nv"> </span><span class="s">Hotspot"</span>
+    <span class="na">password</span><span class="pi">:</span> <span class="s2">"</span><span class="s">012345678999"</span>
+
+<span class="na">captive_portal</span><span class="pi">:</span>
+
+<span class="na">bluetooth_proxy</span><span class="pi">:</span>
+  <span class="na">active</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
         
       </section>
 
@@ -453,31 +499,41 @@ made available in Home Assistant.</p>
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-12-01">December 1, 2024</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-07-22">July 22, 2025</time></p>
 
       </footer>
 
       <section class="page__share">
-  
+  <h4 class="page__share-title">Share on</h4>
 
-  <a href="https://twitter.com/intent/tweet?via=adrianba&text=Running+ESPHome+on+a+ESP32C6+device+for+Home+Assistant%20https%3A%2F%2Fadrianba.net%2F2024%2F12%2F01%2Fesp32c6-and-home-assistant%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://x.com/intent/tweet?via=adrianba&text=Running+ESPHome+on+a+ESP32C6+device+for+Home+Assistant%20https%3A%2F%2Fadrianba.net%2F2024%2F12%2F01%2Fesp32c6-and-home-assistant%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fadrianba.net%2F2024%2F12%2F01%2Fesp32c6-and-home-assistant%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fadrianba.net%2F2024%2F12%2F01%2Fesp32c6-and-home-assistant%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://adrianba.net/2024/12/01/esp32c6-and-home-assistant/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://adrianba.net/2024/12/01/esp32c6-and-home-assistant/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=Running+ESPHome+on+a+ESP32C6+device+for+Home+Assistant%20https%3A%2F%2Fadrianba.net%2F2024%2F12%2F01%2Fesp32c6-and-home-assistant%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/2022/11/23/surface-rt-recovery-and-updates/" class="pagination--pager" title="Clean recovery of Surface RT and Windows Update (2022)
-">Previous</a>
+      <a href="/2022/11/23/surface-rt-recovery-and-updates/" class="pagination--pager" title="Clean recovery of Surface RT and Windows Update (2022)">Previous</a>
     
     
       <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
+
 
     </div>
 
@@ -672,7 +728,9 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
         <!-- start custom footer snippets -->
 
 <!-- end custom footer snippets -->
-        <div class="page__footer-follow">
+        
+
+<div class="page__footer-follow">
   <ul class="social-icons">
     
 
@@ -690,7 +748,8 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2024 <a href="https://adrianba.net">adrianba.net</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://adrianba.net">adrianba.net</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
