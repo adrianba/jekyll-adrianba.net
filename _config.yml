@@ -6,69 +6,69 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 theme: minimal-mistakes-jekyll
-minimal_mistakes_skin    : "purple" # "air", "contrast", "dark", "dirt", "mint", "sunrise"
+minimal_mistakes_skin: "purple" # "air", "contrast", "dark", "dirt", "mint", "sunrise"
 
 # Site Settings
-locale                   : "en"
-title                    : "adrianba.net"
-title_separator          : "-"
-name                     : "Adrian Bateman"
-description              : "On land, on sea, and in the ether."
-url                      : "https://adrianba.net"
-baseurl                  : ""
-repository               : "adrianba/jekyll-adrianba.net"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+locale: "en"
+title: "adrianba.net"
+title_separator: "-"
+name: "Adrian Bateman"
+description: "On land, on sea, and in the ether."
+url: "https://adrianba.net"
+baseurl: ""
+repository: "adrianba/jekyll-adrianba.net"
+teaser: # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
-words_per_minute         : 200
+words_per_minute: 200
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  provider: # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
-    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname: # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
-    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+    server: # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
     # https://developers.facebook.com/docs/plugins/comments
-    appid                :
-    num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
+    appid:
+    num_posts: # 5 (default)
+    colorscheme: # "light" (default), "dark"
 staticman:
-  allowedFields          : ['name', 'email', 'url', 'message']
-  branch                 : "master"
-  commitMessage          : "New comment."
-  filename               : comment-{@timestamp}
-  format                 : "yml"
-  moderation             : true
-  path                   : "docs/_data/comments/{options.slug}" # "/_data/comments/{options.slug}" (default)
-  requiredFields         : ['name', 'email', 'message']
+  allowedFields: ["name", "email", "url", "message"]
+  branch: "master"
+  commitMessage: "New comment."
+  filename: comment-{@timestamp}
+  format: "yml"
+  moderation: true
+  path: "docs/_data/comments/{options.slug}" # "/_data/comments/{options.slug}" (default)
+  requiredFields: ["name", "email", "message"]
   transforms:
-    email                : "md5"
+    email: "md5"
   generatedFields:
     date:
-      type               : "date"
+      type: "date"
       options:
-        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+        format: "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  path                   : # blank (default) uses feed.xml
+  path: # blank (default) uses feed.xml
 
 # SEO Related
-google_site_verification : "BUqUy58DpivlHAgBj3S9R4nIrr4bSvVVWajoA7XED10"
-bing_site_verification   : "63DB9D179BA14FF88535CF66336C4ED2"
-alexa_site_verification  :
-yandex_site_verification :
+google_site_verification: "BUqUy58DpivlHAgBj3S9R4nIrr4bSvVVWajoA7XED10"
+bing_site_verification: "63DB9D179BA14FF88535CF66336C4ED2"
+alexa_site_verification:
+yandex_site_verification:
 
 # Social Sharing
 twitter:
-  username               : "adrianba"
+  username: "adrianba"
 facebook:
-  username               : "adrianba"
-  app_id                 :
-  publisher              :
-og_image                 : "http://adrianba.net/assets/sailing.jpg" # Open Graph/Twitter default site image
+  username: "adrianba"
+  app_id:
+  publisher:
+og_image: "http://adrianba.net/assets/sailing.jpg" # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : Person # Person or Organization (defaults to Person)
-  name                   : "Adrian Bateman" # If the user or organization name differs from the site's name
+  type: Person # Person or Organization (defaults to Person)
+  name: "Adrian Bateman" # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
     - "https://adebateman.org/"
     - "https://twitter.com/adrianba"
@@ -78,10 +78,10 @@ social:
 
 # Analytics
 analytics:
-  provider               : "google-gtag"
+  provider: "google-gtag"
   google:
-    tracking_id          : G-ZB7NPZFPYX
-    anonymize_ip         : false
+    tracking_id: G-ZB7NPZFPYX
+    anonymize_ip: false
 
 # For SEO
 github:
@@ -89,39 +89,39 @@ github:
 
 # Site Author
 author:
-  name             : "Adrian Bateman"
-  avatar           : "/assets/sailing.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Englishman in Seattle."
-  location         : "Seattle, USA"
-  email            :
-  personal_uri     : # "https://adebateman.org/"
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : "adrianba"
-  gitlab           :
-  google_plus      :
-  keybase          :
-  instagram        :
-  lastfm           :
-  linkedin         : "adrianba"
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
-  steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
-  tumblr           :
-  twitter          : "adrianba"
-  vine             :
-  weibo            :
-  xing             :
-  youtube          : # "https://youtube.com/c/MichaelRoseDesign"
+  name: "Adrian Bateman"
+  avatar: "/assets/sailing.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio: "Englishman in Seattle."
+  location: "Seattle, USA"
+  email:
+  personal_uri: # "https://adebateman.org/"
+  bitbucket:
+  codepen:
+  dribbble:
+  flickr:
+  facebook:
+  foursquare:
+  github: "adrianba"
+  gitlab:
+  google_plus:
+  keybase:
+  instagram:
+  lastfm:
+  linkedin: "adrianba"
+  pinterest:
+  soundcloud:
+  stackoverflow: # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
+  steam: # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
+  tumblr:
+  twitter: "adrianba"
+  vine:
+  weibo:
+  xing:
+  youtube: # "https://youtube.com/c/MichaelRoseDesign"
   links:
-    - label        : "Personal site"
-      icon         : "fas fa-fw fa-globe"
-      url          : "https://adebateman.org/"
+    - label: "Personal site"
+      icon: "fas fa-fw fa-globe"
+      url: "https://adebateman.org/"
 
 # Footer
 footer:
@@ -135,6 +135,7 @@ include:
   - .htaccess
   - web.config
   - _pages
+  - .well-known
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -168,14 +169,12 @@ keep_files:
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-
 # Conversion
 markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
-
 
 # Markdown Processing
 kramdown:
@@ -188,12 +187,10 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-
 # Sass/SCSS
 sass:
   sass_dir: _sass
   style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
 
 # Outputting
 permalink: pretty
@@ -215,7 +212,6 @@ whitelist:
   - jekyll-gist
   - jekyll-feed
   - jemoji
-
 
 # Archives
 #  Type
@@ -240,11 +236,11 @@ jekyll-archives:
     - year
     - month
     - day
-  layout: 'archive-taxonomy'
+  layout: "archive-taxonomy"
   permalinks:
-    year: '/:year/'
-    month: '/:year/:month/'
-    day: '/:year/:month/:day.html'
+    year: "/:year/"
+    month: "/:year/:month/"
+    day: "/:year/:month/:day.html"
 
 # HTML Compression
 # - http://jch.penibelst.de/
@@ -252,7 +248,6 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-
 
 # Defaults
 defaults:
