@@ -49,6 +49,8 @@ GEM
       logger
     faraday-net_http (3.4.2)
       net-http (~> 0.5)
+    faraday-retry (2.4.0)
+      faraday (~> 2.0)
     ffi (1.17.3-x86_64-linux-gnu)
     fiber-annotation (0.2.0)
     fiber-local (1.1.0)
@@ -196,6 +198,7 @@ PLATFORMS
 
 DEPENDENCIES
   csv (~> 3.3)
+  faraday-retry
   html-proofer
   jekyll (~> 4.4)
   jekyll-archives

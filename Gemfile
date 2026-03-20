@@ -40,3 +40,4 @@ end
 
 
 gem "csv", "~> 3.3"
+gem "faraday-retry"
