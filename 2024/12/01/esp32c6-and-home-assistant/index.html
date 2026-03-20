@@ -1,14 +1,19 @@
+
+
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.27.3 by Michael Rose
-  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.28.0 by Michael Rose
+  Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
+  Copyright 2024-2026 iBug - ibugone.com | @iBug
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
 
 <html lang="en" class="no-js">
   <head>
-    <meta charset="utf-8">
+    
+<meta charset="utf-8">
+
 
 <!-- begin _includes/seo.html --><title>Running ESPHome on a ESP32C6 device for Home Assistant - adrianba.net</title>
 <meta name="description" content="ESP32C6 boards are not native supported by ESPHome">
@@ -32,6 +37,7 @@
 
 
   <meta property="og:image" content="https://adrianba.net/assets/uploads/2024/esp32.jpg">
+  
 
 
 
@@ -43,11 +49,14 @@
   
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://adrianba.net/assets/uploads/2024/esp32.jpg">
+    
   
 
   
     <meta name="twitter:creator" content="@adrianba">
   
+
+
 
 
 
@@ -109,7 +118,8 @@
   </head>
 
   <body class="layout--single" dir="ltr">
-    <nav class="skip-links">
+    
+<nav class="skip-links" aria-label="Skip links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
     <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
@@ -119,16 +129,23 @@
 
     
 
+
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
         
         <a class="site-title" href="/">
           adrianba.net
           
         </a>
-        <ul class="visible-links"></ul>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/"
+                
+                
+              >Quick-Start Guide</a>
+            </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">Toggle menu</span>
@@ -143,7 +160,10 @@
 
     <div class="initial-content">
       
+
+
   
+
 
 
 
@@ -168,8 +188,10 @@
 
 <div id="main" role="main">
   
+
   <div class="sidebar sticky">
   
+
 
 
 <div itemscope itemtype="https://schema.org/Person" class="h-card">
@@ -199,7 +221,7 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seattle, USA</span>
+          <i class="fas fa-fw fa-location-dot" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seattle, USA</span>
         </li>
       
 
@@ -220,7 +242,7 @@
       
         <li>
           <a href="https://twitter.com/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer me">
-            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+            <i class="fab fa-fw fa-square-x-twitter" aria-hidden="true"></i><span class="label">Twitter</span>
           </a>
         </li>
       
@@ -283,11 +305,12 @@
 </div>
 
   
+  
   </div>
 
 
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Running ESPHome on a ESP32C6 device for Home Assistant">
     <meta itemprop="description" content="ESP32C6 boards are not native supported by ESPHome">
     <meta itemprop="datePublished" content="2024-12-01T00:00:00-08:00">
@@ -296,11 +319,12 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
             <a href="https://adrianba.net/2024/12/01/esp32c6-and-home-assistant/" itemprop="url">Running ESPHome on a ESP32C6 device for Home Assistant
 </a>
           </h1>
           
+
 
   <p class="page__meta">
     
@@ -324,7 +348,7 @@
         </header>
       
 
-      <section class="page__content" itemprop="text">
+      <section class="page__content e-content" itemprop="text">
         
         <h1 id="esp32c6-boards-are-not-native-supported-by-esphome">ESP32C6 boards are not native supported by ESPHome</h1>
 
@@ -395,7 +419,7 @@ as a Bluetooth repeater. Here is the edited configuration file:</p>
 <span class="na">captive_portal</span><span class="pi">:</span>
 
 <span class="na">bluetooth_proxy</span><span class="pi">:</span>
-  <span class="na">active</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">active</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <p>Note 1: change <code class="language-plaintext highlighter-rouge">SSID</code> and <code class="language-plaintext highlighter-rouge">wifi-password</code> for your network. I also chose to start without passwords.</p>
@@ -486,7 +510,7 @@ now specify <code class="language-plaintext highlighter-rouge">seeed_xiao_esp32c
 <span class="na">captive_portal</span><span class="pi">:</span>
 
 <span class="na">bluetooth_proxy</span><span class="pi">:</span>
-  <span class="na">active</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">active</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
         
@@ -496,14 +520,21 @@ now specify <code class="language-plaintext highlighter-rouge">seeed_xiao_esp32c
         
         
 
+  
+
+  
+
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-07-22">July 22, 2025</time></p>
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-updated" datetime="2025-07-22">July 22, 2025</time></p>
+
 
       </footer>
 
-      <section class="page__share">
+      
+<section class="page__share">
   <h4 class="page__share-title">Share on</h4>
 
   <a href="https://x.com/intent/tweet?via=adrianba&text=Running+ESPHome+on+a+ESP32C6+device+for+Home+Assistant%20https%3A%2F%2Fadrianba.net%2F2024%2F12%2F01%2Fesp32c6-and-home-assistant%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on X">
@@ -525,7 +556,8 @@ now specify <code class="language-plaintext highlighter-rouge">seeed_xiao_esp32c
 
 
       
-  <nav class="pagination">
+
+  <nav class="pagination" aria-label="Post pagination">
     
       <a href="/2022/11/23/surface-rt-recovery-and-updates/" class="pagination--pager" title="Clean recovery of Surface RT and Windows Update (2022)">Previous</a>
     
@@ -543,9 +575,10 @@ now specify <code class="language-plaintext highlighter-rouge">seeed_xiao_esp32c
   
   
     
+
 <div class="page__related">
   
-  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <h2 class="page__related-title">You may also enjoy</h2>
   <div class="grid__wrapper">
     
       
@@ -553,16 +586,18 @@ now specify <code class="language-plaintext highlighter-rouge">seeed_xiao_esp32c
 
 
 
+
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2022/11/23/surface-rt-recovery-and-updates/" rel="permalink">Clean recovery of Surface RT and Windows Update (2022)
+        <a class="u-url" href="/2022/11/23/surface-rt-recovery-and-updates/" rel="permalink">Clean recovery of Surface RT and Windows Update (2022)
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -583,7 +618,7 @@ now specify <code class="language-plaintext highlighter-rouge">seeed_xiao_esp32c
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">If you reset a Microsoft Surface RT from a recovery disk, there is a good chance
+    <p class="archive__item-excerpt p-summary" itemprop="description">If you reset a Microsoft Surface RT from a recovery disk, there is a good chance
 that you will get an error from Windows Update: Error 8007000e Windows Updat...</p>
   </article>
 </div>
@@ -594,16 +629,18 @@ that you will get an error from Windows Update: Error 8007000e Windows Updat...<
 
 
 
+
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2022/05/13/running-ssh-agent-with-wsl2/" rel="permalink">Running ssh-agent with WSL2 (so that VSCode can find it)
+        <a class="u-url" href="/2022/05/13/running-ssh-agent-with-wsl2/" rel="permalink">Running ssh-agent with WSL2 (so that VSCode can find it)
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -624,7 +661,7 @@ that you will get an error from Windows Update: Error 8007000e Windows Updat...<
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">I often use Visual Studio Code together with WSL2 using the Remote - WSL extension. Recently, I have been using Docker running on a remote server accessed ov...</p>
+    <p class="archive__item-excerpt p-summary" itemprop="description">I often use Visual Studio Code together with WSL2 using the Remote - WSL extension. Recently, I have been using Docker running on a remote server accessed ov...</p>
   </article>
 </div>
 
@@ -634,16 +671,18 @@ that you will get an error from Windows Update: Error 8007000e Windows Updat...<
 
 
 
+
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2022/01/22/changing-windows-pc-name-case/" rel="permalink">Change Windows PC name to lower case
+        <a class="u-url" href="/2022/01/22/changing-windows-pc-name-case/" rel="permalink">Change Windows PC name to lower case
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -664,7 +703,7 @@ that you will get an error from Windows Update: Error 8007000e Windows Updat...<
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">It is straightforward to change the name of your Windows PC through the Settings
+    <p class="archive__item-excerpt p-summary" itemprop="description">It is straightforward to change the name of your Windows PC through the Settings
 app (go to System, About, and choose “Rename this PC”). One problem, though,...</p>
   </article>
 </div>
@@ -675,16 +714,18 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
 
 
 
+
 <div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2021/03/09/ubuntu-latest-git/" rel="permalink">Installing the latest version of git on Ubuntu
+        <a class="u-url" href="/2021/03/09/ubuntu-latest-git/" rel="permalink">Installing the latest version of git on Ubuntu
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -705,7 +746,7 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">
+    <p class="archive__item-excerpt p-summary" itemprop="description">
 </p>
   </article>
 </div>
@@ -730,8 +771,11 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
 <!-- end custom footer snippets -->
         
 
+
 <div class="page__footer-follow">
   <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
     
 
     
@@ -743,18 +787,19 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
     
 
     
-      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> Feed</a></li>
     
   </ul>
 </div>
 
 
-<div class="page__footer-copyright">&copy; 2025 <a href="https://adrianba.net">adrianba.net</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2026 <a href="https://adrianba.net">adrianba.net</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
 
     
+
   <script src="/assets/js/main.min.js"></script>
 
 
@@ -780,6 +825,7 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
   src="https://log.adrianba.net/script.js"
   data-website-id="e4a4e083-52be-40f7-88e9-3ac737346958"
 ></script>
+
 
 
 

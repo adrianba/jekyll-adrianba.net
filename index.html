@@ -1,14 +1,19 @@
+
+
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.27.3 by Michael Rose
-  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.28.0 by Michael Rose
+  Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
+  Copyright 2024-2026 iBug - ibugone.com | @iBug
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
 
 <html lang="en" class="no-js">
   <head>
-    <meta charset="utf-8">
+    
+<meta charset="utf-8">
+
 
 <!-- begin _includes/seo.html --><title>adrianba.net</title>
 <meta name="description" content="On land, on sea, and in the ether.">
@@ -30,6 +35,7 @@
 
 
   <meta property="og:image" content="https://adrianba.net/assets/seattle.jpg">
+  
 
 
 
@@ -41,11 +47,14 @@
   
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://adrianba.net/assets/seattle.jpg">
+    
   
 
   
     <meta name="twitter:creator" content="@adrianba">
   
+
+
 
 
 
@@ -114,7 +123,8 @@
   </head>
 
   <body class="layout--home" dir="ltr">
-    <nav class="skip-links">
+    
+<nav class="skip-links" aria-label="Skip links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
     <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
@@ -124,16 +134,23 @@
 
     
 
+
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
         
         <a class="site-title" href="/">
           adrianba.net
           
         </a>
-        <ul class="visible-links"></ul>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/"
+                
+                
+              >Quick-Start Guide</a>
+            </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">Toggle menu</span>
@@ -148,7 +165,10 @@
 
     <div class="initial-content">
       
+
+
   
+
 
 
 
@@ -171,8 +191,10 @@
 
 <div id="main" role="main">
   
+
   <div class="sidebar sticky">
   
+
 
 
 <div itemscope itemtype="https://schema.org/Person" class="h-card">
@@ -202,7 +224,7 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seattle, USA</span>
+          <i class="fas fa-fw fa-location-dot" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seattle, USA</span>
         </li>
       
 
@@ -223,7 +245,7 @@
       
         <li>
           <a href="https://twitter.com/adrianba" itemprop="sameAs" rel="nofollow noopener noreferrer me">
-            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span>
+            <i class="fab fa-fw fa-square-x-twitter" aria-hidden="true"></i><span class="label">Twitter</span>
           </a>
         </li>
       
@@ -295,6 +317,7 @@
     
     
   
+  
   </div>
 
 
@@ -305,7 +328,9 @@
     
     
 
-<h3 class="archive__subtitle">Recent Posts</h3>
+
+
+<h3 class="archive__subtitle">Recent posts</h3>
 
 
 
@@ -319,16 +344,19 @@
 
 
 
+
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2024/12/01/esp32c6-and-home-assistant/" rel="permalink">Running ESPHome on a ESP32C6 device for Home Assistant
+        <a class="u-url" href="/2024/12/01/esp32c6-and-home-assistant/" rel="permalink">Running ESPHome on a ESP32C6 device for Home Assistant
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -349,7 +377,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">ESP32C6 boards are not native supported by ESPHome
+    <p class="archive__item-excerpt p-summary" itemprop="description">ESP32C6 boards are not native supported by ESPHome
 </p>
   </article>
 </div>
@@ -357,16 +385,18 @@
 
 
 
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2022/11/23/surface-rt-recovery-and-updates/" rel="permalink">Clean recovery of Surface RT and Windows Update (2022)
+        <a class="u-url" href="/2022/11/23/surface-rt-recovery-and-updates/" rel="permalink">Clean recovery of Surface RT and Windows Update (2022)
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -387,7 +417,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">If you reset a Microsoft Surface RT from a recovery disk, there is a good chance
+    <p class="archive__item-excerpt p-summary" itemprop="description">If you reset a Microsoft Surface RT from a recovery disk, there is a good chance
 that you will get an error from Windows Update: Error 8007000e Windows Updat...</p>
   </article>
 </div>
@@ -395,16 +425,18 @@ that you will get an error from Windows Update: Error 8007000e Windows Updat...<
 
 
 
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2022/05/13/running-ssh-agent-with-wsl2/" rel="permalink">Running ssh-agent with WSL2 (so that VSCode can find it)
+        <a class="u-url" href="/2022/05/13/running-ssh-agent-with-wsl2/" rel="permalink">Running ssh-agent with WSL2 (so that VSCode can find it)
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -425,23 +457,25 @@ that you will get an error from Windows Update: Error 8007000e Windows Updat...<
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">I often use Visual Studio Code together with WSL2 using the Remote - WSL extension. Recently, I have been using Docker running on a remote server accessed ov...</p>
+    <p class="archive__item-excerpt p-summary" itemprop="description">I often use Visual Studio Code together with WSL2 using the Remote - WSL extension. Recently, I have been using Docker running on a remote server accessed ov...</p>
   </article>
 </div>
 
 
 
 
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2022/01/22/changing-windows-pc-name-case/" rel="permalink">Change Windows PC name to lower case
+        <a class="u-url" href="/2022/01/22/changing-windows-pc-name-case/" rel="permalink">Change Windows PC name to lower case
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -462,7 +496,7 @@ that you will get an error from Windows Update: Error 8007000e Windows Updat...<
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">It is straightforward to change the name of your Windows PC through the Settings
+    <p class="archive__item-excerpt p-summary" itemprop="description">It is straightforward to change the name of your Windows PC through the Settings
 app (go to System, About, and choose “Rename this PC”). One problem, though,...</p>
   </article>
 </div>
@@ -470,16 +504,18 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
 
 
 
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2021/03/09/ubuntu-latest-git/" rel="permalink">Installing the latest version of git on Ubuntu
+        <a class="u-url" href="/2021/03/09/ubuntu-latest-git/" rel="permalink">Installing the latest version of git on Ubuntu
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -500,7 +536,7 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">
+    <p class="archive__item-excerpt p-summary" itemprop="description">
 </p>
   </article>
 </div>
@@ -508,16 +544,18 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
 
 
 
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2021/02/18/sd-card-disconnects-on-surface-pro/" rel="permalink">Repeated SD Card Disconnects on Surface Pro 5
+        <a class="u-url" href="/2021/02/18/sd-card-disconnects-on-surface-pro/" rel="permalink">Repeated SD Card Disconnects on Surface Pro 5
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -538,7 +576,7 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">I have been using a 128GB Micro-SD card as additional storage on my Surface Pro
+    <p class="archive__item-excerpt p-summary" itemprop="description">I have been using a 128GB Micro-SD card as additional storage on my Surface Pro
 (both Surface Pro 4 and Surface Pro 5) for some years and regularly run into ...</p>
   </article>
 </div>
@@ -546,16 +584,18 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
 
 
 
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2020/12/19/windows10-startup-folder/" rel="permalink">Quick shortcut to launching the Start Menu Startup folder in Explorer
+        <a class="u-url" href="/2020/12/19/windows10-startup-folder/" rel="permalink">Quick shortcut to launching the Start Menu Startup folder in Explorer
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -576,7 +616,7 @@ app (go to System, About, and choose “Rename this PC”). One problem, though,
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Here is a quick way to get to the current user’s Startup folder in the Start
+    <p class="archive__item-excerpt p-summary" itemprop="description">Here is a quick way to get to the current user’s Startup folder in the Start
 Menu in Windows 10. Once there, you can right-click, Create Shortcut to add a
 pr...</p>
   </article>
@@ -585,16 +625,18 @@ pr...</p>
 
 
 
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2020/12/19/changing-computer-name-command-line/" rel="permalink">Changing Computer Name from the command line on Windows 10
+        <a class="u-url" href="/2020/12/19/changing-computer-name-command-line/" rel="permalink">Changing Computer Name from the command line on Windows 10
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -615,7 +657,7 @@ pr...</p>
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Here is a way to change your Windows computer’s name from the command line.
+    <p class="archive__item-excerpt p-summary" itemprop="description">Here is a way to change your Windows computer’s name from the command line.
 [Source: Password Recovery Blog]
 </p>
   </article>
@@ -624,16 +666,18 @@ pr...</p>
 
 
 
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2020/12/18/changing-bluetooth-pc-name/" rel="permalink">Changing PC Device Name for Bluetooth on Windows 10
+        <a class="u-url" href="/2020/12/18/changing-bluetooth-pc-name/" rel="permalink">Changing PC Device Name for Bluetooth on Windows 10
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -654,7 +698,7 @@ pr...</p>
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">I am lucky enough to own a pair of Bose QC35 II headphones,
+    <p class="archive__item-excerpt p-summary" itemprop="description">I am lucky enough to own a pair of Bose QC35 II headphones,
 which can connect to multiple devices using Bluetooth. The headphones
 announce the name of each d...</p>
   </article>
@@ -663,16 +707,18 @@ announce the name of each d...</p>
 
 
 
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2019/11/16/who-can-sue-companies-ccpa/" rel="permalink">Who can sue a company under the CCPA?
+        <a class="u-url" href="/2019/11/16/who-can-sue-companies-ccpa/" rel="permalink">Who can sue a company under the CCPA?
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -693,7 +739,7 @@ announce the name of each d...</p>
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Yesterday, I read an article on JD Supra answering the question “Can a
+    <p class="archive__item-excerpt p-summary" itemprop="description">Yesterday, I read an article on JD Supra answering the question “Can a
 company be sued under the CCPA for failing to post a ‘do not sell my personal
 informat...</p>
   </article>
@@ -702,16 +748,18 @@ informat...</p>
 
 
 
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2017/12/19/particle-printable-buffer-library/" rel="permalink">Particle Printable Buffer Library
+        <a class="u-url" href="/2017/12/19/particle-printable-buffer-library/" rel="permalink">Particle Printable Buffer Library
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -732,7 +780,7 @@ informat...</p>
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Based on the code used internally by the Particle firmware for printing
+    <p class="archive__item-excerpt p-summary" itemprop="description">Based on the code used internally by the Particle firmware for printing
 to String objects (see StringPrintableHelper in wiring/src/spark_wiring_string.cpp), ...</p>
   </article>
 </div>
@@ -740,16 +788,18 @@ to String objects (see StringPrintableHelper in wiring/src/spark_wiring_string.c
 
 
 
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2017/12/15/fix-surface-type-cover-after-firmware-update/" rel="permalink">Fix Surface Type Cover after firmware update
+        <a class="u-url" href="/2017/12/15/fix-surface-type-cover-after-firmware-update/" rel="permalink">Fix Surface Type Cover after firmware update
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -770,7 +820,7 @@ to String objects (see StringPrintableHelper in wiring/src/spark_wiring_string.c
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">This week there were Surface Pro 4 firmware updates as part of the Patch Tuesday updates. After
+    <p class="archive__item-excerpt p-summary" itemprop="description">This week there were Surface Pro 4 firmware updates as part of the Patch Tuesday updates. After
 the system updates completed on my SP4, the type cover stoppe...</p>
   </article>
 </div>
@@ -778,16 +828,18 @@ the system updates completed on my SP4, the type cover stoppe...</p>
 
 
 
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2017/11/29/inactivity-timeout/" rel="permalink">Setting the inactivity timeout in Windows
+        <a class="u-url" href="/2017/11/29/inactivity-timeout/" rel="permalink">Setting the inactivity timeout in Windows
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -808,7 +860,7 @@ the system updates completed on my SP4, the type cover stoppe...</p>
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Windows has a timeout that can return you to the lock screen after a period of inactivity. This
+    <p class="archive__item-excerpt p-summary" itemprop="description">Windows has a timeout that can return you to the lock screen after a period of inactivity. This
 is useful if you want to make sure the PC gets locked if you ...</p>
   </article>
 </div>
@@ -816,16 +868,18 @@ is useful if you want to make sure the PC gets locked if you ...</p>
 
 
 
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2017/10/13/samsung-smart-switch/" rel="permalink">Samsung Smart Switch - How to install on Windows 10
+        <a class="u-url" href="/2017/10/13/samsung-smart-switch/" rel="permalink">Samsung Smart Switch - How to install on Windows 10
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -846,7 +900,7 @@ is useful if you want to make sure the PC gets locked if you ...</p>
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Samsung Smart Switch is a tool that will backup your phone and transfer the data to a new Samsung
+    <p class="archive__item-excerpt p-summary" itemprop="description">Samsung Smart Switch is a tool that will backup your phone and transfer the data to a new Samsung
 phone. You also use it to backup your phone to your PC in c...</p>
   </article>
 </div>
@@ -854,16 +908,18 @@ phone. You also use it to backup your phone to your PC in c...</p>
 
 
 
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2017/10/12/node-and-vpn/" rel="permalink">NPM giving error EAI_AGAIN from Windows Subsystem for Linux (WSL)
+        <a class="u-url" href="/2017/10/12/node-and-vpn/" rel="permalink">NPM giving error EAI_AGAIN from Windows Subsystem for Linux (WSL)
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -884,7 +940,7 @@ phone. You also use it to backup your phone to your PC in c...</p>
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">This morning I was experimenting with some demo code and when I tried to
+    <p class="archive__item-excerpt p-summary" itemprop="description">This morning I was experimenting with some demo code and when I tried to
 install some packages from npm I got the following network error:
 </p>
   </article>
@@ -893,16 +949,18 @@ install some packages from npm I got the following network error:
 
 
 
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2016/09/24/using-microsoft-flow-to-publish-medium-com-recommendations/" rel="permalink">Using Microsoft Flow to publish medium.com recommendations
+        <a class="u-url" href="/2016/09/24/using-microsoft-flow-to-publish-medium-com-recommendations/" rel="permalink">Using Microsoft Flow to publish medium.com recommendations
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -923,7 +981,7 @@ install some packages from npm I got the following network error:
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Like a growing number of people, I read a lot of content on medium.com. I wanted to find a way to share the posts that I find most interesting.
+    <p class="archive__item-excerpt p-summary" itemprop="description">Like a growing number of people, I read a lot of content on medium.com. I wanted to find a way to share the posts that I find most interesting.
 </p>
   </article>
 </div>
@@ -931,16 +989,18 @@ install some packages from npm I got the following network error:
 
 
 
+
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2016/01/06/using-sublime-text-as-your-git-editor-on-windows/" rel="permalink">Using Sublime Text as your git editor on Windows
+        <a class="u-url" href="/2016/01/06/using-sublime-text-as-your-git-editor-on-windows/" rel="permalink">Using Sublime Text as your git editor on Windows
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -961,9 +1021,10 @@ install some packages from npm I got the following network error:
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git ...</p>
+    <p class="archive__item-excerpt p-summary" itemprop="description">Many git commands require using an editor including writing good commit messages. I use Sublime Text as my default text editor and I wanted to make sure git ...</p>
   </article>
 </div>
+
 
 
 
@@ -971,13 +1032,14 @@ install some packages from npm I got the following network error:
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2015/12/20/mdi-to-tiff-converter/" rel="permalink">MDI to TIFF converter
+        <a class="u-url" href="/2015/12/20/mdi-to-tiff-converter/" rel="permalink">MDI to TIFF converter
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -998,9 +1060,10 @@ install some packages from npm I got the following network error:
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Microsoft Office Document Imaging (MODI) was part of Office up to Office 2007. It allowed you to scan multipage documents into .MDI files. MODI was deprecate...</p>
+    <p class="archive__item-excerpt p-summary" itemprop="description">Microsoft Office Document Imaging (MODI) was part of Office up to Office 2007. It allowed you to scan multipage documents into .MDI files. MODI was deprecate...</p>
   </article>
 </div>
+
 
 
 
@@ -1008,13 +1071,14 @@ install some packages from npm I got the following network error:
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2015/12/05/using-dvi-monitors-with-the-new-surface-dock/" rel="permalink">Using DVI monitors with the new Surface Dock
+        <a class="u-url" href="/2015/12/05/using-dvi-monitors-with-the-new-surface-dock/" rel="permalink">Using DVI monitors with the new Surface Dock
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -1035,9 +1099,10 @@ install some packages from npm I got the following network error:
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">The new Surface Dock from Microsoft has two mini-DisplayPort outputs that can be used to connect a Surface Book, Surface Pro 3, or Surface Pro 4 to two exter...</p>
+    <p class="archive__item-excerpt p-summary" itemprop="description">The new Surface Dock from Microsoft has two mini-DisplayPort outputs that can be used to connect a Surface Book, Surface Pro 3, or Surface Pro 4 to two exter...</p>
   </article>
 </div>
+
 
 
 
@@ -1045,13 +1110,14 @@ install some packages from npm I got the following network error:
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
       
-        <a href="/2015/03/14/using-yeoman-to-start-writing-technical-specifications-with-respec/" rel="permalink">Using Yeoman to start writing technical specifications with ReSpec
+        <a class="u-url" href="/2015/03/14/using-yeoman-to-start-writing-technical-specifications-with-respec/" rel="permalink">Using Yeoman to start writing technical specifications with ReSpec
 </a>
       
     </h2>
     
+
 
   <p class="page__meta">
     
@@ -1072,11 +1138,12 @@ install some packages from npm I got the following network error:
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Yeoman is a tool that provides a scaffolding system to begin new projects. The genius thing about Yeoman is that, by itself, it doesn’t know how to do anythi...</p>
+    <p class="archive__item-excerpt p-summary" itemprop="description">Yeoman is a tool that provides a scaffolding system to begin new projects. The genius thing about Yeoman is that, by itself, it doesn’t know how to do anythi...</p>
   </article>
 </div>
 
 </div>
+
 
 
 
@@ -1096,8 +1163,11 @@ install some packages from npm I got the following network error:
 <!-- end custom footer snippets -->
         
 
+
 <div class="page__footer-follow">
   <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
     
 
     
@@ -1109,18 +1179,19 @@ install some packages from npm I got the following network error:
     
 
     
-      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> Feed</a></li>
     
   </ul>
 </div>
 
 
-<div class="page__footer-copyright">&copy; 2025 <a href="https://adrianba.net">adrianba.net</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2026 <a href="https://adrianba.net">adrianba.net</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
 
     
+
   <script src="/assets/js/main.min.js"></script>
 
 
@@ -1146,6 +1217,7 @@ install some packages from npm I got the following network error:
   src="https://log.adrianba.net/script.js"
   data-website-id="e4a4e083-52be-40f7-88e9-3ac737346958"
 ></script>
+
 
 
 
