@@ -10,7 +10,7 @@ gem "pkg-config", "~> 1.1"
 
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 4.1.1"
+gem "jekyll", "~> 4.4"
 
 # This is the theme for the Jekyll sites.
 gem "minimal-mistakes-jekyll"
@@ -38,3 +38,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 #gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+
+gem "csv", "~> 3.3"
